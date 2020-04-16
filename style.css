@@ -1,0 +1,87 @@
+:root {
+  --button-highlight: #ffffff;
+  --button-face: #c0c0c0;
+  --button-shadow: #808080;
+  --window-frame: #0a0a0a;
+}
+
+.raised-outer {
+  box-shadow: -1px -1px 0 1px var(--button-highlight),
+    0 0 0 2px var(--window-frame);
+}
+
+.raised-inner {
+  box-shadow: inset -2px -2px var(--button-shadow),
+    inset 2px 2px var(--button-face);
+}
+
+.button-face {
+  background-color: var(--button-face);
+}
+
+.sunken-outer {
+  box-shadow: -1px -1px 0 1px var(--window-frame),
+    0 0 0 2px var(--button-highlight);
+}
+
+.sunken-inner {
+  box-shadow: inset -2px -2px var(--button-face),
+    inset 2px 2px var(--button-shadow);
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: var(--button-face);
+}
+
+* {
+  /* Hmmmm... how can I make these a webfont */
+  font-family: "MS Sans Serif", Arial;
+  font-size: 11px;
+  -webkit-font-smoothing: none;
+  color: #222222;
+}
+
+/*
+u {
+  text-decoration: none;
+  border-bottom: 1px solid #222222;
+}
+
+button {
+  background: #c0c0c0;
+  padding: 4px 10px;
+  border: none;
+  box-shadow: -0.5px -0.5px 0 0.5px #c0c0c0, 0 0 0 1px #808080,
+    -0.5px -0.5px 0 1.5px #ffffff, 0 0 0 2px #0a0a0a;
+}
+
+button:active {
+  box-shadow: -0.5px -0.5px 0 0.5px #808080, 0 0 0 1px #c0c0c0,
+    -0.5px -0.5px 0 1.5px #0a0a0a, 0 0 0 2px #ffffff;
+}
+
+button:disabled {
+  color: #9a9a9a;
+  text-shadow: 1px 1px 0 #eeeeee;
+}
+
+button:focus {
+  outline: 1px dotted #000000;
+  outline-offset: -2px;
+}
+
+fieldset {
+  border: none;
+}
+
+fieldset > * {
+  margin: 0 6px 8px 0;
+}
+
+fieldset > *:last-child {
+  margin: 0;
+}
+*/
