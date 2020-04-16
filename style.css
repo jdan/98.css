@@ -38,6 +38,9 @@ button {
   margin: 1px;
   background: var(--surface);
   box-shadow: var(--border-raised-outer), var(--border-raised-inner);
+
+  min-width: 73px;
+  min-height: 21px;
 }
 
 button:active {
@@ -46,13 +49,12 @@ button:active {
 
 button:focus {
   outline: 1px dotted #000000;
-  outline-offset: -3px;
+  outline-offset: -3.5px;
 }
 
 .dialog {
   box-shadow: var(--border-raised-outer), var(--border-raised-inner);
   background: var(--surface);
-  min-width: calc(188 * var(--dlu));
   padding: 1px;
 }
 
@@ -77,9 +79,8 @@ button:focus {
 }
 
 .dialog .header .controls button {
-  /* I don't love these */
-  width: 14px;
-  height: 12px;
+  min-width: 14px;
+  min-height: 12px;
 }
 
 .dialog .header .controls button:focus {
@@ -106,22 +107,22 @@ button:focus {
 }
 
 .dialog .body {
-  margin: 8px;
+  margin: 12px 8px 8px;
+}
+
+.dialog .body > * + * {
+  margin-top: 8px;
+}
+
+section.align-right {
+  text-align: right;
+}
+
+section button + button {
+  margin-left: 4px;
 }
 
 :disabled {
   color: var(--button-shadow);
   text-shadow: 1px 1px 0 var(--button-highlight);
-}
-
-fieldset {
-  border: none;
-}
-
-fieldset > * {
-  margin-right: calc(4 * var(--dlu));
-}
-
-fieldset > *:last-child {
-  margin: 0;
 }

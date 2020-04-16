@@ -18,7 +18,7 @@
   <div class="dialog">
     <div class="header">
       <div class="title">
-        Display Properties
+        Windows 98 Example
       </div>
 
       <div class="controls">
@@ -26,9 +26,28 @@
       </div>
     </div>
     <div class="body">
-      <p>Hello, world!</p>
+      <section>This is an example window with some controls.</section>
 
-      <p><button style="width: 75px; height: 23px"><u>C</u>lose</button></p>
+      <fieldset>
+        <legend>I think it's</legend>
+        <input type="radio" name="answer" value="cool">
+        <label for="male">Cool</label>
+        <input type="radio" name="answer" value="meh">
+        <label for="female">Meh</label>
+
+        <label for="reason">Reason:</label>
+        <select>
+          <option>Nostalgia</option>
+          <option>It looks sharp</option>
+          <option>It's confusing</option>
+          <option>It looks dated</option>
+        </select>
+      </fieldset>
+
+      <section class="align-right">
+        <button>OK</button>
+        <button>Cancel</button>
+      </section>
     </div>
   </div>
 </body>
