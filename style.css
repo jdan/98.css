@@ -5,6 +5,26 @@
   --window-frame: #0a0a0a;
 }
 
+button {
+  border: none;
+  background: var(--button-face);
+  padding: 12px;
+  box-shadow: -1px -1px 0 1px var(--button-highlight),
+    0 0 0 2px var(--window-frame), inset -2px -2px var(--button-shadow),
+    inset 2px 2px var(--button-face);
+}
+
+button:active {
+  box-shadow: -1px -1px 0 1px var(--window-frame),
+    0 0 0 2px var(--button-highlight), inset -2px -2px var(--button-face),
+    inset 2px 2px var(--button-shadow);
+}
+
+button:focus {
+  outline: 1px dotted #000000;
+  outline-offset: -2px;
+}
+
 .raised-outer {
   box-shadow: -1px -1px 0 1px var(--button-highlight),
     0 0 0 2px var(--window-frame);
@@ -20,13 +40,10 @@
 }
 
 .sunken-outer {
-  box-shadow: -1px -1px 0 1px var(--window-frame),
-    0 0 0 2px var(--button-highlight);
 }
 
 .sunken-inner {
-  box-shadow: inset -2px -2px var(--button-face),
-    inset 2px 2px var(--button-shadow);
+  box-shadow: ;
 }
 
 body {
