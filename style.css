@@ -3,6 +3,15 @@
   --button-face: #c0c0c0;
   --button-shadow: #808080;
   --window-frame: #0a0a0a;
+
+  --border-raised-outer: -0.5px -0.5px 0 0.5px var(--button-highlight),
+    0 0 0 1px var(--window-frame);
+  --border-raised-inner: inset -1px -1px var(--button-shadow),
+    inset 1px 1px var(--button-face);
+  --border-sunken-outer: -0.5px -0.5px 0 0.5px var(--window-frame),
+    0 0 0 1px var(--button-highlight);
+  --border-sunken-inner: inset -1px -1px var(--button-face),
+    inset 1px 1px var(--button-shadow);
 }
 
 * {
@@ -22,16 +31,11 @@ button {
   border: none;
   background: var(--button-face);
   padding: 6px 8px;
-  /* Make these shadows into a mixin */
-  box-shadow: -0.5px -0.5px 0 0.5px var(--button-highlight),
-    0 0 0 1px var(--window-frame), inset -1px -1px var(--button-shadow),
-    inset 1px 1px var(--button-face);
+  box-shadow: var(--border-raised-outer), var(--border-raised-inner);
 }
 
 button:active {
-  box-shadow: -0.5px -0.5px 0 0.5px var(--window-frame),
-    0 0 0 1px var(--button-highlight), inset -1px -1px var(--button-face),
-    inset 1px 1px var(--button-shadow);
+  box-shadow: var(--border-sunken-outer), var(--border-sunken-inner);
 }
 
 button:focus {
