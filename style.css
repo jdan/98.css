@@ -5,54 +5,6 @@
   --window-frame: #0a0a0a;
 }
 
-button {
-  border: none;
-  background: var(--button-face);
-  padding: 12px;
-  box-shadow: -1px -1px 0 1px var(--button-highlight),
-    0 0 0 2px var(--window-frame), inset -2px -2px var(--button-shadow),
-    inset 2px 2px var(--button-face);
-}
-
-button:active {
-  box-shadow: -1px -1px 0 1px var(--window-frame),
-    0 0 0 2px var(--button-highlight), inset -2px -2px var(--button-face),
-    inset 2px 2px var(--button-shadow);
-}
-
-button:focus {
-  outline: 1px dotted #000000;
-  outline-offset: -2px;
-}
-
-.raised-outer {
-  box-shadow: -1px -1px 0 1px var(--button-highlight),
-    0 0 0 2px var(--window-frame);
-}
-
-.raised-inner {
-  box-shadow: inset -2px -2px var(--button-shadow),
-    inset 2px 2px var(--button-face);
-}
-
-.button-face {
-  background-color: var(--button-face);
-}
-
-.sunken-outer {
-}
-
-.sunken-inner {
-  box-shadow: ;
-}
-
-body {
-  height: 100vh;
-  margin: 0;
-  padding: 0;
-  background: var(--button-face);
-}
-
 * {
   /* Hmmmm... how can I make these a webfont */
   font-family: "MS Sans Serif", Arial;
@@ -61,33 +13,35 @@ body {
   color: #222222;
 }
 
-/*
 u {
   text-decoration: none;
-  border-bottom: 1px solid #222222;
+  border-bottom: 0.5px solid #222222;
 }
 
 button {
-  background: #c0c0c0;
-  padding: 4px 10px;
   border: none;
-  box-shadow: -0.5px -0.5px 0 0.5px #c0c0c0, 0 0 0 1px #808080,
-    -0.5px -0.5px 0 1.5px #ffffff, 0 0 0 2px #0a0a0a;
+  background: var(--button-face);
+  padding: 6px 8px;
+  /* Make these shadows into a mixin */
+  box-shadow: -0.5px -0.5px 0 0.5px var(--button-highlight),
+    0 0 0 1px var(--window-frame), inset -1px -1px var(--button-shadow),
+    inset 1px 1px var(--button-face);
 }
 
 button:active {
-  box-shadow: -0.5px -0.5px 0 0.5px #808080, 0 0 0 1px #c0c0c0,
-    -0.5px -0.5px 0 1.5px #0a0a0a, 0 0 0 2px #ffffff;
+  box-shadow: -0.5px -0.5px 0 0.5px var(--window-frame),
+    0 0 0 1px var(--button-highlight), inset -1px -1px var(--button-face),
+    inset 1px 1px var(--button-shadow);
+}
+
+button:focus {
+  outline: 1px dotted #000000;
+  outline-offset: -3px;
 }
 
 button:disabled {
   color: #9a9a9a;
   text-shadow: 1px 1px 0 #eeeeee;
-}
-
-button:focus {
-  outline: 1px dotted #000000;
-  outline-offset: -2px;
 }
 
 fieldset {
@@ -101,4 +55,3 @@ fieldset > * {
 fieldset > *:last-child {
   margin: 0;
 }
-*/
