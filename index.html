@@ -7,7 +7,7 @@
       height: 100vh;
       margin: 0;
       padding: 0;
-      background: var(--button-face);
+      background: var(--dialog-blue);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -15,9 +15,21 @@
     </style>
 </head>
 <body>
-  <fieldset>
-    <button><u>H</u>ello, world!</button>
-    <button disabled>Unavailable</button>
-  </fieldset>
+  <div class="dialog">
+    <div class="header">
+      <div class="title">
+        Display Properties
+      </div>
+
+      <div class="controls">
+        <button aria-label="Minimize"></button><button aria-label="Maximize"></button><button aria-label="Close"></button>
+      </div>
+    </div>
+    <div class="body">
+      <p>Hello, world!</p>
+
+      <p><button style="width: 75px; height: 23px"><u>C</u>lose</button></p>
+    </div>
+  </div>
 </body>
 </html>

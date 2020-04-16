@@ -1,9 +1,14 @@
 :root {
+  /* Color */
+  --surface: #c0c0c0;
   --button-highlight: #ffffff;
-  --button-face: #c0c0c0;
+  --button-face: #dfdfdf;
   --button-shadow: #808080;
   --window-frame: #0a0a0a;
+  --dialog-blue: #000080;
+  --dialog-blue-light: #1084d0;
 
+  /* Borders */
   --border-raised-outer: -0.5px -0.5px 0 0.5px var(--button-highlight),
     0 0 0 1px var(--window-frame);
   --border-raised-inner: inset -1px -1px var(--button-shadow),
@@ -28,9 +33,10 @@ u {
 }
 
 button {
+  box-sizing: border-box;
   border: none;
-  background: var(--button-face);
-  padding: 6px 8px;
+  margin: 1px;
+  background: var(--surface);
   box-shadow: var(--border-raised-outer), var(--border-raised-inner);
 }
 
@@ -43,9 +49,69 @@ button:focus {
   outline-offset: -3px;
 }
 
-button:disabled {
-  color: #9a9a9a;
-  text-shadow: 1px 1px 0 #eeeeee;
+.dialog {
+  box-shadow: var(--border-raised-outer), var(--border-raised-inner);
+  background: var(--surface);
+  min-width: calc(188 * var(--dlu));
+  padding: 1px;
+}
+
+.dialog .header {
+  background: linear-gradient(
+    90deg,
+    var(--dialog-blue),
+    var(--dialog-blue-light)
+  );
+  margin: 2px;
+  padding: 2px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dialog .header .title {
+  font-weight: bold;
+  color: white;
+  letter-spacing: 0.1ch;
+  margin-right: 24px;
+}
+
+.dialog .header .controls button {
+  /* I don't love these */
+  width: 14px;
+  height: 12px;
+}
+
+.dialog .header .controls button:focus {
+  outline: none;
+}
+
+.dialog .header .controls button[aria-label="Minimize"] {
+  background-image: url("./minimize.svg");
+  background-repeat: no-repeat;
+  background-position: bottom 2px left 3px;
+}
+
+.dialog .header .controls button[aria-label="Maximize"] {
+  background-image: url("./maximize.svg");
+  background-repeat: no-repeat;
+  background-position: top 1px left 2px;
+}
+
+.dialog .header .controls button[aria-label="Close"] {
+  margin-left: 3px;
+  background-image: url("./close.svg");
+  background-repeat: no-repeat;
+  background-position: top 2px center;
+}
+
+.dialog .body {
+  margin: 8px;
+}
+
+:disabled {
+  color: var(--button-shadow);
+  text-shadow: 1px 1px 0 var(--button-highlight);
 }
 
 fieldset {
@@ -53,7 +119,7 @@ fieldset {
 }
 
 fieldset > * {
-  margin: 0 6px 8px 0;
+  margin-right: calc(4 * var(--dlu));
 }
 
 fieldset > *:last-child {
