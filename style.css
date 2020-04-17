@@ -149,12 +149,8 @@ button:focus {
   margin-top: var(--element-spacing);
 }
 
-section.align-right {
-  text-align: right;
-}
-
-section * + * {
-  margin-left: var(--grouped-element-spacing);
+.align-right {
+  justify-content: flex-end;
 }
 
 fieldset {
@@ -162,6 +158,7 @@ fieldset {
   box-shadow: var(--border-sunken-outer), var(--border-raised-inner);
   padding: calc(2 * var(--border-width) + var(--element-spacing));
   padding-block-start: var(--element-spacing);
+  margin: 0;
 }
 
 legend {
