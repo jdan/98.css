@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+  <link rel="stylesheet" href="/style.css?t=1"></style>
+  <style>
+    body {
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+      background: var(--dialog-blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    </style>
+</head>
+<body>
+  <div class="dialog">
+    <div class="header">
+      <div class="title">
+        Windows 98 Example
+      </div>
+
+      <div class="controls">
+        <button aria-label="Minimize"></button>
+        <button aria-label="Maximize"></button>
+        <button aria-label="Close"></button>
+      </div>
+    </div>
+    <div class="body">
+      <section>This is an example window with some controls.</section>
+
+      <fieldset>
+        <legend>I think it's</legend>
+        <input type="radio" name="answer" value="cool">
+        <label for="male">Cool</label>
+        <input type="radio" name="answer" value="meh">
+        <label for="female">Meh</label>
+
+        <label for="reason">Reason:</label>
+        <select>
+          <option>Nostalgia</option>
+          <option>It looks sharp</option>
+          <option>It's confusing</option>
+          <option>It looks dated</option>
+        </select>
+      </fieldset>
+
+      <section class="align-right">
+        <button>OK</button>
+        <button>Cancel</button>
+      </section>
+    </div>
+  </div>
+</body>
+</html>
