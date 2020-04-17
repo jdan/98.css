@@ -75,7 +75,8 @@ button:focus {
   outline-offset: -4px;
 }
 
-:disabled {
+:disabled,
+:disabled + label {
   color: var(--button-shadow);
   text-shadow: 1px 1px 0 var(--button-highlight);
 }
@@ -289,8 +290,6 @@ input[type="checkbox"][disabled] + label::before {
   background: var(--surface);
 }
 
-/*
 input[type="checkbox"][disabled]:checked + label::after {
-  background: url("./radio-dot-disabled.svg");
+  background: url("./checkmark-disabled.svg");
 }
-*/
