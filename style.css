@@ -8,7 +8,12 @@
   --dialog-blue: #000080;
   --dialog-blue-light: #1084d0;
 
+  /* Spacing */
+  --element-spacing: 8px;
+  --grouped-element-spacing: 4px;
+
   /* Borders */
+  --border-width: 1px;
   --border-raised-outer: inset -1px -1px var(--window-frame),
     inset 1px 1px var(--button-highlight);
   --border-raised-inner: inset -2px -2px var(--button-shadow),
@@ -51,10 +56,14 @@ button:focus {
   outline-offset: -4px;
 }
 
+:disabled {
+  color: var(--button-shadow);
+  text-shadow: 1px 1px 0 var(--button-highlight);
+}
+
 .dialog {
   box-shadow: var(--border-raised-outer), var(--border-raised-inner);
   background: var(--surface);
-  padding: 1px;
 }
 
 .menubar {
@@ -113,22 +122,50 @@ button:focus {
 }
 
 .dialog-body {
-  margin: 12px 8px 8px;
+  margin: var(--element-spacing);
 }
 
 .dialog-body > * + * {
-  margin-top: 8px;
+  margin-top: var(--element-spacing);
 }
 
 section.align-right {
   text-align: right;
 }
 
-section button + button {
-  margin-left: 4px;
+section * + * {
+  margin-left: var(--grouped-element-spacing);
 }
 
-:disabled {
-  color: var(--button-shadow);
-  text-shadow: 1px 1px 0 var(--button-highlight);
+fieldset {
+  border: none;
+  box-shadow: var(--border-sunken-outer), var(--border-raised-inner);
+  padding: calc(2 * var(--border-width) + var(--element-spacing));
+  padding-block-start: var(--grouped-element-spacing);
+}
+
+legend {
+  background: var(--surface);
+}
+
+.field-row {
+  display: flex;
+  align-items: center;
+}
+
+[class^="field-row"] + [class^="field-row"] {
+  margin-top: var(--grouped-element-spacing);
+}
+
+.field-row * + * {
+  margin-left: var(--grouped-element-spacing);
+}
+
+.field-row-stacked {
+  display: flex;
+  flex-direction: column;
+}
+
+.field-row-stacked * + * {
+  margin-top: var(--grouped-element-spacing);
 }

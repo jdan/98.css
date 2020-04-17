@@ -32,18 +32,25 @@
 
       <fieldset>
         <legend>I think it's</legend>
-        <input type="radio" name="answer" value="cool">
-        <label for="male">Cool</label>
-        <input type="radio" name="answer" value="meh">
-        <label for="female">Meh</label>
+        <div class="field-row">
+          <input id="cool" type="radio" name="answer" value="cool">
+          <label for="cool">Cool</label>
+        </div>
 
-        <label for="reason">Reason:</label>
-        <select>
-          <option>Nostalgia</option>
-          <option>It looks sharp</option>
-          <option>It's confusing</option>
-          <option>It looks dated</option>
-        </select>
+        <div class="field-row">
+          <input id="meh" type="radio" name="answer" value="meh">
+          <label for="meh">Meh</label>
+        </div>
+
+        <div class="field-row-stacked">
+          <label for="reason">Reason:</label>
+          <select>
+            <option>Nostalgia</option>
+            <option>It looks sharp</option>
+            <option>It's confusing</option>
+            <option>It looks dated</option>
+          </select>
+        </div>
       </fieldset>
 
       <section class="align-right">
