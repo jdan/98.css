@@ -11,6 +11,7 @@
   /* Spacing */
   --element-spacing: 8px;
   --grouped-element-spacing: 4px;
+  --radio-label-spacing: 6px;
 
   /* Borders */
   --border-width: 1px;
@@ -168,4 +169,42 @@ legend {
 
 .field-row-stacked * + * {
   margin-top: var(--grouped-element-spacing);
+}
+
+label {
+  display: flex;
+  align-items: center;
+}
+input[type="radio"]:focus + label {
+  outline: 1px dotted #000000;
+}
+input[type="radio"] {
+  display: none;
+}
+input[type="radio"] + label {
+  position: relative;
+}
+input[type="radio"] + label::before {
+  content: "";
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-right: var(--radio-label-spacing);
+  background: url("./radio-border.svg");
+}
+input[type="radio"]:checked + label::after {
+  content: "";
+  display: block;
+  width: 4px;
+  height: 4px;
+  top: 4px;
+  left: 4px;
+  position: absolute;
+  background: url("./radio-dot.svg");
+}
+input[type="radio"][disabled] + label::before {
+  background: url("./radio-border-disabled.svg");
+}
+input[type="radio"][disabled]:checked + label::after {
+  background: url("./radio-dot-disabled.svg");
 }

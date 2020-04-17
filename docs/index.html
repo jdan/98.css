@@ -33,13 +33,18 @@
       <fieldset>
         <legend>I think it's</legend>
         <div class="field-row">
-          <input id="cool" type="radio" name="answer" value="cool">
+          <input id="cool" type="radio" value="cool" name="answer">
           <label for="cool">Cool</label>
         </div>
 
         <div class="field-row">
-          <input id="meh" type="radio" name="answer" value="meh">
+          <input id="meh" type="radio" value="meh" name="answer">
           <label for="meh">Meh</label>
+        </div>
+
+        <div class="field-row">
+          <input checked disabled id="idk" type="radio" value="idk" name="answer">
+          <label for="idk">Idk</label>
         </div>
 
         <div class="field-row-stacked">
@@ -50,6 +55,26 @@
             <option>It's confusing</option>
             <option>It looks dated</option>
           </select>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Checkboxes</legend>
+        <div class="field-row">
+          <input checked id="option1" type="checkbox">
+          <label for="option1">Option 1</label>
+        </div>
+        <div class="field-row">
+          <input id="option2" type="checkbox">
+          <label for="option2">Option 2</label>
+        </div>
+        <div class="field-row">
+          <input checked disabled id="option2" type="checkbox">
+          <label for="option2">Option 2</label>
+        </div>
+        <div class="field-row">
+          <input disabled id="option2" type="checkbox">
+          <label for="option2">Option 2</label>
         </div>
       </fieldset>
 
