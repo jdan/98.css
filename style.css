@@ -10,8 +10,14 @@
 
   /* Spacing */
   --element-spacing: 8px;
-  --grouped-element-spacing: 4px;
+  --grouped-button-spacing: 4px;
+  --grouped-element-spacing: 6px;
+  --radio-width: 12px;
   --radio-label-spacing: 6px;
+
+  --radio-total-width-precalc: var(--radio-width) + var(--radio-label-spacing);
+  --radio-total-width: calc(var(--radio-total-width-precalc));
+  --radio-left: calc(-1 * var(--radio-total-width-precalc));
 
   /* Borders */
   --border-width: 1px;
@@ -142,7 +148,7 @@ fieldset {
   border: none;
   box-shadow: var(--border-sunken-outer), var(--border-raised-inner);
   padding: calc(2 * var(--border-width) + var(--element-spacing));
-  padding-block-start: var(--grouped-element-spacing);
+  padding-block-start: var(--element-spacing);
 }
 
 legend {
@@ -175,36 +181,58 @@ label {
   display: flex;
   align-items: center;
 }
-input[type="radio"]:focus + label {
-  outline: 1px dotted #000000;
-}
+
 input[type="radio"] {
-  display: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  margin: 0;
 }
+
 input[type="radio"] + label {
   position: relative;
+  margin-left: var(--radio-total-width);
 }
+
 input[type="radio"] + label::before {
   content: "";
+  position: absolute;
+  left: calc(-1 * var(--radio-total-width));
   display: inline-block;
-  width: 12px;
-  height: 12px;
+  width: var(--radio-width);
+  height: var(--radio-width);
   margin-right: var(--radio-label-spacing);
   background: url("./radio-border.svg");
 }
+
 input[type="radio"]:checked + label::after {
+  --radio-dot-width: 4px;
+  --radio-dot-top: calc(var(--radio-width) / 2 - var(--radio-dot-width) / 2);
+  --radio-dot-left: calc(
+    -1 * (var(--radio-total-width-precalc)) + var(--radio-width) / 2 - var(
+        --radio-dot-width
+      ) / 2
+  );
+
   content: "";
   display: block;
-  width: 4px;
-  height: 4px;
-  top: 4px;
-  left: 4px;
+  width: var(--radio-dot-width);
+  height: var(--radio-dot-width);
+  top: var(--radio-dot-top);
+  left: var(--radio-dot-left);
   position: absolute;
   background: url("./radio-dot.svg");
 }
+
+input[type="radio"]:focus + label {
+  outline: 1px dotted #000000;
+  outline-offset: ;
+}
+
 input[type="radio"][disabled] + label::before {
   background: url("./radio-border-disabled.svg");
 }
+
 input[type="radio"][disabled]:checked + label::after {
   background: url("./radio-dot-disabled.svg");
 }
