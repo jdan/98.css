@@ -9,14 +9,14 @@
   --dialog-blue-light: #1084d0;
 
   /* Borders */
-  --border-raised-outer: -0.5px -0.5px 0 0.5px var(--button-highlight),
-    0 0 0 1px var(--window-frame);
-  --border-raised-inner: inset -1px -1px var(--button-shadow),
-    inset 1px 1px var(--button-face);
-  --border-sunken-outer: -0.5px -0.5px 0 0.5px var(--window-frame),
-    0 0 0 1px var(--button-highlight);
-  --border-sunken-inner: inset -1px -1px var(--button-face),
-    inset 1px 1px var(--button-shadow);
+  --border-raised-outer: inset -1px -1px var(--window-frame),
+    inset 1px 1px var(--button-highlight);
+  --border-raised-inner: inset -2px -2px var(--button-shadow),
+    inset 2px 2px var(--button-face);
+  --border-sunken-outer: inset -1px -1px var(--button-highlight),
+    inset 1px 1px var(--window-frame);
+  --border-sunken-inner: inset -2px -2px var(--button-face),
+    inset 2px 2px var(--button-shadow);
 }
 
 * {
@@ -35,12 +35,11 @@ u {
 button {
   box-sizing: border-box;
   border: none;
-  margin: 1px;
   background: var(--surface);
   box-shadow: var(--border-raised-outer), var(--border-raised-inner);
 
-  min-width: 73px;
-  min-height: 21px;
+  min-width: 75px;
+  min-height: 23px;
 }
 
 button:active {
@@ -49,7 +48,7 @@ button:active {
 
 button:focus {
   outline: 1px dotted #000000;
-  outline-offset: -3.5px;
+  outline-offset: -4px;
 }
 
 .dialog {
@@ -78,7 +77,12 @@ button:focus {
   margin-right: 24px;
 }
 
+.dialog .header .controls {
+  display: flex;
+}
+
 .dialog .header .controls button {
+  display: block;
   min-width: 14px;
   min-height: 12px;
 }
@@ -96,11 +100,13 @@ button:focus {
 .dialog .header .controls button[aria-label="Maximize"] {
   background-image: url("./maximize.svg");
   background-repeat: no-repeat;
-  background-position: top 1px left 2px;
+  /* Off by 1px because contents can't go above the inner shadow */
+  /* Should be 9px by 9px, with top 1px */
+  background-position: top 2px left 2px;
 }
 
 .dialog .header .controls button[aria-label="Close"] {
-  margin-left: 3px;
+  margin-left: 2px;
   background-image: url("./close.svg");
   background-repeat: no-repeat;
   background-position: top 2px center;
