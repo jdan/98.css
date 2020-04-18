@@ -291,23 +291,39 @@ input[type="checkbox"][disabled]:checked + label::after {
   background: url("./checkmark-disabled.svg");
 }
 
+input[type="text"],
+select,
+textarea {
+  padding: 3px 4px;
+  border: none;
+  box-shadow: var(--border-field);
+  background-color: var(--button-highlight);
+  box-sizing: border-box;
+}
+
+input[type="text"],
+select {
+  height: 21px;
+}
+
+input[type="text"] {
+  /* For some reason descenders are getting cut off without this */
+  line-height: 2;
+}
+
 select {
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-  border: none;
   position: relative;
-  padding: 3px 4px;
-  box-shadow: var(--border-field);
-  max-width: 120px;
-  background-color: var(--button-highlight);
-  height: 21px;
   background-image: url("./dropdown-button.svg");
   background-position: top 2px right 2px;
   background-repeat: no-repeat;
 }
 
-select:focus {
+select:focus,
+input[type="text"]:focus,
+textarea:focus {
   outline: none;
 }
 
