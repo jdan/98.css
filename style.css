@@ -317,7 +317,7 @@ select {
   -webkit-appearance: none;
   -moz-appearance: none;
   position: relative;
-  background-image: url("./dropdown-button.svg");
+  background-image: url("./button-down.svg");
   background-position: top 2px right 2px;
   background-repeat: no-repeat;
 }
@@ -329,7 +329,7 @@ textarea:focus {
 }
 
 select:active {
-  background-image: url("./dropdown-button-active.svg");
+  background-image: url("./button-down-active.svg");
 }
 
 a {
@@ -339,3 +339,46 @@ a {
 a:focus {
   outline: 1px dotted var(--link-blue);
 }
+
+#panel {
+  width: 168px;
+  height: 120px;
+  overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+  width: 16px;
+}
+
+::-webkit-scrollbar-track {
+  background-image: url("./scrollbar-background.svg");
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--button-face);
+  box-shadow: var(--border-raised-outer), var(--border-raised-inner);
+}
+
+::-webkit-scrollbar-button:vertical:start {
+  height: 17px;
+  background-image: url("./button-up.svg");
+}
+::-webkit-scrollbar-button:vertical:end {
+  height: 17px;
+  background-image: url("./button-down.svg");
+}
+::-webkit-scrollbar-button:horizontal:start {
+  height: 17px;
+  background-image: url("./button-left.svg");
+}
+::-webkit-scrollbar-button:horizontal:end {
+  height: 17px;
+  background-image: url("./button-right.svg");
+}
+
+/*
+div::-webkit-scrollbar-thumb,
+div::-webkit-scrollbar-button {
+  box-shadow: var(--border-raised-outer), var(--border-raised-inner);
+}
+*/
