@@ -352,11 +352,18 @@ a:focus {
 #panel {
   width: 168px;
   height: 120px;
-  overflow-y: scroll;
+  overflow: scroll;
 }
 
 ::-webkit-scrollbar {
   width: 16px;
+}
+::-webkit-scrollbar:horizontal {
+  height: 17px;
+}
+
+::-webkit-scrollbar-corner {
+  background: var(--button-face);
 }
 
 ::-webkit-scrollbar-track {
@@ -377,11 +384,11 @@ a:focus {
   background-image: url("./button-down.svg");
 }
 ::-webkit-scrollbar-button:horizontal:start {
-  height: 17px;
+  width: 16px;
   background-image: url("./button-left.svg");
 }
 ::-webkit-scrollbar-button:horizontal:end {
-  height: 17px;
+  width: 16px;
   background-image: url("./button-right.svg");
 }
 
