@@ -328,6 +328,15 @@ textarea:focus {
   outline: none;
 }
 
+select:focus {
+  color: var(--button-highlight);
+  background-color: var(--dialog-blue);
+}
+select:focus option {
+  color: #000;
+  background-color: #fff;
+}
+
 select:active {
   background-image: url("./button-down-active.svg");
 }
