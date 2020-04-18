@@ -7,6 +7,7 @@
   --window-frame: #0a0a0a;
   --dialog-blue: #000080;
   --dialog-blue-light: #1084d0;
+  --link-blue: #0000ff;
 
   /* Spacing */
   --element-spacing: 8px;
@@ -329,4 +330,12 @@ textarea:focus {
 
 select:active {
   background-image: url("./dropdown-button-active.svg");
+}
+
+a {
+  color: var(--link-blue);
+}
+
+a:focus {
+  outline: 1px dotted var(--link-blue);
 }
