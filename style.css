@@ -37,8 +37,8 @@
   --border-sunken-inner: inset -2px -2px var(--button-face),
     inset 2px 2px var(--button-shadow);
 
-  /* Checkbox borders flip window-frame and button-shadow */
-  --border-checkbox: inset -1px -1px var(--button-highlight),
+  /* Field borders (checkbox, input, etc) flip window-frame and button-shadow */
+  --border-field: inset -1px -1px var(--button-highlight),
     inset 1px 1px var(--button-shadow), inset -2px -2px var(--button-face),
     inset 2px 2px var(--window-frame);
 }
@@ -262,7 +262,7 @@ input[type="checkbox"] + label::before {
   width: var(--checkbox-width);
   height: var(--checkbox-width);
   background: var(--button-highlight);
-  box-shadow: var(--border-checkbox);
+  box-shadow: var(--border-field);
   margin-right: var(--radio-label-spacing);
 }
 
@@ -289,4 +289,28 @@ input[type="checkbox"][disabled] + label::before {
 
 input[type="checkbox"][disabled]:checked + label::after {
   background: url("./checkmark-disabled.svg");
+}
+
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: none;
+  position: relative;
+  padding: 3px 4px;
+  box-shadow: var(--border-field);
+  max-width: 120px;
+  background-color: var(--button-highlight);
+  height: 21px;
+  background-image: url("./dropdown-button.svg");
+  background-position: top 2px right 2px;
+  background-repeat: no-repeat;
+}
+
+select:focus {
+  outline: none;
+}
+
+select:active {
+  background-image: url("./dropdown-button-active.svg");
 }
