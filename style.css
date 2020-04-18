@@ -349,10 +349,61 @@ a:focus {
   outline: 1px dotted var(--link-blue);
 }
 
-#panel {
-  width: 168px;
-  height: 120px;
-  overflow: scroll;
+ul.treeview {
+  background: var(--button-highlight);
+  box-shadow: var(--border-field);
+  padding: 6px 20px 6px 6px;
+}
+
+ul.treeview li {
+  list-style-type: none;
+}
+
+ul.treeview a {
+  text-decoration: none;
+  color: #000;
+}
+
+ul.treeview a:focus {
+  background-color: var(--dialog-blue);
+  color: var(--button-highlight);
+}
+
+ul.treeview ul,
+ul.treeview li {
+  margin-top: 3px;
+}
+
+ul.treeview ul {
+  margin-left: 16px;
+  padding-left: 16px;
+  /* Goes down too far */
+  border-left: 1px dotted #808080;
+}
+
+ul.treeview ul > li {
+  position: relative;
+}
+ul.treeview ul > li::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: -16px;
+  top: 6px;
+  width: 12px;
+  border-bottom: 1px dotted #808080;
+}
+
+/* Cover the bottom of the left dotted border */
+ul.treeview ul > li:last-child::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: -20px;
+  top: 7px;
+  bottom: 0px;
+  width: 8px;
+  background: var(--button-highlight);
 }
 
 ::-webkit-scrollbar {
