@@ -191,7 +191,7 @@ legend {
 }
 
 label {
-  display: flex;
+  display: inline-flex;
   align-items: center;
 }
 
@@ -410,13 +410,21 @@ ul.treeview ul > li:last-child::after {
   background: var(--button-highlight);
 }
 
-pre code {
+pre {
   display: block;
   background: var(--button-highlight);
   box-shadow: var(--border-field);
   padding: 12px 8px;
   margin: 0;
   font-family: monospace;
+}
+
+code {
+  font-family: monospace;
+}
+
+summary:focus {
+  outline: 1px dotted #000000;
 }
 
 ::-webkit-scrollbar {

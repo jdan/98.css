@@ -7,6 +7,7 @@ body {
 main {
   width: 65rem;
   margin-left: 240px;
+  margin-bottom: 60px;
 }
 
 aside {
@@ -56,7 +57,8 @@ h2 {
 h3 {
   font-size: 2rem;
   margin-top: 20px;
-  width: 120px;
+  display: block;
+  flex: 0 0 120px;
 }
 
 p {
@@ -69,9 +71,13 @@ p {
 }
 
 .component > div {
-  margin: 12px 0 0 32px;
+  margin-left: 32px;
   padding-left: 32px;
   border-left: 1px solid var(--button-shadow);
+}
+
+.component:not(:first) > div {
+  padding-top: 12px;
 }
 
 blockquote {
@@ -85,10 +91,15 @@ blockquote footer {
 }
 
 .example {
-  margin: 12px 12px 24px;
+  margin: 0 12px 24px;
 }
 
-details {
+.example:first {
+  margin-top: 12px;
+}
+
+details,
+summary {
   margin: 12px 0;
 }
 

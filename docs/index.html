@@ -123,7 +123,6 @@
 
         <div class="example">
           <button class="focused">I am focused</button>
-
           <details>
             <summary>Show code</summary>
             <pre><code>&lt;button&gt;I am focused&lt;/button&gt;</code></pre>
@@ -131,6 +130,36 @@
         </div>
       </div>
     </section>
+
+    <section class="component">
+      <h3 id="checkbox">Checkbox</h3>
+      <div>
+        <blockquote>
+          A <em>check box</em>represents an independent or non-exclusive choice.
+          <footer>&mdash; Microsoft Windows User Experience, 8.3</footer>
+        </blockquote>
+
+        <p>
+          Checkboxes are represented with a sunken panel, populated with a "check" icon when
+          selected, next to a label indicating the choice.
+        </p>
+
+        <p>
+          Note: You <strong>must</strong> include a corresponding label <strong>after</strong>
+          your checkbox, using the <code>&lt;label&gt;</code> element with a <code>for</code> attribute
+          pointed at the <code>id</code> of your input.
+        </p>
+
+        <div class="example">
+          <input type="checkbox" id="example1">
+          <label for="example1">This is a checkbox</label>
+
+          <details>
+            <summary>Show code</summary>
+            <pre><code>&lt;input type="checkbox" id="example1"&gt;
+&lt;label for="example1"&gt;This is a checkbox&lt;/label&gt;</code></pre>
+          </details>
+        </div>
   </main>
 </body>
 </html>
