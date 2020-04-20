@@ -1,0 +1,102 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--surface);
+}
+
+main {
+  width: 65rem;
+  margin-left: 240px;
+}
+
+aside {
+  width: 200px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  padding: 8px;
+  display: flex;
+  align-items: stretch;
+}
+
+aside .treeview {
+  width: 100%;
+  /* TODO: Move scrollbar into the recessed region? */
+  overflow-y: scroll;
+}
+
+h1 {
+  font-size: 5rem;
+  margin: 12px 0;
+}
+
+hr {
+  margin: 0;
+  border: none;
+  width: 400px;
+  height: 1px;
+  opacity: 0.5;
+  background: linear-gradient(
+    to right,
+    red 20%,
+    yellow 20%,
+    yellow 36%,
+    green 36%,
+    green 60%,
+    blue 60%,
+    blue 100%
+  );
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 12px;
+}
+
+h3 {
+  font-size: 2rem;
+  margin-top: 20px;
+  width: 120px;
+}
+
+p {
+  max-width: 50rem;
+  line-height: 1.5;
+}
+
+.component {
+  display: flex;
+}
+
+.component > div {
+  margin: 12px 0 0 32px;
+  padding-left: 32px;
+  border-left: 1px solid var(--button-shadow);
+}
+
+blockquote {
+  margin: 0 0 20px;
+  padding: 20px;
+  background: var(--button-face);
+}
+
+blockquote footer {
+  margin: 12px 0 0 12px;
+}
+
+.example {
+  margin: 12px 12px 24px;
+}
+
+details {
+  margin: 12px 0;
+}
+
+button.focused {
+  outline: 1px dotted #000000;
+  outline-offset: -4px;
+}
+
+button.active {
+  box-shadow: var(--border-sunken-outer), var(--border-sunken-inner);
+}

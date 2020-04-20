@@ -1,44 +1,136 @@
 <!doctype html>
 <html>
 <head>
-  <link rel="stylesheet" href="/style.css?t=1"></style>
-  <style>
-    body {
-      height: 100vh;
-      margin: 0;
-      padding: 0;
-      background: var(--surface);
-      display: flex;
-    }
-
-    body > * {
-      margin: 4px;
-    }
-
-    body > * + * {
-      margin-right: 8px;
-    }
-    </style>
+  <link rel="stylesheet" href="/style.css"></style>
+  <link rel="stylesheet" href="docs.css"></style>
 </head>
 <body>
-  <ul class="treeview">
-    <li><a href="#intro">Intro</a></li>
-    <li>
-      <a href="#components">Components</a>
-      <ul>
-        <li><a href="#button">Button</a></li>
-        <li><a href="#dialog">Dialog</a></li>
-        <li><a href="#checkbox">Checkbox</a></li>
-        <li><a href="#option-button">OptionButton</a></li>
-        <li><a href="#text-box">TextBox</a></li>
-        <li><a href="#multiline-text-box">Multiline TextBox</a></li>
-      </ul>
-    </li>
-    <li><a href="#extras">Extras</a></li>
-  </ul>
+  <aside>
+    <ul class="treeview">
+      <li><a href="#intro">Intro</a></li>
+      <li>
+        <a href="#components">Components</a>
+        <ul>
+          <li><a href="#button">Button</a></li>
+          <li><a href="#dialog">Dialog</a></li>
+          <li><a href="#checkbox">Checkbox</a></li>
+          <li><a href="#option-button">OptionButton</a></li>
+          <li><a href="#text-box">TextBox</a></li>
+          <li><a href="#multiline-text-box">Multiline TextBox</a></li>
+        </ul>
+      </li>
+      <li><a href="#extras">Extras</a></li>
+    </ul>
+  </aside>
 
   <main>
-    This is the main body!
+    <h1>98UI</h1>
+    <hr>
+    <p>A design system for building faithful recreations of old UIs.</p>
+
+    <h2 id="intro">Intro</h2>
+    <p>
+    98UI is a CSS library for building interfaces that look like Windows 98. This page lists the
+    various components included, with an example code on how to use them.
+    </p>
+
+    <div class="dialog" style="margin: 32px; width: 250px">
+      <div class="menubar">
+        <div class="menubar-title">
+          Dialog Example
+        </div>
+
+        <div class="menubar-controls">
+          <button aria-label="Minimize"></button>
+          <button aria-label="Maximize"></button>
+          <button aria-label="Close"></button>
+        </div>
+      </div>
+      <div class="dialog-body">
+        <p>Hello, world!</p>
+        <section class="field-row align-right">
+          <button>OK</button>
+          <button>Cancel</button>
+        </section>
+      </div>
+    </div>
+
+    <p>Importantly, <strong>this library does not contain any JavaScript</strong>. You will provide
+      your own, which means this library does not do much but is compatible with your frontend framework
+      of choice.
+    </p>
+    <p>You can install it from the GitHub releases page, or from npm.</p>
+    <pre><code>npm install 98ui</code></pre>
+
+    <h2 id="components">Components</h2>
+
+    <section class="component">
+      <h3 id="button">Button</h3>
+      <div>
+        <blockquote>
+          A <em>command button</em>, also referred to as a push button, is a control
+          that causes the application to perform some action when the user clicks it.
+
+          <footer>&mdash; Microsoft Windows User Experience, 8.1</footer>
+        </blockquote>
+
+        <p>
+          A standard button measures 75px wide and 23px tall, with a raised outer and inner border.
+          They are given 12px of horizontal padding by default.
+        </p>
+
+        <div class="example">
+          <button>Click me</button>
+
+          <details>
+            <summary>Show code</summary>
+            <pre><code>&lt;button&gt;Click me&lt;/button&gt;</code></pre>
+          </details>
+        </div>
+
+        <p>
+          When buttons are clicked, the raised borders become sunken.
+          The following button is simulated to be in the pressed (active) state.
+
+          <div class="example">
+            <button class="active">I am being pressed</button>
+
+            <details>
+              <summary>Show code</summary>
+              <pre><code>&lt;button&gt;I am being pressed&lt;/button&gt;</code></pre>
+            </details>
+          </div>
+        </p>
+
+        <p>
+          Disabled buttons maintain the same raised border, but have a "washed out"
+          appearance in their label.
+        </p>
+
+        <div class="example">
+          <button disabled>I cannot be clicked</button>
+
+          <details>
+            <summary>Show code</summary>
+            <pre><code>&lt;button disabled&gt;I cannot be clicked&lt;/button&gt;</code></pre>
+          </details>
+        </div>
+
+        <p>
+          Button focus is communicated with a dotted border, set 4px within the contents of the button.
+          The following example is simulated to be focused.
+        </p>
+
+        <div class="example">
+          <button class="focused">I am focused</button>
+
+          <details>
+            <summary>Show code</summary>
+            <pre><code>&lt;button&gt;I am focused&lt;/button&gt;</code></pre>
+          </details>
+        </div>
+      </div>
+    </section>
   </main>
 </body>
 </html>
