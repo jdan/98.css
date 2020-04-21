@@ -2,6 +2,8 @@
 const dedent = require("dedent");
 const ejs = require("ejs");
 const fs = require("fs");
+const mkdirp = require("mkdirp");
+const postcss = require("postcss");
 
 let id = 0;
 function getNewId() {
@@ -32,10 +34,24 @@ function example(code) {
 function buildDocs() {
   const template = fs.readFileSync("./docs/index.html.ejs", "utf-8");
 
+  fs.copyFileSync("./build/style.css", "./docs/style.css");
   fs.writeFileSync(
     "./docs/index.html",
     ejs.render(template, { getNewId, getCurrentId, example })
   );
 }
 
-buildDocs();
+function buildCSS() {
+  return postcss()
+    .use(require("postcss-inline-svg"))
+    .process(fs.readFileSync("./style.css"), {
+      from: "style.css",
+      to: "./build/style.css",
+    })
+    .then((result) => {
+      mkdirp.sync("./build");
+      fs.writeFileSync("./build/style.css", result.css);
+    });
+}
+
+buildCSS().then(buildDocs);

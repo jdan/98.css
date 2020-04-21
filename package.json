@@ -2,7 +2,7 @@
   "name": "98.css",
   "version": "0.0.1",
   "description": "A design system for building faithful recreations of old UIs",
-  "main": "style.css",
+  "main": "build/style.css",
   "directories": {
     "doc": "docs"
   },
@@ -26,6 +26,9 @@
   "homepage": "https://github.com/jdan/windows98.css#readme",
   "devDependencies": {
     "dedent": "^0.7.0",
-    "ejs": "^3.0.2"
+    "ejs": "^3.0.2",
+    "mkdirp": "^1.0.4",
+    "postcss-inline": "^1.2.0",
+    "postcss-inline-svg": "^4.1.0"
   }
 }
