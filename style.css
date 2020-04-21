@@ -429,10 +429,10 @@ pre {
   box-shadow: var(--border-field);
   padding: 12px 8px;
   margin: 0;
-  font-family: monospace;
 }
 
-code {
+code,
+code * {
   font-family: monospace;
 }
 

@@ -511,10 +511,10 @@ pre {
     inset 2px 2px #0a0a0a;
   padding: 12px 8px;
   margin: 0;
-  font-family: monospace;
 }
 
-code {
+code,
+code * {
   font-family: monospace;
 }
 

@@ -2,6 +2,7 @@
 const dedent = require("dedent");
 const ejs = require("ejs");
 const fs = require("fs");
+const hljs = require("highlight.js");
 const mkdirp = require("mkdirp");
 const postcss = require("postcss");
 
@@ -17,10 +18,8 @@ function example(code) {
   const magicBrackets = /\[\[(.*)\]\]/g;
   const dedented = dedent(code);
   const inline = dedented.replace(magicBrackets, "$1");
-  const escaped = dedented
-    .replace(magicBrackets, "")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;");
+  const escaped = hljs.highlight("html", dedented.replace(magicBrackets, ""))
+    .value;
 
   return `<div class="example">
     ${inline}
