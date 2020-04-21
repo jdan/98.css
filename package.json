@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jdan/windows98.css.git"
+    "url": "git+https://github.com/jdan/98.css.git"
   },
   "keywords": [
     "css",
@@ -21,9 +21,9 @@
   "author": "Jordan Scales <scalesjordan@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jdan/windows98.css/issues"
+    "url": "https://github.com/jdan/98.css/issues"
   },
-  "homepage": "https://github.com/jdan/windows98.css#readme",
+  "homepage": "https://github.com/jdan/98.css#readme",
   "devDependencies": {
     "dedent": "^0.7.0",
     "ejs": "^3.0.2",
