@@ -32,11 +32,11 @@ function example(code) {
 }
 
 function buildDocs() {
-  const template = fs.readFileSync("./docs/index.html.ejs", "utf-8");
+  const template = fs.readFileSync("docs/index.html.ejs", "utf-8");
 
-  fs.copyFileSync("./build/style.css", "./docs/style.css");
+  fs.copyFileSync("build/98.css", "docs/98.css");
   fs.writeFileSync(
-    "./docs/index.html",
+    "docs/index.html",
     ejs.render(template, { getNewId, getCurrentId, example })
   );
 }
@@ -44,13 +44,14 @@ function buildDocs() {
 function buildCSS() {
   return postcss()
     .use(require("postcss-inline-svg"))
-    .process(fs.readFileSync("./style.css"), {
+    .use(require("postcss-css-variables")({ preserve: "computed" }))
+    .process(fs.readFileSync("style.css"), {
       from: "style.css",
-      to: "./build/style.css",
+      to: "build/98.css",
     })
     .then((result) => {
-      mkdirp.sync("./build");
-      fs.writeFileSync("./build/style.css", result.css);
+      mkdirp.sync("build");
+      fs.writeFileSync("build/98.css", result.css);
     });
 }
 

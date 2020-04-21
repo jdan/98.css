@@ -225,7 +225,7 @@ input[type="radio"] + label {
 input[type="radio"] + label::before {
   content: "";
   position: absolute;
-  left: calc(-1 * var(--radio-total-width));
+  left: calc(-1 * (var(--radio-total-width-precalc)));
   display: inline-block;
   width: var(--radio-width);
   height: var(--radio-width);
@@ -273,7 +273,7 @@ input[type="checkbox"] + label {
 input[type="checkbox"] + label::before {
   content: "";
   position: absolute;
-  left: calc(-1 * var(--checkbox-total-width));
+  left: calc(-1 * (var(--checkbox-total-width-precalc)));
   display: inline-block;
   width: var(--checkbox-width);
   height: var(--checkbox-width);
