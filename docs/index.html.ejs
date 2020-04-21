@@ -371,6 +371,37 @@
             &mdash; Microsoft Windows User Experience p. 175
           </footer>
         </blockquote>
+
+        <p>
+          Dropdowns can be rendered by using the <code>select</code> and <code>option</code>
+          elements.
+        </p>
+
+        <%- example(`
+          <select>
+            <option>5 - Incredible!</option>
+            <option>4 - Great!</option>
+            <option>3 - Pretty good</option>
+            <option>2 - Not so great</option>
+            <option>1 - Unfortunate</option>
+          </select>
+        `) %>
+
+        <p>
+          By default, the first option will be selected. You can change this by
+          giving one of your <code>option</code> elements the <code>selected</code>
+          attribute.
+        </p>
+
+        <%- example(`
+          <select>
+            <option>5 - Incredible!</option>
+            <option>4 - Great!</option>
+            <option selected>3 - Pretty good</option>
+            <option>2 - Not so great</option>
+            <option>1 - Unfortunate</option>
+          </select>
+        `) %>
       </div>
     </section>
 

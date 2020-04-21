@@ -326,6 +326,7 @@ select {
   -webkit-appearance: none;
   -moz-appearance: none;
   position: relative;
+  padding-right: 32px;
   background-image: svg-load("./icon/button-down.svg");
   background-position: top 2px right 2px;
   background-repeat: no-repeat;

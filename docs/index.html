@@ -504,6 +504,57 @@
             &mdash; Microsoft Windows User Experience p. 175
           </footer>
         </blockquote>
+
+        <p>
+          Dropdowns can be rendered by using the <code>select</code> and <code>option</code>
+          elements.
+        </p>
+
+        <div class="example">
+    <select>
+  <option>5 - Incredible!</option>
+  <option>4 - Great!</option>
+  <option>3 - Pretty good</option>
+  <option>2 - Not so great</option>
+  <option>1 - Unfortunate</option>
+</select>
+    <details>
+      <summary>Show code</summary>
+      <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">select</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>5 - Incredible!<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>4 - Great!<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>3 - Pretty good<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>2 - Not so great<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>1 - Unfortunate<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span></code></pre>
+    </details>
+  </div>
+
+        <p>
+          By default, the first option will be selected. You can change this by
+          giving one of your <code>option</code> elements the <code>selected</code>
+          attribute.
+        </p>
+
+        <div class="example">
+    <select>
+  <option>5 - Incredible!</option>
+  <option>4 - Great!</option>
+  <option selected>3 - Pretty good</option>
+  <option>2 - Not so great</option>
+  <option>1 - Unfortunate</option>
+</select>
+    <details>
+      <summary>Show code</summary>
+      <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">select</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>5 - Incredible!<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>4 - Great!<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">selected</span>&gt;</span>3 - Pretty good<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>2 - Not so great<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>1 - Unfortunate<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span></code></pre>
+    </details>
+  </div>
       </div>
     </section>
 
