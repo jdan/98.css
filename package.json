@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/jdan/windows98.css#readme",
   "devDependencies": {
+    "dedent": "^0.7.0",
     "ejs": "^3.0.2"
   }
 }

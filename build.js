@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+const dedent = require("dedent");
 const ejs = require("ejs");
 const fs = require("fs");
 
@@ -12,8 +13,9 @@ function getCurrentId() {
 
 function example(code) {
   const magicBrackets = /\[\[(.*)\]\]/g;
-  const inline = code.replace(magicBrackets, "$1");
-  const escaped = code
+  const dedented = dedent(code);
+  const inline = dedented.replace(magicBrackets, "$1");
+  const escaped = dedented
     .replace(magicBrackets, "")
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;");

@@ -141,16 +141,10 @@
           being able to click the entire label to select the box).
         </p>
 
-        <div class="example">
-          <input type="checkbox" id="example<%= getNewId() %>">
-          <label for="example<%= getCurrentId() %>">This is a checkbox</label>
-
-          <details>
-            <summary>Show code</summary>
-            <pre><code>&lt;input type="checkbox" id="example1"&gt;
-&lt;label for="example1"&gt;This is a checkbox&lt;/label&gt;</code></pre>
-          </details>
-        </div>
+        <%- example(`
+          <input type="checkbox" id="example${getNewId()}">
+          <label for="example${getCurrentId()}">This is a checkbox</label>
+        `) %>
 
         <p>
           Checkboxes can be selected and disabled with the standard <code>checked</code> and <code>disabled</code>
@@ -162,36 +156,20 @@
           a consistent spacing between inputs.
         </p>
 
-        <div class="example">
+        <%- example(`
           <div class="field-row">
-            <input checked type="checkbox" id="example<%= getNewId() %>">
-            <label for="example<%= getCurrentId() %>">I am checked</label>
+            <input checked type="checkbox" id="example${getNewId()}">
+            <label for="example${getCurrentId()}">I am checked</label>
           </div>
           <div class="field-row">
-            <input disabled type="checkbox" id="example3">
-            <label for="example3">I am inactive</label>
+            <input disabled type="checkbox" id="example${getNewId()}">
+            <label for="example${getCurrentId()}">I am inactive</label>
           </div>
           <div class="field-row">
-            <input checked disabled type="checkbox" id="example4">
-            <label for="example4">I am inactive but still checked</label>
+            <input checked disabled type="checkbox" id="example${getNewId()}">
+            <label for="example${getCurrentId()}">I am inactive but still checked</label>
           </div>
-
-          <details>
-            <summary>Show code</summary>
-            <pre><code>&lt;div class="field-row"&gt;
-  &lt;input checked type="checkbox" id="example2"&gt;
-  &lt;label for="example2"&gt;I am checked&lt;/label&gt;
-&lt;/div&gt;
-&lt;div class="field-row"&gt;
-  &lt;input disabled type="checkbox" id="example3"&gt;
-  &lt;label for="example3"&gt;I am inactive&lt;/label&gt;
-&lt;/div&gt;
-&lt;div class="field-row"&gt;
-  &lt;input checked disabled type="checkbox" id="example4"&gt;
-  &lt;label for="example4"&gt;I am inactive but still checked&lt;/label&gt;
-&lt;/div&gt;</code></pre>
-          </details>
-        </div>
+        `) %>
       </div>
     </section>
 
@@ -212,65 +190,36 @@
           <code>field-row</code> class to ensure a consistent spacing between inputs.
         </p>
 
-        <div class="example">
+        <%- example(`
           <div class="field-row">
-            <input id="radio1" type="radio" name="first-example">
-            <label for="radio1">Yes</label>
+            <input id="radio${getNewId()}" type="radio" name="first-example">
+            <label for="radio${getCurrentId()}">Yes</label>
           </div>
           <div class="field-row">
-            <input id="radio2" type="radio" name="first-example">
-            <label for="radio2">No</label>
+            <input id="radio${getNewId()}" type="radio" name="first-example">
+            <label for="radio${getCurrentId()}">No</label>
           </div>
-
-          <details>
-            <summary>Show code</summary>
-            <pre><code>&lt;div class="field-row"&gt;
-  &lt;input id="radio1" type="radio" name="first-example"&gt;
-  &lt;label for="radio1"&gt;Yes&lt;/label&gt;
-&lt;/div&gt;
-&lt;div class="field-row"&gt;
-  &lt;input id="radio2" type="radio" name="first-example"&gt;
-  &lt;label for="radio2"&gt;No&lt;/label&gt;
-&lt;/div&gt;</code></pre>
-          </details>
-        </div>
+        `) %>
 
         <p>
           Option buttons can also be <code>checked</code> and <code>disabled</code> with their corresponding
           HTML attributes.
         </p>
 
-        <div class="example">
+        <%- example(`
           <div class="field-row">
-            <input id="radio3" type="radio" name="second-example">
-            <label for="radio3">Peanut butter should be smooth</label>
+            <input id="radio${getNewId()}" type="radio" name="second-example">
+            <label for="radio${getCurrentId()}">Peanut butter should be smooth</label>
           </div>
           <div class="field-row">
-            <input checked disabled id="radio4" type="radio" name="second-example">
-            <label for="radio4">I understand why people like crunchy peanut butter</label>
+            <input checked disabled id="radio${getNewId()}" type="radio" name="second-example">
+            <label for="radio${getCurrentId()}">I understand why people like crunchy peanut butter</label>
           </div>
           <div class="field-row">
-            <input disabled id="radio5" type="radio" name="second-example">
-            <label for="radio5">Crunchy peanut butter is good</label>
+            <input disabled id="radio${getNewId()}" type="radio" name="second-example">
+            <label for="radio${getCurrentId()}">Crunchy peanut butter is good</label>
           </div>
-
-          <details>
-            <summary>Show code</summary>
-
-            <pre><code>&lt;div class="field-row"&gt;
-  &lt;input id="radio3" type="radio" name="second-example"&gt;
-  &lt;label for="radio3"&gt;Peanut butter should be smooth&lt;/label&gt;
-&lt;/div&gt;
-&lt;div class="field-row"&gt;
-  &lt;input checked disabled id="radio4" type="radio" name="second-example"&gt;
-  &lt;label for="radio4"&gt;I understand why people like crunchy peanut butter&lt;/label&gt;
-&lt;/div&gt;
-&lt;div class="field-row"&gt;
-  &lt;input disabled id="radio5" type="radio" name="second-example"&gt;
-  &lt;label for="radio5"&gt;Crunchy peanut butter is good&lt;/label&gt;
-&lt;/div&gt;</code></pre>
-          </details>
-        </div>
+        `) %>
       </div>
     </section>
   </main>
