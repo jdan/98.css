@@ -21,11 +21,21 @@
   --radio-total-width-precalc: var(--radio-width) + var(--radio-label-spacing);
   --radio-total-width: calc(var(--radio-total-width-precalc));
   --radio-left: calc(-1 * var(--radio-total-width-precalc));
+  --radio-dot-width: 4px;
+  --radio-dot-top: calc(var(--radio-width) / 2 - var(--radio-dot-width) / 2);
+  --radio-dot-left: calc(
+    -1 * (var(--radio-total-width-precalc)) + var(--radio-width) / 2 - var(
+        --radio-dot-width
+      ) / 2
+  );
 
   --checkbox-total-width-precalc: var(--checkbox-width) +
     var(--radio-label-spacing);
   --checkbox-total-width: calc(var(--checkbox-total-width-precalc));
   --checkbox-left: calc(-1 * var(--checkbox-total-width-precalc));
+  --checkmark-width: 7px;
+  --checkmark-top: 3px;
+  --checkmark-left: 3px;
 
   /* Borders */
   --border-width: 1px;
@@ -234,14 +244,6 @@ input[type="radio"] + label::before {
 }
 
 input[type="radio"]:checked + label::after {
-  --radio-dot-width: 4px;
-  --radio-dot-top: calc(var(--radio-width) / 2 - var(--radio-dot-width) / 2);
-  --radio-dot-left: calc(
-    -1 * (var(--radio-total-width-precalc)) + var(--radio-width) / 2 - var(
-        --radio-dot-width
-      ) / 2
-  );
-
   content: "";
   display: block;
   width: var(--radio-dot-width);
@@ -283,10 +285,6 @@ input[type="checkbox"] + label::before {
 }
 
 input[type="checkbox"]:checked + label::after {
-  --checkmark-width: 7px;
-  --checkmark-top: 3px;
-  --checkmark-left: 3px;
-
   content: "";
   display: block;
   width: var(--checkmark-width);
