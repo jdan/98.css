@@ -53,7 +53,10 @@ h2 {
 }
 
 h3 {
-  margin-top: 20px;
+  /* Swap the margin for a top-padding so linking to this section
+     results in a better scroll position */
+  padding-top: 20px;
+  margin-top: 0;
   display: block;
   flex: 0 0 180px;
 }
