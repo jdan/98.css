@@ -92,55 +92,31 @@
           They are given 12px of horizontal padding by default.
         </p>
 
-        <div class="example">
-          <button>Click me</button>
-
-          <details>
-            <summary>Show code</summary>
-            <pre><code>&lt;button&gt;Click me&lt;/button&gt;</code></pre>
-          </details>
-        </div>
+        <%- example(`<button>Click me</button>`) %>
 
         <p>
           When buttons are clicked, the raised borders become sunken.
           The following button is simulated to be in the pressed (active) state.
-
-          <div class="example">
-            <button class="active">I am being pressed</button>
-
-            <details>
-              <summary>Show code</summary>
-              <pre><code>&lt;button&gt;I am being pressed&lt;/button&gt;</code></pre>
-            </details>
-          </div>
         </p>
+
+        <% /* [[ ... ]] is used to render contents that
+              will not appear in the "Show code" section */
+        %>
+        <%- example(`<button[[ class="active"]]>I am being pressed</button>`) %>
 
         <p>
           Disabled buttons maintain the same raised border, but have a "washed out"
           appearance in their label.
         </p>
 
-        <div class="example">
-          <button disabled>I cannot be clicked</button>
-
-          <details>
-            <summary>Show code</summary>
-            <pre><code>&lt;button disabled&gt;I cannot be clicked&lt;/button&gt;</code></pre>
-          </details>
-        </div>
+        <%- example(`<button disabled>I cannot be clicked</button>`) %>
 
         <p>
           Button focus is communicated with a dotted border, set 4px within the contents of the button.
           The following example is simulated to be focused.
         </p>
 
-        <div class="example">
-          <button class="focused">I am focused</button>
-          <details>
-            <summary>Show code</summary>
-            <pre><code>&lt;button&gt;I am focused&lt;/button&gt;</code></pre>
-          </details>
-        </div>
+        <%- example(`<button[[ class="focused"]]>I am focused</button>`) %>
       </div>
     </section>
 
