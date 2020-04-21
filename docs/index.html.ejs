@@ -24,8 +24,7 @@
             <a href="#window">Window</a>
             <ul>
               <li><a href="#title-bar">Title Bar</a></li>
-              <li><a href="#title-bar-buttons">Title Bar Buttons</a></li>
-              <li><a href="#all-together">All together</a></li>
+              <li><a href="#window-contents">Window contents</a></li>
             </ul>
           </li>
           <li><a href="#tree-view">TreeView</a></li>
@@ -47,7 +46,7 @@
 
     <div class="window" style="margin: 32px; width: 250px">
       <div class="title-bar">
-        <div class="title-bar-title">
+        <div class="title-bar-text">
           My First VB4 Program
         </div>
 
@@ -424,12 +423,7 @@
             &mdash; Microsoft Windows User Experience p. 118
           </footer>
         </blockquote>
-      </div>
-    </section>
 
-    <section class="component">
-      <h4 id="title-bar-buttons">Title Bar Buttons</h4>
-      <div>
         <blockquote>
           Include command buttons associated with the common commands of the
           primary window in the title bar. These buttons act as shortcuts to specific
@@ -439,6 +433,37 @@
             &mdash; Microsoft Windows User Experience p. 122
           </footer>
         </blockquote>
+
+        <p>
+          You can build a complete title bar by making use of three classes,
+          <code>title-bar</code>, <code>title-bar-text</code>, and <code>title-bar-controls</code>.
+        </p>
+
+        <%- example(`
+          <div class="title-bar">
+            <div class="title-bar-text">A Title Bar</div>
+            <div class="title-bar-controls">
+              <button aria-label="Close"></button>
+            </div>
+          </div>
+        `) %>
+
+        <p>
+          We make use of <code>aria-label</code> to render the Close button, to let
+          assistive technologies know the intent of this button. You may also use
+          "Minimize" and "Maximize" like so:
+        </p>
+
+        <%- example(`
+          <div class="title-bar">
+            <div class="title-bar-text">A Title Bar</div>
+            <div class="title-bar-controls">
+              <button aria-label="Minimize"></button>
+              <button aria-label="Maximize"></button>
+              <button aria-label="Close"></button>
+            </div>
+          </div>
+        `) %>
       </div>
     </section>
 
@@ -446,14 +471,53 @@
       <h4 id="window-contents">Window contents</h4>
       <div>
         <blockquote>
-          Include command buttons associated with the common commands of the
-          primary window in the title bar. These buttons act as shortcuts to specific
-          window commands.
+          Every window has a boundary that defines its shape.
 
           <footer>
-            &mdash; Microsoft Windows User Experience p. 122
+            &mdash; Microsoft Windows User Experience p. 118
           </footer>
         </blockquote>
+
+        <p>
+          To give our title bar a home, we make use of the <code>window</code>
+          class. This provides a raised outer and inner border, as well as some
+          padding. We can freely resize the window by specifying a width in the
+          container style.
+        </p>
+
+        <%- example(`
+          <div class="window" style="width: 350px">
+            <div class="title-bar">
+              <div class="title-bar-text">A Complete Window</div>
+              <div class="title-bar-controls">
+                <button aria-label="Minimize"></button>
+                <button aria-label="Maximize"></button>
+                <button aria-label="Close"></button>
+              </div>
+            </div>
+          </div>
+        `) %>
+
+        <p>
+          To draw the contents of the window, we use the <code>window-body</code>
+          class under the title bar.
+        </p>
+
+        <%- example(`
+          <div class="window" style="width: 350px">
+            <div class="title-bar">
+              <div class="title-bar-text">A Window With Stuff In It</div>
+              <div class="title-bar-controls">
+                <button aria-label="Minimize"></button>
+                <button aria-label="Maximize"></button>
+                <button aria-label="Close"></button>
+              </div>
+            </div>
+            <div class="window-body">
+              <p>There's so much room for activities!</p>
+            </div>
+          </div>
+        `) %>
       </div>
     </section>
 
