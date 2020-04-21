@@ -105,13 +105,13 @@ button:focus {
   text-shadow: 1px 1px 0 var(--button-highlight);
 }
 
-.dialog {
+.window {
   box-shadow: var(--border-raised-outer), var(--border-raised-inner);
   background: var(--surface);
   padding: 3px;
 }
 
-.menubar {
+.title-bar {
   background: linear-gradient(
     90deg,
     var(--dialog-blue),
@@ -123,35 +123,35 @@ button:focus {
   align-items: center;
 }
 
-.menubar-title {
+.title-bar-title {
   font-weight: bold;
   color: white;
   letter-spacing: 0;
   margin-right: 24px;
 }
 
-.menubar-controls {
+.title-bar-controls {
   display: flex;
 }
 
-.menubar-controls button {
+.title-bar-controls button {
   padding: 0;
   display: block;
   min-width: 14px;
   min-height: 12px;
 }
 
-.menubar-controls button:focus {
+.title-bar-controls button:focus {
   outline: none;
 }
 
-.menubar-controls button[aria-label="Minimize"] {
+.title-bar-controls button[aria-label="Minimize"] {
   background-image: svg-load("./icon/minimize.svg");
   background-repeat: no-repeat;
   background-position: bottom 2px left 3px;
 }
 
-.menubar-controls button[aria-label="Maximize"] {
+.title-bar-controls button[aria-label="Maximize"] {
   background-image: svg-load("./icon/maximize.svg");
   background-repeat: no-repeat;
   /* Off by 1px because contents can't go above the inner shadow */
@@ -159,23 +159,15 @@ button:focus {
   background-position: top 2px left 2px;
 }
 
-.menubar-controls button[aria-label="Close"] {
+.title-bar-controls button[aria-label="Close"] {
   margin-left: 2px;
   background-image: svg-load("./icon/close.svg");
   background-repeat: no-repeat;
   background-position: top 2px center;
 }
 
-.dialog-body {
+.window-body {
   margin: var(--element-spacing);
-}
-
-.dialog-body > * + * {
-  margin-top: var(--element-spacing);
-}
-
-.align-right {
-  justify-content: flex-end;
 }
 
 fieldset {
