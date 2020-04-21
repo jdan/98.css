@@ -19,17 +19,16 @@
           <li><a href="#option-button">OptionButton</a></li>
           <li><a href="#group-box">GroupBox</a></li>
           <li><a href="#text-box">TextBox</a></li>
-          <li><a href="#multiline-text-box">Multiline TextBox</a></li>
           <li><a href="#dropdown">Dropdown</a></li>
           <li>
-            <a href="#dialog">Dialog</a>
+            <a href="#window">Window</a>
             <ul>
-              <li><a href="#menubar">Menubar</a></li>
-              <li><a href="#controls">Controls</a></li>
+              <li><a href="#title-bar">Title Bar</a></li>
+              <li><a href="#title-bar-buttons">Title Bar Buttons</a></li>
               <li><a href="#all-together">All together</a></li>
             </ul>
           </li>
-          <li><a href="#treeview">TreeView</a></li>
+          <li><a href="#tree-view">TreeView</a></li>
         </ul>
       </li>
       <li><a href="#extras">Extras</a></li>
@@ -46,21 +45,21 @@
       98.css is a CSS library for building interfaces that look like Windows 98.
     </p>
 
-    <div class="dialog" style="margin: 32px; width: 250px">
-      <div class="menubar">
-        <div class="menubar-title">
+    <div class="window" style="margin: 32px; width: 250px">
+      <div class="title-bar">
+        <div class="title-bar-title">
           My First VB4 Program
         </div>
 
-        <div class="menubar-controls">
+        <div class="title-bar-controls">
           <button aria-label="Minimize"></button>
           <button aria-label="Maximize"></button>
           <button aria-label="Close"></button>
         </div>
       </div>
-      <div class="dialog-body">
+      <div class="window-body">
         <p>Hello, world!</p>
-        <section class="field-row align-right">
+        <section class="field-row" style="justify-content: flex-end">
           <button>OK</button>
           <button>Cancel</button>
         </section>
@@ -302,6 +301,145 @@
           </fieldset>
         `) %>
       </div>
+    </section>
+
+    <section class="component">
+      <h3 id="text-box">TextBox</h3>
+      <div>
+        <blockquote>
+          A <em>text box</em> (also referred to as an edit control) is a
+          rectangular control where the user enters or edits text. It can
+          be defined to support a single line or multiple lines of text.
+
+          <footer>&mdash; Microsoft Windows User Experience p. 181</footer>
+        </blockquote>
+
+        <p>
+          Text boxes can rendered by specifying a <code>text</code> type on an
+          <code>input</code> element. As with checkboxes and radio buttons, you
+          should provide a corresponding label with a properly set <code>for</code>
+          attribute, and wrap both in a container with the <code>field-row</code> class.
+        </p>
+
+        <%- example(`
+          <div class="field-row">
+            <label for="text${getNewId()}">Occuptation</label>
+            <input id="text${getCurrentId()}" type="text" />
+          </div>
+        `) %>
+
+        <p>
+          Additionally, you can make use of the <code>field-row-stacked</code> class
+          to position your label above the input instead of beside it.
+        </p>
+
+        <%- example(`
+          <div class="field-row-stacked" style="width: 200px">
+            <label for="text${getNewId()}">Address (Line 1)</label>
+            <input id="text${getCurrentId()}" type="text" />
+          </div>
+          <div class="field-row-stacked" style="width: 200px">
+            <label for="text${getNewId()}">Address (Line 2)</label>
+            <input id="text${getCurrentId()}" type="text" />
+          </div>
+        `) %>
+
+        <p>
+          To support multiple lines in the user's input, use the <code>textarea</code>
+          element instead.
+        </p>
+
+        <%- example(`
+          <div class="field-row-stacked" style="width: 200px">
+            <label for="text${getNewId()}">Additional notes</label>
+            <textarea id="text${getCurrentId()}" rows="8"></textarea>
+          </div>
+        `) %>
+      </div>
+    </section>
+
+    <section class="component">
+      <h3 id="dropdown">Dropdown</h3>
+      <div>
+        <blockquote>
+          A <em>drop-down list box</em> allows the selection of only a
+          single item from a list. In its closed state, the control displays
+          the current value for the control. The user opens the list to change
+          the value.
+
+          <footer>
+            &mdash; Microsoft Windows User Experience p. 175
+          </footer>
+        </blockquote>
+      </div>
+    </section>
+
+    <h3 id="window">Window</h3>
+    <p>
+      The following components illustrate how to build complete windows using
+      98.css.
+    </p>
+
+    <section class="component">
+      <h4 id="title-bar">Title Bar</h4>
+      <div>
+        <blockquote>
+          At the top edge of the window, inside its border, is the title bar
+          (also reffered to as the caption or caption bar), which extends across
+          the width of the window. The title bar identifies the contents of the
+          window.
+
+          <footer>
+            &mdash; Microsoft Windows User Experience p. 118
+          </footer>
+        </blockquote>
+      </div>
+    </section>
+
+    <section class="component">
+      <h4 id="title-bar-buttons">Title Bar Buttons</h4>
+      <div>
+        <blockquote>
+          Include command buttons associated with the common commands of the
+          primary window in the title bar. These buttons act as shortcuts to specific
+          window commands.
+
+          <footer>
+            &mdash; Microsoft Windows User Experience p. 122
+          </footer>
+        </blockquote>
+      </div>
+    </section>
+
+    <section class="component">
+      <h4 id="window-contents">Window contents</h4>
+      <div>
+        <blockquote>
+          Include command buttons associated with the common commands of the
+          primary window in the title bar. These buttons act as shortcuts to specific
+          window commands.
+
+          <footer>
+            &mdash; Microsoft Windows User Experience p. 122
+          </footer>
+        </blockquote>
+      </div>
+    </section>
+
+    <section class="component">
+      <h3 id="tree-view">TreeView</h3>
+      <div>
+        <blockquote>
+          A <em>tree view control</em> is a special list box control
+          that displays a set of objects as an indented outline based
+          on their logical hierarchical relationship.
+
+          <footer>
+            &mdash; Microsoft Windows User Experience p. 178
+          </footer>
+        </blockquote>
+      </div>
+    </section>
   </main>
 </body>
 </html>

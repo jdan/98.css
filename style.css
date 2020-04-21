@@ -74,6 +74,10 @@ h3 {
   font-size: 2rem;
 }
 
+h4 {
+  font-size: 1.5rem;
+}
+
 u {
   text-decoration: none;
   border-bottom: 0.5px solid #222222;
