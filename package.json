@@ -7,7 +7,8 @@
     "doc": "docs"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "./build.js"
   },
   "repository": {
     "type": "git",
@@ -22,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/jdan/windows98.css/issues"
   },
-  "homepage": "https://github.com/jdan/windows98.css#readme"
+  "homepage": "https://github.com/jdan/windows98.css#readme",
+  "devDependencies": {
+    "ejs": "^3.0.2"
+  }
 }

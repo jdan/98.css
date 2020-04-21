@@ -166,8 +166,8 @@
         </p>
 
         <div class="example">
-          <input type="checkbox" id="example1">
-          <label for="example1">This is a checkbox</label>
+          <input type="checkbox" id="example<%= getNewId() %>">
+          <label for="example<%= getCurrentId() %>">This is a checkbox</label>
 
           <details>
             <summary>Show code</summary>
@@ -188,8 +188,8 @@
 
         <div class="example">
           <div class="field-row">
-            <input checked type="checkbox" id="example2">
-            <label for="example2">I am checked</label>
+            <input checked type="checkbox" id="example<%= getNewId() %>">
+            <label for="example<%= getCurrentId() %>">I am checked</label>
           </div>
           <div class="field-row">
             <input disabled type="checkbox" id="example3">
