@@ -9,7 +9,7 @@
 </head>
 <body>
   <aside>
-    <ul class="treeview">
+    <ul class="tree-view">
       <li><a href="#intro">Intro</a></li>
       <li>
         <a href="#components">Components</a>
@@ -30,7 +30,7 @@
           <li><a href="#tree-view">TreeView</a></li>
         </ul>
       </li>
-      <li><a href="#extras">Extras</a></li>
+      <li><a href="#issues-contributing-etc">Issues, Contributing, etc.</a></li>
     </ul>
   </aside>
 
@@ -83,8 +83,10 @@
       This means 98.css is compatible with your frontend framework of choice.
     </p>
 
-    <p>You can install 98.css from the GitHub releases page, or from npm.</p>
-    <pre><code>npm install 98.css</code></pre>
+    <p>
+      You can install 98.css from the <a href="https://github.com/jdan/98.css/releases">GitHub releases page</a>, or <a href="https://www.npmjs.com/package/98.css">from npm</a>.
+    </p>
+    <pre style="width: 360px"><code>npm install 98.css</code></pre>
 
     <h2 id="components">Components</h2>
 
@@ -735,8 +737,101 @@
             &mdash; Microsoft Windows User Experience p. 178
           </footer>
         </blockquote>
+
+        <p>
+          To render a tree view, use an <code>ul</code> element with the
+          <code>tree-view</code> class. The children of this list (<code>li</code>
+          elements), can contain whatever you'd like.
+        </p>
+
+        <div class="example">
+    <ul class="tree-view">
+  <li>We can put</li>
+  <li><strong style="color: purple">✨ Whatever ✨</strong></li>
+  <li>We want in here</li>
+</ul>
+    <details>
+      <summary>Show code</summary>
+      <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tree-view"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>We can put<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">strong</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"color: purple"</span>&gt;</span>✨ Whatever ✨<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>We want in here<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span></code></pre>
+    </details>
+  </div>
+
+        <p>
+          To make this a tree, we can nest further <code>ul</code> elements
+          (no class needed on these). This will provide them with a nice dotted
+          border and indentation to illustrate the structure of the tree.
+        </p>
+
+        <div class="example">
+    <ul class="tree-view">
+  <li>Table of Contents</li>
+  <li>What is web development?</li>
+  <li>
+    CSS
+    <ul>
+      <li>Selectors</li>
+      <li>Specificity</li>
+      <li>Properties</li>
+    </ul>
+  </li>
+  <li>
+    JavaScript
+    <ul>
+      <li>Avoid at all costs</li>
+    </ul>
+  </li>
+  <li>HTML</li>
+  <li>Special Thanks</li>
+</ul>
+    <details>
+      <summary>Show code</summary>
+      <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tree-view"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Table of Contents<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>What is web development?<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+    CSS
+    <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Selectors<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Specificity<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Properties<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+    JavaScript
+    <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Avoid at all costs<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>HTML<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Special Thanks<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span></code></pre>
+    </details>
+  </div>
       </div>
     </section>
+
+    <h2 id="issues-contributing-etc">Issues, Contributing, etc.</h2>
+
+    <p>
+      98.css is <a href="https://github.com/jdan/98.css/blob/master/LICENSE">MIT licensed</a>.
+    </p>
+
+    <p>
+      Refer to <a href="https://github.com/jdan/98.css/issues">the Github issues page</a> to see bugs
+      in my CSS or report new ones. I'd really like to see your pull requests (especially those new to
+      open-source!) and will happily provide code review. 98.css is a fun, silly project and I'd like
+      to make it a fun place to build your open-source muscle.
+    </p>
+
+    <p>
+      Thank you for checking my little project out, I hope it brought you some joy today. Consider
+      <a href="https://github.com/jdan/98.css/stargazers">starring/following along on Github</a> and maybe
+      subscribing to more fun things on <a href="https://twitter.com/jdan">my twitter</a>. 👋
+    </p>
   </main>
 </body>
 </html>

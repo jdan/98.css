@@ -1,3 +1,9 @@
+/**
+ * 98.css
+ * Copyright (c) 2020 Jordan Scales <thatjdanisso.cool>
+ * https://github.com/jdan/98.css/blob/master/LICENSE
+ */
+
 :root {
   /* Color */
   --surface: #c0c0c0;
@@ -387,7 +393,7 @@ a:focus {
   outline: 1px dotted #0000ff;
 }
 
-ul.treeview {
+ul.tree-view {
   display: block;
   background: #ffffff;
   box-shadow: inset -1px -1px #ffffff,
@@ -397,36 +403,36 @@ ul.treeview {
   margin: 0;
 }
 
-ul.treeview li {
+ul.tree-view li {
   list-style-type: none;
 }
 
-ul.treeview a {
+ul.tree-view a {
   text-decoration: none;
   color: #000;
 }
 
-ul.treeview a:focus {
+ul.tree-view a:focus {
   background-color: #000080;
   color: #ffffff;
 }
 
-ul.treeview ul,
-ul.treeview li {
+ul.tree-view ul,
+ul.tree-view li {
   margin-top: 3px;
 }
 
-ul.treeview ul {
+ul.tree-view ul {
   margin-left: 16px;
   padding-left: 16px;
   /* Goes down too far */
   border-left: 1px dotted #808080;
 }
 
-ul.treeview ul > li {
+ul.tree-view ul > li {
   position: relative;
 }
-ul.treeview ul > li::before {
+ul.tree-view ul > li::before {
   content: "";
   display: block;
   position: absolute;
@@ -437,7 +443,7 @@ ul.treeview ul > li::before {
 }
 
 /* Cover the bottom of the left dotted border */
-ul.treeview ul > li:last-child::after {
+ul.tree-view ul > li:last-child::after {
   content: "";
   display: block;
   position: absolute;

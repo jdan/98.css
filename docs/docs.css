@@ -20,7 +20,7 @@ aside {
   align-items: stretch;
 }
 
-aside .treeview {
+aside .tree-view {
   width: 100%;
   /* TODO: Move scrollbar into the recessed region? */
   overflow-y: scroll;
