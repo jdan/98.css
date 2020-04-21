@@ -106,3 +106,33 @@ button.focused {
 button.active {
   box-shadow: var(--border-sunken-outer), var(--border-sunken-inner);
 }
+
+@media (max-width: 480px) {
+  aside {
+    display: none;
+  }
+
+  main {
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    padding: 16px;
+  }
+
+  hr {
+    width: 100%;
+  }
+
+  p {
+    width: 100%;
+  }
+
+  h3 {
+    flex: 0;
+  }
+
+  .component {
+    display: block;
+    margin-top: 24px;
+  }
+}
