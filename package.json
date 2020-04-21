@@ -29,6 +29,7 @@
     "ejs": "^3.0.2",
     "highlight.js": "^9.18.1",
     "mkdirp": "^1.0.4",
+    "postcss-calc": "^7.0.2",
     "postcss-css-variables": "^0.14.0",
     "postcss-inline": "^1.2.0",
     "postcss-inline-svg": "^4.1.0"

@@ -44,6 +44,7 @@ function buildCSS() {
   return postcss()
     .use(require("postcss-inline-svg"))
     .use(require("postcss-css-variables")({ preserve: "computed" }))
+    .use(require("postcss-calc"))
     .process(fs.readFileSync("style.css"), {
       from: "style.css",
       to: "build/98.css",
