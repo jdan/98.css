@@ -27,7 +27,6 @@ aside .treeview {
 }
 
 h1 {
-  font-size: 5rem;
   margin: 12px 0;
 }
 
@@ -50,15 +49,13 @@ hr {
 }
 
 h2 {
-  font-size: 2.5rem;
   margin-bottom: 12px;
 }
 
 h3 {
-  font-size: 2rem;
   margin-top: 20px;
   display: block;
-  flex: 0 0 120px;
+  flex: 0 0 180px;
 }
 
 p {
@@ -68,16 +65,7 @@ p {
 
 .component {
   display: flex;
-}
-
-.component > div {
-  margin-left: 32px;
-  padding-left: 32px;
-  border-left: 1px solid var(--button-shadow);
-}
-
-.component:not(:first) > div {
-  padding-top: 12px;
+  margin-top: 24px;
 }
 
 blockquote {
@@ -91,16 +79,23 @@ blockquote footer {
 }
 
 .example {
-  margin: 0 12px 24px;
+  margin: 16px 0;
+  padding: 12px 24px;
+  border-left: 1px solid var(--button-shadow);
 }
 
-.example:first {
+details {
   margin-top: 12px;
 }
 
-details,
 summary {
-  margin: 12px 0;
+  user-select: none;
+  cursor: pointer;
+  display: inline;
+}
+
+details[open] summary {
+  margin-bottom: 8px;
 }
 
 button.focused {

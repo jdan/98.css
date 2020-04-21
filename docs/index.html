@@ -30,14 +30,13 @@
 
     <h2 id="intro">Intro</h2>
     <p>
-    98UI is a CSS library for building interfaces that look like Windows 98. This page lists the
-    various components included, with an example code on how to use them.
+      98UI is a CSS library for building interfaces that look like Windows 98.
     </p>
 
     <div class="dialog" style="margin: 32px; width: 250px">
       <div class="menubar">
         <div class="menubar-title">
-          Dialog Example
+          My First VB4 Program
         </div>
 
         <div class="menubar-controls">
@@ -55,11 +54,25 @@
       </div>
     </div>
 
-    <p>Importantly, <strong>this library does not contain any JavaScript</strong>. You will provide
-      your own, which means this library does not do much but is compatible with your frontend framework
-      of choice.
+    <p>
+      This library relies on the usage of <strong>semantic HTML</strong>. To make a button, you'll need
+      to use a <code>&lt;button&gt;</code>. Input elements require labels. Icon buttons rely on
+      <code>aria-label</code>. This page will guide you through that process, but accessibility is a primary
+      goal of this project.
     </p>
-    <p>You can install it from the GitHub releases page, or from npm.</p>
+
+    <p>
+      You can override many of the styles of your elements while maintaining the appearance provided by
+      this library. Need more padding on your buttons? Go for it. Need to add some color to your input labels?
+      Be our guest.
+    </p>
+
+    <p>
+      <strong>This library does not contain any JavaScript</strong>, it merely styles your HTML with some CSS.
+      This means 98UI is compatible with your frontend framework of choice.
+    </p>
+
+    <p>You can install 98UI from the GitHub releases page, or from npm.</p>
     <pre><code>npm install 98ui</code></pre>
 
     <h2 id="components">Components</h2>
@@ -135,7 +148,7 @@
       <h3 id="checkbox">Checkbox</h3>
       <div>
         <blockquote>
-          A <em>check box</em>represents an independent or non-exclusive choice.
+          A <em>check box</em> represents an independent or non-exclusive choice.
           <footer>&mdash; Microsoft Windows User Experience, 8.3</footer>
         </blockquote>
 
@@ -147,7 +160,9 @@
         <p>
           Note: You <strong>must</strong> include a corresponding label <strong>after</strong>
           your checkbox, using the <code>&lt;label&gt;</code> element with a <code>for</code> attribute
-          pointed at the <code>id</code> of your input.
+          pointed at the <code>id</code> of your input. This ensures the checkbox is easy to use with
+          assistive technologies, on top of ensuring a good user experience for all (navigating with the tab key,
+          being able to click the entire label to select the box).
         </p>
 
         <div class="example">
@@ -160,6 +175,128 @@
 &lt;label for="example1"&gt;This is a checkbox&lt;/label&gt;</code></pre>
           </details>
         </div>
+
+        <p>
+          Checkboxes can be selected and disabled with the standard <code>checked</code> and <code>disabled</code>
+          attributes.
+        </p>
+
+        <p>
+          When grouping inputs, wrap each input in a container with the <code>field-row</code> class. This ensures
+          a consistent spacing between inputs.
+        </p>
+
+        <div class="example">
+          <div class="field-row">
+            <input checked type="checkbox" id="example2">
+            <label for="example2">I am checked</label>
+          </div>
+          <div class="field-row">
+            <input disabled type="checkbox" id="example3">
+            <label for="example3">I am inactive</label>
+          </div>
+          <div class="field-row">
+            <input checked disabled type="checkbox" id="example4">
+            <label for="example4">I am inactive but still checked</label>
+          </div>
+
+          <details>
+            <summary>Show code</summary>
+            <pre><code>&lt;div class="field-row"&gt;
+  &lt;input checked type="checkbox" id="example2"&gt;
+  &lt;label for="example2"&gt;I am checked&lt;/label&gt;
+&lt;/div&gt;
+&lt;div class="field-row"&gt;
+  &lt;input disabled type="checkbox" id="example3"&gt;
+  &lt;label for="example3"&gt;I am inactive&lt;/label&gt;
+&lt;/div&gt;
+&lt;div class="field-row"&gt;
+  &lt;input checked disabled type="checkbox" id="example4"&gt;
+  &lt;label for="example4"&gt;I am inactive but still checked&lt;/label&gt;
+&lt;/div&gt;</code></pre>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="component">
+      <h3 id="option-button">OptionButton</h3>
+      <div>
+        <blockquote>
+          An <em>option button</em>, also referred to as a radio button, represents a single
+          choice within a limited set of mutually exclusive choices. That is, the user can choose only
+          one set of options.
+
+          <footer>&mdash; Microsoft Windows User Experience, 8.2</footer>
+        </blockquote>
+
+        <p>
+          Option buttons can be grouped by specifying a shared <code>name</code> attribute on each
+          input. Just as before: when grouping inputs, wrap each input in a container with the
+          <code>field-row</code> class to ensure a consistent spacing between inputs.
+        </p>
+
+        <div class="example">
+          <div class="field-row">
+            <input id="radio1" type="radio" name="first-example">
+            <label for="radio1">Yes</label>
+          </div>
+          <div class="field-row">
+            <input id="radio2" type="radio" name="first-example">
+            <label for="radio2">No</label>
+          </div>
+
+          <details>
+            <summary>Show code</summary>
+            <pre><code>&lt;div class="field-row"&gt;
+  &lt;input id="radio1" type="radio" name="first-example"&gt;
+  &lt;label for="radio1"&gt;Yes&lt;/label&gt;
+&lt;/div&gt;
+&lt;div class="field-row"&gt;
+  &lt;input id="radio2" type="radio" name="first-example"&gt;
+  &lt;label for="radio2"&gt;No&lt;/label&gt;
+&lt;/div&gt;</code></pre>
+          </details>
+        </div>
+
+        <p>
+          Option buttons can also be <code>checked</code> and <code>disabled</code> with their corresponding
+          HTML attributes.
+        </p>
+
+        <div class="example">
+          <div class="field-row">
+            <input id="radio3" type="radio" name="second-example">
+            <label for="radio3">Peanut butter should be smooth</label>
+          </div>
+          <div class="field-row">
+            <input checked disabled id="radio4" type="radio" name="second-example">
+            <label for="radio4">I understand why people like crunchy peanut butter</label>
+          </div>
+          <div class="field-row">
+            <input disabled id="radio5" type="radio" name="second-example">
+            <label for="radio5">Crunchy peanut butter is good</label>
+          </div>
+
+          <details>
+            <summary>Show code</summary>
+
+            <pre><code>&lt;div class="field-row"&gt;
+  &lt;input id="radio3" type="radio" name="second-example"&gt;
+  &lt;label for="radio3"&gt;Peanut butter should be smooth&lt;/label&gt;
+&lt;/div&gt;
+&lt;div class="field-row"&gt;
+  &lt;input checked disabled id="radio4" type="radio" name="second-example"&gt;
+  &lt;label for="radio4"&gt;I understand why people like crunchy peanut butter&lt;/label&gt;
+&lt;/div&gt;
+&lt;div class="field-row"&gt;
+  &lt;input disabled id="radio5" type="radio" name="second-example"&gt;
+  &lt;label for="radio5"&gt;Crunchy peanut butter is good&lt;/label&gt;
+&lt;/div&gt;</code></pre>
+          </details>
+        </div>
+      </div>
+    </section>
   </main>
 </body>
 </html>

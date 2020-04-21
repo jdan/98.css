@@ -52,6 +52,18 @@
   color: #222222;
 }
 
+h1 {
+  font-size: 5rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
 u {
   text-decoration: none;
   border-bottom: 0.5px solid #222222;
@@ -104,7 +116,7 @@ button:focus {
 .menubar-title {
   font-weight: bold;
   color: white;
-  letter-spacing: 0.1ch;
+  letter-spacing: 0;
   margin-right: 24px;
 }
 
@@ -192,6 +204,7 @@ legend {
 
 label {
   display: inline-flex;
+  line-height: 1;
   align-items: center;
 }
 
