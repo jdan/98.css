@@ -17,9 +17,10 @@
           <li><a href="#button">Button</a></li>
           <li><a href="#checkbox">Checkbox</a></li>
           <li><a href="#option-button">OptionButton</a></li>
-          <li><a href="#fieldset">Fieldset</a></li>
+          <li><a href="#group-box">GroupBox</a></li>
           <li><a href="#text-box">TextBox</a></li>
           <li><a href="#multiline-text-box">Multiline TextBox</a></li>
+          <li><a href="#dropdown">Dropdown</a></li>
           <li>
             <a href="#dialog">Dialog</a>
             <ul>
@@ -96,7 +97,7 @@
           A <em>command button</em>, also referred to as a push button, is a control
           that causes the application to perform some action when the user clicks it.
 
-          <footer>&mdash; Microsoft Windows User Experience, 8.1</footer>
+          <footer>&mdash; Microsoft Windows User Experience p. 160</footer>
         </blockquote>
 
         <p>
@@ -137,7 +138,7 @@
       <div>
         <blockquote>
           A <em>check box</em> represents an independent or non-exclusive choice.
-          <footer>&mdash; Microsoft Windows User Experience, 8.3</footer>
+          <footer>&mdash; Microsoft Windows User Experience p. 167</footer>
         </blockquote>
 
         <p>
@@ -193,8 +194,12 @@
           choice within a limited set of mutually exclusive choices. That is, the user can choose only
           one set of options.
 
-          <footer>&mdash; Microsoft Windows User Experience, 8.2</footer>
+          <footer>&mdash; Microsoft Windows User Experience p. 164</footer>
         </blockquote>
+
+        <p>
+          Option buttons can be used via the <code>radio</code> type on an input element.
+        </p>
 
         <p>
           Option buttons can be grouped by specifying a shared <code>name</code> attribute on each
@@ -234,6 +239,69 @@
         `) %>
       </div>
     </section>
+
+    <section class="component">
+      <h3 id="group-box">GroupBox</h3>
+      <div>
+        <blockquote>
+          A <em>group box</em> is a special control you can use to organize a set of
+          controls. A group box is a rectangular frame with an optional label that surrounds
+          a set of controls.
+
+          <footer>&mdash; Microsoft Windows User Experience p. 189</footer>
+        </blockquote>
+
+        <p>
+          A group box can be used by wrapping your elements with the <code>fieldset</code> tag.
+          It contains a sunken outer border and a raised inner border, resembling an engraved box
+          around your controls.
+        </p>
+
+        <%- example(`
+          <fieldset>
+            <div class="field-row">Select one:</div>
+            <div class="field-row">
+              <input id="radio${getNewId()}" type="radio" name="fieldset-example">
+              <label for="radio${getCurrentId()}">Diners</label>
+            </div>
+            <div class="field-row">
+              <input id="radio${getNewId()}" type="radio" name="fieldset-example">
+              <label for="radio${getCurrentId()}">Drive-Ins</label>
+            </div>
+            <div class="field-row">
+              <input id="radio${getNewId()}" type="radio" name="fieldset-example">
+              <label for="radio${getCurrentId()}">Dives</label>
+            </div>
+          </fieldset>
+        `) %>
+
+        <p>
+          You can provide your group with a label by placing a <code>legend</code> element
+          within the <code>fieldset</code>.
+        </p>
+
+        <%- example(`
+          <fieldset>
+            <legend>Today's mood</legend>
+            <div class="field-row">
+              <input id="radio${getNewId()}" type="radio" name="fieldset-example2">
+              <label for="radio${getCurrentId()}">Claire Saffitz</label>
+            </div>
+            <div class="field-row">
+              <input id="radio${getNewId()}" type="radio" name="fieldset-example2">
+              <label for="radio${getCurrentId()}">Brad Leone</label>
+            </div>
+            <div class="field-row">
+              <input id="radio${getNewId()}" type="radio" name="fieldset-example2">
+              <label for="radio${getCurrentId()}">Chris Morocco</label>
+            </div>
+            <div class="field-row">
+              <input id="radio${getNewId()}" type="radio" name="fieldset-example2">
+              <label for="radio${getCurrentId()}">Carla Lalli Music</label>
+            </div>
+          </fieldset>
+        `) %>
+      </div>
   </main>
 </body>
 </html>
