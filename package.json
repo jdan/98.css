@@ -1,0 +1,26 @@
+{
+  "name": "98.css",
+  "version": "0.0.1",
+  "description": "A design system for building faithful recreations of old UIs",
+  "main": "style.css",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jdan/windows98.css.git"
+  },
+  "keywords": [
+    "css",
+    "windows98"
+  ],
+  "author": "Jordan Scales <scalesjordan@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jdan/windows98.css/issues"
+  },
+  "homepage": "https://github.com/jdan/windows98.css#readme"
+}
