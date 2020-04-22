@@ -34,9 +34,9 @@ The easiest way to use 98.css is to import it from [unpkg](https://unpkg.com/).
 </html>
 ```
 
-Here is an example of [98.css being used with React](https://codesandbox.io/s/objective-chandrasekhar-t5t6h?file=/src/index.js), and [an example with vanilla JavaScript](https://codesandbox.io/s/late-sound-miqho?file=/index.html). The fastest way to use 98.css is to import it from unpkg.
+Here is an example of [98.css being used with React](https://codesandbox.io/s/objective-chandrasekhar-t5t6h?file=/src/index.js), and [an example with vanilla JavaScript](https://codesandbox.io/s/late-sound-miqho?file=/index.html).
 
-Alternatively, you can grab 98.css for [the releases page](https://github.com/jdan/98.css/releases) or [npm](https://www.npmjs.com/package/98.css)
+Alternatively, you can grab 98.css for [the releases page](https://github.com/jdan/98.css/releases) or [npm](https://www.npmjs.com/package/98.css).
 
 ```
 npm install 98.css
