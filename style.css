@@ -100,7 +100,7 @@ button {
   padding: 0 12px;
 }
 
-button:active {
+button:not(:disabled):active {
   box-shadow: var(--border-sunken-outer), var(--border-sunken-inner);
 }
 
