@@ -6,16 +6,44 @@
 
 :root {
   /* Color */
-  --surface: #c0c0c0;
-  --button-highlight: #ffffff;
-  --button-face: #dfdfdf;
-  --button-shadow: #808080;
-  --window-frame: #0a0a0a;
-  --dialog-blue: #000080;
-  --dialog-blue-light: #1084d0;
-  --dialog-gray: #808080;
-  --dialog-gray-light: #b5b5b5;
-  --link-blue: #0000ff;
+  /* Legacy variables for backwards compatibility */
+  --surface: rgb(192, 192, 192);
+  --button-highlight: rgb(255, 255, 255);
+  --dialog-blue: rgb(0, 0, 128);
+  --dialog-blue-light: rgb(16, 132, 208);
+  --link-blue: rgb(0, 0, 128);
+
+  --active-border: rgb(192, 192, 192);
+  --active-title: var(--dialog-blue);
+  --app-workspace: rgb(128, 128, 128);
+  --background: rgb(0, 128, 128);
+  --button-alternate-face: rgb(192, 192, 192);
+  --button-dk-shadow: rgb(0, 0, 0);
+  --button-face: var(--surface);
+  --button-hilight: var(--button-highlight);
+  --button-light: rgb(223, 223, 223);
+  --button-shadow: rgb(128, 128, 128);
+  --button-text: rgb(0, 0, 0);
+  --gradient-active-title: var(--dialog-blue-light);
+  --gradient-inactive-title: rgb(181, 181, 181);
+  --gray-text: rgb(128, 128, 128);
+  --hilight: rgb(0, 0, 128);
+  --hilight-text: rgb(255, 255, 255);
+  --hot-tracking-color: var(--link-blue);
+  --inactive-border: rgb(192, 192, 192);
+  --inactive-title: rgb(128, 128, 128);
+  --inactive-title-text: rgb(192, 192, 192);
+  --info-text: rgb(0, 0, 0);
+  --info-window: rgb(255, 255, 225);
+  --menu: rgb(192, 192, 192);
+  --menu-bar: rgb(192, 192, 192);
+  --menu-hilight: rgb(0, 0, 128);
+  --menu-text: rgb(0, 0, 0);
+  --scrollbar: rgb(192, 192, 192);
+  --title-text: rgb(255, 255, 255);
+  --window: rgb(255, 255, 255);
+  --window-frame: rgb(0, 0, 0);
+  --window-text: rgb(0, 0, 0);
 
   /* Spacing */
   --element-spacing: 8px;
@@ -49,25 +77,25 @@
 
   /* Borders */
   --border-width: 1px;
-  --border-raised-outer: inset -1px -1px var(--window-frame),
-    inset 1px 1px var(--button-highlight);
+  --border-raised-outer: inset -1px -1px var(--button-dk-shadow),
+    inset 1px 1px var(--button-hilight);
   --border-raised-inner: inset -2px -2px var(--button-shadow),
-    inset 2px 2px var(--button-face);
-  --border-sunken-outer: inset -1px -1px var(--button-highlight),
-    inset 1px 1px var(--window-frame);
-  --border-sunken-inner: inset -2px -2px var(--button-face),
+    inset 2px 2px var(--button-light);
+  --border-sunken-outer: inset -1px -1px var(--button-hilight),
+    inset 1px 1px var(--button-dk-shadow);
+  --border-sunken-inner: inset -2px -2px var(--button-light),
     inset 2px 2px var(--button-shadow);
 
-  /* Window borders flip button-face and button-highlight */
-  --border-window-outer: inset -1px -1px var(--window-frame),
-    inset 1px 1px var(--button-face);
+  /* Window borders flip button-light and button-hilight */
+  --border-window-outer: inset -1px -1px var(--button-dk-shadow),
+    inset 1px 1px var(--button-light);
   --border-window-inner: inset -2px -2px var(--button-shadow),
-    inset 2px 2px var(--button-highlight);
+    inset 2px 2px var(--button-hilight);
 
-  /* Field borders (checkbox, input, etc) flip window-frame and button-shadow */
-  --border-field: inset -1px -1px var(--button-highlight),
-    inset 1px 1px var(--button-shadow), inset -2px -2px var(--button-face),
-    inset 2px 2px var(--window-frame);
+  /* Field borders (checkbox, input, etc) flip button-dk-shadow and button-shadow */
+  --border-field: inset -1px -1px var(--button-hilight),
+    inset 1px 1px var(--button-shadow), inset -2px -2px var(--button-light),
+    inset 2px 2px var(--button-dk-shadow);
 }
 
 @font-face {
@@ -89,7 +117,7 @@
 body {
   font-family: Arial;
   font-size: 12px;
-  color: #222222;
+  color: var(--button-text);
 }
 
 button,
@@ -124,13 +152,14 @@ h4 {
 
 u {
   text-decoration: none;
-  border-bottom: 0.5px solid #222222;
+  border-bottom: 0.5px solid var(--button-text);
 }
 
 button {
   box-sizing: border-box;
   border: none;
-  background: var(--surface);
+  color: var(--button-text);
+  background: var(--button-face);
   box-shadow: var(--border-raised-outer), var(--border-raised-inner);
   border-radius: 0;
 
@@ -142,7 +171,7 @@ button {
 .vertical-bar {
   width: 4px;
   height: 20px;
-  background: #c0c0c0;
+  background: var(--button-face);
   box-shadow: var(--border-raised-outer), var(--border-raised-inner);
 }
 
@@ -158,7 +187,7 @@ button:not(:disabled):active {
 }
 
 button:focus {
-  outline: 1px dotted #000000;
+  outline: 1px dotted var(--button-text);
   outline-offset: -4px;
 }
 
@@ -169,20 +198,21 @@ button::-moz-focus-inner {
 :disabled,
 :disabled + label {
   color: var(--button-shadow);
-  text-shadow: 1px 1px 0 var(--button-highlight);
+  text-shadow: 1px 1px 0 var(--button-hilight);
 }
 
 .window {
   box-shadow: var(--border-window-outer), var(--border-window-inner);
-  background: var(--surface);
+  color: var(--button-text);
+  background: var(--button-face);
   padding: 3px;
 }
 
 .title-bar {
   background: linear-gradient(
     90deg,
-    var(--dialog-blue),
-    var(--dialog-blue-light)
+    var(--active-title),
+    var(--gradient-active-title)
   );
   padding: 3px 2px 3px 3px;
   display: flex;
@@ -193,14 +223,14 @@ button::-moz-focus-inner {
 .title-bar.inactive {
   background: linear-gradient(
     90deg,
-    var(--dialog-gray),
-    var(--dialog-gray-light)
+    var(--inactive-title),
+    var(--gradient-inactive-title)
   );
 }
 
 .title-bar-text {
   font-weight: bold;
-  color: white;
+  color: var(--title-text);
   letter-spacing: 0;
   margin-right: 24px;
 }
@@ -268,7 +298,7 @@ fieldset {
 }
 
 legend {
-  background: var(--surface);
+  background: var(--button-face);
 }
 
 .field-row {
@@ -349,7 +379,7 @@ input[type="radio"]:checked + label::after {
 
 input[type="radio"]:focus + label,
 input[type="checkbox"]:focus + label {
-  outline: 1px dotted #000000;
+  outline: 1px dotted var(--button-text);
 }
 
 input[type="radio"][disabled] + label::before {
@@ -372,13 +402,13 @@ input[type="checkbox"] + label::before {
   display: inline-block;
   width: var(--checkbox-width);
   height: var(--checkbox-width);
-  background: var(--button-highlight);
+  background: var(--window);
   box-shadow: var(--border-field);
   margin-right: var(--radio-label-spacing);
 }
 
 input[type="checkbox"]:active + label::before {
-  background: var(--surface);
+  background: var(--button-face);
 }
 
 input[type="checkbox"]:checked + label::after {
@@ -395,7 +425,7 @@ input[type="checkbox"]:checked + label::after {
 }
 
 input[type="checkbox"][disabled] + label::before {
-  background: var(--surface);
+  background: var(--button-face);
 }
 
 input[type="checkbox"][disabled]:checked + label::after {
@@ -410,7 +440,8 @@ textarea {
   padding: 3px 4px;
   border: none;
   box-shadow: var(--border-field);
-  background-color: var(--button-highlight);
+  color: var(--window-text);
+  background-color: var(--window);
   box-sizing: border-box;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -493,22 +524,36 @@ input[type="range"]::-webkit-slider-runnable-track {
   width: 100%;
   height: 2px;
   box-sizing: border-box;
-  background: black;
-  border-right: 1px solid grey;
-  border-bottom: 1px solid grey;
-  box-shadow: 1px 0 0 white, 1px 1px 0 white, 0 1px 0 white, -1px 0 0 darkgrey,
-    -1px -1px 0 darkgrey, 0 -1px 0 darkgrey, -1px 1px 0 white, 1px -1px darkgrey;
+  background: var(--button-dk-shadow);
+  border-right: 1px solid var(--button-light);
+  border-bottom: 1px solid var(--button-light);
+  box-shadow:
+    1px 0 0 var(--button-hilight),
+    1px 1px 0 var(--button-hilight),
+    0 1px 0 var(--button-hilight),
+    -1px 0 0 var(--button-shadow),
+    -1px -1px 0 var(--button-shadow),
+    0 -1px 0 var(--button-shadow),
+    -1px 1px 0 var(--button-hilight),
+    1px -1px var(--button-shadow);
 }
 
 input[type="range"]::-moz-range-track {
   width: 100%;
   height: 2px;
   box-sizing: border-box;
-  background: black;
-  border-right: 1px solid grey;
-  border-bottom: 1px solid grey;
-  box-shadow: 1px 0 0 white, 1px 1px 0 white, 0 1px 0 white, -1px 0 0 darkgrey,
-    -1px -1px 0 darkgrey, 0 -1px 0 darkgrey, -1px 1px 0 white, 1px -1px darkgrey;
+  background: var(--button-dk-shadow);
+  border-right: 1px solid var(--button-light);
+  border-bottom: 1px solid var(--button-light);
+  box-shadow:
+    1px 0 0 var(--button-hilight),
+    1px 1px 0 var(--button-hilight),
+    0 1px 0 var(--button-hilight),
+    -1px 0 0 var(--button-shadow),
+    -1px -1px 0 var(--button-shadow),
+    0 -1px 0 var(--button-shadow),
+    -1px 1px 0 var(--button-hilight),
+    1px -1px var(--button-shadow);
 }
 
 .is-vertical {
@@ -528,19 +573,33 @@ input[type="range"]::-moz-range-track {
 }
 
 .is-vertical > input[type="range"]::-webkit-slider-runnable-track {
-  border-left: 1px solid grey;
+  border-left: 1px solid var(--button-light);
   border-right: 0;
-  border-bottom: 1px solid grey;
-  box-shadow: -1px 0 0 white, -1px 1px 0 white, 0 1px 0 white, 1px 0 0 darkgrey,
-    1px -1px 0 darkgrey, 0 -1px 0 darkgrey, 1px 1px 0 white, -1px -1px darkgrey;
+  border-bottom: 1px solid var(--button-light);
+  box-shadow:
+    -1px 0 0 var(--button-hilight),
+    -1px 1px 0 var(--button-hilight),
+    0 1px 0 var(--button-hilight),
+    1px 0 0 var(--button-shadow),
+    1px -1px 0 var(--button-shadow),
+    0 -1px 0 var(--button-shadow),
+    1px 1px 0 var(--button-hilight),
+    -1px -1px var(--button-shadow);
 }
 
 .is-vertical > input[type="range"]::-moz-range-track {
-  border-left: 1px solid grey;
+  border-left: 1px solid var(--button-light);
   border-right: 0;
-  border-bottom: 1px solid grey;
-  box-shadow: -1px 0 0 white, -1px 1px 0 white, 0 1px 0 white, 1px 0 0 darkgrey,
-    1px -1px 0 darkgrey, 0 -1px 0 darkgrey, 1px 1px 0 white, -1px -1px darkgrey;
+  border-bottom: 1px solid var(--button-light);
+  box-shadow:
+    -1px 0 0 var(--button-hilight),
+    -1px 1px 0 var(--button-hilight),
+    0 1px 0 var(--button-hilight),
+    1px 0 0 var(--button-shadow),
+    1px -1px 0 var(--button-shadow),
+    0 -1px 0 var(--button-shadow),
+    1px 1px 0 var(--button-hilight),
+    -1px -1px var(--button-shadow);
 }
 
 .is-vertical > input[type="range"]::-webkit-slider-thumb {
@@ -560,12 +619,12 @@ input[type="range"]::-moz-range-track {
 }
 
 select:focus {
-  color: var(--button-highlight);
-  background-color: var(--dialog-blue);
+  color: var(--hilight-text);
+  background-color: var(--hilight);
 }
 select:focus option {
-  color: #000;
-  background-color: #fff;
+  color: var(--window-text);
+  background-color: var(--window);
 }
 
 select:active {
@@ -573,16 +632,17 @@ select:active {
 }
 
 a {
-  color: var(--link-blue);
+  color: var(--hot-tracking-color);
 }
 
 a:focus {
-  outline: 1px dotted var(--link-blue);
+  outline: 1px dotted var(--hot-tracking-color);
 }
 
 ul.tree-view {
   display: block;
-  background: var(--button-highlight);
+  color: var(--window-text);
+  background: var(--window);
   box-shadow: var(--border-field);
   padding: 6px;
   margin: 0;
@@ -594,12 +654,12 @@ ul.tree-view li {
 
 ul.tree-view a {
   text-decoration: none;
-  color: #000;
+  color: var(--window-text);
 }
 
 ul.tree-view a:focus {
-  background-color: var(--dialog-blue);
-  color: var(--button-highlight);
+  background-color: var(--hilight);
+  color: var(--hilight-text);
 }
 
 ul.tree-view ul,
@@ -611,7 +671,7 @@ ul.tree-view ul {
   margin-left: 16px;
   padding-left: 16px;
   /* Goes down too far */
-  border-left: 1px dotted #808080;
+  border-left: 1px dotted var(--gray-text);
 }
 
 ul.tree-view ul > li {
@@ -624,7 +684,7 @@ ul.tree-view ul > li::before {
   left: -16px;
   top: 6px;
   width: 12px;
-  border-bottom: 1px dotted #808080;
+  border-bottom: 1px dotted var(--gray-text);
 }
 
 /* Cover the bottom of the left dotted border */
@@ -636,7 +696,7 @@ ul.tree-view ul > li:last-child::after {
   top: 7px;
   bottom: 0px;
   width: 8px;
-  background: var(--button-highlight);
+  background: var(--window);
 }
 
 ul.tree-view details {
@@ -658,13 +718,13 @@ ul.tree-view details > summary:before {
   display: block;
   float: left;
   content: "+";
-  border: 1px solid #808080;
+  border: 1px solid var(--gray-text);
   width: 8px;
   height: 9px;
   line-height: 8px;
   margin-right: 5px;
   padding-left: 1px;
-  background-color: #fff;
+  background-color: var(--window);
 }
 
 ul.tree-view details[open] > summary:before {
@@ -673,7 +733,8 @@ ul.tree-view details[open] > summary:before {
 
 pre {
   display: block;
-  background: var(--button-highlight);
+  color: var(--window-text);
+  background: var(--window);
   box-shadow: var(--border-field);
   padding: 12px 8px;
   margin: 0;
@@ -685,7 +746,7 @@ code * {
 }
 
 summary:focus {
-  outline: 1px dotted #000000;
+  outline: 1px dotted var(--button-text);
 }
 
 ::-webkit-scrollbar {
@@ -696,7 +757,7 @@ summary:focus {
 }
 
 ::-webkit-scrollbar-corner {
-  background: var(--button-face);
+  background: var(--button-light);
 }
 
 ::-webkit-scrollbar-track {
@@ -704,7 +765,7 @@ summary:focus {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: var(--button-face);
+  background-color: var(--button-light);
   box-shadow: var(--border-raised-outer), var(--border-raised-inner);
 }
 
