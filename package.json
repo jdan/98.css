@@ -7,8 +7,8 @@
     "doc": "docs"
   },
   "scripts": {
-    "test": "./test.sh",
-    "build": "./build.js"
+    "test": "sh test.sh",
+    "build": "node build.js"
   },
   "repository": {
     "type": "git",
