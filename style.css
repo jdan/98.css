@@ -315,6 +315,7 @@ textarea {
   box-shadow: var(--border-field);
   background-color: var(--button-highlight);
   box-sizing: border-box;
+  border-radius : unset;
 }
 
 input[type="text"],
