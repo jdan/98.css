@@ -140,4 +140,8 @@ button.active {
     display: block;
     margin-top: 24px;
   }
+
+  pre {
+    overflow-x: scroll;
+  }
 }
