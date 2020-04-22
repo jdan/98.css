@@ -79,6 +79,15 @@
   color: #222222;
 }
 
+h1,
+h2,
+h3,
+h4,
+p,
+blockquote {
+  font-family: Arial;
+}
+
 h1 {
   font-size: 5rem;
 }
