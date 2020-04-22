@@ -10,7 +10,7 @@ A design system for building faithful recreations of old UIs.
 
 The easiest way to use 98.css is to import it from [unpkg](https://unpkg.com/).
 
-```
+```html
 <!DOCTYPE html>
 <html>
   <head>
