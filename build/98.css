@@ -56,8 +56,24 @@
     inset 2px 2px #0a0a0a;
 }
 
+@font-face {
+  font-family: "Pixelated MS Sans Serif";
+  src: url("25f9a0847b3cf78d.woff") format("woff");
+  src: url("13dcc34c595402ca.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Pixelated MS Sans Serif";
+  src: url("c4fd1f3534edc0fe.woff") format("woff");
+  src: url("6a40a91bb5e3bfdf.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+}
+
 * {
-  font-family: Arial;
+  font-family: "Pixelated MS Sans Serif", Arial;
   font-size: 12px;
   -webkit-font-smoothing: none;
   color: #222222;
@@ -323,10 +339,6 @@ input[type="text"] {
     inset 2px 2px #0a0a0a;
   background-color: #ffffff;
   box-sizing: border-box;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border-radius: 0;
 }
 
 select {
@@ -337,10 +349,6 @@ select {
     inset 2px 2px #0a0a0a;
   background-color: #ffffff;
   box-sizing: border-box;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border-radius: 0;
 }
 
 textarea {
@@ -351,10 +359,6 @@ textarea {
     inset 2px 2px #0a0a0a;
   background-color: #ffffff;
   box-sizing: border-box;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border-radius: 0;
 }
 
 input[type="text"],
