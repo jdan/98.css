@@ -323,6 +323,10 @@ input[type="text"] {
     inset 2px 2px #0a0a0a;
   background-color: #ffffff;
   box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0;
 }
 
 select {
@@ -333,6 +337,10 @@ select {
     inset 2px 2px #0a0a0a;
   background-color: #ffffff;
   box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0;
 }
 
 textarea {
@@ -343,6 +351,10 @@ textarea {
     inset 2px 2px #0a0a0a;
   background-color: #ffffff;
   box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0;
 }
 
 input[type="text"],

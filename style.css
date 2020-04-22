@@ -315,6 +315,10 @@ textarea {
   box-shadow: var(--border-field);
   background-color: var(--button-highlight);
   box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0;
 }
 
 input[type="text"],
