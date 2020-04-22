@@ -1,7 +1,7 @@
 #!/bin/sh
 
 npm run build
-output=$( git diff build )
+output=$( git diff build docs )
 
 if [ -z "$output" ]
 then
