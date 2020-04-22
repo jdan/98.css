@@ -336,6 +336,7 @@ select {
   background-image: svg-load("./icon/button-down.svg");
   background-position: top 2px right 2px;
   background-repeat: no-repeat;
+  border-radius: 0;
 }
 
 select:focus,
