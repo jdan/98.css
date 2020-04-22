@@ -35,10 +35,10 @@ function example(code) {
 function buildDocs() {
   const template = fs.readFileSync("docs/index.html.ejs", "utf-8");
 
-  glob("build/*", function (er, files) {
-    if (!er) {
-      files.forEach((srcfile) =>
-        fs.copyFileSync(srcfile, path.join("docs", path.basename(srcfile)))
+  glob("build/*", (err, files) => {
+    if (!err) {
+      files.forEach((srcFile) =>
+        fs.copyFileSync(srcFile, path.join("docs", path.basename(srcFile)))
       );
     } else throw "error globbing build directory.";
   });
@@ -53,7 +53,7 @@ function buildCSS() {
     .use(require("postcss-inline-svg"))
     .use(require("postcss-css-variables")({ preserve: "computed" }))
     .use(require("postcss-calc"))
-    .use(require("postcss-copy")({ dest: "build" }))
+    .use(require("postcss-copy")({ dest: "build", template: "[name].[ext]" }))
     .process(fs.readFileSync("style.css"), {
       from: "style.css",
       to: "build/98.css",

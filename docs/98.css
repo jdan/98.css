@@ -58,16 +58,16 @@
 
 @font-face {
   font-family: "Pixelated MS Sans Serif";
-  src: url("25f9a0847b3cf78d.woff") format("woff");
-  src: url("13dcc34c595402ca.woff2") format("woff2");
+  src: url("ms_sans_serif.woff") format("woff");
+  src: url("ms_sans_serif.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Pixelated MS Sans Serif";
-  src: url("c4fd1f3534edc0fe.woff") format("woff");
-  src: url("6a40a91bb5e3bfdf.woff2") format("woff2");
+  src: url("ms_sans_serif_bold.woff") format("woff");
+  src: url("ms_sans_serif_bold.woff2") format("woff2");
   font-weight: bold;
   font-style: normal;
 }
