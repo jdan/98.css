@@ -5,6 +5,8 @@ const fs = require("fs");
 const hljs = require("highlight.js");
 const mkdirp = require("mkdirp");
 const postcss = require("postcss");
+const glob = require("glob");
+const path = require("path");
 
 let id = 0;
 function getNewId() {
@@ -33,7 +35,13 @@ function example(code) {
 function buildDocs() {
   const template = fs.readFileSync("docs/index.html.ejs", "utf-8");
 
-  fs.copyFileSync("build/98.css", "docs/98.css");
+  glob("build/*", (err, files) => {
+    if (!err) {
+      files.forEach((srcFile) =>
+        fs.copyFileSync(srcFile, path.join("docs", path.basename(srcFile)))
+      );
+    } else throw "error globbing build directory.";
+  });
   fs.writeFileSync(
     "docs/index.html",
     ejs.render(template, { getNewId, getCurrentId, example })
@@ -45,6 +53,7 @@ function buildCSS() {
     .use(require("postcss-inline-svg"))
     .use(require("postcss-css-variables")({ preserve: "computed" }))
     .use(require("postcss-calc"))
+    .use(require("postcss-copy")({ dest: "build", template: "[name].[ext]" }))
     .process(fs.readFileSync("style.css"), {
       from: "style.css",
       to: "build/98.css",

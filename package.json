@@ -27,9 +27,11 @@
   "devDependencies": {
     "dedent": "^0.7.0",
     "ejs": "^3.0.2",
+    "glob": "^7.1.6",
     "highlight.js": "^9.18.1",
     "mkdirp": "^1.0.4",
     "postcss-calc": "^7.0.2",
+    "postcss-copy": "^7.1.0",
     "postcss-css-variables": "^0.14.0",
     "postcss-inline": "^1.2.0",
     "postcss-inline-svg": "^4.1.0"
