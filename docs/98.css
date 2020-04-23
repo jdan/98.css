@@ -72,19 +72,24 @@
   font-style: normal;
 }
 
-* {
-  font-family: "Pixelated MS Sans Serif", Arial;
+body {
+  font-family: Arial;
   font-size: 12px;
   -webkit-font-smoothing: none;
   color: #222222;
 }
 
-h1,
-h2,
-h3,
-h4,
-p,
-blockquote {
+button,
+.window,
+.title-bar {
+  font-family: "Pixelated MS Sans Serif", Arial;
+}
+
+.pixelated {
+  font-family: "Pixelated MS Sans Serif", Arial;
+}
+
+.vectorized {
   font-family: Arial;
 }
 
@@ -348,6 +353,10 @@ input[type="text"] {
     inset 2px 2px #0a0a0a;
   background-color: #ffffff;
   box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0;
 }
 
 select {
@@ -358,6 +367,10 @@ select {
     inset 2px 2px #0a0a0a;
   background-color: #ffffff;
   box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0;
 }
 
 textarea {
@@ -368,6 +381,10 @@ textarea {
     inset 2px 2px #0a0a0a;
   background-color: #ffffff;
   box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0;
 }
 
 input[type="text"],

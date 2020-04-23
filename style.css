@@ -76,19 +76,24 @@
   font-style: normal;
 }
 
-* {
-  font-family: "Pixelated MS Sans Serif", Arial;
+body {
+  font-family: Arial;
   font-size: 12px;
   -webkit-font-smoothing: none;
   color: #222222;
 }
 
-h1,
-h2,
-h3,
-h4,
-p,
-blockquote {
+button,
+.window,
+.title-bar {
+  font-family: "Pixelated MS Sans Serif", Arial;
+}
+
+.pixelated {
+  font-family: "Pixelated MS Sans Serif", Arial;
+}
+
+.vectorized {
   font-family: Arial;
 }
 
@@ -340,6 +345,10 @@ textarea {
   box-shadow: var(--border-field);
   background-color: var(--button-highlight);
   box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0;
 }
 
 input[type="text"],
