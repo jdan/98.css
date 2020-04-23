@@ -52,6 +52,10 @@ h2 {
   margin-bottom: 12px;
 }
 
+h3 {
+  font-size: 1.6rem;
+}
+
 h3,
 h4 {
   /* Swap the margin for a top-padding so linking to this section
