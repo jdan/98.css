@@ -133,6 +133,14 @@ button:not(:disabled):active {
     inset 2px 2px #808080;
 }
 
+@media (not(hover)) {
+  button:not(:disabled):hover {
+    box-shadow: inset -1px -1px #ffffff,
+    inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf,
+    inset 2px 2px #808080;
+  }
+}
+
 button:focus {
   outline: 1px dotted #000000;
   outline-offset: -4px;
