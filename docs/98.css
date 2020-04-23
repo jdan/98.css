@@ -329,6 +329,34 @@ input[type="text"] {
   border-radius: 0;
 }
 
+input[type="password"] {
+  padding: 3px 4px;
+  border: none;
+  box-shadow: inset -1px -1px #ffffff,
+    inset 1px 1px #808080, inset -2px -2px #dfdfdf,
+    inset 2px 2px #0a0a0a;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0;
+}
+
+input[type="email"] {
+  padding: 3px 4px;
+  border: none;
+  box-shadow: inset -1px -1px #ffffff,
+    inset 1px 1px #808080, inset -2px -2px #dfdfdf,
+    inset 2px 2px #0a0a0a;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0;
+}
+
 select {
   padding: 3px 4px;
   border: none;
@@ -358,11 +386,16 @@ textarea {
 }
 
 input[type="text"],
+input[type="password"],
+input[type="email"],
 select {
   height: 21px;
 }
 
-input[type="text"] {
+input[type="text"],
+input[type="password"],
+input[type="email"]
+{
   /* For some reason descenders are getting cut off without this */
   line-height: 2;
 }
@@ -381,6 +414,8 @@ select {
 
 select:focus,
 input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
 textarea:focus {
   outline: none;
 }
