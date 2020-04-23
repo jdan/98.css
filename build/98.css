@@ -75,22 +75,18 @@
 body {
   font-family: Arial;
   font-size: 12px;
-  -webkit-font-smoothing: none;
   color: #222222;
 }
 
 button,
-.window,
-.title-bar {
+label,
+input,
+textarea,
+ul.tree-view,
+.title-bar-text {
   font-family: "Pixelated MS Sans Serif", Arial;
-}
-
-.pixelated {
-  font-family: "Pixelated MS Sans Serif", Arial;
-}
-
-.vectorized {
-  font-family: Arial;
+  -webkit-font-smoothing: none;
+  font-size: 11px;
 }
 
 h1 {
