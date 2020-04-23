@@ -60,11 +60,40 @@
     inset 2px 2px var(--window-frame);
 }
 
-* {
+@font-face {
+  font-family: "Pixelated MS Sans Serif";
+  src: url("fonts/converted/ms_sans_serif.woff") format("woff");
+  src: url("fonts/converted/ms_sans_serif.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Pixelated MS Sans Serif";
+  src: url("fonts/converted/ms_sans_serif_bold.woff") format("woff");
+  src: url("fonts/converted/ms_sans_serif_bold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+}
+
+body {
   font-family: Arial;
   font-size: 12px;
-  -webkit-font-smoothing: none;
   color: #222222;
+}
+
+button,
+label,
+input,
+textarea,
+select,
+option,
+ul.tree-view,
+.window,
+.title-bar {
+  font-family: "Pixelated MS Sans Serif", Arial;
+  -webkit-font-smoothing: none;
+  font-size: 11px;
 }
 
 h1 {
@@ -216,7 +245,6 @@ legend {
 
 label {
   display: inline-flex;
-  line-height: 1;
   align-items: center;
 }
 
@@ -229,6 +257,11 @@ input[type="checkbox"] {
   border: none;
 }
 
+input[type="radio"] + label,
+input[type="checkbox"] + label {
+  line-height: 13px;
+}
+
 input[type="radio"] + label {
   position: relative;
   margin-left: var(--radio-total-width);
@@ -237,6 +270,7 @@ input[type="radio"] + label {
 input[type="radio"] + label::before {
   content: "";
   position: absolute;
+  top: 0;
   left: calc(-1 * (var(--radio-total-width-precalc)));
   display: inline-block;
   width: var(--radio-width);
@@ -332,8 +366,7 @@ select {
 
 input[type="text"],
 input[type="password"],
-input[type="email"]
-{
+input[type="email"] {
   /* For some reason descenders are getting cut off without this */
   line-height: 2;
 }
