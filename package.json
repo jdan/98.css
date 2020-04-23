@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/jdan/98.css#readme",
   "devDependencies": {
+    "cssnano": "^4.1.10",
     "dedent": "^0.7.0",
     "ejs": "^3.0.2",
     "glob": "^7.1.6",
