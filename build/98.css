@@ -82,6 +82,8 @@ button,
 label,
 input,
 textarea,
+select,
+option,
 ul.tree-view,
 .title-bar-text {
   font-family: "Pixelated MS Sans Serif", Arial;
@@ -250,7 +252,6 @@ legend {
 
 label {
   display: inline-flex;
-  line-height: 1;
   align-items: center;
 }
 
