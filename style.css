@@ -56,21 +56,14 @@
   --range-spacing: 10px;
 
   /* Some detailed computations for radio buttons and checkboxes */
-  --radio-total-width-precalc: var(--radio-width) + var(--radio-label-spacing);
-  --radio-total-width: calc(var(--radio-total-width-precalc));
-  --radio-left: calc(-1 * var(--radio-total-width-precalc));
+  --radio-total-width: calc(var(--radio-width) + var(--radio-label-spacing));
+  --radio-left: calc(-1 * var(--radio-total-width));
   --radio-dot-width: 4px;
-  --radio-dot-top: calc(var(--radio-width) / 2 - var(--radio-dot-width) / 2);
-  --radio-dot-left: calc(
-    -1 * (var(--radio-total-width-precalc)) + var(--radio-width) / 2 - var(
-        --radio-dot-width
-      ) / 2
-  );
+  --radio-dot-top: var(--radio-dot-width);
+  --radio-dot-left: calc(var(--radio-left) + var(--radio-dot-top));
 
-  --checkbox-total-width-precalc: var(--checkbox-width) +
-    var(--radio-label-spacing);
-  --checkbox-total-width: calc(var(--checkbox-total-width-precalc));
-  --checkbox-left: calc(-1 * var(--checkbox-total-width-precalc));
+  --checkbox-total-width: calc(var(--checkbox-width) + var(--radio-label-spacing));
+  --checkbox-left: calc(-1 * var(--checkbox-total-width));
   --checkmark-width: 7px;
   --checkmark-top: 3px;
   --checkmark-left: 3px;
@@ -354,7 +347,7 @@ input[type="radio"] + label::before {
   content: "";
   position: absolute;
   top: 0;
-  left: calc(-1 * (var(--radio-total-width-precalc)));
+  left: var(--radio-left);
   display: inline-block;
   width: var(--radio-width);
   height: var(--radio-width);
@@ -398,7 +391,7 @@ input[type="checkbox"] + label {
 input[type="checkbox"] + label::before {
   content: "";
   position: absolute;
-  left: calc(-1 * (var(--checkbox-total-width-precalc)));
+  left: var(--checkbox-left);
   display: inline-block;
   width: var(--checkbox-width);
   height: var(--checkbox-width);
@@ -418,9 +411,7 @@ input[type="checkbox"]:checked + label::after {
   height: var(--checkmark-width);
   position: absolute;
   top: var(--checkmark-top);
-  left: calc(
-    -1 * (var(--checkbox-total-width-precalc)) + var(--checkmark-left)
-  );
+  left: calc(var(--checkbox-left) + var(--checkmark-left));
   background: svg-load("./icon/checkmark.svg");
 }
 
