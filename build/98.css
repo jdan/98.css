@@ -85,7 +85,8 @@ textarea,
 select,
 option,
 ul.tree-view,
-.title-bar-text {
+.window,
+.title-bar {
   font-family: "Pixelated MS Sans Serif", Arial;
   -webkit-font-smoothing: none;
   font-size: 11px;
