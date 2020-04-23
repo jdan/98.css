@@ -38,6 +38,7 @@
               <li><a href="#window-contents">Window contents</a></li>
             </ul>
           </li>
+          <li><a href="#status-bar">Status Bar</a></li>
           <li><a href="#tree-view">TreeView</a></li>
         </ul>
       </li>
@@ -140,7 +141,7 @@
           The following button is simulated to be in the pressed (active) state.
         </p>
 
-        
+
         <div class="example">
     <button class="active">I am being pressed</button>
     <details>
@@ -744,6 +745,41 @@
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
     </details>
   </div>
+      </div>
+    </section>
+
+    <section class="component">
+      <h3 id="status-bar">Status Bar</h3>
+      <div>
+        <blockquote>
+          I don't have a copy of this book and I don't know if it talks about status bars.
+
+          <footer>
+            &mdash; Microsoft Windows User Experience p. 0
+          </footer>
+        </blockquote>
+
+       <p>To render a status bar, use a <code>table</code> element with
+         the <code>status-bar</code> class. The <code>td</code> elements
+         within it become status bar panels. The second through last panels
+         will be sized their contents; the first will fill in the rest of the
+         space.
+
+         <div class="example" style="width:400px">
+            <table class="status-bar">
+              <td>12 object(s)
+              <td>5.47MB
+              <td>&#x1f4bb; My Computer
+            </table>
+          </div>
+          <details>
+            <summary>Show code</summary>
+            <pre><code>&lt;table class="status-bar">
+  &lt;td&gt;12 object(s)
+  &lt;td&gt;5.47MB
+  &lt;td&gt;&amp;#x1f4bb; My Computer
+&lt;/table&gt;</code></pre>
+          </details>
       </div>
     </section>
 

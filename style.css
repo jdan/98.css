@@ -516,3 +516,15 @@ summary:focus {
   width: 16px;
   background-image: svg-load("./icon/button-right.svg");
 }
+
+table.status-bar {
+  width: 100%;
+}
+table.status-bar td {
+  box-shadow: var(--border-sunken-outer);
+  padding: 4px 6px;
+  white-space: nowrap;
+}
+table.status-bar td:first-child {
+  width: 100%;
+}
