@@ -257,6 +257,11 @@ input[type="checkbox"] {
   border: none;
 }
 
+input[type="radio"] + label,
+input[type="checkbox"] + label {
+  line-height: 13px;
+}
+
 input[type="radio"] + label {
   position: relative;
   margin-left: var(--radio-total-width);
@@ -265,6 +270,7 @@ input[type="radio"] + label {
 input[type="radio"] + label::before {
   content: "";
   position: absolute;
+  top: 0;
   left: calc(-1 * (var(--radio-total-width-precalc)));
   display: inline-block;
   width: var(--radio-width);

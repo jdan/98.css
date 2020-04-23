@@ -265,6 +265,11 @@ input[type="checkbox"] {
   border: none;
 }
 
+input[type="radio"] + label,
+input[type="checkbox"] + label {
+  line-height: 13px;
+}
+
 input[type="radio"] + label {
   position: relative;
   margin-left: 18px;
@@ -273,6 +278,7 @@ input[type="radio"] + label {
 input[type="radio"] + label::before {
   content: "";
   position: absolute;
+  top: 0;
   left: -18px;
   display: inline-block;
   width: 12px;
