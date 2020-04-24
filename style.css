@@ -258,6 +258,7 @@ input[type="checkbox"] {
   -webkit-appearance: none;
   -moz-appearance: none;
   margin: 0;
+  background: 0; /* necessary for hiding default disabled-state styling on iOS */
   border: none;
 }
 
@@ -346,6 +347,8 @@ input[type="checkbox"][disabled]:checked + label::after {
 }
 
 input[type="text"],
+input[type="password"],
+input[type="email"],
 select,
 textarea {
   padding: 3px 4px;
@@ -360,11 +363,15 @@ textarea {
 }
 
 input[type="text"],
+input[type="password"],
+input[type="email"],
 select {
   height: 21px;
 }
 
-input[type="text"] {
+input[type="text"],
+input[type="password"],
+input[type="email"] {
   /* For some reason descenders are getting cut off without this */
   line-height: 2;
 }
@@ -383,6 +390,8 @@ select {
 
 select:focus,
 input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
 textarea:focus {
   outline: none;
 }
