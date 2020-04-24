@@ -138,6 +138,10 @@ button:focus {
   outline-offset: -4px;
 }
 
+button::-moz-focus-inner {
+  border: 0;
+}
+
 :disabled,
 :disabled + label {
   color: var(--button-shadow);
