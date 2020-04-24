@@ -1,6 +1,6 @@
 {
   "name": "98.css",
-  "version": "0.1.6-beta",
+  "version": "0.1.6",
   "description": "A design system for building faithful recreations of old UIs",
   "main": "dist/98.css",
   "directories": {
@@ -8,8 +8,7 @@
   },
   "scripts": {
     "build": "node build.js",
-    "build:docs": "npm run build && node build-docs.js",
-    "release": "npm run build && npm publish"
+    "build:docs": "npm run build && node build-docs.js"
   },
   "repository": {
     "type": "git",
