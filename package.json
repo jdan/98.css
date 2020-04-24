@@ -8,6 +8,7 @@
   },
   "scripts": {
     "build": "node build.js",
+    "build:docs": "npm run build && node build-docs.js",
     "release": "npm run build && npm publish"
   },
   "repository": {
