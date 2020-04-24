@@ -133,6 +133,12 @@ button:not(:disabled):active {
   box-shadow: var(--border-sunken-outer), var(--border-sunken-inner);
 }
 
+@media (not(hover)) {
+  button:not(:disabled):hover {
+    box-shadow: var(--border-sunken-outer), var(--border-sunken-inner);
+  }
+}
+
 button:focus {
   outline: 1px dotted #000000;
   outline-offset: -4px;
