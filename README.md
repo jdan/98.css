@@ -44,6 +44,12 @@ Here is an example of [98.css being used with React](https://codesandbox.io/s/ob
 
 Refer to the [documentation page](https://jdan.github.io/98.css/) for specific instructions on this library's components.
 
+### Developing
+
+[`style.css`](https://github.com/jdan/98.css/blob/master/style.css) is where everything happens.
+
+`npm run build:docs` will compile `style.css` (and all fonts/icons/etc) and rebuild the docs/ directory which powers http://jdan.github.io/98.css. It's a static directory so serve it with your server of choice (I am partial to `python -m SimpleHTTPServer 3000`) to see your changes.
+
 ### Issues, Contributing, etc.
 
 Refer to [the GitHub issues page](https://github.com/jdan/98.css/issues) to see bugs in my CSS or report new ones. I'd really like to see your pull requests (especially those new to open-source!) and will happily provide code review. 98.css is a fun, silly project and I'd like to make it a fun place to build your open-source muscle.
