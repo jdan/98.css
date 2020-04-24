@@ -51,16 +51,19 @@ function buildDocs() {
 function buildCSS() {
   return postcss()
     .use(require("postcss-inline-svg"))
-    .use(require("postcss-css-variables")({ preserve: "computed" }))
+    .use(require("postcss-css-variables"))
     .use(require("postcss-calc"))
     .use(require("postcss-copy")({ dest: "build", template: "[name].[ext]" }))
+    .use(require("cssnano"))
     .process(fs.readFileSync("style.css"), {
       from: "style.css",
       to: "build/98.css",
+      map: { inline: false },
     })
     .then((result) => {
       mkdirp.sync("build");
       fs.writeFileSync("build/98.css", result.css);
+      fs.writeFileSync("build/98.css.map", result.map);
     });
 }
 

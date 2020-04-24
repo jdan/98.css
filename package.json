@@ -1,13 +1,12 @@
 {
   "name": "98.css",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "A design system for building faithful recreations of old UIs",
   "main": "build/98.css",
   "directories": {
     "doc": "docs"
   },
   "scripts": {
-    "test": "sh test.sh",
     "build": "node build.js"
   },
   "repository": {
@@ -25,6 +24,7 @@
   },
   "homepage": "https://github.com/jdan/98.css#readme",
   "devDependencies": {
+    "cssnano": "^4.1.10",
     "dedent": "^0.7.0",
     "ejs": "^3.0.2",
     "glob": "^7.1.6",
