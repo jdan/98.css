@@ -35,12 +35,12 @@ function example(code) {
 function buildDocs() {
   const template = fs.readFileSync("docs/index.html.ejs", "utf-8");
 
-  glob("build/*", (err, files) => {
+  glob("dist/*", (err, files) => {
     if (!err) {
       files.forEach((srcFile) =>
         fs.copyFileSync(srcFile, path.join("docs", path.basename(srcFile)))
       );
-    } else throw "error globbing build directory.";
+    } else throw "error globbing dist directory.";
   });
   fs.writeFileSync(
     "docs/index.html",
@@ -53,17 +53,17 @@ function buildCSS() {
     .use(require("postcss-inline-svg"))
     .use(require("postcss-css-variables"))
     .use(require("postcss-calc"))
-    .use(require("postcss-copy")({ dest: "build", template: "[name].[ext]" }))
+    .use(require("postcss-copy")({ dest: "dist", template: "[name].[ext]" }))
     .use(require("cssnano"))
     .process(fs.readFileSync("style.css"), {
       from: "style.css",
-      to: "build/98.css",
+      to: "dist/98.css",
       map: { inline: false },
     })
     .then((result) => {
-      mkdirp.sync("build");
-      fs.writeFileSync("build/98.css", result.css);
-      fs.writeFileSync("build/98.css.map", result.map);
+      mkdirp.sync("dist");
+      fs.writeFileSync("dist/98.css", result.css);
+      fs.writeFileSync("dist/98.css.map", result.map);
     });
 }
 
