@@ -7,7 +7,6 @@
     "doc": "docs"
   },
   "scripts": {
-    "test": "sh test.sh",
     "build": "node build.js"
   },
   "repository": {
