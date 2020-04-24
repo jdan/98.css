@@ -738,7 +738,12 @@ summary:focus {
   background-image: svg-load("./icon/button-right.svg");
 }
 
-menu.tabs {
+.window[role=tabpanel] {
+  position: relative;
+  z-index: 2;
+}
+
+menu[role=tablist] {
   position: relative;
   margin: 0 0 -2px 0;
   text-indent: 0;
@@ -747,13 +752,14 @@ menu.tabs {
   padding-left: 3px;
 }
 
-menu.tabs li {
+menu[role=tablist] > li {
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
   box-shadow: var(--border-tab);
   z-index: 1;
 }
-menu.tabs > li.active {
+
+menu[role=tablist] > li[aria-selected] {
   padding-bottom: 2px;
   margin-top: -2px;
   background-color: var(--surface);
@@ -762,20 +768,20 @@ menu.tabs > li.active {
   margin-left: -3px;
 }
 
-menu.tabs > li > a {
+menu[role=tablist] > li > a {
   display: block;
   color: #222;
   margin: 6px;
   text-decoration: none;
 }
-menu.tabs > li.active > a:focus {
+menu[role=tablist] > li[aria-selected] > a:focus {
   outline: none;
 }
-menu.tabs > li > a:focus {
+menu[role=tablist] > li > a:focus {
   outline: 1px dotted #222;
 }
 
-menu.tabs.justified > li {
+menu[role=tablist].justified > li {
   flex-grow: 1;
   text-align: center;
 }
