@@ -1,0 +1,626 @@
+<!doctype html>
+<html>
+<head>
+  <title>98.css - A design system for building faithful recreations of old UIs</title>
+  <link rel="Shortcut Icon" type="image/x-icon" href="icon.png" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta property="og:title" content="98.css" />
+  <meta name="Description" content="A design system for building faithful recreations of old UIs." />
+  <meta property="og:description" content="A design system for building faithful recreations of old UIs." />
+  <meta
+    property="og:image"
+    content="https://github.com/jdan/98.css/raw/master/docs/window.png?raw=true"
+  />
+
+  <link rel="stylesheet" href="98.css"></style>
+  <link rel="stylesheet" href="docs.css"></style>
+  <link rel="stylesheet" href="vs.css"></style>
+</head>
+<body ontouchstart>
+  <aside>
+    <ul class="tree-view">
+      <li><a href="#intro">Intro</a></li>
+      <li>
+        <a href="#components">Components</a>
+        <ul>
+          <li><a href="#button">Button</a></li>
+          <li><a href="#checkbox">Checkbox</a></li>
+          <li><a href="#option-button">OptionButton</a></li>
+          <li><a href="#group-box">GroupBox</a></li>
+          <li><a href="#text-box">TextBox</a></li>
+          <li><a href="#dropdown">Dropdown</a></li>
+          <li>
+            <a href="#window">Window</a>
+            <ul>
+              <li><a href="#title-bar">Title Bar</a></li>
+              <li><a href="#window-contents">Window contents</a></li>
+            </ul>
+          </li>
+          <li><a href="#tree-view">TreeView</a></li>
+        </ul>
+      </li>
+      <li><a href="#issues-contributing-etc">Issues, Contributing, etc.</a></li>
+    </ul>
+  </aside>
+
+  <main>
+    <h1>98.css</h1>
+    <hr>
+    <p>A design system for building faithful recreations of old UIs.</p>
+
+    <h2 id="intro">Intro</h2>
+    <p>
+      98.css is a CSS library for building interfaces that look like Windows 98.
+      See more <a href="https://github.com/jdan/98.css">on GitHub</a>.
+    </p>
+
+    <div class="window" style="margin: 32px; width: 250px">
+      <div class="title-bar">
+        <div class="title-bar-text">
+          My First VB4 Program
+        </div>
+
+        <div class="title-bar-controls">
+          <button aria-label="Minimize"></button>
+          <button aria-label="Maximize"></button>
+          <button aria-label="Close"></button>
+        </div>
+      </div>
+      <div class="window-body">
+        <p>Hello, world!</p>
+        <section class="field-row" style="justify-content: flex-end">
+          <button>OK</button>
+          <button>Cancel</button>
+        </section>
+      </div>
+    </div>
+
+    <p>
+      This library relies on the usage of <strong>semantic HTML</strong>. To make a button, you'll need
+      to use a <code>&lt;button&gt;</code>. Input elements require labels. Icon buttons rely on
+      <code>aria-label</code>. This page will guide you through that process, but accessibility is a primary
+      goal of this project.
+    </p>
+
+    <p>
+      You can override many of the styles of your elements while maintaining the appearance provided by
+      this library. Need more padding on your buttons? Go for it. Need to add some color to your input labels?
+      Be our guest.
+    </p>
+
+    <p>
+      <strong>This library does not contain any JavaScript</strong>, it merely styles your HTML with some CSS.
+      This means 98.css is compatible with your frontend framework of choice.
+    </p>
+
+    <p>
+      Here is an example of <a href="https://codesandbox.io/s/objective-chandrasekhar-t5t6h?file=/src/index.js">98.css used with React</a>, and
+      <a href="https://codesandbox.io/s/late-sound-miqho?file=/index.html">an example with vanilla JavaScript</a>. The fastest way to use 98.css is to import it from unpkg.
+    </p>
+
+    <pre style="max-width: 375px"><code>&lt;link
+  rel="stylesheet"
+  href="https://unpkg.com/98.css"
+&gt;</code></pre>
+
+    <p>
+      You can install 98.css from the <a href="https://github.com/jdan/98.css/releases">GitHub releases page</a>, or <a href="https://www.npmjs.com/package/98.css">from npm</a>.
+    </p>
+    <pre style="max-width: 375px"><code>npm install 98.css</code></pre>
+
+    <h2 id="components">Components</h2>
+
+    <section class="component">
+      <h3 id="button">Button</h3>
+      <div>
+        <blockquote>
+          A <em>command button</em>, also referred to as a push button, is a control
+          that causes the application to perform some action when the user clicks it.
+
+          <footer>&mdash; Microsoft Windows User Experience p. 160</footer>
+        </blockquote>
+
+        <p>
+          A standard button measures 75px wide and 23px tall, with a raised outer and inner border.
+          They are given 12px of horizontal padding by default.
+        </p>
+
+        <%- example(`<button>Click me</button>`) %>
+
+        <p>
+          When buttons are clicked, the raised borders become sunken.
+          The following button is simulated to be in the pressed (active) state.
+        </p>
+
+        <% /* [[ ... ]] is used to render contents that
+              will not appear in the "Show code" section */
+        %>
+        <%- example(`<button[[ class="active"]]>I am being pressed</button>`) %>
+
+        <p>
+          Disabled buttons maintain the same raised border, but have a "washed out"
+          appearance in their label.
+        </p>
+
+        <%- example(`<button disabled>I cannot be clicked</button>`) %>
+
+        <p>
+          Button focus is communicated with a dotted border, set 4px within the contents of the button.
+          The following example is simulated to be focused.
+        </p>
+
+        <%- example(`<button[[ class="focused"]]>I am focused</button>`) %>
+      </div>
+    </section>
+
+    <section class="component">
+      <h3 id="checkbox">Checkbox</h3>
+      <div>
+        <blockquote>
+          A <em>check box</em> represents an independent or non-exclusive choice.
+          <footer>&mdash; Microsoft Windows User Experience p. 167</footer>
+        </blockquote>
+
+        <p>
+          Checkboxes are represented with a sunken panel, populated with a "check" icon when
+          selected, next to a label indicating the choice.
+        </p>
+
+        <p>
+          Note: You <strong>must</strong> include a corresponding label <strong>after</strong>
+          your checkbox, using the <code>&lt;label&gt;</code> element with a <code>for</code> attribute
+          pointed at the <code>id</code> of your input. This ensures the checkbox is easy to use with
+          assistive technologies, on top of ensuring a good user experience for all (navigating with the tab key,
+          being able to click the entire label to select the box).
+        </p>
+
+        <%- example(`
+          <input type="checkbox" id="example${getNewId()}">
+          <label for="example${getCurrentId()}">This is a checkbox</label>
+        `) %>
+
+        <p>
+          Checkboxes can be selected and disabled with the standard <code>checked</code> and <code>disabled</code>
+          attributes.
+        </p>
+
+        <p>
+          When grouping inputs, wrap each input in a container with the <code>field-row</code> class. This ensures
+          a consistent spacing between inputs.
+        </p>
+
+        <%- example(`
+          <div class="field-row">
+            <input checked type="checkbox" id="example${getNewId()}">
+            <label for="example${getCurrentId()}">I am checked</label>
+          </div>
+          <div class="field-row">
+            <input disabled type="checkbox" id="example${getNewId()}">
+            <label for="example${getCurrentId()}">I am inactive</label>
+          </div>
+          <div class="field-row">
+            <input checked disabled type="checkbox" id="example${getNewId()}">
+            <label for="example${getCurrentId()}">I am inactive but still checked</label>
+          </div>
+        `) %>
+      </div>
+    </section>
+
+    <section class="component">
+      <h3 id="option-button">OptionButton</h3>
+      <div>
+        <blockquote>
+          An <em>option button</em>, also referred to as a radio button, represents a single
+          choice within a limited set of mutually exclusive choices. That is, the user can choose only
+          one set of options.
+
+          <footer>&mdash; Microsoft Windows User Experience p. 164</footer>
+        </blockquote>
+
+        <p>
+          Option buttons can be used via the <code>radio</code> type on an input element.
+        </p>
+
+        <p>
+          Option buttons can be grouped by specifying a shared <code>name</code> attribute on each
+          input. Just as before: when grouping inputs, wrap each input in a container with the
+          <code>field-row</code> class to ensure a consistent spacing between inputs.
+        </p>
+
+        <%- example(`
+          <div class="field-row">
+            <input id="radio${getNewId()}" type="radio" name="first-example">
+            <label for="radio${getCurrentId()}">Yes</label>
+          </div>
+          <div class="field-row">
+            <input id="radio${getNewId()}" type="radio" name="first-example">
+            <label for="radio${getCurrentId()}">No</label>
+          </div>
+        `) %>
+
+        <p>
+          Option buttons can also be <code>checked</code> and <code>disabled</code> with their corresponding
+          HTML attributes.
+        </p>
+
+        <%- example(`
+          <div class="field-row">
+            <input id="radio${getNewId()}" type="radio" name="second-example">
+            <label for="radio${getCurrentId()}">Peanut butter should be smooth</label>
+          </div>
+          <div class="field-row">
+            <input checked disabled id="radio${getNewId()}" type="radio" name="second-example">
+            <label for="radio${getCurrentId()}">I understand why people like crunchy peanut butter</label>
+          </div>
+          <div class="field-row">
+            <input disabled id="radio${getNewId()}" type="radio" name="second-example">
+            <label for="radio${getCurrentId()}">Crunchy peanut butter is good</label>
+          </div>
+        `) %>
+      </div>
+    </section>
+
+    <section class="component">
+      <h3 id="group-box">GroupBox</h3>
+      <div>
+        <blockquote>
+          A <em>group box</em> is a special control you can use to organize a set of
+          controls. A group box is a rectangular frame with an optional label that surrounds
+          a set of controls.
+
+          <footer>&mdash; Microsoft Windows User Experience p. 189</footer>
+        </blockquote>
+
+        <p>
+          A group box can be used by wrapping your elements with the <code>fieldset</code> tag.
+          It contains a sunken outer border and a raised inner border, resembling an engraved box
+          around your controls.
+        </p>
+
+        <%- example(`
+          <fieldset>
+            <div class="field-row">Select one:</div>
+            <div class="field-row">
+              <input id="radio${getNewId()}" type="radio" name="fieldset-example">
+              <label for="radio${getCurrentId()}">Diners</label>
+            </div>
+            <div class="field-row">
+              <input id="radio${getNewId()}" type="radio" name="fieldset-example">
+              <label for="radio${getCurrentId()}">Drive-Ins</label>
+            </div>
+            <div class="field-row">
+              <input id="radio${getNewId()}" type="radio" name="fieldset-example">
+              <label for="radio${getCurrentId()}">Dives</label>
+            </div>
+          </fieldset>
+        `) %>
+
+        <p>
+          You can provide your group with a label by placing a <code>legend</code> element
+          within the <code>fieldset</code>.
+        </p>
+
+        <%- example(`
+          <fieldset>
+            <legend>Today's mood</legend>
+            <div class="field-row">
+              <input id="radio${getNewId()}" type="radio" name="fieldset-example2">
+              <label for="radio${getCurrentId()}">Claire Saffitz</label>
+            </div>
+            <div class="field-row">
+              <input id="radio${getNewId()}" type="radio" name="fieldset-example2">
+              <label for="radio${getCurrentId()}">Brad Leone</label>
+            </div>
+            <div class="field-row">
+              <input id="radio${getNewId()}" type="radio" name="fieldset-example2">
+              <label for="radio${getCurrentId()}">Chris Morocco</label>
+            </div>
+            <div class="field-row">
+              <input id="radio${getNewId()}" type="radio" name="fieldset-example2">
+              <label for="radio${getCurrentId()}">Carla Lalli Music</label>
+            </div>
+          </fieldset>
+        `) %>
+      </div>
+    </section>
+
+    <section class="component">
+      <h3 id="text-box">TextBox</h3>
+      <div>
+        <blockquote>
+          A <em>text box</em> (also referred to as an edit control) is a
+          rectangular control where the user enters or edits text. It can
+          be defined to support a single line or multiple lines of text.
+
+          <footer>&mdash; Microsoft Windows User Experience p. 181</footer>
+        </blockquote>
+
+        <p>
+          Text boxes can rendered by specifying a <code>text</code> type on an
+          <code>input</code> element. As with checkboxes and radio buttons, you
+          should provide a corresponding label with a properly set <code>for</code>
+          attribute, and wrap both in a container with the <code>field-row</code> class.
+        </p>
+
+        <%- example(`
+          <div class="field-row">
+            <label for="text${getNewId()}">Occupation</label>
+            <input id="text${getCurrentId()}" type="text" />
+          </div>
+        `) %>
+
+        <p>
+          Additionally, you can make use of the <code>field-row-stacked</code> class
+          to position your label above the input instead of beside it.
+        </p>
+
+        <%- example(`
+          <div class="field-row-stacked" style="width: 200px">
+            <label for="text${getNewId()}">Address (Line 1)</label>
+            <input id="text${getCurrentId()}" type="text" />
+          </div>
+          <div class="field-row-stacked" style="width: 200px">
+            <label for="text${getNewId()}">Address (Line 2)</label>
+            <input id="text${getCurrentId()}" type="text" />
+          </div>
+        `) %>
+
+        <p>
+          To support multiple lines in the user's input, use the <code>textarea</code>
+          element instead.
+        </p>
+
+        <%- example(`
+          <div class="field-row-stacked" style="width: 200px">
+            <label for="text${getNewId()}">Additional notes</label>
+            <textarea id="text${getCurrentId()}" rows="8"></textarea>
+          </div>
+        `) %>
+      </div>
+    </section>
+
+    <section class="component">
+      <h3 id="dropdown">Dropdown</h3>
+      <div>
+        <blockquote>
+          A <em>drop-down list box</em> allows the selection of only a
+          single item from a list. In its closed state, the control displays
+          the current value for the control. The user opens the list to change
+          the value.
+
+          <footer>
+            &mdash; Microsoft Windows User Experience p. 175
+          </footer>
+        </blockquote>
+
+        <p>
+          Dropdowns can be rendered by using the <code>select</code> and <code>option</code>
+          elements.
+        </p>
+
+        <%- example(`
+          <select>
+            <option>5 - Incredible!</option>
+            <option>4 - Great!</option>
+            <option>3 - Pretty good</option>
+            <option>2 - Not so great</option>
+            <option>1 - Unfortunate</option>
+          </select>
+        `) %>
+
+        <p>
+          By default, the first option will be selected. You can change this by
+          giving one of your <code>option</code> elements the <code>selected</code>
+          attribute.
+        </p>
+
+        <%- example(`
+          <select>
+            <option>5 - Incredible!</option>
+            <option>4 - Great!</option>
+            <option selected>3 - Pretty good</option>
+            <option>2 - Not so great</option>
+            <option>1 - Unfortunate</option>
+          </select>
+        `) %>
+      </div>
+    </section>
+
+    <h3 id="window">Window</h3>
+    <p>
+      The following components illustrate how to build complete windows using
+      98.css.
+    </p>
+
+    <section class="component">
+      <h4 id="title-bar">Title Bar</h4>
+      <div>
+        <blockquote>
+          At the top edge of the window, inside its border, is the title bar
+          (also reffered to as the caption or caption bar), which extends across
+          the width of the window. The title bar identifies the contents of the
+          window.
+
+          <footer>
+            &mdash; Microsoft Windows User Experience p. 118
+          </footer>
+        </blockquote>
+
+        <blockquote>
+          Include command buttons associated with the common commands of the
+          primary window in the title bar. These buttons act as shortcuts to specific
+          window commands.
+
+          <footer>
+            &mdash; Microsoft Windows User Experience p. 122
+          </footer>
+        </blockquote>
+
+        <p>
+          You can build a complete title bar by making use of three classes,
+          <code>title-bar</code>, <code>title-bar-text</code>, and <code>title-bar-controls</code>.
+        </p>
+
+        <%- example(`
+          <div class="title-bar">
+            <div class="title-bar-text">A Title Bar</div>
+            <div class="title-bar-controls">
+              <button aria-label="Close"></button>
+            </div>
+          </div>
+        `) %>
+
+        <p>
+          We make use of <code>aria-label</code> to render the Close button, to let
+          assistive technologies know the intent of this button. You may also use
+          "Minimize" and "Maximize" like so:
+        </p>
+
+        <%- example(`
+          <div class="title-bar">
+            <div class="title-bar-text">A Title Bar</div>
+            <div class="title-bar-controls">
+              <button aria-label="Minimize"></button>
+              <button aria-label="Maximize"></button>
+              <button aria-label="Close"></button>
+            </div>
+          </div>
+        `) %>
+      </div>
+    </section>
+
+    <section class="component">
+      <h4 id="window-contents">Window contents</h4>
+      <div>
+        <blockquote>
+          Every window has a boundary that defines its shape.
+
+          <footer>
+            &mdash; Microsoft Windows User Experience p. 118
+          </footer>
+        </blockquote>
+
+        <p>
+          To give our title bar a home, we make use of the <code>window</code>
+          class. This provides a raised outer and inner border, as well as some
+          padding. We can freely resize the window by specifying a width in the
+          container style.
+        </p>
+
+        <%- example(`
+          <div class="window" style="width: 300px">
+            <div class="title-bar">
+              <div class="title-bar-text">A Complete Window</div>
+              <div class="title-bar-controls">
+                <button aria-label="Minimize"></button>
+                <button aria-label="Maximize"></button>
+                <button aria-label="Close"></button>
+              </div>
+            </div>
+          </div>
+        `) %>
+
+        <p>
+          To draw the contents of the window, we use the <code>window-body</code>
+          class under the title bar.
+        </p>
+
+        <%- example(`
+          <div class="window" style="width: 300px">
+            <div class="title-bar">
+              <div class="title-bar-text">A Window With Stuff In It</div>
+              <div class="title-bar-controls">
+                <button aria-label="Minimize"></button>
+                <button aria-label="Maximize"></button>
+                <button aria-label="Close"></button>
+              </div>
+            </div>
+            <div class="window-body">
+              <p>There's so much room for activities!</p>
+            </div>
+          </div>
+        `) %>
+      </div>
+    </section>
+
+    <section class="component">
+      <h3 id="tree-view">TreeView</h3>
+      <div>
+        <blockquote>
+          A <em>tree view control</em> is a special list box control
+          that displays a set of objects as an indented outline based
+          on their logical hierarchical relationship.
+
+          <footer>
+            &mdash; Microsoft Windows User Experience p. 178
+          </footer>
+        </blockquote>
+
+        <p>
+          To render a tree view, use an <code>ul</code> element with the
+          <code>tree-view</code> class. The children of this list (<code>li</code>
+          elements), can contain whatever you'd like.
+        </p>
+
+        <%- example(`
+          <ul class="tree-view">
+            <li>We can put</li>
+            <li><strong style="color: purple">✨ Whatever ✨</strong></li>
+            <li>We want in here</li>
+          </ul>
+        `) %>
+
+        <p>
+          To make this a tree, we can nest further <code>ul</code> elements
+          (no class needed on these). This will provide them with a nice dotted
+          border and indentation to illustrate the structure of the tree.
+        </p>
+
+        <%- example(`
+          <ul class="tree-view">
+            <li>Table of Contents</li>
+            <li>What is web development?</li>
+            <li>
+              CSS
+              <ul>
+                <li>Selectors</li>
+                <li>Specificity</li>
+                <li>Properties</li>
+              </ul>
+            </li>
+            <li>
+              JavaScript
+              <ul>
+                <li>Avoid at all costs</li>
+              </ul>
+            </li>
+            <li>HTML</li>
+            <li>Special Thanks</li>
+          </ul>
+        `) %>
+      </div>
+    </section>
+
+    <h2 id="issues-contributing-etc">Issues, Contributing, etc.</h2>
+
+    <p>
+      98.css is <a href="https://github.com/jdan/98.css/blob/master/LICENSE">MIT licensed</a>.
+    </p>
+
+    <p>
+      Refer to <a href="https://github.com/jdan/98.css/issues">the GitHub issues page</a> to see bugs
+      in my CSS or report new ones. I'd really like to see your pull requests (especially those new to
+      open-source!) and will happily provide code review. 98.css is a fun, silly project and I'd like
+      to make it a fun place to build your open-source muscle.
+    </p>
+
+    <p>
+      Thank you for checking my little project out, I hope it brought you some joy today. Consider
+      <a href="https://github.com/jdan/98.css/stargazers">starring/following along on GitHub</a> and maybe
+      subscribing to more fun things on <a href="https://twitter.com/jdan">my twitter</a>. 👋
+    </p>
+  </main>
+</body>
+</html>
