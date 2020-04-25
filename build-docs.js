@@ -32,14 +32,14 @@ function example(code) {
   </div>`;
 }
 
-glob("dist/*", (err, files) => {
+glob("docs/*", (err, files) => {
   if (!err) {
     files.forEach((srcFile) =>
-      fs.copyFileSync(srcFile, path.join("docs", path.basename(srcFile)))
+      fs.copyFileSync(srcFile, path.join("dist", path.basename(srcFile)))
     );
   } else throw "error globbing dist directory.";
 });
 fs.writeFileSync(
-  "docs/index.html",
+  path.join(__dirname, "/dist/index.html"),
   ejs.render(template, { getNewId, getCurrentId, example })
 );
