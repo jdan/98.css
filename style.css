@@ -290,6 +290,10 @@ input[type="radio"] + label::before {
   background: svg-load("./icon/radio-border.svg");
 }
 
+input[type="radio"]:active + label::before {
+  background: svg-load("./icon/radio-border-disabled.svg");
+}
+
 input[type="radio"]:checked + label::after {
   content: "";
   display: block;
@@ -329,6 +333,10 @@ input[type="checkbox"] + label::before {
   background: var(--button-highlight);
   box-shadow: var(--border-field);
   margin-right: var(--radio-label-spacing);
+}
+
+input[type="checkbox"]:active + label::before {
+  background: var(--surface);
 }
 
 input[type="checkbox"]:checked + label::after {
