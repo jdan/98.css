@@ -48,7 +48,9 @@ Refer to the [documentation page](https://jdan.github.io/98.css/) for specific i
 
 [`style.css`](https://github.com/jdan/98.css/blob/master/style.css) is where everything happens.
 
-`npm run build:docs` will compile `style.css` (and all fonts/icons/etc) and rebuild the `dist/` directory which powers https://jdan.github.io/98.css. It's a static directory so serve it with your server of choice (I am partial to `python -m SimpleHTTPServer 3000`) to see your changes.
+You can use `npm start` to start a development environment that will watch for file changes and rebuild 98.css, serving everything on localhost.
+
+You can run a build manually with `npm run build`. This will write to the `dist/` directory.
 
 ### Issues, Contributing, etc.
 

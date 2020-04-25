@@ -19,13 +19,12 @@ function buildCSS() {
       from: "style.css",
       to: "dist/98.css",
       map: { inline: false },
+    })
+    .then((result) => {
+      mkdirp.sync("dist");
+      fs.writeFileSync("dist/98.css", result.css);
+      fs.writeFileSync("dist/98.css.map", result.map);
     });
-}
-
-function writeCSS(result) {
-  mkdirp.sync("dist");
-  fs.writeFileSync("dist/98.css", result.css);
-  fs.writeFileSync("dist/98.css.map", result.map);
 }
 
 function buildDocs() {
@@ -67,4 +66,11 @@ function buildDocs() {
   );
 }
 
-buildCSS().then(writeCSS).then(buildDocs);
+function build() {
+  buildCSS()
+    .then(buildDocs)
+    .catch((err) => console.log(err));
+}
+module.exports = build;
+
+build();
