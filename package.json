@@ -8,7 +8,8 @@
   },
   "scripts": {
     "build": "node build.js",
-    "build:docs": "npm run build && node build-docs.js"
+    "build:docs": "npm run build && node build-docs.js",
+    "deploy:docs": "npm run build:docs && gh-pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -28,6 +29,7 @@
     "cssnano": "^4.1.10",
     "dedent": "^0.7.0",
     "ejs": "^3.0.2",
+    "gh-pages": "^2.2.0",
     "glob": "^7.1.6",
     "highlight.js": "^9.18.1",
     "mkdirp": "^1.0.4",
