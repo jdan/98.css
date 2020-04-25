@@ -550,3 +550,31 @@ summary:focus {
   width: 16px;
   background-image: svg-load("./icon/button-right.svg");
 }
+
+.menu > ul {
+  display: none;
+  padding-left: 0;
+  list-style: none;
+  box-shadow: var(--border-raised-outer), var(--border-raised-inner);
+  background: var(--surface);
+  padding: 2px;
+  margin: 0;
+}
+
+.menu > ul li {
+  padding: 7px 10px;
+  cursor: pointer;
+}
+
+.menu > ul li:hover {
+  background-color: var(--dialog-blue);
+  color: var(--button-highlight);
+}
+
+.menu > button {
+  width: 100%;
+}
+
+.menu > button:focus + ul {
+  display: block;
+}
