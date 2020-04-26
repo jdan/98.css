@@ -8,14 +8,19 @@ const mkdirp = require("mkdirp");
 const path = require("path");
 const postcss = require("postcss");
 
+const { homepage, version } = require("./package.json");
+
 function buildCSS() {
+  const input =
+    `/*! 98.css v${version} - ${homepage} */\n` + fs.readFileSync("style.css");
+
   return postcss()
     .use(require("postcss-inline-svg"))
     .use(require("postcss-css-variables"))
     .use(require("postcss-calc"))
     .use(require("postcss-copy")({ dest: "dist", template: "[name].[ext]" }))
     .use(require("cssnano"))
-    .process(fs.readFileSync("style.css"), {
+    .process(input, {
       from: "style.css",
       to: "dist/98.css",
       map: { inline: false },

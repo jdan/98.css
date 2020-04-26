@@ -1,6 +1,6 @@
 {
   "name": "98.css",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "A design system for building faithful recreations of old UIs",
   "main": "dist/98.css",
   "directories": {
@@ -23,7 +23,7 @@
   "bugs": {
     "url": "https://github.com/jdan/98.css/issues"
   },
-  "homepage": "https://github.com/jdan/98.css#readme",
+  "homepage": "https://github.com/jdan/98.css",
   "devDependencies": {
     "chokidar": "^3.3.1",
     "cssnano": "^4.1.10",
