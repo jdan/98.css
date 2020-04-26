@@ -6,6 +6,9 @@ A design system for building faithful recreations of old UIs.
 
 98.css is a CSS file that takes semantic HTML and makes it look pretty. It does not ship with any JavaScript, so it is compatible with your frontend framework of choice.
 
+[![npm](https://img.shields.io/npm/v/98.css.svg)](http://npm.im/98.css)
+[![gzip size](http://img.badgesize.io/https://unpkg.com/98.css?compression=gzip&label=gzip)](https://unpkg.com/98.css)
+
 ### Installation / Usage
 
 The easiest way to use 98.css is to import it from [unpkg](https://unpkg.com/).
