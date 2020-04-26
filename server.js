@@ -1,7 +1,4 @@
 const chokidar = require("chokidar");
-const handler = require("serve-handler");
-const http = require("http");
-
 const build = require("./build");
 
 chokidar
@@ -15,12 +12,5 @@ chokidar
     build();
   });
 
-const server = http.createServer((request, response) => {
-  return handler(request, response, {
-    public: "dist",
-  });
-});
-
-server.listen(3000, () => {
-  console.log("Running at http://localhost:3000");
-});
+var liveServer = require("live-server");
+liveServer.start({ port: 3000, root: "dist" });

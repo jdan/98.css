@@ -46,9 +46,11 @@ Refer to the [documentation page](https://jdan.github.io/98.css/) for specific i
 
 ### Developing
 
+First, run `npm install`.
+
 [`style.css`](https://github.com/jdan/98.css/blob/master/style.css) is where everything happens.
 
-You can use `npm start` to start a development environment that will watch for file changes and rebuild 98.css, serving everything on localhost.
+You can use `npm start` to start a development environment that will watch for file changes and rebuild 98.css, reloading your browser in the process.
 
 You can run a build manually with `npm run build`. This will write to the `dist/` directory.
 
