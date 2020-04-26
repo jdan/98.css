@@ -129,6 +129,14 @@ button {
   padding: 0 12px;
 }
 
+.vertical-bar{
+  width: 4px;
+  height: 20px;
+  background: #c0c0c0;
+  box-shadow: inset -1px -1px var(--window-frame), inset 1px 1px var(--button-highlight), inset -1px -1px var(--button-highlight), inset 1px 1px var(--window-frame);
+  border-radius: 5px;
+}
+
 button:not(:disabled):active {
   box-shadow: var(--border-sunken-outer), var(--border-sunken-inner);
 }
