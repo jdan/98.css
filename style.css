@@ -240,7 +240,7 @@ legend {
   margin-top: var(--grouped-element-spacing);
 }
 
-.field-row * + * {
+.field-row > * + * {
   margin-left: var(--grouped-element-spacing);
 }
 
