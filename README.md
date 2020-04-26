@@ -2,7 +2,8 @@
 
 A design system for building faithful recreations of old UIs.
 
-![a screenshot of a window with the title "My First VB4 Program" and two buttons OK and Cancel, styled like a Windows 98 dialog](https://github.com/jdan/98.css/blob/master/docs/window.png?raw=true)
+<img alt="a screenshot of a window with the title 'My First VB4 Program' and two buttons OK and Cancel, styled like a Windows 98 dialog" src="https://github.com/jdan/98.css/blob/master/docs/window.png?raw=true" height="133">
+<img alt="a magnified view showing pixel-perfect borders on a scrollbar and button element" src="https://github.com/jdan/98.css/blob/master/docs/zoom.png?raw=true?raw=true" height="133">
 
 98.css is a CSS file that takes semantic HTML and makes it look pretty. It does not ship with any JavaScript, so it is compatible with your frontend framework of choice.
 
