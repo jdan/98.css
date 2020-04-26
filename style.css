@@ -527,6 +527,13 @@ summary:focus {
   box-shadow: var(--border-raised-outer), var(--border-raised-inner);
 }
 
+::-webkit-scrollbar-button:horizontal:start:decrement,
+::-webkit-scrollbar-button:horizontal:end:increment,
+::-webkit-scrollbar-button:vertical:start:decrement,
+::-webkit-scrollbar-button:vertical:end:increment {
+  display: block;
+}
+
 ::-webkit-scrollbar-button:vertical:start {
   height: 17px;
   background-image: svg-load("./icon/button-up.svg");
