@@ -796,6 +796,10 @@
           (no class needed on these). This will provide them with a nice dotted
           border and indentation to illustrate the structure of the tree.
         </p>
+        <p>
+          To create expandable sections, wrap child lists inside of
+          <code>details</code> elements.
+        </p>
 
         <div class="example">
       <ul class="tree-view">
@@ -810,10 +814,33 @@
     </ul>
   </li>
   <li>
-    JavaScript
-    <ul>
-      <li>Avoid at all costs</li>
-    </ul>
+    <details open>
+      <summary>JavaScript</summary>
+      <ul>
+        <li>Avoid at all costs</li>
+        <li>
+          <details>
+            <summary>Unless</summary>
+            <ul>
+              <li>Avoid</li>
+              <li>
+                <details>
+                  <summary>At</summary>
+                  <ul>
+                    <li>Avoid</li>
+                    <li>At</li>
+                    <li>All</li>
+                    <li>Cost</li>
+                  </ul>
+                </details>
+              </li>
+              <li>All</li>
+              <li>Cost</li>
+            </ul>
+          </details>
+        </li>
+      </ul>
+    </details>
   </li>
   <li>HTML</li>
   <li>Special Thanks</li>
@@ -832,10 +859,33 @@
     <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
-    JavaScript
-    <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Avoid at all costs<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">details</span> <span class="hljs-attr">open</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">summary</span>&gt;</span>JavaScript<span class="hljs-tag">&lt;/<span class="hljs-name">summary</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Avoid at all costs<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">details</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">summary</span>&gt;</span>Unless<span class="hljs-tag">&lt;/<span class="hljs-name">summary</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Avoid<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">details</span>&gt;</span>
+                  <span class="hljs-tag">&lt;<span class="hljs-name">summary</span>&gt;</span>At<span class="hljs-tag">&lt;/<span class="hljs-name">summary</span>&gt;</span>
+                  <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Avoid<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>At<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>All<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Cost<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                  <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">details</span>&gt;</span>
+              <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>All<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Cost<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">details</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">details</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>HTML<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Special Thanks<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
