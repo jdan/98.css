@@ -43,6 +43,7 @@
           <li><a href="#tree-view">TreeView</a></li>
           <li><a href="#tabs">Tabs</a></li>
           <li><a href="#table-view">TableView</a></li>
+          <li><a href="#progress-indicator">Progress Indicator</a></li>
         </ul>
       </li>
       <li><a href="#issues-contributing-etc">Issues, Contributing, etc.</a></li>
@@ -878,7 +879,6 @@
               </div>
     </section>
     <section class="component">
-
       <h3 id="table-view">TableView</h3>
       <div>
         <p>
@@ -965,6 +965,35 @@
             });
           </script>
       `) %>
+    </div>
+    </section>
+
+    <section class="component">
+      <h3 id="progress-indicator">Progress Indicator</h3>
+      <div>
+        <blockquote>
+          A <em>ProgressIndicator</em> is a control, also known as a <em>progress bar control</em>, you can use to show the percentage of completion of a lengthy operation.
+
+          <footer>
+            &mdash; Microsoft Windows User Experience p. 142
+          </footer>
+        </blockquote>
+
+        <p>
+          The ProgressIndicator component supports two types of bars. Both are deterministic, which means that you should give it a <code>value</code> parameter. Indeterministic progress bars are not supported, yet.
+        </p>
+
+        <p>
+          There are two types of progress bars: continuous and block. The continuous doesn't require any further configuration. The block bar does require a class of <code>progress-bar-block</code>.
+        </p>
+
+        <%- example(`
+          <progress value="50" max="100"></progress>
+        `) %>
+
+        <%- example(`
+          <progress class="progress-bar-block" value="70" max="100"></progress>
+        `) %>
       </div>
     </section>
 
