@@ -1,14 +1,15 @@
 {
   "name": "98.css",
-  "version": "0.1.5",
+  "version": "0.1.11",
   "description": "A design system for building faithful recreations of old UIs",
-  "main": "build/98.css",
+  "main": "dist/98.css",
   "directories": {
     "doc": "docs"
   },
   "scripts": {
-    "test": "sh test.sh",
-    "build": "node build.js"
+    "build": "node build.js",
+    "deploy:docs": "npm run build && gh-pages -d dist",
+    "release": "npm run build && npm publish"
   },
   "repository": {
     "type": "git",
@@ -23,13 +24,16 @@
   "bugs": {
     "url": "https://github.com/jdan/98.css/issues"
   },
-  "homepage": "https://github.com/jdan/98.css#readme",
+  "homepage": "https://github.com/jdan/98.css",
   "devDependencies": {
+    "chokidar": "^3.3.1",
     "cssnano": "^4.1.10",
     "dedent": "^0.7.0",
     "ejs": "^3.0.2",
+    "gh-pages": "^2.2.0",
     "glob": "^7.1.6",
     "highlight.js": "^9.18.1",
+    "live-server": "^1.2.1",
     "mkdirp": "^1.0.4",
     "postcss-calc": "^7.0.2",
     "postcss-copy": "^7.1.0",

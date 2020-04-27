@@ -54,6 +54,12 @@
   --border-sunken-inner: inset -2px -2px var(--button-face),
     inset 2px 2px var(--button-shadow);
 
+  /* Window borders flip button-face and button-highlight */
+  --border-window-outer: inset -1px -1px var(--window-frame),
+    inset 1px 1px var(--button-face);
+  --border-window-inner: inset -2px -2px var(--button-shadow),
+    inset 2px 2px var(--button-highlight);
+
   /* Field borders (checkbox, input, etc) flip window-frame and button-shadow */
   --border-field: inset -1px -1px var(--button-highlight),
     inset 1px 1px var(--button-shadow), inset -2px -2px var(--button-face),
@@ -129,13 +135,30 @@ button {
   padding: 0 12px;
 }
 
+.vertical-bar {
+  width: 4px;
+  height: 20px;
+  background: #c0c0c0;
+  box-shadow: var(--border-raised-outer), var(--border-raised-inner);
+}
+
 button:not(:disabled):active {
   box-shadow: var(--border-sunken-outer), var(--border-sunken-inner);
+}
+
+@media (not(hover)) {
+  button:not(:disabled):hover {
+    box-shadow: var(--border-sunken-outer), var(--border-sunken-inner);
+  }
 }
 
 button:focus {
   outline: 1px dotted #000000;
   outline-offset: -4px;
+}
+
+button::-moz-focus-inner {
+  border: 0;
 }
 
 :disabled,
@@ -145,7 +168,7 @@ button:focus {
 }
 
 .window {
-  box-shadow: var(--border-raised-outer), var(--border-raised-inner);
+  box-shadow: var(--border-window-outer), var(--border-window-inner);
   background: var(--surface);
   padding: 3px;
 }
@@ -156,7 +179,7 @@ button:focus {
     var(--dialog-blue),
     var(--dialog-blue-light)
   );
-  padding: 2px;
+  padding: 3px 2px 3px 3px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -176,8 +199,8 @@ button:focus {
 .title-bar-controls button {
   padding: 0;
   display: block;
-  min-width: 14px;
-  min-height: 12px;
+  min-width: 16px;
+  min-height: 14px;
 }
 
 .title-bar-controls button:focus {
@@ -187,22 +210,20 @@ button:focus {
 .title-bar-controls button[aria-label="Minimize"] {
   background-image: svg-load("./icon/minimize.svg");
   background-repeat: no-repeat;
-  background-position: bottom 2px left 3px;
+  background-position: bottom 3px left 4px;
 }
 
 .title-bar-controls button[aria-label="Maximize"] {
   background-image: svg-load("./icon/maximize.svg");
   background-repeat: no-repeat;
-  /* Off by 1px because contents can't go above the inner shadow */
-  /* Should be 9px by 9px, with top 1px */
-  background-position: top 2px left 2px;
+  background-position: top 2px left 3px;
 }
 
 .title-bar-controls button[aria-label="Close"] {
   margin-left: 2px;
   background-image: svg-load("./icon/close.svg");
   background-repeat: no-repeat;
-  background-position: top 2px center;
+  background-position: top 3px left 4px;
 }
 
 .window-body {
@@ -230,7 +251,7 @@ legend {
   margin-top: var(--grouped-element-spacing);
 }
 
-.field-row * + * {
+.field-row > * + * {
   margin-left: var(--grouped-element-spacing);
 }
 
@@ -254,6 +275,7 @@ input[type="checkbox"] {
   -webkit-appearance: none;
   -moz-appearance: none;
   margin: 0;
+  background: 0; /* necessary for hiding default disabled-state styling on iOS */
   border: none;
 }
 
@@ -277,6 +299,10 @@ input[type="radio"] + label::before {
   height: var(--radio-width);
   margin-right: var(--radio-label-spacing);
   background: svg-load("./icon/radio-border.svg");
+}
+
+input[type="radio"]:active + label::before {
+  background: svg-load("./icon/radio-border-disabled.svg");
 }
 
 input[type="radio"]:checked + label::after {
@@ -320,6 +346,10 @@ input[type="checkbox"] + label::before {
   margin-right: var(--radio-label-spacing);
 }
 
+input[type="checkbox"]:active + label::before {
+  background: var(--surface);
+}
+
 input[type="checkbox"]:checked + label::after {
   content: "";
   display: block;
@@ -342,6 +372,8 @@ input[type="checkbox"][disabled]:checked + label::after {
 }
 
 input[type="text"],
+input[type="password"],
+input[type="email"],
 select,
 textarea {
   padding: 3px 4px;
@@ -356,11 +388,15 @@ textarea {
 }
 
 input[type="text"],
+input[type="password"],
+input[type="email"],
 select {
   height: 21px;
 }
 
-input[type="text"] {
+input[type="text"],
+input[type="password"],
+input[type="email"] {
   /* For some reason descenders are getting cut off without this */
   line-height: 2;
 }
@@ -379,6 +415,8 @@ select {
 
 select:focus,
 input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
 textarea:focus {
   outline: none;
 }
@@ -463,6 +501,38 @@ ul.tree-view ul > li:last-child::after {
   background: var(--button-highlight);
 }
 
+ul.tree-view details {
+  margin-top: 0;
+}
+
+ul.tree-view details[open] summary {
+  margin-bottom: 0;
+}
+
+ul.tree-view ul details > summary:before {
+  margin-left: -22px;
+  position: relative;
+  z-index: 1;
+}
+
+ul.tree-view details > summary:before {
+  text-align: center;
+  display: block;
+  float: left;
+  content: "+";
+  border: 1px solid #808080;
+  width: 8px;
+  height: 9px;
+  line-height: 9px;
+  margin-right: 5px;
+  padding-left: 1px;
+  background-color: #fff;
+}
+
+ul.tree-view details[open] > summary:before {
+  content: "-";
+}
+
 pre {
   display: block;
   background: var(--button-highlight);
@@ -498,6 +568,13 @@ summary:focus {
 ::-webkit-scrollbar-thumb {
   background-color: var(--button-face);
   box-shadow: var(--border-raised-outer), var(--border-raised-inner);
+}
+
+::-webkit-scrollbar-button:horizontal:start:decrement,
+::-webkit-scrollbar-button:horizontal:end:increment,
+::-webkit-scrollbar-button:vertical:start:decrement,
+::-webkit-scrollbar-button:vertical:end:increment {
+  display: block;
 }
 
 ::-webkit-scrollbar-button:vertical:start {

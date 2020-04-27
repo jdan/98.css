@@ -1,8 +1,11 @@
 ## 98.css
 
+[![npm](https://98badges.now.sh/api/version)](http://npm.im/98.css)
+[![gzip size](https://98badges.now.sh/api/size)](https://unpkg.com/98.css)
+
 A design system for building faithful recreations of old UIs.
 
-![a screenshot of a window with the title "My First VB4 Program" and two buttons OK and Cancel, styled like a Windows 98 dialog](https://github.com/jdan/98.css/blob/master/docs/window.png?raw=true)
+<img alt="a screenshot of a window with the title 'My First VB4 Program' and two buttons OK and Cancel, styled like a Windows 98 dialog" src="https://github.com/jdan/98.css/blob/master/docs/window.png?raw=true" height="133"> <img alt="a magnified view showing pixel-perfect borders on a scrollbar and button element" src="https://github.com/jdan/98.css/blob/master/docs/zoom.png?raw=true?raw=true" height="133">
 
 98.css is a CSS file that takes semantic HTML and makes it look pretty. It does not ship with any JavaScript, so it is compatible with your frontend framework of choice.
 
@@ -13,24 +16,24 @@ The easiest way to use 98.css is to import it from [unpkg](https://unpkg.com/).
 ```html
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>98.css example</title>
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" href="https://unpkg.com/98.css" />
-  </head>
+<head>
+  <title>98.css example</title>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="https://unpkg.com/98.css" />
+</head>
 
-  <body>
-    <div class="window" style="margin: 32px; width: 250px">
-      <div class="title-bar">
-        <div class="title-bar-text">
-          My First VB4 Program
-        </div>
-      </div>
-      <div class="window-body">
-        <p>Hello, world!</p>
+<body>
+  <div class="window" style="margin: 32px; width: 250px">
+    <div class="title-bar">
+      <div class="title-bar-text">
+        My First VB4 Program
       </div>
     </div>
-  </body>
+    <div class="window-body">
+      <p>Hello, world!</p>
+    </div>
+  </div>
+</body>
 </html>
 ```
 
@@ -43,6 +46,16 @@ npm install 98.css
 Here is an example of [98.css being used with React](https://codesandbox.io/s/objective-chandrasekhar-t5t6h?file=/src/index.js), and [an example with vanilla JavaScript](https://codesandbox.io/s/late-sound-miqho?file=/index.html).
 
 Refer to the [documentation page](https://jdan.github.io/98.css/) for specific instructions on this library's components.
+
+### Developing
+
+First, run `npm install`.
+
+[`style.css`](https://github.com/jdan/98.css/blob/master/style.css) is where everything happens.
+
+You can use `npm start` to start a development environment that will watch for file changes and rebuild 98.css, reloading your browser in the process.
+
+You can run a build manually with `npm run build`. This will write to the `dist/` directory.
 
 ### Issues, Contributing, etc.
 

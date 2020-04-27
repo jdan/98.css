@@ -14,11 +14,11 @@
     content="https://github.com/jdan/98.css/raw/master/docs/window.png?raw=true"
   />
 
-  <link rel="stylesheet" href="98.css"></style>
-  <link rel="stylesheet" href="docs.css"></style>
-  <link rel="stylesheet" href="vs.css"></style>
+  <link rel="stylesheet" href="98.css">
+  <link rel="stylesheet" href="docs.css">
+  <link rel="stylesheet" href="vs.css">
 </head>
-<body>
+<body ontouchstart>
   <aside>
     <ul class="tree-view">
       <li><a href="#intro">Intro</a></li>
@@ -50,6 +50,15 @@
     <h1>98.css</h1>
     <hr>
     <p>A design system for building faithful recreations of old UIs.</p>
+
+    <p>
+      <a href="http://npm.im/98.css" rel="nofollow" style="text-decoration: none">
+        <img alt="npm" src="https://98badges.now.sh/api/version" style="max-width:100%;">
+      </a>
+      <a href="https://unpkg.com/98.css" rel="nofollow" style="text-decoration: none">
+        <img alt="gzip size" src="https://98badges.now.sh/api/size" style="max-width:100%;">
+      </a>
+    </p>
 
     <h2 id="intro">Intro</h2>
     <p>
@@ -605,6 +614,10 @@
           (no class needed on these). This will provide them with a nice dotted
           border and indentation to illustrate the structure of the tree.
         </p>
+        <p>
+          To create expandable sections, wrap child lists inside of
+          <code>details</code> elements.
+        </p>
 
         <%- example(`
           <ul class="tree-view">
@@ -619,10 +632,33 @@
               </ul>
             </li>
             <li>
-              JavaScript
-              <ul>
-                <li>Avoid at all costs</li>
-              </ul>
+              <details open>
+                <summary>JavaScript</summary>
+                <ul>
+                  <li>Avoid at all costs</li>
+                  <li>
+                    <details>
+                      <summary>Unless</summary>
+                      <ul>
+                        <li>Avoid</li>
+                        <li>
+                          <details>
+                            <summary>At</summary>
+                            <ul>
+                              <li>Avoid</li>
+                              <li>At</li>
+                              <li>All</li>
+                              <li>Cost</li>
+                            </ul>
+                          </details>
+                        </li>
+                        <li>All</li>
+                        <li>Cost</li>
+                      </ul>
+                    </details>
+                  </li>
+                </ul>
+              </details>
             </li>
             <li>HTML</li>
             <li>Special Thanks</li>
