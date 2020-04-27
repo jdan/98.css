@@ -507,6 +507,38 @@ summary:focus {
   outline: 1px dotted #000000;
 }
 
+progress {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 280px;
+  height: 16px;
+  box-shadow: var(--border-field);
+}
+
+progress::-webkit-progress-bar {
+  background: var(--surface);
+  box-shadow: var(--border-field);
+}
+
+progress[value]::-webkit-progress-value,
+progress[value]::-moz-progress-bar {
+  background-color: var(--dialog-blue);
+  box-shadow: var(--border-field);
+}
+
+progress[value].progress-bar-block::-webkit-progress-value,
+progress[value].progress-bar-block::-moz-progress-bar {
+  background: repeating-linear-gradient(to right,
+    var(--dialog-blue),
+    var(--dialog-blue) 4px,
+    var(--surface) 4px,
+    var(--surface) 8px,
+    var(--dialog-blue) 8px,
+    var(--dialog-blue) 12px
+  );
+}
+
 ::-webkit-scrollbar {
   width: 16px;
 }
