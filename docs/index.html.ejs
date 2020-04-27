@@ -586,6 +586,10 @@
           (no class needed on these). This will provide them with a nice dotted
           border and indentation to illustrate the structure of the tree.
         </p>
+        <p>
+          To create expandable sections, wrap child lists inside of
+          <code>details</code> elements.
+        </p>
 
         <%- example(`
           <ul class="tree-view">
@@ -600,10 +604,33 @@
               </ul>
             </li>
             <li>
-              JavaScript
-              <ul>
-                <li>Avoid at all costs</li>
-              </ul>
+              <details open>
+                <summary>JavaScript</summary>
+                <ul>
+                  <li>Avoid at all costs</li>
+                  <li>
+                    <details>
+                      <summary>Unless</summary>
+                      <ul>
+                        <li>Avoid</li>
+                        <li>
+                          <details>
+                            <summary>At</summary>
+                            <ul>
+                              <li>Avoid</li>
+                              <li>At</li>
+                              <li>All</li>
+                              <li>Cost</li>
+                            </ul>
+                          </details>
+                        </li>
+                        <li>All</li>
+                        <li>Cost</li>
+                      </ul>
+                    </details>
+                  </li>
+                </ul>
+              </details>
             </li>
             <li>HTML</li>
             <li>Special Thanks</li>
