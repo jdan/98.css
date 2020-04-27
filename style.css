@@ -166,7 +166,7 @@ button::-moz-focus-inner {
     var(--dialog-blue),
     var(--dialog-blue-light)
   );
-  padding: 2px;
+  padding: 3px 2px 3px 3px;
   display: flex;
   justify-content: space-between;
   align-items: center;
