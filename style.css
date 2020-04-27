@@ -186,8 +186,8 @@ button::-moz-focus-inner {
 .title-bar-controls button {
   padding: 0;
   display: block;
-  min-width: 14px;
-  min-height: 12px;
+  min-width: 16px;
+  min-height: 14px;
 }
 
 .title-bar-controls button:focus {
@@ -197,22 +197,20 @@ button::-moz-focus-inner {
 .title-bar-controls button[aria-label="Minimize"] {
   background-image: svg-load("./icon/minimize.svg");
   background-repeat: no-repeat;
-  background-position: bottom 2px left 3px;
+  background-position: bottom 3px left 3px;
 }
 
 .title-bar-controls button[aria-label="Maximize"] {
   background-image: svg-load("./icon/maximize.svg");
   background-repeat: no-repeat;
-  /* Off by 1px because contents can't go above the inner shadow */
-  /* Should be 9px by 9px, with top 1px */
-  background-position: top 2px left 2px;
+  background-position: top 2px left 3px;
 }
 
 .title-bar-controls button[aria-label="Close"] {
   margin-left: 2px;
   background-image: svg-load("./icon/close.svg");
   background-repeat: no-repeat;
-  background-position: top 2px center;
+  background-position: top 3px left 4px;
 }
 
 .window-body {
