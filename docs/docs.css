@@ -102,6 +102,8 @@ summary {
   display: inline;
 }
 
+summary::-webkit-details-marker { display: none; }
+
 details[open] summary {
   margin-bottom: 8px;
 }
