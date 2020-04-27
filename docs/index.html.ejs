@@ -38,6 +38,7 @@
               <li><a href="#window-contents">Window contents</a></li>
             </ul>
           </li>
+          <li><a href="#status-bar">StatusBar</a></li>
           <li><a href="#tree-view">TreeView</a></li>
         </ul>
       </li>
@@ -541,6 +542,33 @@
               <p>There's so much room for activities!</p>
             </div>
           </div>
+        `) %>
+      </div>
+    </section>
+
+    <section class="component">
+      <h3 id="status-bar">Status Bar</h3>
+      <div>
+        <blockquote>
+          I don't have a copy of this book and I don't know if it talks about status bars.
+
+          <footer>
+            &mdash; Microsoft Windows User Experience p. 0
+          </footer>
+        </blockquote>
+
+       <p>To render a status bar, use a <code>table</code> element with
+         the <code>status-bar</code> class. The <code>td</code> elements
+         within it become status bar panels. The second through last panels
+         will be sized their contents; the first will fill in the rest of the
+         space.
+
+        <%- example(`
+          <table class="status-bar">
+            <td>12 object(s)
+            <td>5.47MB
+            <td>&#x1f4bb; My Computer
+          </table>
         `) %>
       </div>
     </section>
