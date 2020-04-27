@@ -490,6 +490,38 @@ ul.tree-view ul > li:last-child::after {
   background: var(--button-highlight);
 }
 
+ul.tree-view details {
+  margin-top: 0;
+}
+
+ul.tree-view details[open] summary {
+  margin-bottom: 0;
+}
+
+ul.tree-view ul details > summary:before {
+  margin-left: -22px;
+  position: relative;
+  z-index: 1;
+}
+
+ul.tree-view details > summary:before {
+  text-align: center;
+  display: block;
+  float: left;
+  content: '+';
+  border: 1px solid #808080;
+  width: 8px;
+  height: 9px;
+  line-height: 9px;
+  margin-right: 5px;
+  padding-left: 1px;
+  background-color: #fff;
+}
+
+ul.tree-view details[open] > summary:before {
+  content: '-'
+}
+
 pre {
   display: block;
   background: var(--button-highlight);
