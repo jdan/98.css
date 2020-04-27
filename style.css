@@ -54,6 +54,12 @@
   --border-sunken-inner: inset -2px -2px var(--button-face),
     inset 2px 2px var(--button-shadow);
 
+  /* Window borders flip button-face and button-highlight */
+  --border-window-outer: inset -1px -1px var(--window-frame),
+    inset 1px 1px var(--button-face);
+  --border-window-inner: inset -2px -2px var(--button-shadow),
+    inset 2px 2px var(--button-highlight);
+
   /* Field borders (checkbox, input, etc) flip window-frame and button-shadow */
   --border-field: inset -1px -1px var(--button-highlight),
     inset 1px 1px var(--button-shadow), inset -2px -2px var(--button-face),
@@ -129,7 +135,7 @@ button {
   padding: 0 12px;
 }
 
-.vertical-bar{
+.vertical-bar {
   width: 4px;
   height: 20px;
   background: #c0c0c0;
@@ -162,7 +168,7 @@ button::-moz-focus-inner {
 }
 
 .window {
-  box-shadow: var(--border-raised-outer), var(--border-raised-inner);
+  box-shadow: var(--border-window-outer), var(--border-window-inner);
   background: var(--surface);
   padding: 3px;
 }
