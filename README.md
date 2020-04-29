@@ -47,6 +47,12 @@ Here is an example of [98.css being used with React](https://codesandbox.io/s/ob
 
 Refer to the [documentation page](https://jdan.github.io/98.css/) for specific instructions on this library's components.
 
+### Online one-click setup for Contributing
+
+Contribute to 98.css using a fully featured online development environment that will automatically: clone the repo, install the dependencies and start the webserver.
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/from-referrer/)
+
 ### Developing
 
 First, run `npm install`.
