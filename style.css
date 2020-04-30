@@ -451,6 +451,31 @@ input[type=range]::-ms-track {
   color: transparent;
 }
 
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 21px;
+  width: 11px;
+  background: svg-load("./icon/indicator-horizontal.svg");
+}
+
+input[type=range]::-moz-range-thumb {
+  height: 21px;
+  width: 11px;
+  border: 0;
+  border-radius: 0;
+  background: svg-load("./icon/indicator-horizontal.svg");
+}
+
+input[type=range]::-ms-thumb {
+  height: 21px;
+  width: 11px;
+  border: 0;
+  background: svg-load("./icon/indicator-horizontal.svg");
+}
+input[type=range]::-ms-track {
+  height: 21px;
+}
+
 select:focus {
   color: var(--button-highlight);
   background-color: var(--dialog-blue);
