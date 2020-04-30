@@ -30,6 +30,7 @@
           <li><a href="#option-button">OptionButton</a></li>
           <li><a href="#group-box">GroupBox</a></li>
           <li><a href="#text-box">TextBox</a></li>
+          <li><a href="#slider">Slider</a></li>
           <li><a href="#dropdown">Dropdown</a></li>
           <li>
             <a href="#window">Window</a>
@@ -385,6 +386,44 @@
           <div class="field-row-stacked" style="width: 200px">
             <label for="text${getNewId()}">Additional notes</label>
             <textarea id="text${getCurrentId()}" rows="8"></textarea>
+          </div>
+        `) %>
+      </div>
+    </section>
+
+    <section class="component">
+      <h3 id="slider">Slider</h3>
+      <div>
+        <blockquote>
+          A <em>slider</em>, sometimes called a trackbar control, consists of a bar that
+          defines the extent or range of the adjustment and an indicator that
+          shows the current value for the control...
+
+          <footer>&mdash; Microsoft Windows User Experience p. 146</footer>
+        </blockquote>
+
+        <p>
+          Sliders can rendered by specifying a <code>range</code> type on an
+          <code>input</code> element.
+        </p>
+
+        <%- example(`
+          <div class="field-row">
+            <label for="range${getNewId()}">Cowbell</label>
+            <input id="range${getCurrentId()}" type="range" min="1" max="3" step="1" value="2" />
+          </div>
+        `) %>
+
+        <p>
+          You can make use of the <code>is-vertical</code> class to display the input
+          vertically, and use the <code>has-rectangular-indicator</code> class to use
+          a rectangular indicator.
+        </p>
+
+        <%- example(`
+          <div class="field-row">
+            <label for="range${getNewId()}">Volume</label>
+            <input id="range${getCurrentId()}" type="range" min="1" max="11" value="5" />
           </div>
         `) %>
       </div>
