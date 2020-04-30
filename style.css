@@ -594,14 +594,20 @@ summary:focus {
   background-image: svg-load("./icon/button-right.svg");
 }
 
-table.status-bar {
-  width: 100%;
+.status-bar {
+  display: flex;
+  margin: 1px;
 }
-table.status-bar td {
+
+.status-bar > :first-child {
+  flex-grow: 1;
+}
+
+.status-bar > * {
   box-shadow: var(--border-sunken-outer);
   padding: 4px 6px;
-  white-space: nowrap;
 }
-table.status-bar td:first-child {
-  width: 100%;
+
+.status-bar > * + * {
+  margin-left: 2px;
 }

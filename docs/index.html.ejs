@@ -36,9 +36,9 @@
             <ul>
               <li><a href="#title-bar">Title Bar</a></li>
               <li><a href="#window-contents">Window contents</a></li>
+              <li><a href="#status-bar">StatusBar</a></li>
             </ul>
           </li>
-          <li><a href="#status-bar">StatusBar</a></li>
           <li><a href="#tree-view">TreeView</a></li>
         </ul>
       </li>
@@ -566,18 +566,31 @@
           </footer>
         </blockquote>
 
-       <p>To render a status bar, use a <code>table</code> element with
-         the <code>status-bar</code> class. The <code>td</code> elements
+       <p>To render a status bar, use a <code>footer</code> element with
+         the <code>status-bar</code> class. The elements
          within it become status bar panels. The second through last panels
-         will be sized their contents; the first will fill in the rest of the
+         will be sized to their contents; the first will fill in the remaining
          space.
 
         <%- example(`
-          <table class="status-bar">
-            <td>12 object(s)
-            <td>5.47MB
-            <td>&#x1f4bb; My Computer
-          </table>
+          <div class="window" style="width: 300px">
+            <div class="title-bar">
+              <div class="title-bar-text">A Window With Stuff In It</div>
+              <div class="title-bar-controls">
+                <button aria-label="Minimize"></button>
+                <button aria-label="Maximize"></button>
+                <button aria-label="Close"></button>
+              </div>
+            </div>
+            <div class="window-body">
+              <p>There's so much room for activities!</p>
+            </div>
+            <footer class="status-bar">
+              <div>12 object(s)</div>
+              <div>5.47MB</div>
+              <div>My Computer</div>
+            </footer>
+          </div>
         `) %>
       </div>
     </section>
