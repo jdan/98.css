@@ -435,10 +435,6 @@ input[type=range] {
   background: transparent;
 }
 
-input[type=range]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-}
-
 input[type=range]:focus {
   outline: none;
 }
