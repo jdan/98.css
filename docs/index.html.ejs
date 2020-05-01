@@ -409,8 +409,10 @@
 
         <%- example(`
           <div class="field-row" style="width: 300px">
-            <label for="range${getNewId()}">Cowbell</label>
-            <input id="range${getCurrentId()}" type="range" min="1" max="3" step="1" value="2" />
+            <label for="range${getNewId()}">Volume:</label>
+            <label for="range${getNewId()}">Low</label>
+            <input id="range${getCurrentId()}" type="range" min="1" max="11" value="5" />
+            <label for="range${getNewId()}">High</label>
           </div>
         `) %>
 
