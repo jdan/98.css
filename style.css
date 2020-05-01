@@ -502,6 +502,65 @@ input[type=range]::-moz-range-track {
     1px -1px darkgrey;
 }
 
+.slider-vertical-wrapper {
+  display: inline-block;
+  width: 4px;
+  height: 150px;
+}
+
+.slider-vertical-wrapper > input[type=range].is-vertical {
+  width: 150px;
+  height: 4px;
+  transform: rotate(270deg);
+  transform-origin: 75px 75px;
+}
+
+.slider-vertical-wrapper > input[type=range].is-vertical::-webkit-slider-runnable-track {
+  border-left: 1px solid grey;
+  border-right: 0;
+  border-bottom: 1px solid grey;
+  box-shadow:
+    -1px 0 0 white,
+    -1px 1px 0 white,
+    0 1px 0 white,
+    1px 0 0 darkgrey,
+    1px -1px 0 darkgrey,
+    0 -1px 0 darkgrey,
+    1px 1px 0 white,
+    -1px -1px darkgrey;
+}
+
+.slider-vertical-wrapper > input[type=range].is-vertical::-moz-range-track {
+  border-left: 1px solid grey;
+  border-right: 0;
+  border-bottom: 1px solid grey;
+  box-shadow:
+    -1px 0 0 white,
+    -1px 1px 0 white,
+    0 1px 0 white,
+    1px 0 0 darkgrey,
+    1px -1px 0 darkgrey,
+    0 -1px 0 darkgrey,
+    1px 1px 0 white,
+    -1px -1px darkgrey;
+}
+
+.slider-vertical-wrapper > input[type=range].is-vertical::-webkit-slider-thumb {
+  transform: translateY(-8px) scaleX(-1);
+}
+
+.slider-vertical-wrapper > input[type=range].is-vertical.has-rectangular-indicator::-webkit-slider-thumb {
+  transform: translateY(-10px) scaleX(-1);
+}
+
+.slider-vertical-wrapper > input[type=range].is-vertical::-moz-range-thumb {
+  transform: translateY(2x) scaleX(-1);
+}
+
+.slider-vertical-wrapper > input[type=range].is-vertical.has-rectangular-indicator::-moz-range-thumb {
+  transform: translateY(0px) scaleX(-1);
+}
+
 select:focus {
   color: var(--button-highlight);
   background-color: var(--dialog-blue);
