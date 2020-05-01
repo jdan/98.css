@@ -451,6 +451,11 @@ input[type=range]::-webkit-slider-thumb {
   transform: translateY(-8px);
 }
 
+input[type=range].has-rectangular-indicator::-webkit-slider-thumb {
+  background: svg-load("./icon/indicator-rectangle-horizontal.svg");
+  transform: translateY(-10px);
+}
+
 input[type=range]::-moz-range-thumb {
   height: 21px;
   width: 11px;
@@ -458,6 +463,11 @@ input[type=range]::-moz-range-thumb {
   border-radius: 0;
   background: svg-load("./icon/indicator-horizontal.svg");
   transform: translateY(2px);
+}
+
+input[type=range].has-rectangular-indicator::-moz-range-thumb {
+  background: svg-load("./icon/indicator-rectangle-horizontal.svg");
+  transform: translateY(0px);
 }
 
 input[type=range]::-webkit-slider-runnable-track {
