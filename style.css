@@ -96,7 +96,8 @@ select,
 option,
 ul.tree-view,
 .window,
-.title-bar {
+.title-bar, 
+.div-block {
   font-family: "Pixelated MS Sans Serif", Arial;
   -webkit-font-smoothing: none;
   font-size: 11px;
@@ -140,6 +141,18 @@ button {
   height: 20px;
   background: #c0c0c0;
   box-shadow: var(--border-raised-outer), var(--border-raised-inner);
+}
+
+.div-block{
+  box-sizing: border-box;
+  border: none;
+  background: var(--surface);
+  box-shadow: var(--border-raised-outer), var(--border-raised-inner);
+  border-radius: 0;
+
+  min-width: 100px;
+  min-height: 30px;
+  padding: 12px;
 }
 
 button:not(:disabled):active {
