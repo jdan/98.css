@@ -417,17 +417,17 @@
         `) %>
 
         <p>
-          You can make use of the <code>is-vertical</code> class to display the input
-          vertically, and use the <code>has-rectangular-indicator</code> class to use
-          a rectangular indicator.
+          You can make use of the <code>has-box-indicator</code> class replace the
+          default indicator with a box indicator, furthermore the input can be wrapped
+          with a div using <code>is-vertical</code> to display the input vertically.
         </p>
 
         <%- example(`
-          <div class="field-row" style="width: 300px">
-            <label for="range${getNewId()}">Volume:</label>
-            <label for="range${getNewId()}">Low</label>
-            <input id="range${getCurrentId()}" class="has-rectangular-indicator" type="range" min="1" max="11" value="5" />
-            <label for="range${getNewId()}">High</label>
+          <div class="field-row" style="width: 150px">
+            <label for="range${getNewId()}">Cowbell</label>
+            <div class="is-vertical">
+              <input id="range${getCurrentId()}" class="has-box-indicator" type="range" min="1" max="3" step="1" value="2" />
+            </div>
           </div>
         `) %>
       </div>
