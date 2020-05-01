@@ -22,6 +22,8 @@
   --radio-width: 12px;
   --checkbox-width: 13px;
   --radio-label-spacing: 6px;
+  --range-track-height: 4px;
+  --range-spacing: 10px;
 
   /* Some detailed computations for radio buttons and checkboxes */
   --radio-total-width-precalc: var(--radio-width) + var(--radio-label-spacing);
@@ -506,13 +508,15 @@ input[type=range]::-moz-range-track {
   display: inline-block;
   width: 4px;
   height: 150px;
+  transform: translateY(50%) ;
 }
 
 .is-vertical > input[type=range] {
   width: 150px;
   height: 4px;
-  transform: rotate(270deg);
-  transform-origin: 75px 75px;
+  margin: 0 calc(var(--grouped-element-spacing) + var(--range-spacing)) 0 var(--range-spacing);
+  transform-origin: left;
+  transform: rotate(270deg) translateX(calc(-50% + var(--element-spacing))) ;
 }
 
 .is-vertical > input[type=range]::-webkit-slider-runnable-track {
