@@ -281,7 +281,9 @@ input[type="checkbox"] {
   -webkit-appearance: none;
   -moz-appearance: none;
   margin: 0;
-  background: 0; /* necessary for hiding default disabled-state styling on iOS */
+  background: 0;
+  position: fixed;
+  opacity: 0;
   border: none;
 }
 
