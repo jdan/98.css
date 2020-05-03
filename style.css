@@ -144,6 +144,10 @@ button {
 
 button:not(:disabled):active {
   box-shadow: var(--border-sunken-outer), var(--border-sunken-inner);
+  border-top: 1px solid transparent;
+  border-right: 0px solid transparent;
+  border-bottom: 0px solid transparent;
+  border-left: 1px solid transparent;
 }
 
 @media (not(hover)) {
