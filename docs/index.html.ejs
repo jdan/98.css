@@ -1,5 +1,6 @@
 <!doctype html>
 <html>
+
 <head>
   <title>98.css - A design system for building faithful recreations of old UIs</title>
   <link rel="Shortcut Icon" type="image/x-icon" href="icon.png" />
@@ -9,15 +10,13 @@
   <meta property="og:title" content="98.css" />
   <meta name="Description" content="A design system for building faithful recreations of old UIs." />
   <meta property="og:description" content="A design system for building faithful recreations of old UIs." />
-  <meta
-    property="og:image"
-    content="https://github.com/jdan/98.css/raw/master/docs/window.png?raw=true"
-  />
+  <meta property="og:image" content="https://github.com/jdan/98.css/raw/master/docs/window.png?raw=true" />
 
   <link rel="stylesheet" href="98.css">
   <link rel="stylesheet" href="docs.css">
   <link rel="stylesheet" href="vs.css">
 </head>
+
 <body ontouchstart>
   <aside>
     <ul class="tree-view">
@@ -105,8 +104,10 @@
     </p>
 
     <p>
-      Here is an example of <a href="https://codesandbox.io/s/objective-chandrasekhar-t5t6h?file=/src/index.js">98.css used with React</a>, and
-      <a href="https://codesandbox.io/s/late-sound-miqho?file=/index.html">an example with vanilla JavaScript</a>. The fastest way to use 98.css is to import it from unpkg.
+      Here is an example of <a href="https://codesandbox.io/s/objective-chandrasekhar-t5t6h?file=/src/index.js">98.css
+        used with React</a>, and
+      <a href="https://codesandbox.io/s/late-sound-miqho?file=/index.html">an example with vanilla JavaScript</a>. The
+      fastest way to use 98.css is to import it from unpkg.
     </p>
 
     <pre style="max-width: 375px"><code>&lt;link
@@ -115,7 +116,8 @@
 &gt;</code></pre>
 
     <p>
-      You can install 98.css from the <a href="https://github.com/jdan/98.css/releases">GitHub releases page</a>, or <a href="https://www.npmjs.com/package/98.css">from npm</a>.
+      You can install 98.css from the <a href="https://github.com/jdan/98.css/releases">GitHub releases page</a>, or <a
+        href="https://www.npmjs.com/package/98.css">from npm</a>.
     </p>
     <pre style="max-width: 375px"><code>npm install 98.css</code></pre>
 
@@ -565,6 +567,76 @@
     </section>
 
     <section class="component">
+      <h4 id="window-contents">Menu Bar</h4>
+      <div>
+        <p>
+          Work in Progress
+        </p>
+
+        <%- example(`
+          <div class="window" style="margin: 32px; width: 250px">
+            <div class="title-bar">
+              <div class="title-bar-text">
+                My 98.css Text Editor
+              </div>
+
+              <div class="title-bar-controls">
+                <button aria-label="Minimize"></button>
+                <button aria-label="Maximize"></button>
+                <button aria-label="Close"></button>
+              </div>
+            </div>
+
+            <section class="field-row" style="justify-content: flex-start">
+              <div>
+                <button class="menu-bar">File</button>
+                <div class="menu" style="width: 160px">
+                  <ul>
+                    <li><strong>Open</strong></li>
+                    <li>Save</li>
+                    <li>Export...</li>
+                    <div class="separator"></div>
+                    <li class="disabled">Print to PDF</li>
+                    <li>Upload</li>
+                    <li>Close</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div>
+                <button class="menu-bar">Edit</button>
+                <div class="menu" style="width: 160px">
+                  <ul>
+                    <li>Copy</li>
+                    <li>Paste</li>
+                    <div class="separator"></div>
+                    <li>Settings</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div>
+                <button class="menu-bar">About</button>
+                <div class="menu" style="width: 160px">
+                  <ul>
+                    <li>About</li>
+                    <li>Help</li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+
+            <div class="separator"></div>
+
+            <div class="window-body">
+              <textarea rows="8" style="width: 100%;"></textarea>
+            </div>
+          </div>
+      `) %>
+      </div>
+    </section>
+
+    <section class="component">
       <h3 id="tree-view">TreeView</h3>
       <div>
         <blockquote>
@@ -669,4 +741,5 @@
     </p>
   </main>
 </body>
+
 </html>

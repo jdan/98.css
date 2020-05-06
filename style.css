@@ -96,6 +96,7 @@ select,
 option,
 ul.tree-view,
 .window,
+.menu,
 .title-bar {
   font-family: "Pixelated MS Sans Serif", Arial;
   -webkit-font-smoothing: none;
@@ -142,7 +143,8 @@ button {
   box-shadow: var(--border-raised-outer), var(--border-raised-inner);
 }
 
-button:not(:disabled):active {
+button:not(:disabled):active,
+button.menu-bar:focus {
   box-shadow: var(--border-sunken-outer), var(--border-sunken-inner);
 }
 
@@ -171,6 +173,57 @@ button::-moz-focus-inner {
   box-shadow: var(--border-window-outer), var(--border-window-inner);
   background: var(--surface);
   padding: 3px;
+}
+
+.separator {
+  height: 0px;
+  width: 100%;
+  border-top:1px solid var(--button-shadow);
+  border-bottom: 1px solid var(--button-highlight);
+}
+
+button.menu-bar {
+  box-shadow: none;
+  min-width: 0;
+  padding: 0 6px;
+}
+
+button.menu-bar:focus + .menu {
+  visibility: visible;
+}
+
+.menu {
+  visibility: hidden;
+  position: absolute;
+  box-shadow: var(--border-window-outer), var(--border-window-inner);
+  background: var(--surface);
+  padding: 3px;
+  cursor: default;
+}
+
+.menu ul {
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  list-style-type: none;
+  padding: 3px 0 3px 16px;
+}
+
+.menu li:hover:not(.disabled) {
+  color: white;
+  background-color: var(--dialog-blue);
+}
+
+.menu li.disabled{
+  color: var(--button-shadow);
+  text-shadow: 1px 1px 0 var(--button-highlight);
+}
+
+.menu .separator {
+  margin-top: 3px;
+  margin-bottom: 3px;
 }
 
 .title-bar {
