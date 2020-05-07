@@ -30,6 +30,7 @@
           <li><a href="#option-button">OptionButton</a></li>
           <li><a href="#group-box">GroupBox</a></li>
           <li><a href="#text-box">TextBox</a></li>
+          <li><a href="#slider">Slider</a></li>
           <li><a href="#dropdown">Dropdown</a></li>
           <li>
             <a href="#window">Window</a>
@@ -385,6 +386,53 @@
           <div class="field-row-stacked" style="width: 200px">
             <label for="text${getNewId()}">Additional notes</label>
             <textarea id="text${getCurrentId()}" rows="8"></textarea>
+          </div>
+        `) %>
+      </div>
+    </section>
+
+    <section class="component">
+      <h3 id="slider">Slider</h3>
+      <div>
+        <blockquote>
+          A <em>slider</em>, sometimes called a trackbar control, consists of a bar that
+          defines the extent or range of the adjustment and an indicator that
+          shows the current value for the control...
+
+          <footer>&mdash; Microsoft Windows User Experience p. 146</footer>
+        </blockquote>
+
+        <p>
+          Sliders can rendered by specifying a <code>range</code> type on an
+          <code>input</code> element.
+        </p>
+
+        <%- example(`
+          <div class="field-row" style="width: 300px">
+            <label for="range${getNewId()}">Volume:</label>
+            <label for="range${getNewId()}">Low</label>
+            <input id="range${getCurrentId()}" type="range" min="1" max="11" value="5" />
+            <label for="range${getNewId()}">High</label>
+          </div>
+        `) %>
+
+        <p>
+          You can make use of the <code>has-box-indicator</code> class replace the
+          default indicator with a box indicator, furthermore the slider can be wrapped
+          with a <code>div</code> using <code>is-vertical</code> to display the input vertically.
+        </p>
+
+        <p>
+          Note: To change the length of a vertical slider, the <code>input</code> width
+          and <code>div</code> height.
+        </p>
+
+        <%- example(`
+          <div class="field-row">
+            <label for="range${getNewId()}">Cowbell</label>
+            <div class="is-vertical">
+              <input id="range${getCurrentId()}" class="has-box-indicator" type="range" min="1" max="3" step="1" value="2" />
+            </div>
           </div>
         `) %>
       </div>
