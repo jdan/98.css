@@ -558,7 +558,7 @@ input[type=range]::-moz-range-track {
 }
 
 .is-vertical > input[type=range]::-moz-range-thumb {
-  transform: translateY(2x) scaleX(-1);
+  transform: translateY(2px) scaleX(-1);
 }
 
 .is-vertical > input[type=range].has-box-indicator::-moz-range-thumb {
