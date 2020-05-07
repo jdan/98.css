@@ -30,6 +30,7 @@
           <li><a href="#option-button">OptionButton</a></li>
           <li><a href="#group-box">GroupBox</a></li>
           <li><a href="#text-box">TextBox</a></li>
+          <li><a href="#slider">Slider</a></li>
           <li><a href="#dropdown">Dropdown</a></li>
           <li>
             <a href="#window">Window</a>
@@ -517,6 +518,71 @@
         <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"field-row-stacked"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"width: 200px"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"text20"</span>&gt;</span>Additional notes<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">textarea</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"text20"</span> <span class="hljs-attr">rows</span>=<span class="hljs-string">"8"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+      </details>
+    </div>
+      </div>
+    </section>
+
+    <section class="component">
+      <h3 id="slider">Slider</h3>
+      <div>
+        <blockquote>
+          A <em>slider</em>, sometimes called a trackbar control, consists of a bar that
+          defines the extent or range of the adjustment and an indicator that
+          shows the current value for the control...
+
+          <footer>&mdash; Microsoft Windows User Experience p. 146</footer>
+        </blockquote>
+
+        <p>
+          Sliders can rendered by specifying a <code>range</code> type on an
+          <code>input</code> element.
+        </p>
+
+        <div class="example">
+      <div class="field-row" style="width: 300px">
+  <label for="range21">Volume:</label>
+  <label for="range22">Low</label>
+  <input id="range22" type="range" min="1" max="11" value="5" />
+  <label for="range23">High</label>
+</div>
+      <details>
+        <summary>Show code</summary>
+        <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"field-row"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"width: 300px"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"range21"</span>&gt;</span>Volume:<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"range22"</span>&gt;</span>Low<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"range22"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"range"</span> <span class="hljs-attr">min</span>=<span class="hljs-string">"1"</span> <span class="hljs-attr">max</span>=<span class="hljs-string">"11"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"5"</span> /&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"range23"</span>&gt;</span>High<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+      </details>
+    </div>
+
+        <p>
+          You can make use of the <code>has-box-indicator</code> class replace the
+          default indicator with a box indicator, furthermore the slider can be wrapped
+          with a <code>div</code> using <code>is-vertical</code> to display the input vertically.
+        </p>
+
+        <p>
+          Note: To change the length of a vertical slider, the <code>input</code> width
+          and <code>div</code> height.
+        </p>
+
+        <div class="example">
+      <div class="field-row">
+  <label for="range24">Cowbell</label>
+  <div class="is-vertical">
+    <input id="range24" class="has-box-indicator" type="range" min="1" max="3" step="1" value="2" />
+  </div>
+</div>
+      <details>
+        <summary>Show code</summary>
+        <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"field-row"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"range24"</span>&gt;</span>Cowbell<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"is-vertical"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"range24"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"has-box-indicator"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"range"</span> <span class="hljs-attr">min</span>=<span class="hljs-string">"1"</span> <span class="hljs-attr">max</span>=<span class="hljs-string">"3"</span> <span class="hljs-attr">step</span>=<span class="hljs-string">"1"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"2"</span> /&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
       </details>
     </div>
