@@ -532,9 +532,9 @@
         <p>
           We make use of <code>aria-label</code> to render the Close button, to let
           assistive technologies know the intent of this button. You may also use
-          "Minimize" and "Maximize" like so:
+          "Minimize", "Maximize", "Restore" and "Help" like so:
         </p>
-
+        
         <%- example(`
           <div class="title-bar">
             <div class="title-bar-text">A Title Bar</div>
@@ -545,7 +545,18 @@
             </div>
           </div>
 
-          <br>
+          <br />
+
+          <div class="title-bar">
+            <div class="title-bar-text">A Maximized Title Bar</div>
+            <div class="title-bar-controls">
+              <button aria-label="Minimize"></button>
+              <button aria-label="Restore"></button>
+              <button aria-label="Close"></button>
+            </div>
+          </div>
+
+          <br />
 
           <div class="title-bar">
             <div class="title-bar-text">A Helpful Bar</div>
@@ -553,7 +564,7 @@
               <button aria-label="Help"></button>
               <button aria-label="Close"></button>
             </div>
-          </div>
+          </div>          
         `) %>
       </div>
     </section>
