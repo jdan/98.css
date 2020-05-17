@@ -148,6 +148,7 @@ button {
 
 button:not(:disabled):active {
   box-shadow: var(--border-sunken-outer), var(--border-sunken-inner);
+  padding: 2px 11px 0 13px;
 }
 
 @media (not(hover)) {
