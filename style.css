@@ -192,10 +192,10 @@ button::-moz-focus-inner {
 
 .title-bar.inactive {
   background: linear-gradient(
-	  90deg,
-	  var(--dialog-gray),
-	  var(--dialog-gray-light)
-	);
+    90deg,
+    var(--dialog-gray),
+    var(--dialog-gray-light)
+  );
 }
 
 .title-bar-text {
@@ -214,6 +214,10 @@ button::-moz-focus-inner {
   display: block;
   min-width: 16px;
   min-height: 14px;
+}
+
+.title-bar-controls button:active {
+  padding: 0;
 }
 
 .title-bar-controls button:focus {
@@ -448,17 +452,17 @@ textarea:focus {
   outline: none;
 }
 
-input[type=range] {
+input[type="range"] {
   -webkit-appearance: none;
   width: 100%;
   background: transparent;
 }
 
-input[type=range]:focus {
+input[type="range"]:focus {
   outline: none;
 }
 
-input[type=range]::-webkit-slider-thumb {
+input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   height: 21px;
   width: 11px;
@@ -466,12 +470,12 @@ input[type=range]::-webkit-slider-thumb {
   transform: translateY(-8px);
 }
 
-input[type=range].has-box-indicator::-webkit-slider-thumb {
+input[type="range"].has-box-indicator::-webkit-slider-thumb {
   background: svg-load("./icon/indicator-rectangle-horizontal.svg");
   transform: translateY(-10px);
 }
 
-input[type=range]::-moz-range-thumb {
+input[type="range"]::-moz-range-thumb {
   height: 21px;
   width: 11px;
   border: 0;
@@ -480,105 +484,78 @@ input[type=range]::-moz-range-thumb {
   transform: translateY(2px);
 }
 
-input[type=range].has-box-indicator::-moz-range-thumb {
+input[type="range"].has-box-indicator::-moz-range-thumb {
   background: svg-load("./icon/indicator-rectangle-horizontal.svg");
   transform: translateY(0px);
 }
 
-input[type=range]::-webkit-slider-runnable-track {
+input[type="range"]::-webkit-slider-runnable-track {
   width: 100%;
   height: 2px;
   box-sizing: border-box;
   background: black;
   border-right: 1px solid grey;
   border-bottom: 1px solid grey;
-  box-shadow:
-    1px 0 0 white,
-    1px 1px 0 white,
-    0 1px 0 white,
-    -1px 0 0 darkgrey,
-    -1px -1px 0 darkgrey,
-    0 -1px 0 darkgrey,
-    -1px 1px 0 white,
-    1px -1px darkgrey;
+  box-shadow: 1px 0 0 white, 1px 1px 0 white, 0 1px 0 white, -1px 0 0 darkgrey,
+    -1px -1px 0 darkgrey, 0 -1px 0 darkgrey, -1px 1px 0 white, 1px -1px darkgrey;
 }
 
-input[type=range]::-moz-range-track {
+input[type="range"]::-moz-range-track {
   width: 100%;
   height: 2px;
   box-sizing: border-box;
   background: black;
   border-right: 1px solid grey;
   border-bottom: 1px solid grey;
-  box-shadow:
-    1px 0 0 white,
-    1px 1px 0 white,
-    0 1px 0 white,
-    -1px 0 0 darkgrey,
-    -1px -1px 0 darkgrey,
-    0 -1px 0 darkgrey,
-    -1px 1px 0 white,
-    1px -1px darkgrey;
+  box-shadow: 1px 0 0 white, 1px 1px 0 white, 0 1px 0 white, -1px 0 0 darkgrey,
+    -1px -1px 0 darkgrey, 0 -1px 0 darkgrey, -1px 1px 0 white, 1px -1px darkgrey;
 }
 
 .is-vertical {
   display: inline-block;
   width: 4px;
   height: 150px;
-  transform: translateY(50%) ;
+  transform: translateY(50%);
 }
 
-.is-vertical > input[type=range] {
+.is-vertical > input[type="range"] {
   width: 150px;
   height: 4px;
-  margin: 0 calc(var(--grouped-element-spacing) + var(--range-spacing)) 0 var(--range-spacing);
+  margin: 0 calc(var(--grouped-element-spacing) + var(--range-spacing)) 0
+    var(--range-spacing);
   transform-origin: left;
-  transform: rotate(270deg) translateX(calc(-50% + var(--element-spacing))) ;
+  transform: rotate(270deg) translateX(calc(-50% + var(--element-spacing)));
 }
 
-.is-vertical > input[type=range]::-webkit-slider-runnable-track {
+.is-vertical > input[type="range"]::-webkit-slider-runnable-track {
   border-left: 1px solid grey;
   border-right: 0;
   border-bottom: 1px solid grey;
-  box-shadow:
-    -1px 0 0 white,
-    -1px 1px 0 white,
-    0 1px 0 white,
-    1px 0 0 darkgrey,
-    1px -1px 0 darkgrey,
-    0 -1px 0 darkgrey,
-    1px 1px 0 white,
-    -1px -1px darkgrey;
+  box-shadow: -1px 0 0 white, -1px 1px 0 white, 0 1px 0 white, 1px 0 0 darkgrey,
+    1px -1px 0 darkgrey, 0 -1px 0 darkgrey, 1px 1px 0 white, -1px -1px darkgrey;
 }
 
-.is-vertical > input[type=range]::-moz-range-track {
+.is-vertical > input[type="range"]::-moz-range-track {
   border-left: 1px solid grey;
   border-right: 0;
   border-bottom: 1px solid grey;
-  box-shadow:
-    -1px 0 0 white,
-    -1px 1px 0 white,
-    0 1px 0 white,
-    1px 0 0 darkgrey,
-    1px -1px 0 darkgrey,
-    0 -1px 0 darkgrey,
-    1px 1px 0 white,
-    -1px -1px darkgrey;
+  box-shadow: -1px 0 0 white, -1px 1px 0 white, 0 1px 0 white, 1px 0 0 darkgrey,
+    1px -1px 0 darkgrey, 0 -1px 0 darkgrey, 1px 1px 0 white, -1px -1px darkgrey;
 }
 
-.is-vertical > input[type=range]::-webkit-slider-thumb {
+.is-vertical > input[type="range"]::-webkit-slider-thumb {
   transform: translateY(-8px) scaleX(-1);
 }
 
-.is-vertical > input[type=range].has-box-indicator::-webkit-slider-thumb {
+.is-vertical > input[type="range"].has-box-indicator::-webkit-slider-thumb {
   transform: translateY(-10px) scaleX(-1);
 }
 
-.is-vertical > input[type=range]::-moz-range-thumb {
+.is-vertical > input[type="range"]::-moz-range-thumb {
   transform: translateY(2px) scaleX(-1);
 }
 
-.is-vertical > input[type=range].has-box-indicator::-moz-range-thumb {
+.is-vertical > input[type="range"].has-box-indicator::-moz-range-thumb {
   transform: translateY(0px) scaleX(-1);
 }
 
