@@ -10,25 +10,27 @@ const postcss = require("postcss");
 
 const { homepage, version } = require("./package.json");
 
-function buildCSS() {
+function buildCSS(preserveVariables) {
   const input =
     `/*! 98.css v${version} - ${homepage} */\n` + fs.readFileSync("style.css");
+  const destination = preserveVariables ? "dist/98-full.css" : "dist/98.css";
+  const template = preserveVariables ? "[name]-full.[ext]" : "[name].[ext]";
 
   return postcss()
     .use(require("postcss-inline-svg"))
-    .use(require("postcss-css-variables"))
+    .use(require("postcss-css-variables")({ preserve: preserveVariables }))
     .use(require("postcss-calc"))
-    .use(require("postcss-copy")({ dest: "dist", template: "[name].[ext]" }))
+    .use(require("postcss-copy")({ dest: "dist", template }))
     .use(require("cssnano"))
     .process(input, {
       from: "style.css",
-      to: "dist/98.css",
+      to: destination,
       map: { inline: false },
     })
     .then((result) => {
       mkdirp.sync("dist");
-      fs.writeFileSync("dist/98.css", result.css);
-      fs.writeFileSync("dist/98.css.map", result.map.toString());
+      fs.writeFileSync(destination, result.css);
+      fs.writeFileSync(destination + ".map", result.map.toString());
     });
 }
 
@@ -72,7 +74,8 @@ function buildDocs() {
 }
 
 function build() {
-  buildCSS()
+  buildCSS(false)
+    .then(() => buildCSS(true))
     .then(buildDocs)
     .catch((err) => console.log(err));
 }
