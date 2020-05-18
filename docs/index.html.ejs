@@ -1,23 +1,26 @@
 <!doctype html>
 <html>
+
 <head>
-  <title>98.css - A design system for building faithful recreations of old UIs</title>
+  <title>98.css - A design system for building faithful recreations of old UIs
+  </title>
   <link rel="Shortcut Icon" type="image/x-icon" href="icon.png" />
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta property="og:title" content="98.css" />
-  <meta name="Description" content="A design system for building faithful recreations of old UIs." />
-  <meta property="og:description" content="A design system for building faithful recreations of old UIs." />
-  <meta
-    property="og:image"
-    content="https://github.com/jdan/98.css/raw/master/docs/window.png?raw=true"
-  />
+  <meta name="Description"
+    content="A design system for building faithful recreations of old UIs." />
+  <meta property="og:description"
+    content="A design system for building faithful recreations of old UIs." />
+  <meta property="og:image"
+    content="https://github.com/jdan/98.css/raw/master/docs/window.png?raw=true" />
 
   <link rel="stylesheet" href="98.css">
   <link rel="stylesheet" href="docs.css">
   <link rel="stylesheet" href="vs.css">
 </head>
+
 <body ontouchstart>
   <aside>
     <ul class="tree-view">
@@ -52,11 +55,15 @@
     <p>A design system for building faithful recreations of old UIs.</p>
 
     <p>
-      <a href="http://npm.im/98.css" rel="nofollow" style="text-decoration: none">
-        <img alt="npm" src="https://98badges.now.sh/api/version" style="max-width:100%;">
+      <a href="http://npm.im/98.css" rel="nofollow"
+        style="text-decoration: none">
+        <img alt="npm" src="https://98badges.now.sh/api/version"
+          style="max-width:100%;">
       </a>
-      <a href="https://unpkg.com/98.css" rel="nofollow" style="text-decoration: none">
-        <img alt="gzip size" src="https://98badges.now.sh/api/size" style="max-width:100%;">
+      <a href="https://unpkg.com/98.css" rel="nofollow"
+        style="text-decoration: none">
+        <img alt="gzip size" src="https://98badges.now.sh/api/size"
+          style="max-width:100%;">
       </a>
     </p>
 
@@ -88,26 +95,36 @@
     </div>
 
     <p>
-      This library relies on the usage of <strong>semantic HTML</strong>. To make a button, you'll need
-      to use a <code>&lt;button&gt;</code>. Input elements require labels. Icon buttons rely on
-      <code>aria-label</code>. This page will guide you through that process, but accessibility is a primary
+      This library relies on the usage of <strong>semantic HTML</strong>. To
+      make a button, you'll need
+      to use a <code>&lt;button&gt;</code>. Input elements require labels. Icon
+      buttons rely on
+      <code>aria-label</code>. This page will guide you through that process,
+      but accessibility is a primary
       goal of this project.
     </p>
 
     <p>
-      You can override many of the styles of your elements while maintaining the appearance provided by
-      this library. Need more padding on your buttons? Go for it. Need to add some color to your input labels?
+      You can override many of the styles of your elements while maintaining the
+      appearance provided by
+      this library. Need more padding on your buttons? Go for it. Need to add
+      some color to your input labels?
       Be our guest.
     </p>
 
     <p>
-      <strong>This library does not contain any JavaScript</strong>, it merely styles your HTML with some CSS.
+      <strong>This library does not contain any JavaScript</strong>, it merely
+      styles your HTML with some CSS.
       This means 98.css is compatible with your frontend framework of choice.
     </p>
 
     <p>
-      Here is an example of <a href="https://codesandbox.io/s/objective-chandrasekhar-t5t6h?file=/src/index.js">98.css used with React</a>, and
-      <a href="https://codesandbox.io/s/late-sound-miqho?file=/index.html">an example with vanilla JavaScript</a>. The fastest way to use 98.css is to import it from unpkg.
+      Here is an example of <a
+        href="https://codesandbox.io/s/objective-chandrasekhar-t5t6h?file=/src/index.js">98.css
+        used with React</a>, and
+      <a href="https://codesandbox.io/s/late-sound-miqho?file=/index.html">an
+        example with vanilla JavaScript</a>. The fastest way to use 98.css is to
+      import it from unpkg.
     </p>
 
     <pre style="max-width: 375px"><code>&lt;link
@@ -116,7 +133,9 @@
 &gt;</code></pre>
 
     <p>
-      You can install 98.css from the <a href="https://github.com/jdan/98.css/releases">GitHub releases page</a>, or <a href="https://www.npmjs.com/package/98.css">from npm</a>.
+      You can install 98.css from the <a
+        href="https://github.com/jdan/98.css/releases">GitHub releases page</a>,
+      or <a href="https://www.npmjs.com/package/98.css">from npm</a>.
     </p>
     <pre style="max-width: 375px"><code>npm install 98.css</code></pre>
 
@@ -126,14 +145,17 @@
       <h3 id="button">Button</h3>
       <div>
         <blockquote>
-          A <em>command button</em>, also referred to as a push button, is a control
-          that causes the application to perform some action when the user clicks it.
+          A <em>command button</em>, also referred to as a push button, is a
+          control
+          that causes the application to perform some action when the user
+          clicks it.
 
           <footer>&mdash; Microsoft Windows User Experience p. 160</footer>
         </blockquote>
 
         <p>
-          A standard button measures 75px wide and 23px tall, with a raised outer and inner border.
+          A standard button measures 75px wide and 23px tall, with a raised
+          outer and inner border.
           They are given 12px of horizontal padding by default.
         </p>
 
@@ -150,14 +172,16 @@
         <%- example(`<button[[ class="active"]]>I am being pressed</button>`) %>
 
         <p>
-          Disabled buttons maintain the same raised border, but have a "washed out"
+          Disabled buttons maintain the same raised border, but have a "washed
+          out"
           appearance in their label.
         </p>
 
         <%- example(`<button disabled>I cannot be clicked</button>`) %>
 
         <p>
-          Button focus is communicated with a dotted border, set 4px within the contents of the button.
+          Button focus is communicated with a dotted border, set 4px within the
+          contents of the button.
           The following example is simulated to be focused.
         </p>
 
@@ -169,20 +193,26 @@
       <h3 id="checkbox">Checkbox</h3>
       <div>
         <blockquote>
-          A <em>check box</em> represents an independent or non-exclusive choice.
+          A <em>check box</em> represents an independent or non-exclusive
+          choice.
           <footer>&mdash; Microsoft Windows User Experience p. 167</footer>
         </blockquote>
 
         <p>
-          Checkboxes are represented with a sunken panel, populated with a "check" icon when
+          Checkboxes are represented with a sunken panel, populated with a
+          "check" icon when
           selected, next to a label indicating the choice.
         </p>
 
         <p>
-          Note: You <strong>must</strong> include a corresponding label <strong>after</strong>
-          your checkbox, using the <code>&lt;label&gt;</code> element with a <code>for</code> attribute
-          pointed at the <code>id</code> of your input. This ensures the checkbox is easy to use with
-          assistive technologies, on top of ensuring a good user experience for all (navigating with the tab key,
+          Note: You <strong>must</strong> include a corresponding label
+          <strong>after</strong>
+          your checkbox, using the <code>&lt;label&gt;</code> element with a
+          <code>for</code> attribute
+          pointed at the <code>id</code> of your input. This ensures the
+          checkbox is easy to use with
+          assistive technologies, on top of ensuring a good user experience for
+          all (navigating with the tab key,
           being able to click the entire label to select the box).
         </p>
 
@@ -192,12 +222,14 @@
         `) %>
 
         <p>
-          Checkboxes can be selected and disabled with the standard <code>checked</code> and <code>disabled</code>
+          Checkboxes can be selected and disabled with the standard
+          <code>checked</code> and <code>disabled</code>
           attributes.
         </p>
 
         <p>
-          When grouping inputs, wrap each input in a container with the <code>field-row</code> class. This ensures
+          When grouping inputs, wrap each input in a container with the
+          <code>field-row</code> class. This ensures
           a consistent spacing between inputs.
         </p>
 
@@ -222,21 +254,27 @@
       <h3 id="option-button">OptionButton</h3>
       <div>
         <blockquote>
-          An <em>option button</em>, also referred to as a radio button, represents a single
-          choice within a limited set of mutually exclusive choices. That is, the user can choose only
+          An <em>option button</em>, also referred to as a radio button,
+          represents a single
+          choice within a limited set of mutually exclusive choices. That is,
+          the user can choose only
           one set of options.
 
           <footer>&mdash; Microsoft Windows User Experience p. 164</footer>
         </blockquote>
 
         <p>
-          Option buttons can be used via the <code>radio</code> type on an input element.
+          Option buttons can be used via the <code>radio</code> type on an input
+          element.
         </p>
 
         <p>
-          Option buttons can be grouped by specifying a shared <code>name</code> attribute on each
-          input. Just as before: when grouping inputs, wrap each input in a container with the
-          <code>field-row</code> class to ensure a consistent spacing between inputs.
+          Option buttons can be grouped by specifying a shared <code>name</code>
+          attribute on each
+          input. Just as before: when grouping inputs, wrap each input in a
+          container with the
+          <code>field-row</code> class to ensure a consistent spacing between
+          inputs.
         </p>
 
         <%- example(`
@@ -251,7 +289,8 @@
         `) %>
 
         <p>
-          Option buttons can also be <code>checked</code> and <code>disabled</code> with their corresponding
+          Option buttons can also be <code>checked</code> and
+          <code>disabled</code> with their corresponding
           HTML attributes.
         </p>
 
@@ -276,16 +315,20 @@
       <h3 id="group-box">GroupBox</h3>
       <div>
         <blockquote>
-          A <em>group box</em> is a special control you can use to organize a set of
-          controls. A group box is a rectangular frame with an optional label that surrounds
+          A <em>group box</em> is a special control you can use to organize a
+          set of
+          controls. A group box is a rectangular frame with an optional label
+          that surrounds
           a set of controls.
 
           <footer>&mdash; Microsoft Windows User Experience p. 189</footer>
         </blockquote>
 
         <p>
-          A group box can be used by wrapping your elements with the <code>fieldset</code> tag.
-          It contains a sunken outer border and a raised inner border, resembling an engraved box
+          A group box can be used by wrapping your elements with the
+          <code>fieldset</code> tag.
+          It contains a sunken outer border and a raised inner border,
+          resembling an engraved box
           around your controls.
         </p>
 
@@ -308,7 +351,8 @@
         `) %>
 
         <p>
-          You can provide your group with a label by placing a <code>legend</code> element
+          You can provide your group with a label by placing a
+          <code>legend</code> element
           within the <code>fieldset</code>.
         </p>
 
@@ -350,8 +394,10 @@
         <p>
           Text boxes can rendered by specifying a <code>text</code> type on an
           <code>input</code> element. As with checkboxes and radio buttons, you
-          should provide a corresponding label with a properly set <code>for</code>
-          attribute, and wrap both in a container with the <code>field-row</code> class.
+          should provide a corresponding label with a properly set
+          <code>for</code>
+          attribute, and wrap both in a container with the
+          <code>field-row</code> class.
         </p>
 
         <%- example(`
@@ -362,7 +408,8 @@
         `) %>
 
         <p>
-          Additionally, you can make use of the <code>field-row-stacked</code> class
+          Additionally, you can make use of the <code>field-row-stacked</code>
+          class
           to position your label above the input instead of beside it.
         </p>
 
@@ -378,7 +425,8 @@
         `) %>
 
         <p>
-          To support multiple lines in the user's input, use the <code>textarea</code>
+          To support multiple lines in the user's input, use the
+          <code>textarea</code>
           element instead.
         </p>
 
@@ -395,7 +443,8 @@
       <h3 id="slider">Slider</h3>
       <div>
         <blockquote>
-          A <em>slider</em>, sometimes called a trackbar control, consists of a bar that
+          A <em>slider</em>, sometimes called a trackbar control, consists of a
+          bar that
           defines the extent or range of the adjustment and an indicator that
           shows the current value for the control...
 
@@ -417,13 +466,17 @@
         `) %>
 
         <p>
-          You can make use of the <code>has-box-indicator</code> class replace the
-          default indicator with a box indicator, furthermore the slider can be wrapped
-          with a <code>div</code> using <code>is-vertical</code> to display the input vertically.
+          You can make use of the <code>has-box-indicator</code> class replace
+          the
+          default indicator with a box indicator, furthermore the slider can be
+          wrapped
+          with a <code>div</code> using <code>is-vertical</code> to display the
+          input vertically.
         </p>
 
         <p>
-          Note: To change the length of a vertical slider, the <code>input</code> width
+          Note: To change the length of a vertical slider, the
+          <code>input</code> width
           and <code>div</code> height.
         </p>
 
@@ -453,7 +506,8 @@
         </blockquote>
 
         <p>
-          Dropdowns can be rendered by using the <code>select</code> and <code>option</code>
+          Dropdowns can be rendered by using the <code>select</code> and
+          <code>option</code>
           elements.
         </p>
 
@@ -469,7 +523,8 @@
 
         <p>
           By default, the first option will be selected. You can change this by
-          giving one of your <code>option</code> elements the <code>selected</code>
+          giving one of your <code>option</code> elements the
+          <code>selected</code>
           attribute.
         </p>
 
@@ -507,7 +562,8 @@
 
         <blockquote>
           Include command buttons associated with the common commands of the
-          primary window in the title bar. These buttons act as shortcuts to specific
+          primary window in the title bar. These buttons act as shortcuts to
+          specific
           window commands.
 
           <footer>
@@ -517,7 +573,8 @@
 
         <p>
           You can build a complete title bar by making use of three classes,
-          <code>title-bar</code>, <code>title-bar-text</code>, and <code>title-bar-controls</code>.
+          <code>title-bar</code>, <code>title-bar-text</code>, and
+          <code>title-bar-controls</code>.
         </p>
 
         <%- example(`
@@ -530,11 +587,13 @@
         `) %>
 
         <p>
-          We make use of <code>aria-label</code> to render the Close button, to let
-          assistive technologies know the intent of this button. You may also use
+          We make use of <code>aria-label</code> to render the Close button, to
+          let
+          assistive technologies know the intent of this button. You may also
+          use
           "Minimize", "Maximize", "Restore" and "Help" like so:
         </p>
-        
+
         <%- example(`
           <div class="title-bar">
             <div class="title-bar-text">A Title Bar</div>
@@ -566,11 +625,12 @@
             </div>
           </div>          
         `) %>
-		<p>
-          You can make a title bar "inactive" by adding <code>inactive</code> class,
-		  useful when making more than one window.
+        <p>
+          You can make a title bar "inactive" by adding <code>inactive</code>
+          class,
+          useful when making more than one window.
         </p>
-		 <%- example(`
+        <%- example(`
           <div class="title-bar inactive">
             <div class="title-bar-text">An inactive title bar</div>
             <div class="title-bar-controls">
@@ -613,7 +673,8 @@
         `) %>
 
         <p>
-          To draw the contents of the window, we use the <code>window-body</code>
+          To draw the contents of the window, we use the
+          <code>window-body</code>
           class under the title bar.
         </p>
 
@@ -650,7 +711,8 @@
 
         <p>
           To render a tree view, use an <code>ul</code> element with the
-          <code>tree-view</code> class. The children of this list (<code>li</code>
+          <code>tree-view</code> class. The children of this list
+          (<code>li</code>
           elements), can contain whatever you'd like.
         </p>
 
@@ -723,21 +785,68 @@
     <h2 id="issues-contributing-etc">Issues, Contributing, etc.</h2>
 
     <p>
-      98.css is <a href="https://github.com/jdan/98.css/blob/master/LICENSE">MIT licensed</a>.
+      98.css is <a href="https://github.com/jdan/98.css/blob/master/LICENSE">MIT
+        licensed</a>.
     </p>
 
     <p>
-      Refer to <a href="https://github.com/jdan/98.css/issues">the GitHub issues page</a> to see bugs
-      in my CSS or report new ones. I'd really like to see your pull requests (especially those new to
-      open-source!) and will happily provide code review. 98.css is a fun, silly project and I'd like
+      Refer to <a href="https://github.com/jdan/98.css/issues">the GitHub issues
+        page</a> to see bugs
+      in my CSS or report new ones. I'd really like to see your pull requests
+      (especially those new to
+      open-source!) and will happily provide code review. 98.css is a fun, silly
+      project and I'd like
       to make it a fun place to build your open-source muscle.
     </p>
 
     <p>
-      Thank you for checking my little project out, I hope it brought you some joy today. Consider
-      <a href="https://github.com/jdan/98.css/stargazers">starring/following along on GitHub</a> and maybe
-      subscribing to more fun things on <a href="https://twitter.com/jdan">my twitter</a>. 👋
+      Thank you for checking my little project out, I hope it brought you some
+      joy today. Consider
+      <a href="https://github.com/jdan/98.css/stargazers">starring/following
+        along on GitHub</a> and maybe
+      subscribing to more fun things on <a href="https://twitter.com/jdan">my
+        twitter</a>. 👋
     </p>
   </main>
+  <footer>
+
+    <button class="active menu-bar">
+      <img src="./start.png" alt="" srcset="">
+      <div class="menu-bar-content">
+        <div class="side">
+          <span class="font-weight-bold">
+            Windows NT
+          </span>
+          <span>
+            Server
+          </span>
+        </div>
+        <div class="main">
+          <ul class="items">
+            <li class="item"><a class="link" href="#intro">Intro</a></li>
+            <li class="item"><a class="link" href="#button">Button</a></li>
+            <li class="item"><a class="link" href="#checkbox">Checkbox</a></li>
+            <li class="item"><a class="link"
+                href="#option-button">OptionButton</a></li>
+            <li class="item"><a class="link" href="#group-box">GroupBox</a></li>
+            <li class="item"><a class="link" href="#text-box">TextBox</a></li>
+            <li class="item"><a class="link" href="#slider">Slider</a></li>
+            <li class="item"><a class="link" href="#dropdown">Dropdown</a></li>
+            <li class="item"><a class="link" href="#title-bar">Title Bar</a>
+            </li>
+            <li class="item"><a class="link" href="#window-contents">Window
+                contents</a></li>
+            <li class="item"><a class="link" href="#tree-view">TreeView</a></li>
+            <li class="item"><a class="link"
+                href="#issues-contributing-etc">Issues, Contributing,
+                etc.</a></li>
+          </ul>
+        </div>
+      </div>
+    </button>
+    <button class="active">4:12 PM</button>
+
+  </footer>
 </body>
+
 </html>
