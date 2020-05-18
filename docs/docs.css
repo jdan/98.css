@@ -2,6 +2,7 @@ body {
   margin: 0;
   padding: 0;
   background: #c0c0c0;
+  background: var(--button-face, #c0c0c0);
 }
 
 main {
@@ -80,6 +81,7 @@ blockquote {
   margin: 0 0 20px;
   padding: 20px;
   background: #dfdfdf;
+  background: var(--button-light, #dfdfdf);
 }
 
 blockquote footer {
@@ -90,6 +92,7 @@ blockquote footer {
   margin: 16px 0;
   padding: 12px 24px;
   border-left: 1px solid #808080;
+  border-left: 1px solid var(--button-shadow, #808080);
 }
 
 details {
@@ -112,12 +115,15 @@ details[open] summary {
 
 button.focused {
   outline: 1px dotted #000000;
+  outline: 1px dotted var(--button-text, #000000);
   outline-offset: -4px;
 }
 
 button.active {
   box-shadow: inset -1px -1px #ffffff, inset 1px 1px #0a0a0a,
     inset -2px -2px #dfdfdf, inset 2px 2px #808080;
+  box-shadow: inset -1px -1px var(--button-hilight, #ffffff), inset 1px 1px var(--button-shadow, #0a0a0a),
+    inset -2px -2px var(--button-light, #dfdfdf), inset 2px 2px var(--button-dk-shadow, #808080);
 }
 
 @media (max-width: 480px) {
