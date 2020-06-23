@@ -33,14 +33,9 @@
   --radio-left: calc(-1 * var(--radio-total-width-precalc));
   --radio-dot-width: 4px;
   --radio-dot-top: calc(var(--radio-width) / 2 - var(--radio-dot-width) / 2);
-  --radio-dot-left: calc(
-    -1 * (var(--radio-total-width-precalc)) + var(--radio-width) / 2 - var(
-        --radio-dot-width
-      ) / 2
-  );
+  --radio-dot-left: calc(-1 * (var(--radio-total-width-precalc)) + var(--radio-width) / 2 - var(--radio-dot-width) / 2);
 
-  --checkbox-total-width-precalc: var(--checkbox-width) +
-    var(--radio-label-spacing);
+  --checkbox-total-width-precalc: var(--checkbox-width) + var(--radio-label-spacing);
   --checkbox-total-width: calc(var(--checkbox-total-width-precalc));
   --checkbox-left: calc(-1 * var(--checkbox-total-width-precalc));
   --checkmark-width: 7px;
@@ -49,25 +44,18 @@
 
   /* Borders */
   --border-width: 1px;
-  --border-raised-outer: inset -1px -1px var(--window-frame),
-    inset 1px 1px var(--button-highlight);
-  --border-raised-inner: inset -2px -2px var(--button-shadow),
-    inset 2px 2px var(--button-face);
-  --border-sunken-outer: inset -1px -1px var(--button-highlight),
-    inset 1px 1px var(--window-frame);
-  --border-sunken-inner: inset -2px -2px var(--button-face),
-    inset 2px 2px var(--button-shadow);
+  --border-raised-outer: inset -1px -1px var(--window-frame), inset 1px 1px var(--button-highlight);
+  --border-raised-inner: inset -2px -2px var(--button-shadow), inset 2px 2px var(--button-face);
+  --border-sunken-outer: inset -1px -1px var(--button-highlight), inset 1px 1px var(--window-frame);
+  --border-sunken-inner: inset -2px -2px var(--button-face), inset 2px 2px var(--button-shadow);
 
   /* Window borders flip button-face and button-highlight */
-  --border-window-outer: inset -1px -1px var(--window-frame),
-    inset 1px 1px var(--button-face);
-  --border-window-inner: inset -2px -2px var(--button-shadow),
-    inset 2px 2px var(--button-highlight);
+  --border-window-outer: inset -1px -1px var(--window-frame), inset 1px 1px var(--button-face);
+  --border-window-inner: inset -2px -2px var(--button-shadow), inset 2px 2px var(--button-highlight);
 
   /* Field borders (checkbox, input, etc) flip window-frame and button-shadow */
-  --border-field: inset -1px -1px var(--button-highlight),
-    inset 1px 1px var(--button-shadow), inset -2px -2px var(--button-face),
-    inset 2px 2px var(--window-frame);
+  --border-field: inset -1px -1px var(--button-highlight), inset 1px 1px var(--button-shadow),
+    inset -2px -2px var(--button-face), inset 2px 2px var(--window-frame);
 }
 
 @font-face {
@@ -179,11 +167,7 @@ button::-moz-focus-inner {
 }
 
 .title-bar {
-  background: linear-gradient(
-    90deg,
-    var(--dialog-blue),
-    var(--dialog-blue-light)
-  );
+  background: linear-gradient(90deg, var(--dialog-blue), var(--dialog-blue-light));
   padding: 3px 2px 3px 3px;
   display: flex;
   justify-content: space-between;
@@ -191,11 +175,7 @@ button::-moz-focus-inner {
 }
 
 .title-bar.inactive {
-  background: linear-gradient(
-    90deg,
-    var(--dialog-gray),
-    var(--dialog-gray-light)
-  );
+  background: linear-gradient(90deg, var(--dialog-gray), var(--dialog-gray-light));
 }
 
 .title-bar-text {
@@ -261,7 +241,8 @@ button::-moz-focus-inner {
 
 fieldset {
   border: none;
-  box-shadow: var(--border-sunken-outer), var(--border-raised-inner);
+  box-shadow: inset -1px -1px var(--button-highlight), inset -2px 1px var(--button-shadow),
+    inset 1px -2px var(--button-shadow), inset 2px 2px var(--button-highlight);
   padding: calc(2 * var(--border-width) + var(--element-spacing));
   padding-block-start: var(--element-spacing);
   margin: 0;
@@ -388,9 +369,7 @@ input[type="checkbox"]:checked + label::after {
   height: var(--checkmark-width);
   position: absolute;
   top: var(--checkmark-top);
-  left: calc(
-    -1 * (var(--checkbox-total-width-precalc)) + var(--checkmark-left)
-  );
+  left: calc(-1 * (var(--checkbox-total-width-precalc)) + var(--checkmark-left));
   background: svg-load("./icon/checkmark.svg");
 }
 
@@ -496,8 +475,8 @@ input[type="range"]::-webkit-slider-runnable-track {
   background: black;
   border-right: 1px solid grey;
   border-bottom: 1px solid grey;
-  box-shadow: 1px 0 0 white, 1px 1px 0 white, 0 1px 0 white, -1px 0 0 darkgrey,
-    -1px -1px 0 darkgrey, 0 -1px 0 darkgrey, -1px 1px 0 white, 1px -1px darkgrey;
+  box-shadow: 1px 0 0 white, 1px 1px 0 white, 0 1px 0 white, -1px 0 0 darkgrey, -1px -1px 0 darkgrey, 0 -1px 0 darkgrey,
+    -1px 1px 0 white, 1px -1px darkgrey;
 }
 
 input[type="range"]::-moz-range-track {
@@ -507,8 +486,8 @@ input[type="range"]::-moz-range-track {
   background: black;
   border-right: 1px solid grey;
   border-bottom: 1px solid grey;
-  box-shadow: 1px 0 0 white, 1px 1px 0 white, 0 1px 0 white, -1px 0 0 darkgrey,
-    -1px -1px 0 darkgrey, 0 -1px 0 darkgrey, -1px 1px 0 white, 1px -1px darkgrey;
+  box-shadow: 1px 0 0 white, 1px 1px 0 white, 0 1px 0 white, -1px 0 0 darkgrey, -1px -1px 0 darkgrey, 0 -1px 0 darkgrey,
+    -1px 1px 0 white, 1px -1px darkgrey;
 }
 
 .is-vertical {
@@ -521,8 +500,7 @@ input[type="range"]::-moz-range-track {
 .is-vertical > input[type="range"] {
   width: 150px;
   height: 4px;
-  margin: 0 calc(var(--grouped-element-spacing) + var(--range-spacing)) 0
-    var(--range-spacing);
+  margin: 0 calc(var(--grouped-element-spacing) + var(--range-spacing)) 0 var(--range-spacing);
   transform-origin: left;
   transform: rotate(270deg) translateX(calc(-50% + var(--element-spacing)));
 }
@@ -531,16 +509,16 @@ input[type="range"]::-moz-range-track {
   border-left: 1px solid grey;
   border-right: 0;
   border-bottom: 1px solid grey;
-  box-shadow: -1px 0 0 white, -1px 1px 0 white, 0 1px 0 white, 1px 0 0 darkgrey,
-    1px -1px 0 darkgrey, 0 -1px 0 darkgrey, 1px 1px 0 white, -1px -1px darkgrey;
+  box-shadow: -1px 0 0 white, -1px 1px 0 white, 0 1px 0 white, 1px 0 0 darkgrey, 1px -1px 0 darkgrey, 0 -1px 0 darkgrey,
+    1px 1px 0 white, -1px -1px darkgrey;
 }
 
 .is-vertical > input[type="range"]::-moz-range-track {
   border-left: 1px solid grey;
   border-right: 0;
   border-bottom: 1px solid grey;
-  box-shadow: -1px 0 0 white, -1px 1px 0 white, 0 1px 0 white, 1px 0 0 darkgrey,
-    1px -1px 0 darkgrey, 0 -1px 0 darkgrey, 1px 1px 0 white, -1px -1px darkgrey;
+  box-shadow: -1px 0 0 white, -1px 1px 0 white, 0 1px 0 white, 1px 0 0 darkgrey, 1px -1px 0 darkgrey, 0 -1px 0 darkgrey,
+    1px 1px 0 white, -1px -1px darkgrey;
 }
 
 .is-vertical > input[type="range"]::-webkit-slider-thumb {
