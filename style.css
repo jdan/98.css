@@ -406,6 +406,7 @@ input[type="checkbox"][disabled]:checked + label::after {
 input[type="text"],
 input[type="password"],
 input[type="email"],
+input[type="number"],
 select,
 textarea {
   padding: 3px 4px;
@@ -422,13 +423,15 @@ textarea {
 input[type="text"],
 input[type="password"],
 input[type="email"],
-select {
+input[type="number"],
+select{
   height: 21px;
 }
 
 input[type="text"],
 input[type="password"],
-input[type="email"] {
+input[type="email"],
+input[type="number"] {
   /* For some reason descenders are getting cut off without this */
   line-height: 2;
 }
@@ -449,6 +452,7 @@ select:focus,
 input[type="text"]:focus,
 input[type="password"]:focus,
 input[type="email"]:focus,
+input[type="number"]:focus,
 textarea:focus {
   outline: none;
 }
@@ -731,4 +735,28 @@ summary:focus {
 ::-webkit-scrollbar-button:horizontal:end {
   width: 16px;
   background-image: svg-load("./icon/button-right.svg");
+}
+
+.meter { 
+	height: 23px;  /* Can be anything */
+	position: relative;
+  box-shadow: var(--border-field);
+  padding: 3px 4px;
+  border: none;
+  background-color: var(--button-highlight);
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0;
+}
+
+.meter > span {
+  display: block;
+  height: 100%;
+  background-color: var(--dialog-blue);
+  position: relative;
+  overflow: hidden;
+  background-image: linear-gradient(90deg, #000080 40%, #ffffff 40%, #ffffff 50%, #000080 50%, #000080 90%, #ffffff 90%, #ffffff 100%);
+  background-size: 30.00px 30.00px;
 }
