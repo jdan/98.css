@@ -741,7 +741,7 @@ summary:focus {
 	height: 23px;  /* Can be anything */
 	position: relative;
   box-shadow: var(--border-field);
-  padding: 3px 4px;
+  padding: 4px 4px 3px 4px;
   border: none;
   background-color: var(--button-highlight);
   box-sizing: border-box;

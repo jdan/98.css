@@ -32,6 +32,7 @@
           <li><a href="#text-box">TextBox</a></li>
           <li><a href="#slider">Slider</a></li>
           <li><a href="#dropdown">Dropdown</a></li>
+          <li><a href="#progressbar">ProgressBar</a></li>
           <li>
             <a href="#window">Window</a>
             <ul>
@@ -439,50 +440,19 @@
     </section>
 
     <section class="component">
-      <h3 id="dropdown">Dropdown</h3>
+      <h3 id="progressbar">Progress Bar</h3>
       <div>
         <blockquote>
-          A <em>drop-down list box</em> allows the selection of only a
-          single item from a list. In its closed state, the control displays
-          the current value for the control. The user opens the list to change
-          the value.
+          <em>Progress bar</em> is a component of a graphical user interface used to display the    progress of a task, such as downloading a file or loading a web page.
 
-          <footer>
-            &mdash; Microsoft Windows User Experience p. 175
-          </footer>
+          <footer>&mdash; Wikipedia.</footer>
         </blockquote>
-
-        <p>
-          Dropdowns can be rendered by using the <code>select</code> and <code>option</code>
-          elements.
-        </p>
-
         <%- example(`
-          <select>
-            <option>5 - Incredible!</option>
-            <option>4 - Great!</option>
-            <option>3 - Pretty good</option>
-            <option>2 - Not so great</option>
-            <option>1 - Unfortunate</option>
-          </select>
-        `) %>
+        <div class="meter"> 
+          <span style="width: 80%"></span> 
+        </div>
+      `) %>
 
-        <p>
-          By default, the first option will be selected. You can change this by
-          giving one of your <code>option</code> elements the <code>selected</code>
-          attribute.
-        </p>
-
-        <%- example(`
-          <select>
-            <option>5 - Incredible!</option>
-            <option>4 - Great!</option>
-            <option selected>3 - Pretty good</option>
-            <option>2 - Not so great</option>
-            <option>1 - Unfortunate</option>
-          </select>
-        `) %>
-      </div>
     </section>
 
     <h3 id="window">Window</h3>
