@@ -972,27 +972,27 @@
       <h3 id="progress-indicator">Progress Indicator</h3>
       <div>
         <blockquote>
-          A <em>ProgressIndicator</em> is a control, also known as a <em>progress bar control</em>, you can use to show the percentage of completion of a lengthy operation.
+          You can use a <em>progress indicator</em>, also known as a <em>progress bar control</em>, to show the percentage of completion of a lengthy operation.
 
           <footer>
-            &mdash; Microsoft Windows User Experience p. 142
+            &mdash; Microsoft Windows User Experience p. 189
           </footer>
         </blockquote>
 
         <p>
-          The ProgressIndicator component supports two types of bars. Both are deterministic, which means that you should give it a <code>value</code> parameter. Indeterministic progress bars are not supported, yet.
-        </p>
-
-        <p>
-          There are two types of progress bars: continuous and block. The continuous doesn't require any further configuration. The block bar does require a class of <code>progress-bar-block</code>.
+          There are two types of progress bars: solid and segmented. The solid version is the default. To declare a segmented bar, you should use the <code>segmented</code> class.
         </p>
 
         <%- example(`
-          <progress value="50" max="100"></progress>
+          <div class="progress-indicator">
+            <span class="progress-indicator-bar"  style="width: 40%;" />
+          </div>
         `) %>
 
         <%- example(`
-          <progress class="progress-bar-block" value="70" max="100"></progress>
+          <div class="progress-indicator segmented">
+            <span class="progress-indicator-bar" style="width: 40%;" />
+          </div>
         `) %>
       </div>
     </section>
