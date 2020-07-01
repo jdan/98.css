@@ -1,7 +1,7 @@
 /**
  * 98.css
  * Copyright (c) 2020 Jordan Scales <thatjdanisso.cool>
- * https://github.com/jdan/98.css/blob/main/LICENSE
+ * https://github.com/jdan/98.css/blob/master/LICENSE
  */
 
 :root {
@@ -13,8 +13,6 @@
   --window-frame: #0a0a0a;
   --dialog-blue: #000080;
   --dialog-blue-light: #1084d0;
-  --dialog-gray: #808080;
-  --dialog-gray-light: #b5b5b5;
   --link-blue: #0000ff;
 
   /* Spacing */
@@ -72,8 +70,8 @@
 
 @font-face {
   font-family: "Pixelated MS Sans Serif";
-  src: url("fonts/converted/ms_sans_serif.woff") format("woff");
-  src: url("fonts/converted/ms_sans_serif.woff2") format("woff2");
+  src: url("ms_sans_serif.woff") format("woff");
+  src: url("ms_sans_serif.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
 }
@@ -88,6 +86,7 @@
 
 body {
   font-family: Arial;
+  cursor: url("icon/std.cur"), default;
   font-size: 12px;
   color: #222222;
 }
@@ -133,7 +132,7 @@ button {
   background: var(--surface);
   box-shadow: var(--border-raised-outer), var(--border-raised-inner);
   border-radius: 0;
-
+  font-size: 11px;
   min-width: 75px;
   min-height: 23px;
   padding: 0 12px;
@@ -148,13 +147,16 @@ button {
 
 button:not(:disabled):active {
   box-shadow: var(--border-sunken-outer), var(--border-sunken-inner);
-  padding: 2px 11px 0 13px;
 }
 
-@media (not(hover)) {
+@media(not(hover)) {
   button:not(:disabled):hover {
     box-shadow: var(--border-sunken-outer), var(--border-sunken-inner);
   }
+}
+
+button:hover {
+    cursor: url("icon/std.cur"), default;
 }
 
 button:focus {
@@ -190,14 +192,6 @@ button::-moz-focus-inner {
   align-items: center;
 }
 
-.title-bar.inactive {
-  background: linear-gradient(
-    90deg,
-    var(--dialog-gray),
-    var(--dialog-gray-light)
-  );
-}
-
 .title-bar-text {
   font-weight: bold;
   color: white;
@@ -216,41 +210,31 @@ button::-moz-focus-inner {
   min-height: 14px;
 }
 
-.title-bar-controls button:active {
-  padding: 0;
-}
-
 .title-bar-controls button:focus {
   outline: none;
 }
 
 .title-bar-controls button[aria-label="Minimize"] {
-  background-image: svg-load("./icon/minimize.svg");
+  background-image: url("./icon/minimize.svg");
   background-repeat: no-repeat;
   background-position: bottom 3px left 4px;
 }
 
 .title-bar-controls button[aria-label="Maximize"] {
-  background-image: svg-load("./icon/maximize.svg");
-  background-repeat: no-repeat;
-  background-position: top 2px left 3px;
-}
-
-.title-bar-controls button[aria-label="Restore"] {
-  background-image: svg-load("./icon/restore.svg");
+  background-image: url("./icon/maximize.svg");
   background-repeat: no-repeat;
   background-position: top 2px left 3px;
 }
 
 .title-bar-controls button[aria-label="Help"] {
-  background-image: svg-load("./icon/help.svg");
+  background-image: url("./icon/help.svg");
   background-repeat: no-repeat;
   background-position: top 2px left 5px;
 }
 
 .title-bar-controls button[aria-label="Close"] {
   margin-left: 2px;
-  background-image: svg-load("./icon/close.svg");
+  background-image: url("./icon/close.svg");
   background-repeat: no-repeat;
   background-position: top 3px left 4px;
 }
@@ -261,8 +245,7 @@ button::-moz-focus-inner {
 
 fieldset {
   border: none;
-  box-shadow: inset -1px -1px var(--button-highlight), inset -2px 1px var(--button-shadow),
-    inset 1px -2px var(--button-shadow), inset 2px 2px var(--button-highlight);
+  box-shadow: var(--border-sunken-outer), var(--border-raised-inner);
   padding: calc(2 * var(--border-width) + var(--element-spacing));
   padding-block-start: var(--element-spacing);
   margin: 0;
@@ -270,6 +253,8 @@ fieldset {
 
 legend {
   background: var(--surface);
+  font-family: "Pixelated MS Sans Serif";
+  font-size: 11px;
 }
 
 .field-row {
@@ -330,11 +315,11 @@ input[type="radio"] + label::before {
   width: var(--radio-width);
   height: var(--radio-width);
   margin-right: var(--radio-label-spacing);
-  background: svg-load("./icon/radio-border.svg");
+  background: url("./icon/radio-border.svg");
 }
 
 input[type="radio"]:active + label::before {
-  background: svg-load("./icon/radio-border-disabled.svg");
+  background: url("./icon/radio-border-disabled.svg");
 }
 
 input[type="radio"]:checked + label::after {
@@ -345,7 +330,7 @@ input[type="radio"]:checked + label::after {
   top: var(--radio-dot-top);
   left: var(--radio-dot-left);
   position: absolute;
-  background: svg-load("./icon/radio-dot.svg");
+  background: url("./icon/radio-dot.svg");
 }
 
 input[type="radio"]:focus + label,
@@ -354,11 +339,11 @@ input[type="checkbox"]:focus + label {
 }
 
 input[type="radio"][disabled] + label::before {
-  background: svg-load("./icon/radio-border-disabled.svg");
+  background: url("./icon/radio-border-disabled.svg");
 }
 
 input[type="radio"][disabled]:checked + label::after {
-  background: svg-load("./icon/radio-dot-disabled.svg");
+  background: url("./icon/radio-dot-disabled.svg");
 }
 
 input[type="checkbox"] + label {
@@ -392,7 +377,7 @@ input[type="checkbox"]:checked + label::after {
   left: calc(
     -1 * (var(--checkbox-total-width-precalc)) + var(--checkmark-left)
   );
-  background: svg-load("./icon/checkmark.svg");
+  background: url("./icon/checkmark.svg");
 }
 
 input[type="checkbox"][disabled] + label::before {
@@ -400,7 +385,7 @@ input[type="checkbox"][disabled] + label::before {
 }
 
 input[type="checkbox"][disabled]:checked + label::after {
-  background: svg-load("./icon/checkmark-disabled.svg");
+  background: url("./icon/checkmark-disabled.svg");
 }
 
 input[type="text"],
@@ -439,7 +424,7 @@ select {
   -moz-appearance: none;
   position: relative;
   padding-right: 32px;
-  background-image: svg-load("./icon/button-down.svg");
+  background-image: url("./icon/button-down.svg");
   background-position: top 2px right 2px;
   background-repeat: no-repeat;
   border-radius: 0;
@@ -453,110 +438,137 @@ textarea:focus {
   outline: none;
 }
 
-input[type="range"] {
+input[type=range] {
   -webkit-appearance: none;
   width: 100%;
   background: transparent;
 }
 
-input[type="range"]:focus {
+input[type=range]:focus {
   outline: none;
 }
 
-input[type="range"]::-webkit-slider-thumb {
+input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
   height: 21px;
   width: 11px;
-  background: svg-load("./icon/indicator-horizontal.svg");
+  background: url("./icon/indicator-horizontal.svg");
   transform: translateY(-8px);
 }
 
-input[type="range"].has-box-indicator::-webkit-slider-thumb {
-  background: svg-load("./icon/indicator-rectangle-horizontal.svg");
+input[type=range].has-box-indicator::-webkit-slider-thumb {
+  background: url("./icon/indicator-rectangle-horizontal.svg");
   transform: translateY(-10px);
 }
 
-input[type="range"]::-moz-range-thumb {
+input[type=range]::-moz-range-thumb {
   height: 21px;
   width: 11px;
   border: 0;
   border-radius: 0;
-  background: svg-load("./icon/indicator-horizontal.svg");
+  background: url("./icon/indicator-horizontal.svg");
   transform: translateY(2px);
 }
 
-input[type="range"].has-box-indicator::-moz-range-thumb {
-  background: svg-load("./icon/indicator-rectangle-horizontal.svg");
+input[type=range].has-box-indicator::-moz-range-thumb {
+  background: url("./icon/indicator-rectangle-horizontal.svg");
   transform: translateY(0px);
 }
 
-input[type="range"]::-webkit-slider-runnable-track {
+input[type=range]::-webkit-slider-runnable-track {
   width: 100%;
   height: 2px;
   box-sizing: border-box;
   background: black;
   border-right: 1px solid grey;
   border-bottom: 1px solid grey;
-  box-shadow: 1px 0 0 white, 1px 1px 0 white, 0 1px 0 white, -1px 0 0 darkgrey,
-    -1px -1px 0 darkgrey, 0 -1px 0 darkgrey, -1px 1px 0 white, 1px -1px darkgrey;
+  box-shadow:
+    1px 0 0 white,
+    1px 1px 0 white,
+    0 1px 0 white,
+    -1px 0 0 darkgrey,
+    -1px -1px 0 darkgrey,
+    0 -1px 0 darkgrey,
+    -1px 1px 0 white,
+    1px -1px darkgrey;
 }
 
-input[type="range"]::-moz-range-track {
+input[type=range]::-moz-range-track {
   width: 100%;
   height: 2px;
   box-sizing: border-box;
   background: black;
   border-right: 1px solid grey;
   border-bottom: 1px solid grey;
-  box-shadow: 1px 0 0 white, 1px 1px 0 white, 0 1px 0 white, -1px 0 0 darkgrey,
-    -1px -1px 0 darkgrey, 0 -1px 0 darkgrey, -1px 1px 0 white, 1px -1px darkgrey;
+  box-shadow:
+    1px 0 0 white,
+    1px 1px 0 white,
+    0 1px 0 white,
+    -1px 0 0 darkgrey,
+    -1px -1px 0 darkgrey,
+    0 -1px 0 darkgrey,
+    -1px 1px 0 white,
+    1px -1px darkgrey;
 }
 
 .is-vertical {
   display: inline-block;
   width: 4px;
   height: 150px;
-  transform: translateY(50%);
+  transform: translateY(50%) ;
 }
 
-.is-vertical > input[type="range"] {
+.is-vertical > input[type=range] {
   width: 150px;
   height: 4px;
-  margin: 0 calc(var(--grouped-element-spacing) + var(--range-spacing)) 0
-    var(--range-spacing);
+  margin: 0 calc(var(--grouped-element-spacing) + var(--range-spacing)) 0 var(--range-spacing);
   transform-origin: left;
-  transform: rotate(270deg) translateX(calc(-50% + var(--element-spacing)));
+  transform: rotate(270deg) translateX(calc(-50% + var(--element-spacing))) ;
 }
 
-.is-vertical > input[type="range"]::-webkit-slider-runnable-track {
+.is-vertical > input[type=range]::-webkit-slider-runnable-track {
   border-left: 1px solid grey;
   border-right: 0;
   border-bottom: 1px solid grey;
-  box-shadow: -1px 0 0 white, -1px 1px 0 white, 0 1px 0 white, 1px 0 0 darkgrey,
-    1px -1px 0 darkgrey, 0 -1px 0 darkgrey, 1px 1px 0 white, -1px -1px darkgrey;
+  box-shadow:
+    -1px 0 0 white,
+    -1px 1px 0 white,
+    0 1px 0 white,
+    1px 0 0 darkgrey,
+    1px -1px 0 darkgrey,
+    0 -1px 0 darkgrey,
+    1px 1px 0 white,
+    -1px -1px darkgrey;
 }
 
-.is-vertical > input[type="range"]::-moz-range-track {
+.is-vertical > input[type=range]::-moz-range-track {
   border-left: 1px solid grey;
   border-right: 0;
   border-bottom: 1px solid grey;
-  box-shadow: -1px 0 0 white, -1px 1px 0 white, 0 1px 0 white, 1px 0 0 darkgrey,
-    1px -1px 0 darkgrey, 0 -1px 0 darkgrey, 1px 1px 0 white, -1px -1px darkgrey;
+  box-shadow:
+    -1px 0 0 white,
+    -1px 1px 0 white,
+    0 1px 0 white,
+    1px 0 0 darkgrey,
+    1px -1px 0 darkgrey,
+    0 -1px 0 darkgrey,
+    1px 1px 0 white,
+    -1px -1px darkgrey;
 }
 
-.is-vertical > input[type="range"]::-webkit-slider-thumb {
+.is-vertical > input[type=range]::-webkit-slider-thumb {
   transform: translateY(-8px) scaleX(-1);
 }
 
-.is-vertical > input[type="range"].has-box-indicator::-webkit-slider-thumb {
+.is-vertical > input[type=range].has-box-indicator::-webkit-slider-thumb {
   transform: translateY(-10px) scaleX(-1);
 }
 
-.is-vertical > input[type="range"]::-moz-range-thumb {
+.is-vertical > input[type=range]::-moz-range-thumb {
   transform: translateY(2px) scaleX(-1);
 }
 
-.is-vertical > input[type="range"].has-box-indicator::-moz-range-thumb {
+.is-vertical > input[type=range].has-box-indicator::-moz-range-thumb {
   transform: translateY(0px) scaleX(-1);
 }
 
@@ -570,7 +582,7 @@ select:focus option {
 }
 
 select:active {
-  background-image: svg-load("./icon/button-down-active.svg");
+  background-image: url("./icon/button-down-active.svg");
 }
 
 a {
@@ -579,6 +591,10 @@ a {
 
 a:focus {
   outline: 1px dotted var(--link-blue);
+}
+
+a:hover {
+    cursor: url("icon/finger.cur"), move;
 }
 
 ul.tree-view {
@@ -662,10 +678,14 @@ ul.tree-view details > summary:before {
   border: 1px solid #808080;
   width: 8px;
   height: 9px;
-  line-height: 8px;
+  line-height: 9px;
   margin-right: 5px;
   padding-left: 1px;
   background-color: #fff;
+}
+
+ul.tree-view details > summary:before {
+    cursor: url("icon/finger.cur"), move;
 }
 
 ul.tree-view details[open] > summary:before {
@@ -701,7 +721,7 @@ summary:focus {
 }
 
 ::-webkit-scrollbar-track {
-  background-image: svg-load("./icon/scrollbar-background.svg");
+  background-image: url("./icon/scrollbar-background.svg");
 }
 
 ::-webkit-scrollbar-thumb {
@@ -718,17 +738,17 @@ summary:focus {
 
 ::-webkit-scrollbar-button:vertical:start {
   height: 17px;
-  background-image: svg-load("./icon/button-up.svg");
+  background-image: url("./icon/button-up.svg");
 }
 ::-webkit-scrollbar-button:vertical:end {
   height: 17px;
-  background-image: svg-load("./icon/button-down.svg");
+  background-image: url("./icon/button-down.svg");
 }
 ::-webkit-scrollbar-button:horizontal:start {
   width: 16px;
-  background-image: svg-load("./icon/button-left.svg");
+  background-image: url("./icon/button-left.svg");
 }
 ::-webkit-scrollbar-button:horizontal:end {
   width: 16px;
-  background-image: svg-load("./icon/button-right.svg");
+  background-image: url("./icon/button-right.svg");
 }
