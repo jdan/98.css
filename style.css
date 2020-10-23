@@ -782,7 +782,7 @@ menu[role=tablist] > li > a:focus {
   outline: 1px dotted #222;
 }
 
-menu[role=tablist].justified > li {
+menu[role=tablist].multirows > li {
   flex-grow: 1;
   text-align: center;
 }
