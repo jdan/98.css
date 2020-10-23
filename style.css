@@ -69,10 +69,11 @@
     inset 1px 1px var(--button-shadow), inset -2px -2px var(--button-face),
     inset 2px 2px var(--window-frame);
 
+  /* Tabs */
   --border-tab: inset -1px 0 var(--window-frame),
-    inset 1px 1px var(--button-highlight),
+    inset 1px 1px var(--button-face),
     inset -2px 0 var(--button-shadow),
-    inset 2px 2px var(--button-face)
+    inset 2px 2px var(--button-highlight)
 }
 
 @font-face {
