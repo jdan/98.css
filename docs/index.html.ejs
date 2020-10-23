@@ -534,7 +534,7 @@
           assistive technologies know the intent of this button. You may also use
           "Minimize", "Maximize", "Restore" and "Help" like so:
         </p>
-        
+
         <%- example(`
           <div class="title-bar">
             <div class="title-bar-text">A Title Bar</div>
@@ -564,7 +564,7 @@
               <button aria-label="Help"></button>
               <button aria-label="Close"></button>
             </div>
-          </div>          
+          </div>
         `) %>
 		<p>
           You can make a title bar "inactive" by adding <code>inactive</code> class,
@@ -716,6 +716,83 @@
             <li>HTML</li>
             <li>Special Thanks</li>
           </ul>
+        `) %>
+      </div>
+    </section>
+
+    <section class="component">
+      <h3 id="tabs">Tabs</h3>
+      <div>
+        <blockquote>
+          ...
+
+          <footer>
+            &mdash; Microsoft Windows User Experience p. #
+          </footer>
+        </blockquote>
+
+        <p>
+          To render a tab list, use a <code>menu</code> element with the
+          <code>[role=tablist]</code> attribute. The children of this menu (<code>li</code>
+          elements), should get a <code>[role=tab]</code> attribute.
+        </p>
+
+        <p>
+          Tabs should be managed by adding custom javascript code.
+          All you need is to add the <code>[aria-selected=true]</code> attribute to the active tab.
+        </p>
+
+        <%- example(`
+        <div class="window-body">
+          <p>Hello, world!</p>
+
+          <menu role="tablist">
+            <li role="tab" aria-selected="true"><a href="#">Desktop</a></li>
+            <li role="tab"><a href="#">My computer</a></li>
+            <li role="tab"><a href="#">Control panel</a></li>
+            <li role="tab"><a href="#">Devices manager</a></li>
+            <li role="tab"><a href="#">Hardware profiles</a></li>
+            <li role="tab"><a href="#">Performance</a></li>
+          </menu>
+          <div class="window" role="tabpanel">
+            <div class="window-body">
+              <p>the tab content</p>
+            </div>
+          </div>
+        </div>
+        `) %>
+
+        <p>
+          To create multirows tabs, add a <code>multirows</code>
+          class to the <code>menu</code> tag.
+        </p>
+
+        <%- example(`
+        <div class="window-body">
+          <p>Hello, world!</p>
+
+          <menu role="tablist" class="multirows">
+            <li role="tab"><a href="#">Desktop</a></li>
+            <li role="tab"><a href="#">My computer</a></li>
+            <li role="tab"><a href="#">Control panel</a></li>
+            <li role="tab"><a href="#">Devices manager</a></li>
+            <li role="tab"><a href="#">Hardware profiles</a></li>
+            <li role="tab"><a href="#">Performance</a></li>
+          </menu>
+          <menu role="tablist" class="multirows">
+            <li role="tab"><a href="#">Users</a></li>
+            <li role="tab"><a href="#">Network</a></li>
+            <li role="tab"><a href="#">Programs</a></li>
+            <li role="tab"><a href="#">Services</a></li>
+            <li role="tab"><a href="#">Resources</a></li>
+            <li role="tab"><a href="#">Advanced</a></li>
+          </menu>
+          <div class="window" role="tabpanel">
+            <div class="window-body">
+              <p>the tab content</p>
+            </div>
+          </div>
+        </div>
         `) %>
       </div>
     </section>
