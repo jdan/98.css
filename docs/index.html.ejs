@@ -636,6 +636,48 @@
     </section>
 
     <section class="component">
+      <h4 id="status-bar">Status Bar</h4>
+      <div>
+        <blockquote>
+          A status bar is a special area within a window, typically the bottom, that displays information
+          about the current state of what is being viewed in the window or any other contextual information, such as keyboard
+          state.
+
+          <footer>
+            &mdash; Microsoft Windows User Experience p. 146
+          </footer>
+        </blockquote>
+
+        <p>
+          You can render a status bar with the <code>status-bar</code> class, 
+          and <code>status-bar-field</code> for every child text element.
+        </p>
+
+        <%- example(`
+        <div class="window" style="width: 320px">
+          <div class="title-bar">
+            <div class="title-bar-text">A Window With A Status Bar</div>
+          </div>
+          <div class="window-body">
+        <p> There are just so many possibilities:</p>
+        <ul>
+            <li>A Task Manager</li>
+            <li>A Notepad</li>
+            <li>Or even a File Explorer!</li>
+        </ul>
+          </div>
+          <div class="status-bar">
+            <p class="status-bar-field">Press F1 for help</p>
+            <p class="status-bar-field">Slide 1</p>
+            <p class="status-bar-field">CPU Usage: 14%</p>
+          </div>
+        </div>
+      `) %>
+
+       
+    </section>
+
+    <section class="component">
       <h3 id="tree-view">TreeView</h3>
       <div>
         <blockquote>
