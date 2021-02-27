@@ -6,16 +6,24 @@
 
 :root {
   /* Color */
+  --control-outline: #000000;
+  --control-shadow: #808080;
+  --control-shadow-dark-gray: #a9a9a9;
+  --control-shadow-white: #ffffff;
   --surface: #c0c0c0;
   --button-highlight: #ffffff;
   --button-face: #dfdfdf;
-  --button-shadow: #808080;
+  --button-shadow: var(--control-shadow);
   --window-frame: #0a0a0a;
   --dialog-blue: #000080;
   --dialog-blue-light: #1084d0;
   --dialog-gray: #808080;
   --dialog-gray-light: #b5b5b5;
   --link-blue: #0000ff;
+  --range-background: #000000;
+  --text-black: #000000;
+  --text-dark-gray: #222222;
+  --text-white: #ffffff;
 
   /* Spacing */
   --element-spacing: 8px;
@@ -89,7 +97,7 @@
 body {
   font-family: Arial;
   font-size: 12px;
-  color: #222222;
+  color: var(--text-dark-gray);
 }
 
 button,
@@ -124,7 +132,7 @@ h4 {
 
 u {
   text-decoration: none;
-  border-bottom: 0.5px solid #222222;
+  border-bottom: 0.5px solid var(--text-dark-gray);
 }
 
 button {
@@ -142,7 +150,7 @@ button {
 .vertical-bar {
   width: 4px;
   height: 20px;
-  background: #c0c0c0;
+  background: var(--surface);
   box-shadow: var(--border-raised-outer), var(--border-raised-inner);
 }
 
@@ -158,7 +166,7 @@ button:not(:disabled):active {
 }
 
 button:focus {
-  outline: 1px dotted #000000;
+  outline: 1px dotted var(--control-outline);
   outline-offset: -4px;
 }
 
@@ -200,7 +208,7 @@ button::-moz-focus-inner {
 
 .title-bar-text {
   font-weight: bold;
-  color: white;
+  color: var(--text-white);
   letter-spacing: 0;
   margin-right: 24px;
 }
@@ -350,7 +358,7 @@ input[type="radio"]:checked + label::after {
 
 input[type="radio"]:focus + label,
 input[type="checkbox"]:focus + label {
-  outline: 1px dotted #000000;
+  outline: 1px dotted var(--control-outline);
 }
 
 input[type="radio"][disabled] + label::before {
@@ -494,22 +502,22 @@ input[type="range"]::-webkit-slider-runnable-track {
   width: 100%;
   height: 2px;
   box-sizing: border-box;
-  background: black;
-  border-right: 1px solid grey;
-  border-bottom: 1px solid grey;
-  box-shadow: 1px 0 0 white, 1px 1px 0 white, 0 1px 0 white, -1px 0 0 darkgrey,
-    -1px -1px 0 darkgrey, 0 -1px 0 darkgrey, -1px 1px 0 white, 1px -1px darkgrey;
+  background: var(--range-background);
+  border-right: 1px solid var(--control-shadow);
+  border-bottom: 1px solid var(--control-shadow);
+  box-shadow: 1px 0 0 var(--control-shadow-white), 1px 1px 0 var(--control-shadow-white), 0 1px 0 var(--control-shadow-white), -1px 0 0 var(--control-shadow-dark-gray),
+    -1px -1px 0 var(--control-shadow-dark-gray), 0 -1px 0 var(--control-shadow-dark-gray), -1px 1px 0 var(--control-shadow-white), 1px -1px var(--control-shadow-dark-gray);
 }
 
 input[type="range"]::-moz-range-track {
   width: 100%;
   height: 2px;
   box-sizing: border-box;
-  background: black;
-  border-right: 1px solid grey;
-  border-bottom: 1px solid grey;
-  box-shadow: 1px 0 0 white, 1px 1px 0 white, 0 1px 0 white, -1px 0 0 darkgrey,
-    -1px -1px 0 darkgrey, 0 -1px 0 darkgrey, -1px 1px 0 white, 1px -1px darkgrey;
+  background: var(--range-background);
+  border-right: 1px solid var(--control-shadow);
+  border-bottom: 1px solid var(--control-shadow);
+  box-shadow: 1px 0 0 var(--control-shadow-white), 1px 1px 0 var(--control-shadow-white), 0 1px 0 var(--control-shadow-white), -1px 0 0 var(--control-shadow-dark-gray),
+    -1px -1px 0 var(--control-shadow-dark-gray), 0 -1px 0 var(--control-shadow-dark-gray), -1px 1px 0 var(--control-shadow-white), 1px -1px var(--control-shadow-dark-gray);
 }
 
 .is-vertical {
@@ -529,19 +537,19 @@ input[type="range"]::-moz-range-track {
 }
 
 .is-vertical > input[type="range"]::-webkit-slider-runnable-track {
-  border-left: 1px solid grey;
+  border-left: 1px solid var(--control-shadow);
   border-right: 0;
-  border-bottom: 1px solid grey;
-  box-shadow: -1px 0 0 white, -1px 1px 0 white, 0 1px 0 white, 1px 0 0 darkgrey,
-    1px -1px 0 darkgrey, 0 -1px 0 darkgrey, 1px 1px 0 white, -1px -1px darkgrey;
+  border-bottom: 1px solid var(--control-shadow);
+  box-shadow: -1px 0 0 var(--control-shadow-white), -1px 1px 0 var(--control-shadow-white), 0 1px 0 var(--control-shadow-white), 1px 0 0 var(--control-shadow-dark-gray),
+    1px -1px 0 var(--control-shadow-dark-gray), 0 -1px 0 var(--control-shadow-dark-gray), 1px 1px 0 var(--control-shadow-white), -1px -1px var(--control-shadow-dark-gray);
 }
 
 .is-vertical > input[type="range"]::-moz-range-track {
-  border-left: 1px solid grey;
+  border-left: 1px solid var(--control-shadow);
   border-right: 0;
-  border-bottom: 1px solid grey;
-  box-shadow: -1px 0 0 white, -1px 1px 0 white, 0 1px 0 white, 1px 0 0 darkgrey,
-    1px -1px 0 darkgrey, 0 -1px 0 darkgrey, 1px 1px 0 white, -1px -1px darkgrey;
+  border-bottom: 1px solid var(--control-shadow);
+  box-shadow: -1px 0 0 var(--control-shadow-white), -1px 1px 0 var(--control-shadow-white), 0 1px 0 var(--control-shadow-white), 1px 0 0 var(--control-shadow-dark-gray),
+    1px -1px 0 var(--control-shadow-dark-gray), 0 -1px 0 var(--control-shadow-dark-gray), 1px 1px 0 var(--control-shadow-white), -1px -1px var(--control-shadow-dark-gray);
 }
 
 .is-vertical > input[type="range"]::-webkit-slider-thumb {
@@ -565,8 +573,8 @@ select:focus {
   background-color: var(--dialog-blue);
 }
 select:focus option {
-  color: #000;
-  background-color: #fff;
+  color: var(--control-outline);
+  background-color: var(--button-highlight);
 }
 
 select:active {
@@ -595,7 +603,7 @@ ul.tree-view li {
 
 ul.tree-view a {
   text-decoration: none;
-  color: #000;
+  color: var(--text-black);
 }
 
 ul.tree-view a:focus {
@@ -612,7 +620,7 @@ ul.tree-view ul {
   margin-left: 16px;
   padding-left: 16px;
   /* Goes down too far */
-  border-left: 1px dotted #808080;
+  border-left: 1px dotted var(--control-shadow);
 }
 
 ul.tree-view ul > li {
@@ -625,7 +633,7 @@ ul.tree-view ul > li::before {
   left: -16px;
   top: 6px;
   width: 12px;
-  border-bottom: 1px dotted #808080;
+  border-bottom: 1px dotted var(--control-shadow);
 }
 
 /* Cover the bottom of the left dotted border */
@@ -659,13 +667,13 @@ ul.tree-view details > summary:before {
   display: block;
   float: left;
   content: "+";
-  border: 1px solid #808080;
+  border: 1px solid var(--control-shadow);
   width: 8px;
   height: 9px;
   line-height: 8px;
   margin-right: 5px;
   padding-left: 1px;
-  background-color: #fff;
+  background-color: var(--control-outline);
 }
 
 ul.tree-view details[open] > summary:before {
@@ -686,7 +694,7 @@ code * {
 }
 
 summary:focus {
-  outline: 1px dotted #000000;
+  outline: 1px dotted (--control-outline);
 }
 
 ::-webkit-scrollbar {
