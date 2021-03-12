@@ -433,6 +433,12 @@ input[type="email"] {
   line-height: 2;
 }
 
+input[type='email'][disabled],
+input[type='password'][disabled],
+input[type='text'][disabled] {
+  background-color: var(--surface);
+}
+
 select {
   appearance: none;
   -webkit-appearance: none;
