@@ -261,8 +261,9 @@ button::-moz-focus-inner {
 
 fieldset {
   border: none;
-  box-shadow: inset -1px -1px var(--button-highlight), inset -2px 1px var(--button-shadow),
-    inset 1px -2px var(--button-shadow), inset 2px 2px var(--button-highlight);
+  box-shadow: inset -1px -1px var(--button-highlight),
+    inset -2px 1px var(--button-shadow), inset 1px -2px var(--button-shadow),
+    inset 2px 2px var(--button-highlight);
   padding: calc(2 * var(--border-width) + var(--element-spacing));
   padding-block-start: var(--element-spacing);
   margin: 0;
@@ -433,9 +434,10 @@ input[type="email"] {
   line-height: 2;
 }
 
-input[type='email'][disabled],
-input[type='password'][disabled],
-input[type='text'][disabled] {
+input[type="email"][disabled],
+input[type="password"][disabled],
+input[type="text"][disabled],
+textarea[disabled] {
   background-color: var(--surface);
 }
 
