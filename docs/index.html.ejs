@@ -388,7 +388,20 @@
             <textarea id="text${getCurrentId()}" rows="8"></textarea>
           </div>
         `) %>
+
+        <p>
+          Text boxes can also be disabled and have value with their corresponding HTML attributes. 
+        </p>
+  
+        <%- example(`
+          <div class="field-row">
+            <label for="text${getNewId()}">Favorite color</label>
+            <input id="text${getCurrentId()}" disabled type="text" value="Windows Green"/>
+          </div>
+        `) %>
       </div>
+
+
     </section>
 
     <section class="component">
