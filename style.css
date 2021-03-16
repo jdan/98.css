@@ -169,6 +169,10 @@ button::-moz-focus-inner {
 :disabled,
 :disabled + label {
   color: var(--button-shadow);
+}
+
+button:disabled,
+:disabled + label {
   text-shadow: 1px 1px 0 var(--button-highlight);
 }
 
@@ -431,6 +435,13 @@ input[type="password"],
 input[type="email"] {
   /* For some reason descenders are getting cut off without this */
   line-height: 2;
+}
+
+input[type="email"]:disabled,
+input[type="password"]:disabled,
+input[type="text"]:disabled,
+textarea:disabled {
+  background-color: var(--surface);
 }
 
 select {
