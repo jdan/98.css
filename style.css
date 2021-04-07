@@ -259,6 +259,20 @@ button:disabled,
   background-position: top 3px left 4px;
 }
 
+.status-bar {
+  margin: 0px 1px;
+  display: flex;
+  gap: 1px;
+}
+
+.status-bar-field {
+  box-shadow: inset -1px -1px  #dfdfdf, 
+    inset 1px 1px #808080;
+  flex-grow: 1;
+  padding: 2px 3px;
+  margin: 0;
+}
+
 .window-body {
   margin: var(--element-spacing);
 }
