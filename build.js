@@ -29,7 +29,7 @@ function buildCSS() {
       mkdirp.sync("dist");
       fs.writeFileSync("dist/98.css", result.css);
       fs.writeFileSync("dist/98.css.map", result.map.toString());
-    })
+    });
 }
 
 function buildCSSCustomProperties() {
@@ -47,7 +47,7 @@ function buildCSSCustomProperties() {
     .then(({extracted}) => {
       mkdirp.sync("dist");
       fs.writeFileSync("dist/custom-properties.css", extracted.trim());
-    })
+    });
 }
 
 function buildDocs() {
