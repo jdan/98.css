@@ -37,15 +37,16 @@ function buildCSSCustomProperties() {
     `/*! 98.css v${version} - ${homepage} */\n` + fs.readFileSync("style.css");
 
   return postcss()
-    .use(require("postcss-extract-styles")({ pattern: /^--/g }))
+    .use(require("postcss-extract-styles")({ pattern: /(--).*:/gim }))
     .process(input, {
       from: "style.css",
       to: "dist/custom-properties.css",
       map: { inline: false },
     })
-    .then(({extracted}) => {
+    .then((results) => {
       mkdirp.sync("dist");
-      fs.writeFileSync("dist/custom-properties.css", extracted.trim());
+      console.log(results)
+      fs.writeFileSync("dist/custom-properties.css", results.extracted);
     });
 }
 
