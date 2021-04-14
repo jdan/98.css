@@ -29,7 +29,27 @@ function buildCSS() {
       mkdirp.sync("dist");
       fs.writeFileSync("dist/98.css", result.css);
       fs.writeFileSync("dist/98.css.map", result.map.toString());
-    });
+    })
+}
+
+function buildCSSCustomProperties() {
+  const input =
+    `/*! 98.css v${version} - ${homepage} */\n` + fs.readFileSync("style.css");
+
+  return postcss()
+    .use(require("postcss-extract-styles")({
+      pattern: /^--/g
+    }))
+    .process(input, {
+      from: "style.css",
+      to: "dist/custom-properties.css",
+      map: { inline: false },
+    })
+    .then(({extracted}) => {
+      mkdirp.sync("dist");
+
+      fs.writeFileSync("dist/custom-properties.css", extracted);
+    })
 }
 
 function buildDocs() {
@@ -73,6 +93,7 @@ function buildDocs() {
 
 function build() {
   buildCSS()
+    .then(buildCSSCustomProperties)
     .then(buildDocs)
     .catch((err) => console.log(err));
 }

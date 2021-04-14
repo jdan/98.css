@@ -38,6 +38,7 @@
     "postcss-calc": "^7.0.2",
     "postcss-copy": "^7.1.0",
     "postcss-css-variables": "^0.14.0",
+    "postcss-extract-styles": "^1.2.0",
     "postcss-inline": "^1.2.0",
     "postcss-inline-svg": "^4.1.0"
   },
