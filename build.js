@@ -38,7 +38,6 @@ function buildCSSCustomProperties() {
 
   return postcss()
     .use(require("postcss-extract-styles")({ pattern: /^--/g }))
-    .use(require("cssnano"))
     .process(input, {
       from: "style.css",
       to: "dist/custom-properties.css",
