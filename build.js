@@ -37,9 +37,8 @@ function buildCSSCustomProperties() {
     `/*! 98.css v${version} - ${homepage} */\n` + fs.readFileSync("style.css");
 
   return postcss()
-    .use(require("postcss-extract-styles")({
-      pattern: /^--/g
-    }))
+    .use(require("postcss-extract-styles")({ pattern: /^--/g }))
+    .use(require("cssnano"))
     .process(input, {
       from: "style.css",
       to: "dist/custom-properties.css",
@@ -47,8 +46,7 @@ function buildCSSCustomProperties() {
     })
     .then(({extracted}) => {
       mkdirp.sync("dist");
-
-      fs.writeFileSync("dist/custom-properties.css", extracted);
+      fs.writeFileSync("dist/custom-properties.css", extracted.trim());
     })
 }
 
