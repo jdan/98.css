@@ -45,6 +45,7 @@ function buildCSSCustomProperties() {
     .use(require('postcss-discard')({
       rule: (_, value) => value !== ':root',
     }))
+    .use(require("cssnano"))
     .process(input, {
       from: "style.css",
       to: "dist/custom-properties.css",
@@ -53,24 +54,7 @@ function buildCSSCustomProperties() {
     .then((results) => {
       mkdirp.sync("dist");
       fs.writeFileSync("dist/custom-properties.css", results.css);
-    });
-}
-
-function buildCSSCustomProperties2() {
-  const input =
-    `/*! 98.css v${version} - ${homepage} */\n` + fs.readFileSync("style.css");
-
-  return postcss()
-    .use(require("postcss-extract-styles")({ pattern: /(--).*:/gim }))
-    .process(input, {
-      from: "style.css",
-      to: "dist/custom-properties.css",
-      map: { inline: false },
-    })
-    .then((results) => {
-      mkdirp.sync("dist");
-      // console.log(results)
-      fs.writeFileSync("dist/custom-properties.css", results.extracted);
+      fs.writeFileSync("dist/custom-properties.css.map", results.map.toString());
     });
 }
 
