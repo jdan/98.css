@@ -37,8 +37,13 @@ function buildCSSCustomProperties() {
     `/*! 98.css v${version} - ${homepage} */\n` + fs.readFileSync("style.css");
 
   return postcss()
+    // remove all @-rules
     .use(require('postcss-discard')({
-      atrule: ['@font-face'],
+      atrule: /.*/,
+    }))
+    // remove non-:root selectors
+    .use(require('postcss-discard')({
+      rule: (_, value) => value !== ':root',
     }))
     .process(input, {
       from: "style.css",
@@ -47,7 +52,6 @@ function buildCSSCustomProperties() {
     })
     .then((results) => {
       mkdirp.sync("dist");
-      console.log(results)
       fs.writeFileSync("dist/custom-properties.css", results.css);
     });
 }
@@ -65,7 +69,7 @@ function buildCSSCustomProperties2() {
     })
     .then((results) => {
       mkdirp.sync("dist");
-      console.log(results)
+      // console.log(results)
       fs.writeFileSync("dist/custom-properties.css", results.extracted);
     });
 }
