@@ -1,6 +1,6 @@
 {
   "name": "98.css",
-  "version": "0.1.16",
+  "version": "0.1.17",
   "description": "A design system for building faithful recreations of old UIs",
   "main": "dist/98.css",
   "directories": {
@@ -40,6 +40,5 @@
     "postcss-css-variables": "^0.14.0",
     "postcss-inline": "^1.2.0",
     "postcss-inline-svg": "^4.1.0"
-  },
-  "dependencies": {}
+  }
 }
