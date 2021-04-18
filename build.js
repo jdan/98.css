@@ -32,6 +32,32 @@ function buildCSS() {
     });
 }
 
+function buildCSSCustomProperties() {
+  const input =
+    `/*! 98.css v${version} - ${homepage} */\n` + fs.readFileSync("style.css");
+
+  return postcss()
+    // remove all @-rules
+    .use(require('postcss-discard')({
+      atrule: /.*/,
+    }))
+    // remove non-:root selectors
+    .use(require('postcss-discard')({
+      rule: (_, value) => value !== ':root',
+    }))
+    .use(require("cssnano"))
+    .process(input, {
+      from: "style.css",
+      to: "dist/custom-properties.css",
+      map: { inline: false },
+    })
+    .then((results) => {
+      mkdirp.sync("dist");
+      fs.writeFileSync("dist/custom-properties.css", results.css);
+      fs.writeFileSync("dist/custom-properties.css.map", results.map.toString());
+    });
+}
+
 function buildDocs() {
   let id = 0;
   function getNewId() {
@@ -73,6 +99,7 @@ function buildDocs() {
 
 function build() {
   buildCSS()
+    .then(buildCSSCustomProperties)
     .then(buildDocs)
     .catch((err) => console.log(err));
 }
