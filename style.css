@@ -278,9 +278,7 @@ button:disabled,
 }
 
 fieldset {
-  border: none;
-  box-shadow: inset -1px -1px var(--button-highlight), inset -2px 1px var(--button-shadow),
-    inset 1px -2px var(--button-shadow), inset 2px 2px var(--button-highlight);
+  border-image: svg-load("./icon/groupbox-border.svg") 2;
   padding: calc(2 * var(--border-width) + var(--element-spacing));
   padding-block-start: var(--element-spacing);
   margin: 0;
