@@ -266,7 +266,7 @@ button:disabled,
 }
 
 .status-bar-field {
-  box-shadow: inset -1px -1px  #dfdfdf, 
+  box-shadow: inset -1px -1px  #dfdfdf,
     inset 1px 1px #808080;
   flex-grow: 1;
   padding: 2px 3px;
@@ -693,6 +693,10 @@ ul.tree-view details > summary:before {
 
 ul.tree-view details[open] > summary:before {
   content: "-";
+}
+
+ul.tree-view details > summary::marker, ul.tree-view details > summary::-webkit-details-marker {
+  display: none;
 }
 
 pre {
