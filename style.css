@@ -696,7 +696,7 @@ ul.tree-view details[open] > summary:before {
 }
 
 ul.tree-view details > summary::marker, ul.tree-view details > summary::-webkit-details-marker {
-  display: none;
+  content: "";
 }
 
 pre {
