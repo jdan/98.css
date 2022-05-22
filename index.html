@@ -140,9 +140,13 @@
 
         <div class="example">
       <button>Click me</button>
+<input type="submit" />
+<input type="reset" />
       <details>
         <summary>Show code</summary>
-        <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>Click me<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></code></pre>
+        <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>Click me<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span> /&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;reset&quot;</span> /&gt;</span></code></pre>
       </details>
     </div>
 
@@ -524,9 +528,9 @@
     </div>
 
         <p>
-          Text boxes can also be disabled and have value with their corresponding HTML attributes. 
+          Text boxes can also be disabled and have value with their corresponding HTML attributes.
         </p>
-  
+
         <div class="example">
       <div class="field-row">
   <label for="text21">Favorite color</label>
@@ -540,6 +544,41 @@
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
       </details>
     </div>
+
+        <p>
+          Other types of HTML5 text inputs are also supported.
+        </p>
+
+        <div class="example">
+      <div class="field-row-stacked" style="width: 200px">
+  <label for="text22">Email</label>
+  <input id="text22" type="email" value="admin@contoso.com"/>
+</div>
+<div class="field-row-stacked" style="width: 200px">
+  <label for="text23">Password</label>
+  <input id="text23" type="password" value="hunter2"/>
+</div>
+<div class="field-row-stacked" style="width: 200px">
+  <label for="text24">Favorite Number</label>
+  <input id="text24" type="number" value="98"/>
+</div>
+      <details>
+        <summary>Show code</summary>
+        <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;field-row-stacked&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;width: 200px&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;text22&quot;</span>&gt;</span>Email<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;text22&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;email&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;admin@contoso.com&quot;</span>/&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;field-row-stacked&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;width: 200px&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;text23&quot;</span>&gt;</span>Password<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;text23&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;password&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;hunter2&quot;</span>/&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;field-row-stacked&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;width: 200px&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;text24&quot;</span>&gt;</span>Favorite Number<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;text24&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;number&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;98&quot;</span>/&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+      </details>
+    </div>
+
       </div>
 
 
@@ -563,18 +602,18 @@
 
         <div class="example">
       <div class="field-row" style="width: 300px">
-  <label for="range22">Volume:</label>
-  <label for="range23">Low</label>
-  <input id="range23" type="range" min="1" max="11" value="5" />
-  <label for="range24">High</label>
+  <label for="range25">Volume:</label>
+  <label for="range26">Low</label>
+  <input id="range26" type="range" min="1" max="11" value="5" />
+  <label for="range27">High</label>
 </div>
       <details>
         <summary>Show code</summary>
         <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;field-row&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;width: 300px&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;range22&quot;</span>&gt;</span>Volume:<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;range23&quot;</span>&gt;</span>Low<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;range23&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;range&quot;</span> <span class="hljs-attr">min</span>=<span class="hljs-string">&quot;1&quot;</span> <span class="hljs-attr">max</span>=<span class="hljs-string">&quot;11&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;5&quot;</span> /&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;range24&quot;</span>&gt;</span>High<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;range25&quot;</span>&gt;</span>Volume:<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;range26&quot;</span>&gt;</span>Low<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;range26&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;range&quot;</span> <span class="hljs-attr">min</span>=<span class="hljs-string">&quot;1&quot;</span> <span class="hljs-attr">max</span>=<span class="hljs-string">&quot;11&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;5&quot;</span> /&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;range27&quot;</span>&gt;</span>High<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
       </details>
     </div>
@@ -592,17 +631,17 @@
 
         <div class="example">
       <div class="field-row">
-  <label for="range25">Cowbell</label>
+  <label for="range28">Cowbell</label>
   <div class="is-vertical">
-    <input id="range25" class="has-box-indicator" type="range" min="1" max="3" step="1" value="2" />
+    <input id="range28" class="has-box-indicator" type="range" min="1" max="3" step="1" value="2" />
   </div>
 </div>
       <details>
         <summary>Show code</summary>
         <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;field-row&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;range25&quot;</span>&gt;</span>Cowbell<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;range28&quot;</span>&gt;</span>Cowbell<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;is-vertical&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;range25&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;has-box-indicator&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;range&quot;</span> <span class="hljs-attr">min</span>=<span class="hljs-string">&quot;1&quot;</span> <span class="hljs-attr">max</span>=<span class="hljs-string">&quot;3&quot;</span> <span class="hljs-attr">step</span>=<span class="hljs-string">&quot;1&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;2&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;range28&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;has-box-indicator&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;range&quot;</span> <span class="hljs-attr">min</span>=<span class="hljs-string">&quot;1&quot;</span> <span class="hljs-attr">max</span>=<span class="hljs-string">&quot;3&quot;</span> <span class="hljs-attr">step</span>=<span class="hljs-string">&quot;1&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;2&quot;</span> /&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
       </details>
@@ -735,7 +774,7 @@
           assistive technologies know the intent of this button. You may also use
           "Minimize", "Maximize", "Restore" and "Help" like so:
         </p>
-        
+
         <div class="example">
       <div class="title-bar">
   <div class="title-bar-text">A Title Bar</div>
@@ -920,7 +959,7 @@
         </blockquote>
 
         <p>
-          You can render a status bar with the <code>status-bar</code> class, 
+          You can render a status bar with the <code>status-bar</code> class,
           and <code>status-bar-field</code> for every child text element.
         </p>
 
@@ -966,7 +1005,7 @@
       </details>
     </div>
 
-       
+
     </section>
 
     <section class="component">
