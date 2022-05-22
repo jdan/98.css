@@ -167,7 +167,9 @@ button::-moz-focus-inner {
 }
 
 :disabled,
-:disabled + label {
+:disabled + label,
+:read-only,
+:read-only + label {
   color: var(--button-shadow);
 }
 
@@ -266,8 +268,7 @@ button:disabled,
 }
 
 .status-bar-field {
-  box-shadow: inset -1px -1px  #dfdfdf,
-    inset 1px 1px #808080;
+  box-shadow: inset -1px -1px #dfdfdf, inset 1px 1px #808080;
   flex-grow: 1;
   padding: 2px 3px;
   margin: 0;
@@ -459,6 +460,10 @@ input[type="email"]:disabled,
 input[type="password"]:disabled,
 input[type="text"]:disabled,
 input[type="number"]:disabled,
+input[type="email"]:read-only,
+input[type="password"]:read-only,
+input[type="text"]:read-only,
+input[type="number"]:read-only,
 textarea:disabled {
   background-color: var(--surface);
 }
@@ -703,7 +708,8 @@ ul.tree-view details[open] > summary:before {
   content: "-";
 }
 
-ul.tree-view details > summary::marker, ul.tree-view details > summary::-webkit-details-marker {
+ul.tree-view details > summary::marker,
+ul.tree-view details > summary::-webkit-details-marker {
   content: "";
 }
 
