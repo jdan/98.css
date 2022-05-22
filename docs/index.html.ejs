@@ -391,15 +391,35 @@
         `) %>
 
         <p>
-          Text boxes can also be disabled and have value with their corresponding HTML attributes. 
+          Text boxes can also be disabled and have value with their corresponding HTML attributes.
         </p>
-  
+
         <%- example(`
           <div class="field-row">
             <label for="text${getNewId()}">Favorite color</label>
             <input id="text${getCurrentId()}" disabled type="text" value="Windows Green"/>
           </div>
         `) %>
+
+        <p>
+          Other types of HTML5 text inputs are also supported.
+        </p>
+
+        <%- example(`
+        <div class="field-row-stacked" style="width: 200px">
+          <label for="text${getNewId()}">Email</label>
+          <input id="text${getCurrentId()}" type="email" value="admin@contoso.com"/>
+        </div>
+        <div class="field-row-stacked" style="width: 200px">
+          <label for="text${getNewId()}">Password</label>
+          <input id="text${getCurrentId()}" type="password" value="hunter2"/>
+        </div>
+        <div class="field-row-stacked" style="width: 200px">
+          <label for="text${getNewId()}">Favorite Number</label>
+          <input id="text${getCurrentId()}" type="number" value="98"/>
+        </div>
+      `) %>
+
       </div>
 
 
@@ -548,7 +568,7 @@
           assistive technologies know the intent of this button. You may also use
           "Minimize", "Maximize", "Restore" and "Help" like so:
         </p>
-        
+
         <%- example(`
           <div class="title-bar">
             <div class="title-bar-text">A Title Bar</div>
@@ -578,7 +598,7 @@
               <button aria-label="Help"></button>
               <button aria-label="Close"></button>
             </div>
-          </div>          
+          </div>
         `) %>
 		<p>
           You can make a title bar "inactive" by adding <code>inactive</code> class,
@@ -663,7 +683,7 @@
         </blockquote>
 
         <p>
-          You can render a status bar with the <code>status-bar</code> class, 
+          You can render a status bar with the <code>status-bar</code> class,
           and <code>status-bar-field</code> for every child text element.
         </p>
 
@@ -688,7 +708,7 @@
         </div>
       `) %>
 
-       
+
     </section>
 
     <section class="component">
