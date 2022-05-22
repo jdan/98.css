@@ -178,8 +178,8 @@ input[type="reset"]::-moz-focus-inner {
 
 :disabled,
 :disabled + label,
-:read-only,
-:read-only + label {
+input[readonly],
+input[readonly] + label {
   color: var(--button-shadow);
 }
 
