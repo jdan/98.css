@@ -4,8 +4,9 @@
 name: Publish to NPM
 
 on:
+  workflow_dispatch:
   release:
-    types: [created]
+    types: [published]
 
 jobs:
   publish-npm:
