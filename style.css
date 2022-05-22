@@ -127,7 +127,9 @@ u {
   border-bottom: 0.5px solid #222222;
 }
 
-button {
+button,
+input[type="submit"],
+input[type="reset"] {
   box-sizing: border-box;
   border: none;
   background: var(--surface);
@@ -146,23 +148,31 @@ button {
   box-shadow: var(--border-raised-outer), var(--border-raised-inner);
 }
 
-button:not(:disabled):active {
+button:not(:disabled):active,
+input[type="submit"]:not(:disabled):active,
+input[type="reset"]:not(:disabled):active {
   box-shadow: var(--border-sunken-outer), var(--border-sunken-inner);
   padding: 2px 11px 0 13px;
 }
 
 @media (not(hover)) {
-  button:not(:disabled):hover {
+  button:not(:disabled):hover,
+  input[type="submit"]:not(:disabled):hover,
+  input[type="reset"]:not(:disabled):hover {
     box-shadow: var(--border-sunken-outer), var(--border-sunken-inner);
   }
 }
 
-button:focus {
+button:focus,
+input[type="submit"]:focus,
+input[type="reset"]:focus {
   outline: 1px dotted #000000;
   outline-offset: -4px;
 }
 
-button::-moz-focus-inner {
+button::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner,
+input[type="reset"]::-moz-focus-inner {
   border: 0;
 }
 
@@ -172,6 +182,8 @@ button::-moz-focus-inner {
 }
 
 button:disabled,
+input[type="submit"]:disabled,
+input[type="reset"]:disabled,
 :disabled + label {
   text-shadow: 1px 1px 0 var(--button-highlight);
 }
@@ -266,8 +278,7 @@ button:disabled,
 }
 
 .status-bar-field {
-  box-shadow: inset -1px -1px  #dfdfdf,
-    inset 1px 1px #808080;
+  box-shadow: inset -1px -1px #dfdfdf, inset 1px 1px #808080;
   flex-grow: 1;
   padding: 2px 3px;
   margin: 0;
