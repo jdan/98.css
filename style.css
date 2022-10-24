@@ -152,7 +152,14 @@ button:not(:disabled):active,
 input[type="submit"]:not(:disabled):active,
 input[type="reset"]:not(:disabled):active {
   box-shadow: var(--border-sunken-outer), var(--border-sunken-inner);
-  padding: 2px 11px 0 13px;
+
+  /* Make the text to appear to shift down and right 1px without affecting any
+  surrounding layout */
+  vertical-align: -1px;
+  margin-bottom: -1px;
+  padding: 1px 0 0 2px;
+  position: relative;
+  top: -0.5px;
 }
 
 @media (not(hover)) {
