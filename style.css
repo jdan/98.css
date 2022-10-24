@@ -137,7 +137,7 @@ input[type="reset"] {
   border: none;
   background: var(--surface);
   box-shadow: var(--border-raised-outer), var(--border-raised-inner);
-  border-radius: 0px;
+  border-radius: 0;
   outline: none;
 
   min-width: 75px;
