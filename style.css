@@ -138,7 +138,8 @@ input[type="reset"] {
 
   min-width: 75px;
   min-height: 23px;
-  padding: 0 12px;
+  --original-padding-x: 12px;
+  padding: 0 var(--original-padding-x);
 }
 
 .vertical-bar {
@@ -153,11 +154,11 @@ input[type="submit"]:not(:disabled):active,
 input[type="reset"]:not(:disabled):active {
   box-shadow: var(--border-sunken-outer), var(--border-sunken-inner);
 
-  /* Make the text to appear to shift down and right 1px without affecting any
-  surrounding layout */
+  /* Shift text down and right 1px without affecting any surrounding layout */
   vertical-align: -1px;
   margin-bottom: -1px;
-  padding: 1px 0 0 2px;
+  padding: 1px calc(var(--original-padding-x) - 1px) 0
+    calc(var(--original-padding-x) + 1px);
   position: relative;
   top: -0.5px;
 }
