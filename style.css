@@ -99,6 +99,7 @@ textarea,
 select,
 option,
 ul.tree-view,
+table.table-view,
 .window,
 .title-bar {
   font-family: "Pixelated MS Sans Serif", Arial;
@@ -786,4 +787,51 @@ summary:focus {
 ::-webkit-scrollbar-button:horizontal:end {
   width: 16px;
   background-image: svg-load("./icon/button-right.svg");
+}
+
+.sunken-panel {
+  box-shadow: var(--border-sunken-outer), var(--border-sunken-inner);
+  background: var(--surface);
+  overflow: hidden;
+  padding: 2px;
+}
+
+.sunken-panel-content {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: #fff;
+}
+
+table.table-view {
+  border-collapse: collapse;
+  position: relative;
+  text-align: left;
+  white-space: nowrap;
+  background-color: #fff;
+}
+
+table.table-view > thead > tr > * {
+  position: sticky;
+  top: 0;
+  height: 17px;
+  box-shadow: var(--border-raised-outer), var(--border-raised-inner);
+  background: var(--surface);
+  box-sizing: border-box;
+  font-weight: normal;
+  padding: 0 var(--grouped-element-spacing);
+}
+
+table.table-view.interactive > tbody > tr {
+  cursor: pointer;
+}
+
+table.table-view > tbody > tr.highlighted {
+  color: #fff;
+  background-color: var(--dialog-blue);
+}
+
+table.table-view > tbody > tr > * {
+  padding: 0 var(--grouped-element-spacing);
+  height: 14px;
 }

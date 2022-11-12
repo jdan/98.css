@@ -41,6 +41,7 @@
             </ul>
           </li>
           <li><a href="#tree-view">TreeView</a></li>
+          <li><a href="#table-view">TableView</a></li>
         </ul>
       </li>
       <li><a href="#issues-contributing-etc">Issues, Contributing, etc.</a></li>
@@ -794,6 +795,96 @@
             <li>HTML</li>
             <li>Special Thanks</li>
           </ul>
+        `) %>
+      </div>
+    </section>
+
+    <section class="component">
+      <h3 id="table-view">TableView</h3>
+      <div>
+        <p>
+          To render a table view, use a table element with the <code>table-view</code> class. Use 2 div elements with <code>sunken-panel</code> and <code>sunken-panel-content</code> classes as a proper overflow container.
+        </p>
+        <p>
+          Table rows can be given <code>highlighted</code> class to appear selected.
+        </p>
+        
+        <%- example(`
+          <div class="sunken-panel" style="height: 120px; width: 240px;">
+            <div class="sunken-panel-content">
+              <table class="table-view interactive">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Version</th>
+                    <th>Company</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>MySQL ODBC 3.51 Driver</td>
+                    <td>3.51.11.00</td>
+                    <td>MySQL AB</td>
+                  </tr>
+                  <tr>
+                    <td>SQL Server</td>
+                    <td>3.70.06.23</td>
+                    <td>Microsoft Corporation</td>
+                  </tr>
+                  <tr>
+                    <td>SQL Server</td>
+                    <td>3.70.06.23</td>
+                    <td>Microsoft Corporation</td>
+                  </tr>
+                  <tr>
+                    <td>SQL Server</td>
+                    <td>3.70.06.23</td>
+                    <td>Microsoft Corporation</td>
+                  </tr>
+                  <tr>
+                    <td>SQL Server</td>
+                    <td>3.70.06.23</td>
+                    <td>Microsoft Corporation</td>
+                  </tr>
+                  <tr>
+                    <td>SQL Server</td>
+                    <td>3.70.06.23</td>
+                    <td>Microsoft Corporation</td>
+                  </tr>
+                  <tr>
+                    <td>SQL Server</td>
+                    <td>3.70.06.23</td>
+                    <td>Microsoft Corporation</td>
+                  </tr>
+                  <tr>
+                    <td>SQL Server</td>
+                    <td>3.70.06.23</td>
+                    <td>Microsoft Corporation</td>
+                  </tr>
+                  <tr>
+                    <td>SQL Server</td>
+                    <td>3.70.06.23</td>
+                    <td>Microsoft Corporation</td>
+                  </tr>
+                  <tr>
+                    <td>SQL Server</td>
+                    <td>3.70.06.23</td>
+                    <td>Microsoft Corporation</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <script>
+              document.querySelectorAll('.table-view').forEach(element => {
+                element.addEventListener('click', (event) => {
+                  const row = event.path.find(element => element.tagName === 'TR' && element.parentElement.tagName === 'TBODY');
+                  if(row) {
+                    row.classList.toggle('highlighted');
+                  }
+                })
+              });
+          </script>
         `) %>
       </div>
     </section>
