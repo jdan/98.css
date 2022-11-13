@@ -6,6 +6,7 @@
 
 :root {
   /* Color */
+  --text-color: #222222;
   --surface: #c0c0c0;
   --button-highlight: #ffffff;
   --button-face: #dfdfdf;
@@ -89,7 +90,7 @@
 body {
   font-family: Arial;
   font-size: 12px;
-  color: #222222;
+  color: var(--text-color);
 }
 
 button,
@@ -133,6 +134,8 @@ input[type="submit"],
 input[type="reset"] {
   box-sizing: border-box;
   border: none;
+  color: transparent;
+  text-shadow: 0 0 var(--text-color);
   background: var(--surface);
   box-shadow: var(--border-raised-outer), var(--border-raised-inner);
   border-radius: 0;
@@ -153,7 +156,7 @@ button:not(:disabled):active,
 input[type="submit"]:not(:disabled):active,
 input[type="reset"]:not(:disabled):active {
   box-shadow: var(--border-sunken-outer), var(--border-sunken-inner);
-  padding: 2px 11px 0 13px;
+  text-shadow: 1px 1px var(--text-color);
 }
 
 @media (not(hover)) {
