@@ -793,15 +793,9 @@ summary:focus {
 }
 
 .sunken-panel {
-  box-shadow: var(--border-sunken-outer), var(--border-sunken-inner);
-  background: var(--surface);
-  overflow: hidden;
-  padding: 2px;
-}
-
-.sunken-panel-content {
-  width: 100%;
-  height: 100%;
+  box-sizing: border-box;
+  border: 2px groove transparent;
+  border-image: svg-load("./icon/sunken-panel-border.svg") 2;
   overflow: auto;
   background-color: #fff;
 }

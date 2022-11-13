@@ -803,8 +803,7 @@
       <h3 id="table-view">TableView</h3>
       <div>
         <p>
-          To render a table view, use a table element wrapped with 2 div elements with <code>sunken-panel</code> and
-          <code>sunken-panel-content</code> classes. Those extra divs provide proper border and act as overflow container.
+          To render a table view, use a table element. Wrap it with a div element with <code>sunken-panel</code> class to provide proper border and overflow container.
         </p>
         <p>
           With a bit of extra scripting you can make table view interactive. Give <code>interactive</code> class to
@@ -814,7 +813,6 @@
 
         <%- example(`
           <div class="sunken-panel" style="height: 120px; width: 240px;">
-          <div class="sunken-panel-content">
             <table class="interactive">
               <thead>
                 <tr>
@@ -877,17 +875,16 @@
               </tbody>
             </table>
           </div>
-      </div>
-      <script>
-        document.querySelectorAll('table.interactive').forEach(element => {
-          element.addEventListener('click', (event) => {
-            const row = event.path.find(element => element.tagName === 'TR' && element.parentElement.tagName === 'TBODY');
-            if (row) {
-              row.classList.toggle('highlighted');
-            }
-          })
-        });
-      </script>
+          <script>
+            document.querySelectorAll('table.interactive').forEach(element => {
+              element.addEventListener('click', (event) => {
+                const row = event.path.find(element => element.tagName === 'TR' && element.parentElement.tagName === 'TBODY');
+                if (row) {
+                  row.classList.toggle('highlighted');
+                }
+              })
+            });
+          </script>
       `) %>
       </div>
     </section>
