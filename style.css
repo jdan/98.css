@@ -99,6 +99,7 @@ input,
 textarea,
 select,
 option,
+table,
 ul.tree-view,
 .window,
 .title-bar {
@@ -789,4 +790,45 @@ summary:focus {
 ::-webkit-scrollbar-button:horizontal:end {
   width: 16px;
   background-image: svg-load("./icon/button-right.svg");
+}
+
+.sunken-panel {
+  box-sizing: border-box;
+  border: 2px groove transparent;
+  border-image: svg-load("./icon/sunken-panel-border.svg") 2;
+  overflow: auto;
+  background-color: #fff;
+}
+
+table {
+  border-collapse: collapse;
+  position: relative;
+  text-align: left;
+  white-space: nowrap;
+  background-color: #fff;
+}
+
+table > thead > tr > * {
+  position: sticky;
+  top: 0;
+  height: 17px;
+  box-shadow: var(--border-raised-outer), var(--border-raised-inner);
+  background: var(--surface);
+  box-sizing: border-box;
+  font-weight: normal;
+  padding: 0 var(--grouped-element-spacing);
+}
+
+table.interactive > tbody > tr {
+  cursor: pointer;
+}
+
+table > tbody > tr.highlighted {
+  color: #fff;
+  background-color: var(--dialog-blue);
+}
+
+table > tbody > tr > * {
+  padding: 0 var(--grouped-element-spacing);
+  height: 14px;
 }
