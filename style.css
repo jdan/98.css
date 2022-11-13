@@ -99,8 +99,8 @@ input,
 textarea,
 select,
 option,
+table,
 ul.tree-view,
-table.table-view,
 .window,
 .title-bar {
   font-family: "Pixelated MS Sans Serif", Arial;
@@ -806,7 +806,7 @@ summary:focus {
   background-color: #fff;
 }
 
-table.table-view {
+table {
   border-collapse: collapse;
   position: relative;
   text-align: left;
@@ -814,7 +814,7 @@ table.table-view {
   background-color: #fff;
 }
 
-table.table-view > thead > tr > * {
+table > thead > tr > * {
   position: sticky;
   top: 0;
   height: 17px;
@@ -825,16 +825,16 @@ table.table-view > thead > tr > * {
   padding: 0 var(--grouped-element-spacing);
 }
 
-table.table-view.interactive > tbody > tr {
+table.interactive > tbody > tr {
   cursor: pointer;
 }
 
-table.table-view > tbody > tr.highlighted {
+table > tbody > tr.highlighted {
   color: #fff;
   background-color: var(--dialog-blue);
 }
 
-table.table-view > tbody > tr > * {
+table > tbody > tr > * {
   padding: 0 var(--grouped-element-spacing);
   height: 14px;
 }
