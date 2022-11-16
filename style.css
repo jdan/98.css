@@ -808,7 +808,16 @@ table > thead > tr > * {
   text-shadow: 0 0 var(--text-color);
 }
 
-table.interactive > tbody > tr {
+table > thead > tr > *[tabindex] {
+  cursor: pointer;
+}
+
+table > thead > tr > *[tabindex]:active {
+  border-image: var(--border-table-header-sunken) 2;
+  text-shadow: 1px 1px var(--text-color);
+}
+
+table > tbody > tr[tabindex] {
   cursor: pointer;
 }
 
