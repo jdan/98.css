@@ -740,7 +740,7 @@ summary:focus {
 }
 
 ::-webkit-scrollbar-corner {
-  background: var(--button-face);
+  background: var(--surface);
 }
 
 ::-webkit-scrollbar-track {
@@ -748,7 +748,7 @@ summary:focus {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: var(--button-face);
+  background-color: var(--surface);
   border: 2px solid transparent;
   border-image: var(--border-raised) 2;
 }
