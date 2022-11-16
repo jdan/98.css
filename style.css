@@ -49,26 +49,11 @@
   --checkmark-left: 3px;
 
   /* Borders */
-  --border-width: 1px;
-  --border-raised-outer: inset -1px -1px var(--window-frame),
-    inset 1px 1px var(--button-highlight);
-  --border-raised-inner: inset -2px -2px var(--button-shadow),
-    inset 2px 2px var(--button-face);
-  --border-sunken-outer: inset -1px -1px var(--button-highlight),
-    inset 1px 1px var(--window-frame);
-  --border-sunken-inner: inset -2px -2px var(--button-face),
-    inset 2px 2px var(--button-shadow);
-
-  /* Window borders flip button-face and button-highlight */
-  --border-window-outer: inset -1px -1px var(--window-frame),
-    inset 1px 1px var(--button-face);
-  --border-window-inner: inset -2px -2px var(--button-shadow),
-    inset 2px 2px var(--button-highlight);
-
-  /* Field borders (checkbox, input, etc) flip window-frame and button-shadow */
-  --border-field: inset -1px -1px var(--button-highlight),
-    inset 1px 1px var(--button-shadow), inset -2px -2px var(--button-face),
-    inset 2px 2px var(--window-frame);
+  --border-button-raised: svg-load("./icon/border-button-raised.svg");
+  --border-button-sunken: svg-load("./icon/border-button-sunken.svg");
+  --border-table-header-sunken: svg-load("./icon/border-table-header-sunken.svg");
+  --border-raised: svg-load("./icon/border-raised.svg");
+  --border-sunken: svg-load("./icon/border-sunken.svg");
 }
 
 @font-face {
@@ -137,25 +122,19 @@ input[type="reset"] {
   color: transparent;
   text-shadow: 0 0 var(--text-color);
   background: var(--surface);
-  box-shadow: var(--border-raised-outer), var(--border-raised-inner);
+  border: 2px solid transparent;
+  border-image: var(--border-button-raised) 2;
   border-radius: 0;
 
   min-width: 75px;
   min-height: 23px;
-  padding: 0 12px;
-}
-
-.vertical-bar {
-  width: 4px;
-  height: 20px;
-  background: #c0c0c0;
-  box-shadow: var(--border-raised-outer), var(--border-raised-inner);
+  padding: 0 10px;
 }
 
 button:not(:disabled):active,
 input[type="submit"]:not(:disabled):active,
 input[type="reset"]:not(:disabled):active {
-  box-shadow: var(--border-sunken-outer), var(--border-sunken-inner);
+  border-image: var(--border-button-sunken) 2;
   text-shadow: 1px 1px var(--text-color);
 }
 
@@ -163,7 +142,7 @@ input[type="reset"]:not(:disabled):active {
   button:not(:disabled):hover,
   input[type="submit"]:not(:disabled):hover,
   input[type="reset"]:not(:disabled):hover {
-    box-shadow: var(--border-sunken-outer), var(--border-sunken-inner);
+    border-image: var(--border-button-sunken) 2;
   }
 }
 
@@ -195,9 +174,10 @@ input[type="reset"]:disabled,
 }
 
 .window {
-  box-shadow: var(--border-window-outer), var(--border-window-inner);
+  border: 2px solid transparent;
+  border-image: var(--border-raised) 2;
   background: var(--surface);
-  padding: 3px;
+  padding: 1px;
 }
 
 .title-bar {
@@ -249,32 +229,32 @@ input[type="reset"]:disabled,
 .title-bar-controls button[aria-label="Minimize"] {
   background-image: svg-load("./icon/minimize.svg");
   background-repeat: no-repeat;
-  background-position: bottom 3px left 4px;
+  background-position: bottom 1px left 2px;
 }
 
 .title-bar-controls button[aria-label="Maximize"] {
   background-image: svg-load("./icon/maximize.svg");
   background-repeat: no-repeat;
-  background-position: top 2px left 3px;
+  background-position: top left 1px;
 }
 
 .title-bar-controls button[aria-label="Restore"] {
   background-image: svg-load("./icon/restore.svg");
   background-repeat: no-repeat;
-  background-position: top 2px left 3px;
+  background-position: top left 1px;
 }
 
 .title-bar-controls button[aria-label="Help"] {
   background-image: svg-load("./icon/help.svg");
   background-repeat: no-repeat;
-  background-position: top 2px left 5px;
+  background-position: top left 3px;
 }
 
 .title-bar-controls button[aria-label="Close"] {
   margin-left: 2px;
   background-image: svg-load("./icon/close.svg");
   background-repeat: no-repeat;
-  background-position: top 3px left 4px;
+  background-position: top 1px left 2px;
 }
 
 .status-bar {
@@ -296,7 +276,7 @@ input[type="reset"]:disabled,
 
 fieldset {
   border-image: svg-load("./icon/groupbox-border.svg") 2;
-  padding: calc(2 * var(--border-width) + var(--element-spacing));
+  padding: calc(2 + var(--element-spacing));
   padding-block-start: var(--element-spacing);
   margin: 0;
 }
@@ -407,7 +387,9 @@ input[type="checkbox"] + label::before {
   width: var(--checkbox-width);
   height: var(--checkbox-width);
   background: var(--button-highlight);
-  box-shadow: var(--border-field);
+  box-sizing: border-box;
+  border: 2px solid transparent;
+  border-image: var(--border-sunken) 2;
   margin-right: var(--radio-label-spacing);
 }
 
@@ -442,9 +424,9 @@ input[type="email"],
 input[type="number"],
 select,
 textarea {
-  padding: 3px 4px;
-  border: none;
-  box-shadow: var(--border-field);
+  padding: 1px 2px;
+  border: 2px solid transparent;
+  border-image: var(--border-sunken) 2;
   background-color: var(--button-highlight);
   box-sizing: border-box;
   -webkit-appearance: none;
@@ -489,9 +471,9 @@ select {
   -webkit-appearance: none;
   -moz-appearance: none;
   position: relative;
-  padding-right: 32px;
+  padding-right: 30px;
   background-image: svg-load("./icon/button-down.svg");
-  background-position: top 2px right 2px;
+  background-position: top right;
   background-repeat: no-repeat;
   border-radius: 0;
 }
@@ -638,8 +620,9 @@ a:focus {
 ul.tree-view {
   display: block;
   background: var(--button-highlight);
-  box-shadow: var(--border-field);
-  padding: 6px;
+  border: 2px solid transparent;
+  border-image: var(--border-sunken) 2;
+  padding: 4px;
   margin: 0;
 }
 
@@ -734,8 +717,9 @@ ul.tree-view details > summary::-webkit-details-marker {
 pre {
   display: block;
   background: var(--button-highlight);
-  box-shadow: var(--border-field);
-  padding: 12px 8px;
+  border: 2px solid transparent;
+  border-image: var(--border-sunken) 2;
+  padding: 10px 6px;
   margin: 0;
 }
 
@@ -765,7 +749,8 @@ summary:focus {
 
 ::-webkit-scrollbar-thumb {
   background-color: var(--button-face);
-  box-shadow: var(--border-raised-outer), var(--border-raised-inner);
+  border: 2px solid transparent;
+  border-image: var(--border-raised) 2;
 }
 
 ::-webkit-scrollbar-button:horizontal:start:decrement,
@@ -794,14 +779,14 @@ summary:focus {
 
 .sunken-panel {
   box-sizing: border-box;
-  border: 2px groove transparent;
-  border-image: svg-load("./icon/sunken-panel-border.svg") 2;
+  border: 2px solid transparent;
+  border-image: var(--border-sunken) 2;
   overflow: auto;
   background-color: #fff;
 }
 
 table {
-  border-collapse: collapse;
+  border-spacing: 0;
   position: relative;
   text-align: left;
   white-space: nowrap;
@@ -811,12 +796,16 @@ table {
 table > thead > tr > * {
   position: sticky;
   top: 0;
-  height: 17px;
-  box-shadow: var(--border-raised-outer), var(--border-raised-inner);
+  height: 18px;
+  border: 2px solid transparent;
+  border-image: var(--border-button-raised) 2;
   background: var(--surface);
   box-sizing: border-box;
   font-weight: normal;
   padding: 0 var(--grouped-element-spacing);
+  vertical-align: bottom;
+  color: transparent;
+  text-shadow: 0 0 var(--text-color);
 }
 
 table.interactive > tbody > tr {
@@ -829,6 +818,7 @@ table > tbody > tr.highlighted {
 }
 
 table > tbody > tr > * {
+  border: 2px solid transparent;
   padding: 0 var(--grouped-element-spacing);
-  height: 14px;
+  height: 13px;
 }
