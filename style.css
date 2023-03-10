@@ -6,6 +6,7 @@
 
 :root {
   /* Color */
+  --text-color: #222222;
   --surface: #c0c0c0;
   --button-highlight: #ffffff;
   --button-face: #dfdfdf;
@@ -95,7 +96,7 @@
 body {
   font-family: Arial;
   font-size: 12px;
-  color: #222222;
+  color: var(--text-color);
 }
 
 button,
@@ -104,6 +105,7 @@ input,
 textarea,
 select,
 option,
+table,
 ul.tree-view,
 .window,
 .title-bar {
@@ -133,9 +135,13 @@ u {
   border-bottom: 0.5px solid #222222;
 }
 
-button {
+button,
+input[type="submit"],
+input[type="reset"] {
   box-sizing: border-box;
   border: none;
+  color: transparent;
+  text-shadow: 0 0 var(--text-color);
   background: var(--surface);
   box-shadow: var(--border-raised-outer), var(--border-raised-inner);
   border-radius: 0;
@@ -152,29 +158,45 @@ button {
   box-shadow: var(--border-raised-outer), var(--border-raised-inner);
 }
 
-button:not(:disabled):active {
+button:not(:disabled):active,
+input[type="submit"]:not(:disabled):active,
+input[type="reset"]:not(:disabled):active {
   box-shadow: var(--border-sunken-outer), var(--border-sunken-inner);
-  padding: 2px 11px 0 13px;
+  text-shadow: 1px 1px var(--text-color);
 }
 
 @media (not(hover)) {
-  button:not(:disabled):hover {
+  button:not(:disabled):hover,
+  input[type="submit"]:not(:disabled):hover,
+  input[type="reset"]:not(:disabled):hover {
     box-shadow: var(--border-sunken-outer), var(--border-sunken-inner);
   }
 }
 
-button:focus {
+button:focus,
+input[type="submit"]:focus,
+input[type="reset"]:focus {
   outline: 1px dotted #000000;
   outline-offset: -4px;
 }
 
-button::-moz-focus-inner {
+button::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner,
+input[type="reset"]::-moz-focus-inner {
   border: 0;
 }
 
 :disabled,
-:disabled + label {
+:disabled + label,
+input[readonly],
+input[readonly] + label {
   color: var(--button-shadow);
+}
+
+button:disabled,
+input[type="submit"]:disabled,
+input[type="reset"]:disabled,
+:disabled + label {
   text-shadow: 1px 1px 0 var(--button-highlight);
 }
 
@@ -261,14 +283,25 @@ button::-moz-focus-inner {
   background-position: top 3px left 4px;
 }
 
+.status-bar {
+  margin: 0px 1px;
+  display: flex;
+  gap: 1px;
+}
+
+.status-bar-field {
+  box-shadow: inset -1px -1px #dfdfdf, inset 1px 1px #808080;
+  flex-grow: 1;
+  padding: 2px 3px;
+  margin: 0;
+}
+
 .window-body {
   margin: var(--element-spacing);
 }
 
 fieldset {
-  border: none;
-  box-shadow: inset -1px -1px var(--button-highlight), inset -2px 1px var(--button-shadow),
-    inset 1px -2px var(--button-shadow), inset 2px 2px var(--button-highlight);
+  border-image: svg-load("./icon/groupbox-border.svg") 2;
   padding: calc(2 * var(--border-width) + var(--element-spacing));
   padding-block-start: var(--element-spacing);
   margin: 0;
@@ -412,6 +445,7 @@ input[type="checkbox"][disabled]:checked + label::after {
 input[type="text"],
 input[type="password"],
 input[type="email"],
+input[type="number"],
 select,
 textarea {
   padding: 3px 4px;
@@ -431,12 +465,29 @@ input[type="email"],
 select {
   height: 21px;
 }
+input[type="number"] {
+  /* need this 1 pixel to fit the spinner controls in box */
+  height: 22px;
+}
 
 input[type="text"],
 input[type="password"],
-input[type="email"] {
+input[type="email"],
+input[type="number"] {
   /* For some reason descenders are getting cut off without this */
   line-height: 2;
+}
+
+input[type="email"]:disabled,
+input[type="password"]:disabled,
+input[type="text"]:disabled,
+input[type="number"]:disabled,
+input[type="email"]:read-only,
+input[type="password"]:read-only,
+input[type="text"]:read-only,
+input[type="number"]:read-only,
+textarea:disabled {
+  background-color: var(--surface);
 }
 
 select {
@@ -455,6 +506,7 @@ select:focus,
 input[type="text"]:focus,
 input[type="password"]:focus,
 input[type="email"]:focus,
+input[type="number"]:focus,
 textarea:focus {
   outline: none;
 }
@@ -475,6 +527,8 @@ input[type="range"]::-webkit-slider-thumb {
   width: 11px;
   background: svg-load("./icon/indicator-horizontal.svg");
   transform: translateY(-8px);
+  box-shadow: none;
+  border: none;
 }
 
 input[type="range"].has-box-indicator::-webkit-slider-thumb {
@@ -678,6 +732,11 @@ ul.tree-view details[open] > summary:before {
   content: "-";
 }
 
+ul.tree-view details > summary::marker,
+ul.tree-view details > summary::-webkit-details-marker {
+  content: "";
+}
+
 pre {
   display: block;
   background: var(--button-highlight);
@@ -785,4 +844,44 @@ menu[role=tablist] > li > a:focus {
 menu[role=tablist].multirows > li {
   flex-grow: 1;
   text-align: center;
+}
+.sunken-panel {
+  box-sizing: border-box;
+  border: 2px groove transparent;
+  border-image: svg-load("./icon/sunken-panel-border.svg") 2;
+  overflow: auto;
+  background-color: #fff;
+}
+
+table {
+  border-collapse: collapse;
+  position: relative;
+  text-align: left;
+  white-space: nowrap;
+  background-color: #fff;
+}
+
+table > thead > tr > * {
+  position: sticky;
+  top: 0;
+  height: 17px;
+  box-shadow: var(--border-raised-outer), var(--border-raised-inner);
+  background: var(--surface);
+  box-sizing: border-box;
+  font-weight: normal;
+  padding: 0 var(--grouped-element-spacing);
+}
+
+table.interactive > tbody > tr {
+  cursor: pointer;
+}
+
+table > tbody > tr.highlighted {
+  color: #fff;
+  background-color: var(--dialog-blue);
+}
+
+table > tbody > tr > * {
+  padding: 0 var(--grouped-element-spacing);
+  height: 14px;
 }

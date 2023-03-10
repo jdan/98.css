@@ -9,7 +9,7 @@ A design system for building faithful recreations of old UIs.
 
 98.css is a CSS file that takes semantic HTML and makes it look pretty. It does not ship with any JavaScript, so it is compatible with your frontend framework of choice.
 
-Be sure to check out [XP.css](https://botoxparty.github.io/XP.css/) as well.
+Be sure to check out [XP.css](https://botoxparty.github.io/XP.css/) and [7.css](https://khang-nd.github.io/7.css/) as well.
 
 ### Installation / Usage
 
