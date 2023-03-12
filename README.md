@@ -65,6 +65,12 @@ Refer to [the GitHub issues page](https://github.com/jdan/98.css/issues) to see 
 
 Thank you for checking my little project out, I hope it brought you some joy today. Consider [starring/following along on GitHub](https://github.com/jdan/98.css/stargazers) and maybe subscribing to more fun things on [my twitter](https://twitter.com/jdan). 👋
 
+### Publishing
+
+Building the docs site: `npm run deploy:docs`
+
+Publishing to npm: `npm run release`
+
 ### License
 
 [MIT](https://github.com/jdan/98.css/blob/main/LICENSE)
