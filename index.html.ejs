@@ -41,6 +41,8 @@
             </ul>
           </li>
           <li><a href="#tree-view">TreeView</a></li>
+          <li><a href="#tabs">Tabs</a></li>
+          <li><a href="#table-view">TableView</a></li>
         </ul>
       </li>
       <li><a href="#issues-contributing-etc">Issues, Contributing, etc.</a></li>
@@ -795,6 +797,174 @@
             <li>Special Thanks</li>
           </ul>
         `) %>
+      </div>
+    </section>
+
+    <section class="component">
+      <h3 id="tabs">Tabs</h3>
+      <div>
+        <blockquote>
+          A <em>tab control</em> is analogous to a divider in a file cabinet or notebook.
+          You can use this control to define multiple logical pages or sections of information within the same window.
+
+          <footer>
+            &mdash; Microsoft Windows User Experience p. 193
+          </footer>
+        </blockquote>
+
+        <p>
+          To render a tab list, use a <code>menu</code> element with the
+          <code>[role=tablist]</code> attribute. The children of this menu (<code>li</code>
+          elements), should get a <code>[role=tab]</code> attribute.
+        </p>
+
+        <p>
+          Tabs should be managed by adding custom javascript code.
+          All you need is to add the <code>[aria-selected=true]</code> attribute to the active tab.
+        </p>
+
+        <%- example(`
+        <div class="window-body">
+          <p>Hello, world!</p>
+
+          <menu role="tablist">
+            <li role="tab" aria-selected="true"><a href="#tabs">Desktop</a></li>
+            <li role="tab"><a href="#tabs">My computer</a></li>
+            <li role="tab"><a href="#tabs">Control panel</a></li>
+            <li role="tab"><a href="#tabs">Devices manager</a></li>
+            <li role="tab"><a href="#tabs">Hardware profiles</a></li>
+            <li role="tab"><a href="#tabs">Performance</a></li>
+          </menu>
+          <div class="window" role="tabpanel">
+            <div class="window-body">
+              <p>the tab content</p>
+            </div>
+          </div>
+        </div>
+        `) %>
+
+        <p>
+          To create multirows tabs, add a <code>multirows</code>
+          class to the <code>menu</code> tag.
+        </p>
+
+        <%- example(`
+        <div class="window-body">
+          <p>Hello, world!</p>
+
+          <menu role="tablist" class="multirows">
+            <li role="tab"><a href="#tabs">Desktop</a></li>
+            <li role="tab"><a href="#tabs">My computer</a></li>
+            <li role="tab"><a href="#tabs">Control panel</a></li>
+            <li role="tab"><a href="#tabs">Devices manager</a></li>
+            <li role="tab"><a href="#tabs">Hardware profiles</a></li>
+            <li role="tab"><a href="#tabs">Performance</a></li>
+          </menu>
+          <menu role="tablist" class="multirows">
+            <li role="tab"><a href="#tabs">Users</a></li>
+            <li role="tab"><a href="#tabs">Network</a></li>
+            <li role="tab"><a href="#tabs">Programs</a></li>
+            <li role="tab"><a href="#tabs">Services</a></li>
+            <li role="tab"><a href="#tabs">Resources</a></li>
+            <li role="tab"><a href="#tabs">Advanced</a></li>
+          </menu>
+          <div class="window" role="tabpanel">
+            <div class="window-body">
+              <p>the tab content</p>
+            </div>
+          </div>
+        </div>
+        `) %>
+              </div>
+    </section>
+    <section class="component">
+
+      <h3 id="table-view">TableView</h3>
+      <div>
+        <p>
+          To render a table view, use a table element. Wrap it with a div element with <code>sunken-panel</code> class to provide proper border and overflow container.
+        </p>
+        <p>
+          With a bit of extra scripting you can make table view interactive. Give <code>interactive</code> class to
+          table element to show pointer cursor when hovering over body rows. Table rows can be given
+          <code>highlighted</code> class to appear selected.
+        </p>
+
+        <%- example(`
+          <div class="sunken-panel" style="height: 120px; width: 240px;">
+            <table class="interactive">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Version</th>
+                  <th>Company</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>MySQL ODBC 3.51 Driver</td>
+                  <td>3.51.11.00</td>
+                  <td>MySQL AB</td>
+                </tr>
+                <tr>
+                  <td>SQL Server</td>
+                  <td>3.70.06.23</td>
+                  <td>Microsoft Corporation</td>
+                </tr>
+                <tr>
+                  <td>SQL Server</td>
+                  <td>3.70.06.23</td>
+                  <td>Microsoft Corporation</td>
+                </tr>
+                <tr>
+                  <td>SQL Server</td>
+                  <td>3.70.06.23</td>
+                  <td>Microsoft Corporation</td>
+                </tr>
+                <tr>
+                  <td>SQL Server</td>
+                  <td>3.70.06.23</td>
+                  <td>Microsoft Corporation</td>
+                </tr>
+                <tr>
+                  <td>SQL Server</td>
+                  <td>3.70.06.23</td>
+                  <td>Microsoft Corporation</td>
+                </tr>
+                <tr>
+                  <td>SQL Server</td>
+                  <td>3.70.06.23</td>
+                  <td>Microsoft Corporation</td>
+                </tr>
+                <tr>
+                  <td>SQL Server</td>
+                  <td>3.70.06.23</td>
+                  <td>Microsoft Corporation</td>
+                </tr>
+                <tr>
+                  <td>SQL Server</td>
+                  <td>3.70.06.23</td>
+                  <td>Microsoft Corporation</td>
+                </tr>
+                <tr>
+                  <td>SQL Server</td>
+                  <td>3.70.06.23</td>
+                  <td>Microsoft Corporation</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <script>
+            document.querySelectorAll('table.interactive').forEach(element => {
+              element.addEventListener('click', (event) => {
+                const row = event.path.find(element => element.tagName === 'TR' && element.parentElement.tagName === 'TBODY');
+                if (row) {
+                  row.classList.toggle('highlighted');
+                }
+              })
+            });
+          </script>
+      `) %>
       </div>
     </section>
 
