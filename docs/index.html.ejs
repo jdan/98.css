@@ -167,6 +167,19 @@
         </p>
 
         <%- example(`<button[[ class="focused"]]>I am focused</button>`) %>
+
+        <p>
+          Images and elements with <code>[role=img]</code> inside the button will get disabled state when the button is disabled.
+        </p>
+
+        <%- example(`
+          <button style="height: auto; padding: 16px;">
+            <img style="width: 32px;height: 32px;" src="mail-icon.png" alt="icon"/>
+          </button>
+          <button style="height: auto; padding: 16px;" disabled>
+            <img style="width: 32px;height: 32px;" src="mail-icon.png" alt="icon"/>
+          </button>
+        `) %>
       </div>
     </section>
 
@@ -987,5 +1000,20 @@
       subscribing to more fun things on <a href="https://twitter.com/jdan">my twitter</a>. 👋
     </p>
   </main>
+
+  <svg id="filters-98css">
+    <defs>
+      <filter id="disabled-filter-98css">
+        <feColorMatrix
+          type="matrix"
+          values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 -21.25 -71.54 -7.21 40 0"
+          result="color-matrix"
+        />
+        <feFlood flood-color="grey" result="color" />
+        <feComposite in="color" in2="color-matrix" operator="in" />
+        <feDropShadow dx="1" dy="1" stdDeviation="0" flood-color="white" />
+      </filter>
+    </defs>
+  </svg>
 </body>
 </html>

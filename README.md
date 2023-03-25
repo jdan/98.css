@@ -18,24 +18,37 @@ The easiest way to use 98.css is to import it from [unpkg](https://unpkg.com/).
 ```html
 <!DOCTYPE html>
 <html>
-<head>
-  <title>98.css example</title>
-  <meta charset="UTF-8" />
-  <link rel="stylesheet" href="https://unpkg.com/98.css" />
-</head>
+  <head>
+    <title>98.css example</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="https://unpkg.com/98.css" />
+  </head>
 
-<body>
-  <div class="window" style="margin: 32px; width: 250px">
-    <div class="title-bar">
-      <div class="title-bar-text">
-        My First VB4 Program
+  <body>
+    <div class="window" style="margin: 32px; width: 250px">
+      <div class="title-bar">
+        <div class="title-bar-text">My First VB4 Program</div>
+      </div>
+      <div class="window-body">
+        <p>Hello, world!</p>
       </div>
     </div>
-    <div class="window-body">
-      <p>Hello, world!</p>
-    </div>
-  </div>
-</body>
+
+    <svg id="filters-98css">
+      <defs>
+        <filter id="disabled-filter-98css">
+          <feColorMatrix
+            type="matrix"
+            values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 -21.25 -71.54 -7.21 40 0"
+            result="color-matrix"
+          />
+          <feFlood flood-color="grey" result="color" />
+          <feComposite in="color" in2="color-matrix" operator="in" />
+          <feDropShadow dx="1" dy="1" stdDeviation="0" flood-color="white" />
+        </filter>
+      </defs>
+    </svg>
+  </body>
 </html>
 ```
 

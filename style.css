@@ -200,6 +200,11 @@ input[type="reset"]:disabled,
   text-shadow: 1px 1px 0 var(--button-highlight);
 }
 
+button:disabled img,
+button:disabled [role="img"] {
+  filter: url("#disabled-filter-98css");
+}
+
 .window {
   box-shadow: var(--border-window-outer), var(--border-window-inner);
   background: var(--surface);
@@ -884,4 +889,11 @@ table > tbody > tr.highlighted {
 table > tbody > tr > * {
   padding: 0 var(--grouped-element-spacing);
   height: 14px;
+}
+
+#filters-98css {
+  position: absolute;
+  pointer-events: none;
+  top: 0;
+  left: 0;
 }
