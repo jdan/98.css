@@ -107,6 +107,7 @@ select,
 option,
 table,
 ul.tree-view,
+menu[role=tablist],
 .window,
 .title-bar {
   font-family: "Pixelated MS Sans Serif", Arial;
@@ -837,7 +838,7 @@ menu[role=tablist] > li[aria-selected=true] {
 menu[role=tablist] > li > a {
   display: block;
   color: #222;
-  margin: 6px;
+  margin: 5px 8px;
   text-decoration: none;
 }
 menu[role=tablist] > li[aria-selected=true] > a:focus {
