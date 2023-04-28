@@ -38,6 +38,7 @@
               <li><a href="#title-bar">Title Bar</a></li>
               <li><a href="#window-contents">Window contents</a></li>
               <li><a href="#status-bar">Status Bar</a></li>
+              <li><a href="#menu-bar">Menu Bar</a></li>
             </ul>
           </li>
           <li><a href="#tree-view">TreeView</a></li>
@@ -717,6 +718,81 @@
       `) %>
 
 
+    </section>
+
+    <section class="component">
+      <h4 id="menu-bar">Menu Bar</h4>
+      <div>
+        <p>
+          You can render a menu bar with the <code>menu-bar</code> class,
+          then use a <code>button</code> element to render the menu item.
+          Finally, you can use a <code>ul</code> element with the <code>menu</code>
+          class to render a menu that the button will open.
+        </p>
+
+        <%- example(`
+        <div class="window" style="width: 320px">
+          <div class="title-bar">
+            <div class="title-bar-text">Untitled - Notepad</div>
+            <div class="title-bar-controls">
+              <button aria-label="Minimize"></button>
+              <button aria-label="Maximize"></button>
+              <button aria-label="Close"></button>
+            </div>
+          </div>
+          <div class="menu-bar">
+            <div class="menu-bar-item">
+              <button aria-label="File"><u>F</u>ile</button>
+              <ul class="menu">
+                <li><u>N</u>ew</li>
+                <li><u>O</u>pen...</li>
+                <li><u>S</u>ave</li>
+                <li>Save <u>A</u>s...</li>
+                <li class="divider"></li>
+                <li>Page Se<u>t</u>up...</li>
+                <li class="disabled"><u>P</u>rint</li>
+                <li class="divider"></li>
+                <li>E<u>x</u>it</li>
+              </ul>
+            </div>
+            <div class="menu-bar-item">
+              <button aria-label="Edit"><u>E</u>dit</button>
+              <ul class="menu">
+                <li class="disabled"><u>U</u>ndo<span>Ctrl+Z</span></li>
+                <li class="divider"></li>
+                <li class="disabled"><u>C</u>ut<span>Ctrl+X</span></li>
+                <li class="disabled"><u>C</u>opy<span>Ctrl+C</span></li>
+                <li class="disabled"><u>P</u>aste<span>Ctrl+V</span></li>
+                <li class="disabled">De<u>l</u>ete<span>Del</span></li>
+                <li class="divider"></li>
+                <li>Select <u>A</u>ll</li>
+                <li>Time/<u>D</u>ate<span>F5</span></li>
+                <li class="divider"></li>
+                <li><u>W</u>ord Wrap</li>
+                <li>Set <u>F</u>ont...</li>
+              </ul>
+            </div>
+            <div class="menu-bar-item">
+              <button aria-label="File"><u>S</u>earch</button>
+              <ul class="menu">
+                <li><u>F</u>ind...</li>
+                <li>Find <u>N</u>ext<span>F3</span></li>
+              </ul>
+            </div>
+            <div class="menu-bar-item">
+              <button aria-label="File"><u>H</u>elp</button>
+              <ul class="menu">
+                <li><u>H</u>elp Topics</li>
+                <li class="divider"></li>
+                <li><u>A</u>bout Notepad</li>
+              </ul>
+            </div>
+          </div>
+          <div class="window-body frame">
+            <textarea style="resize: none; width:100%; height:100px; overflow:scroll;">Pro-tip: Use the \`frame\` class on the \`window-body\` for smaller margins.</textarea>
+          </div>
+        </div>
+      `) %>
     </section>
 
     <section class="component">
