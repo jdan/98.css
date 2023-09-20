@@ -108,7 +108,8 @@ option,
 table,
 ul.tree-view,
 .window,
-.title-bar {
+.title-bar,
+li[role=tab] {
   font-family: "Pixelated MS Sans Serif", Arial;
   -webkit-font-smoothing: none;
   font-size: 11px;
