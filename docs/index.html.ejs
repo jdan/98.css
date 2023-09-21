@@ -43,6 +43,7 @@
           <li><a href="#tree-view">TreeView</a></li>
           <li><a href="#tabs">Tabs</a></li>
           <li><a href="#table-view">TableView</a></li>
+          <li><a href="#progress-indicator">Progress Indicator</a></li>
         </ul>
       </li>
       <li><a href="#issues-contributing-etc">Issues, Contributing, etc.</a></li>
@@ -882,7 +883,6 @@
               </div>
     </section>
     <section class="component">
-
       <h3 id="table-view">TableView</h3>
       <div>
         <p>
@@ -969,6 +969,35 @@
             });
           </script>
       `) %>
+    </div>
+    </section>
+
+    <section class="component">
+      <h3 id="progress-indicator">Progress Indicator</h3>
+      <div>
+        <blockquote>
+          You can use a <em>progress indicator</em>, also known as a <em>progress bar control</em>, to show the percentage of completion of a lengthy operation.
+
+          <footer>
+            &mdash; Microsoft Windows User Experience p. 189
+          </footer>
+        </blockquote>
+
+        <p>
+          There are two types of progress bars: solid and segmented. The solid version is the default. To declare a segmented bar, you should use the <code>segmented</code> class.
+        </p>
+
+        <%- example(`
+          <div class="progress-indicator">
+            <span class="progress-indicator-bar"  style="width: 40%;" />
+          </div>
+        `) %>
+
+        <%- example(`
+          <div class="progress-indicator segmented">
+            <span class="progress-indicator-bar" style="width: 40%;" />
+          </div>
+        `) %>
       </div>
     </section>
 
