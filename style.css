@@ -448,6 +448,7 @@ input[type="password"],
 input[type="email"],
 input[type="tel"],
 input[type="number"],
+input[type="search"],
 select,
 textarea {
   padding: 3px 4px;
@@ -465,6 +466,7 @@ input[type="text"],
 input[type="password"],
 input[type="email"],
 input[type="tel"],
+input[type="search"],
 select {
   height: 21px;
 }
@@ -477,7 +479,8 @@ input[type="text"],
 input[type="password"],
 input[type="email"],
 input[type="tel"],
-input[type="number"] {
+input[type="number"],
+input[type="search"] {
   /* For some reason descenders are getting cut off without this */
   line-height: 2;
 }
@@ -487,11 +490,13 @@ input[type="tel"]:disabled,
 input[type="password"]:disabled,
 input[type="text"]:disabled,
 input[type="number"]:disabled,
+input[type="search"]:disabled,
 input[type="email"]:read-only,
 input[type="tel"]:read-only,
 input[type="password"]:read-only,
 input[type="text"]:read-only,
 input[type="number"]:read-only,
+input[type="search"]:read-only,
 textarea:disabled {
   background-color: var(--surface);
 }
@@ -514,6 +519,7 @@ input[type="password"]:focus,
 input[type="email"]:focus,
 input[type="tel"]:focus,
 input[type="number"]:focus,
+input[type="search"]:focus,
 textarea:focus {
   outline: none;
 }
