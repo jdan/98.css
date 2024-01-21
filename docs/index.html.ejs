@@ -94,7 +94,7 @@
     <p>
       This library relies on the usage of <strong>semantic HTML</strong>. To make a button, you'll need
       to use a <code>&lt;button&gt;</code>. Input elements require labels. Icon buttons rely on
-      <code>aria-label</code>. This page will guide you through that process, but accessibility is a primary
+      <code>aria-label</code> (or corresponding styling classes). This page will guide you through that process, but accessibility is a primary
       goal of this project.
     </p>
 
@@ -610,6 +610,43 @@
             <div class="title-bar-controls">
               <button aria-label="Help"></button>
               <button aria-label="Close"></button>
+            </div>
+          </div>
+        `) %>
+
+        <p>
+          Each <code>aria-label</code> also has a corresponding styling class to render the title bar buttons,
+          to let the <code>aria-label</code> text be in other languages without causing rendering, accessibility, or localization issues.
+        </p>
+
+        <%- example(`
+          <div class="title-bar">
+            <div class="title-bar-text">A Title Bar using Button Styling Classes</div>
+            <div class="title-bar-controls">
+              <button class="minimize"></button>
+              <button class="maximize"></button>
+              <button class="close"></button>
+            </div>
+          </div>
+
+          <br />
+
+          <div class="title-bar">
+            <div class="title-bar-text">A Maximized Title Bar using Button Styling Classes</div>
+            <div class="title-bar-controls">
+              <button class="minimize"></button>
+              <button class="restore"></button>
+              <button class="close"></button>
+            </div>
+          </div>
+
+          <br />
+
+          <div class="title-bar">
+            <div class="title-bar-text">A Helpful Bar using Button Styling Classes</div>
+            <div class="title-bar-controls">
+              <button class="help"></button>
+              <button class="close"></button>
             </div>
           </div>
         `) %>
