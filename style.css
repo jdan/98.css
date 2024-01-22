@@ -64,14 +64,6 @@
   --default-button-border-sunken-inner: inset -2px -2px var(--button-highlight), inset 3px 3px var(--button-shadow), inset -3px -3px var(--button-face);
 
 
-  .default {
-    box-shadow: var(--default-button-border-raised-outer), var(--default-button-border-raised-inner);
-  }
-  
-  .default:active {
-    box-shadow: var(--default-button-border-sunken-outer), var(--default-button-border-sunken-inner);
-  }
-
   /* Window borders flip button-face and button-highlight */
   --border-window-outer: inset -1px -1px var(--window-frame),
     inset 1px 1px var(--button-face);
@@ -166,6 +158,12 @@ input[type="reset"] {
   padding: 0 12px;
 }
 
+button.default,
+input[type="submit"].default,
+input[type="reset"].default {
+  box-shadow: var(--default-button-border-raised-outer), var(--default-button-border-raised-inner);
+}
+
 .vertical-bar {
   width: 4px;
   height: 20px;
@@ -178,6 +176,12 @@ input[type="submit"]:not(:disabled):active,
 input[type="reset"]:not(:disabled):active {
   box-shadow: var(--border-sunken-outer), var(--border-sunken-inner);
   text-shadow: 1px 1px var(--text-color);
+}
+
+button.default:not(:disabled):active,
+input[type="submit"].default:not(:disabled):active,
+input[type="reset"].default:not(:disabled):active {
+  box-shadow: var(--default-button-border-sunken-outer), var(--default-button-border-sunken-inner);
 }
 
 @media (not(hover)) {
