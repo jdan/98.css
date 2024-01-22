@@ -141,9 +141,17 @@
           They are given 12px of horizontal padding by default.
         </p>
 
-        <%- example(`<button class="default">Click me</button>
+        <%- example(`<button>Click me</button>
         <input type="submit" />
         <input type="reset" /> `)%>
+
+        <p>
+          You can add the class <code>default</code> to any button to apply additional styling, 
+          useful when communicating to the user what default action would happen in the active window if 
+          the <kbd>Enter</kbd> key was pressed on Windows 98.
+        </p>
+
+        <%- example(`<button class="default">OK</button>`)%>
 
         <p>
           When buttons are clicked, the raised borders become sunken.
