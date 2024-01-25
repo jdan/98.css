@@ -45,7 +45,6 @@
   --checkbox-total-width: calc(var(--checkbox-total-width-precalc));
   --checkbox-left: calc(-1 * var(--checkbox-total-width-precalc));
   --checkmark-width: 7px;
-  --checkmark-top: 3px;
   --checkmark-left: 3px;
 
   /* Borders */
@@ -429,7 +428,6 @@ input[type="checkbox"]:checked + label::after {
   width: var(--checkmark-width);
   height: var(--checkmark-width);
   position: absolute;
-  top: var(--checkmark-top);
   left: calc(
     -1 * (var(--checkbox-total-width-precalc)) + var(--checkmark-left)
   );
