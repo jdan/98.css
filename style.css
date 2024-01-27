@@ -253,31 +253,36 @@ input[type="reset"]:disabled,
   outline: none;
 }
 
-.title-bar-controls button[aria-label="Minimize"] {
+.title-bar-controls button[aria-label="Minimize"],
+.title-bar-controls button[aria-label].minimize {
   background-image: svg-load("./icon/minimize.svg");
   background-repeat: no-repeat;
   background-position: bottom 3px left 4px;
 }
 
-.title-bar-controls button[aria-label="Maximize"] {
+.title-bar-controls button[aria-label="Maximize"],
+.title-bar-controls button[aria-label].maximize {
   background-image: svg-load("./icon/maximize.svg");
   background-repeat: no-repeat;
   background-position: top 2px left 3px;
 }
 
-.title-bar-controls button[aria-label="Restore"] {
+.title-bar-controls button[aria-label="Restore"],
+.title-bar-controls button[aria-label].restore {
   background-image: svg-load("./icon/restore.svg");
   background-repeat: no-repeat;
   background-position: top 2px left 3px;
 }
 
-.title-bar-controls button[aria-label="Help"] {
+.title-bar-controls button[aria-label="Help"],
+.title-bar-controls button[aria-label].help {
   background-image: svg-load("./icon/help.svg");
   background-repeat: no-repeat;
   background-position: top 2px left 5px;
 }
 
-.title-bar-controls button[aria-label="Close"] {
+.title-bar-controls button[aria-label="Close"],
+.title-bar-controls button[aria-label].close {
   margin-left: 2px;
   background-image: svg-load("./icon/close.svg");
   background-repeat: no-repeat;
