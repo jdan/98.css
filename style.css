@@ -451,7 +451,8 @@ input[type="checkbox"]:active + label::before {
   background: var(--surface);
 }
 
-input[type="checkbox"]:checked + label::after {
+input[type="checkbox"]:checked + label::after,
+input[type="checkbox"]:indeterminate + label::after {
   content: "";
   display: block;
   width: var(--checkmark-width);
@@ -463,12 +464,20 @@ input[type="checkbox"]:checked + label::after {
   background: svg-load("./icon/checkmark.svg");
 }
 
+input[type="checkbox"]:indeterminate + label::after {
+  background: svg-load("./icon/checkmark-mixed-value.svg");
+}
+
 input[type="checkbox"][disabled] + label::before {
   background: var(--surface);
 }
 
 input[type="checkbox"][disabled]:checked + label::after {
   background: svg-load("./icon/checkmark-disabled.svg");
+}
+
+input[type="checkbox"][disabled]:indeterminate + label::after {
+  background: svg-load("./icon/checkmark-mixed-value-disabled.svg");
 }
 
 input[type="text"],
