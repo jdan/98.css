@@ -439,6 +439,13 @@
           <label for="text${getNewId()}">Search</label>
           <input id="text${getCurrentId()}" type="search" value="98 css"/>
         </div>
+        <div class="number-input">
+          <input type="number" id="text${getNewId()}" min="1980" max="2099" value="1998">
+          <div class="number-input-controls">
+            <button aria-label="Up"></button>
+            <button aria-label="Down"></button>
+          </div>
+        </div>
       `) %>
 
       </div>
