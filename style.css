@@ -494,14 +494,60 @@ input[type="text"],
 input[type="password"],
 input[type="email"],
 input[type="tel"],
+input[type="number"],
 input[type="search"],
 select {
   height: 21px;
 }
-input[type="number"] {
-  /* need this 1 pixel to fit the spinner controls in box */
-  height: 22px;
+
+.number-input {
+  display: flex;
+  gap: 1px;
 }
+
+.number-input-controls {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.number-input-controls button:focus {
+  outline: none;
+}
+
+.number-input-controls button[aria-label="Up"],
+.number-input-controls button[aria-label].up,
+.number-input-controls button[aria-label="Down"],
+.number-input-controls button[aria-label].down {
+    min-width: 15px;
+    min-height: 10px;
+    padding: 0;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
+.number-input-controls button[aria-label="Up"],
+.number-input-controls button[aria-label].up {
+    background-image: svg-load("./icon/input-control-up.svg");
+}
+
+.number-input-controls button[aria-label="Down"],
+.number-input-controls button[aria-label].down {
+    background-image: svg-load("./icon/input-control-down.svg");
+}
+
+input[type="number"] {
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    appearance: textfield;
+    padding-right: 32px;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
 /* clears the ‘X’ from Internet Explorer */
 input[type=search]::-ms-clear { display: none; width : 0; height: 0; }
 input[type=search]::-ms-reveal { display: none; width : 0; height: 0; }
