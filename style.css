@@ -117,6 +117,7 @@ li[role=tab] {
   font-family: "Pixelated MS Sans Serif", Arial;
   -webkit-font-smoothing: none;
   font-size: 0.9166666666666666em;
+  user-select: none;
 }
 
 h1 {
