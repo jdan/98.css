@@ -965,3 +965,12 @@ table > tbody > tr > * {
   background-repeat: repeat;
   background-size: 18px 100%;
 }
+
+::selection {
+  color: white;
+  background: darkblue;
+}
+
+input:focus {
+  outline: 1px black dotted;
+}
