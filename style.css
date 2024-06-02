@@ -120,6 +120,12 @@ li[role=tab] {
   user-select: none;
 }
 
+.window-body, label, input, button, legend, table, ul, ul.tree-view,
+li[role=tab] {
+  -webkit-font-smoothing: auto;
+  word-spacing: 0.12em;
+}
+
 h1 {
   font-size: 5rem;
 }
