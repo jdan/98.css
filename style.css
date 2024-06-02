@@ -19,11 +19,11 @@
   --link-blue: #0000ff;
 
   /* Spacing */
-  --element-spacing: 8px;
-  --grouped-button-spacing: 4px;
-  --grouped-element-spacing: 6px;
+  --element-spacing: 0.6666666em;
+  --grouped-button-spacing: 0.33333333em;
+  --grouped-element-spacing: 0.5em;
   --radio-width: 12px;
-  --checkbox-width: 13px;
+  --checkbox-width: 1.0833333333333333em;
   --radio-label-spacing: 6px;
   --range-track-height: 4px;
   --range-spacing: 10px;
@@ -44,8 +44,8 @@
     var(--radio-label-spacing);
   --checkbox-total-width: calc(var(--checkbox-total-width-precalc));
   --checkbox-left: calc(-1 * var(--checkbox-total-width-precalc));
-  --checkmark-width: 7px;
-  --checkmark-left: 3px;
+  --checkmark-width: 0.5833333333333334em;
+  --checkmark-left: 0.25em;
 
   /* Borders */
   --border-width: 1px;
@@ -99,7 +99,6 @@
 
 body {
   font-family: Arial;
-  font-size: 12px;
   color: var(--text-color);
 }
 
@@ -117,7 +116,7 @@ ul.tree-view,
 li[role=tab] {
   font-family: "Pixelated MS Sans Serif", Arial;
   -webkit-font-smoothing: none;
-  font-size: 11px;
+  font-size: 0.9166666666666666em;
 }
 
 h1 {
@@ -153,8 +152,8 @@ input[type="reset"] {
   border-radius: 0;
 
   min-width: 75px;
-  min-height: 23px;
-  padding: 0 12px;
+  min-height: 1.9166666666666667em;
+  padding: 0 1.09090em;
 }
 
 button.default,
@@ -230,7 +229,7 @@ input[type="reset"]:disabled,
     var(--dialog-blue),
     var(--dialog-blue-light)
   );
-  padding: 3px 2px 3px 3px;
+  padding: 0.2727272727em 0.1818181818em 0.2727272727em 0.2727272727em;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -382,7 +381,7 @@ input[type="checkbox"] {
 
 input[type="radio"] + label,
 input[type="checkbox"] + label {
-  line-height: 13px;
+  line-height: 1.0833333333333333em;
 }
 
 input[type="radio"] + label {
@@ -496,7 +495,7 @@ input[type="email"],
 input[type="tel"],
 input[type="search"],
 select {
-  height: 21px;
+  height: 1.9090em;
 }
 input[type="number"] {
   /* need this 1 pixel to fit the spinner controls in box */
@@ -896,7 +895,7 @@ menu[role=tablist].multirows > li {
 }
 .sunken-panel {
   box-sizing: border-box;
-  border: 2px groove transparent;
+  height: 1.4166666667em;;
   border-image: svg-load("./icon/sunken-panel-border.svg") 2;
   overflow: auto;
   background-color: #fff;
@@ -913,7 +912,7 @@ table {
 table > thead > tr > * {
   position: sticky;
   top: 0;
-  height: 17px;
+  height: 1.4166666667em;;
   box-shadow: var(--border-raised-outer), var(--border-raised-inner);
   background: var(--surface);
   box-sizing: border-box;
@@ -932,7 +931,7 @@ table > tbody > tr.highlighted {
 
 table > tbody > tr > * {
   padding: 0 var(--grouped-element-spacing);
-  height: 14px;
+  height: 1.1666666667em;
 }
 
 .progress-indicator {
