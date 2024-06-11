@@ -22,17 +22,17 @@
   --element-spacing: 0.6666666em;
   --grouped-button-spacing: 0.33333333em;
   --grouped-element-spacing: 0.5em;
-  --radio-width: 12px;
+  --radio-width: 1em;
   --checkbox-width: 1.0833333333333333em;
-  --radio-label-spacing: 6px;
-  --range-track-height: 4px;
-  --range-spacing: 10px;
+  --radio-label-spacing: 0.5em;
+  --range-track-height: 0.25em;
+  --range-spacing: 0.833333333333333em;
 
   /* Some detailed computations for radio buttons and checkboxes */
   --radio-total-width-precalc: var(--radio-width) + var(--radio-label-spacing);
   --radio-total-width: calc(var(--radio-total-width-precalc));
   --radio-left: calc(-1 * var(--radio-total-width-precalc));
-  --radio-dot-width: 4px;
+  --radio-dot-width: 0.333333333333em;
   --radio-dot-top: calc(var(--radio-width) / 2 - var(--radio-dot-width) / 2);
   --radio-dot-left: calc(
     -1 * (var(--radio-total-width-precalc)) + var(--radio-width) / 2 - var(
@@ -48,37 +48,37 @@
   --checkmark-left: 0.25em;
 
   /* Borders */
-  --border-width: 1px;
-  --border-raised-outer: inset -1px -1px var(--window-frame),
-    inset 1px 1px var(--button-highlight);
-  --border-raised-inner: inset -2px -2px var(--button-shadow),
-    inset 2px 2px var(--button-face);
-  --border-sunken-outer: inset -1px -1px var(--button-highlight),
-    inset 1px 1px var(--window-frame);
-  --border-sunken-inner: inset -2px -2px var(--button-face),
-    inset 2px 2px var(--button-shadow);
-  --default-button-border-raised-outer: inset -2px -2px var(--window-frame), inset 1px 1px var(--window-frame);
-  --default-button-border-raised-inner: inset 2px 2px var(--button-highlight), inset -3px -3px var(--button-shadow), inset 3px 3px var(--button-face);
-  --default-button-border-sunken-outer: inset 2px 2px var(--window-frame), inset -1px -1px var(--window-frame);
-  --default-button-border-sunken-inner: inset -2px -2px var(--button-highlight), inset 3px 3px var(--button-shadow), inset -3px -3px var(--button-face);
+  --border-width: 0.0833333333333333em;
+  --border-raised-outer: inset -0.0833333333333333em -0.0833333333333333em var(--window-frame),
+    inset 0.0833333333333333em 0.0833333333333333em var(--button-highlight);
+  --border-raised-inner: inset -0.1666666666666667em -0.1666666666666667em var(--button-shadow),
+    inset 0.1666666666666667em 0.1666666666666667em var(--button-face);
+  --border-sunken-outer: inset -0.0833333333333333em -0.0833333333333333em var(--button-highlight),
+    inset 0.0833333333333333em 0.0833333333333333em var(--window-frame);
+  --border-sunken-inner: inset -0.1666666666666667em -0.1666666666666667em var(--button-face),
+    inset 0.1666666666666667em 0.1666666666666667em var(--button-shadow);
+  --default-button-border-raised-outer: inset -0.1666666666666667em -0.1666666666666667em var(--window-frame), inset 0.0833333333333333em 0.0833333333333333em var(--window-frame);
+  --default-button-border-raised-inner: inset 0.1666666666666667em 0.1666666666666667em var(--button-highlight), inset -0.25em -0.25em var(--button-shadow), inset 0.25em 0.25em var(--button-face);
+  --default-button-border-sunken-outer: inset 0.1666666666666667em 0.1666666666666667em var(--window-frame), inset -0.0833333333333333em -0.0833333333333333em var(--window-frame);
+  --default-button-border-sunken-inner: inset -0.1666666666666667em -0.1666666666666667em var(--button-highlight), inset 0.25em 0.25em var(--button-shadow), inset -0.25em -0.25em var(--button-face);
 
 
   /* Window borders flip button-face and button-highlight */
-  --border-window-outer: inset -1px -1px var(--window-frame),
-    inset 1px 1px var(--button-face);
-  --border-window-inner: inset -2px -2px var(--button-shadow),
-    inset 2px 2px var(--button-highlight);
+  --border-window-outer: inset -0.0833333333333333em -0.0833333333333333em var(--window-frame),
+    inset 0.0833333333333333em 0.0833333333333333em var(--button-face);
+  --border-window-inner: inset -0.1666666666666667em -0.1666666666666667em var(--button-shadow),
+    inset 0.1666666666666667em 0.1666666666666667em var(--button-highlight);
 
   /* Field borders (checkbox, input, etc) flip window-frame and button-shadow */
-  --border-field: inset -1px -1px var(--button-highlight),
-    inset 1px 1px var(--button-shadow), inset -2px -2px var(--button-face),
-    inset 2px 2px var(--window-frame);
+  --border-field: inset -0.0833333333333333em -0.0833333333333333em var(--button-highlight),
+    inset 0.0833333333333333em 0.0833333333333333em var(--button-shadow), inset -0.1666666666666667em -0.1666666666666667em var(--button-face),
+    inset 0.1666666666666667em 0.1666666666666667em var(--window-frame);
 
   /* Tabs */
-  --border-tab: inset -1px 0 var(--window-frame),
-    inset 1px 1px var(--button-face),
-    inset -2px 0 var(--button-shadow),
-    inset 2px 2px var(--button-highlight)
+  --border-tab: inset -0.0833333333333333em 0 var(--window-frame),
+    inset 0.0833333333333333em 0.0833333333333333em var(--button-face),
+    inset -0.1666666666666667em 0 var(--button-shadow),
+    inset 0.1666666666666667em 0.1666666666666667em var(--button-highlight)
 }
 
 @font-face {
@@ -144,7 +144,7 @@ h4 {
 
 u {
   text-decoration: none;
-  border-bottom: 0.5px solid #222222;
+  border-bottom: 0.0416666666666667em solid #222222;
 }
 
 button,
@@ -158,7 +158,7 @@ input[type="reset"] {
   box-shadow: var(--border-raised-outer), var(--border-raised-inner);
   border-radius: 0;
 
-  min-width: 75px;
+  min-width: 6.25em;
   min-height: 1.9166666666666667em;
   padding: 0 1.09090em;
 }
@@ -170,8 +170,8 @@ input[type="reset"].default {
 }
 
 .vertical-bar {
-  width: 4px;
-  height: 20px;
+  width: 0.3333333333333333em;
+  height: 0.1111111111111111em;
   background: #c0c0c0;
   box-shadow: var(--border-raised-outer), var(--border-raised-inner);
 }
@@ -180,7 +180,7 @@ button:not(:disabled):active,
 input[type="submit"]:not(:disabled):active,
 input[type="reset"]:not(:disabled):active {
   box-shadow: var(--border-sunken-outer), var(--border-sunken-inner);
-  text-shadow: 1px 1px var(--text-color);
+  text-shadow: 0.0833333333333333em 0.0833333333333333em var(--text-color);
 }
 
 button.default:not(:disabled):active,
@@ -200,8 +200,8 @@ input[type="reset"].default:not(:disabled):active {
 button:focus,
 input[type="submit"]:focus,
 input[type="reset"]:focus {
-  outline: 1px dotted #000000;
-  outline-offset: -4px;
+  outline: 0.0833333333333333em dotted #000000;
+  outline-offset: -0.3333333333333em;
 }
 
 button::-moz-focus-inner,
@@ -221,13 +221,13 @@ button:disabled,
 input[type="submit"]:disabled,
 input[type="reset"]:disabled,
 :disabled + label {
-  text-shadow: 1px 1px 0 var(--button-highlight);
+  text-shadow: 0.0833333333333333em 0.0833333333333333em 0 var(--button-highlight);
 }
 
 .window {
   box-shadow: var(--border-window-outer), var(--border-window-inner);
   background: var(--surface);
-  padding: 3px;
+  padding: 0.25em;
 }
 
 .title-bar {
@@ -254,7 +254,7 @@ input[type="reset"]:disabled,
   font-weight: bold;
   color: white;
   letter-spacing: 0;
-  margin-right: 24px;
+  margin-right: 2em;
 }
 
 .title-bar-controls {
@@ -264,8 +264,8 @@ input[type="reset"]:disabled,
 .title-bar-controls button {
   padding: 0;
   display: block;
-  min-width: 16px;
-  min-height: 14px;
+  min-width: 1.3333333333333333em;
+  min-height: 10.3333333333333em;
 }
 
 .title-bar-controls button:active {
@@ -280,55 +280,55 @@ input[type="reset"]:disabled,
 .title-bar-controls button[aria-label].minimize {
   background-image: svg-load("./icon/minimize.svg");
   background-repeat: no-repeat;
-  background-position: bottom 3px left 4px;
+  background-position: bottom 0.25em left 0.3333333333333em;
 }
 
 .title-bar-controls button[aria-label="Maximize"],
 .title-bar-controls button[aria-label].maximize {
   background-image: svg-load("./icon/maximize.svg");
   background-repeat: no-repeat;
-  background-position: top 2px left 3px;
+  background-position: top 0.1666666666666667em left 0.25em;
 }
 
 .title-bar-controls button[aria-label="Maximize"]:disabled,
 .title-bar-controls button[aria-label].maximize:disabled {
   background-image: svg-load("./icon/maximize-disabled.svg");
   background-repeat: no-repeat;
-  background-position: top 2px left 3px;
+  background-position: top 0.1666666666666667em left 0.25em;
 }
 
 .title-bar-controls button[aria-label="Restore"],
 .title-bar-controls button[aria-label].restore {
   background-image: svg-load("./icon/restore.svg");
   background-repeat: no-repeat;
-  background-position: top 2px left 3px;
+  background-position: top 0.1666666666666667em left 0.25em;
 }
 
 .title-bar-controls button[aria-label="Help"],
 .title-bar-controls button[aria-label].help {
   background-image: svg-load("./icon/help.svg");
   background-repeat: no-repeat;
-  background-position: top 2px left 5px;
+  background-position: top 0.1666666666666667em left 0.4166666666666667em;
 }
 
 .title-bar-controls button[aria-label="Close"],
 .title-bar-controls button[aria-label].close {
-  margin-left: 2px;
+  margin-left: 0.1666666666666667em;
   background-image: svg-load("./icon/close.svg");
   background-repeat: no-repeat;
-  background-position: top 3px left 4px;
+  background-position: top 0.25em left 0.3333333333333em;
 }
 
 .status-bar {
-  margin: 0px 1px;
+  margin: 0em 0.0833333333333333em;
   display: flex;
-  gap: 1px;
+  gap: 0.0833333333333333em;
 }
 
 .status-bar-field {
-  box-shadow: inset -1px -1px #dfdfdf, inset 1px 1px #808080;
+  box-shadow: inset -0.0833333333333333em -0.0833333333333333em #dfdfdf, inset 0.0833333333333333em 0.0833333333333333em #808080;
   flex-grow: 1;
-  padding: 2px 3px;
+  padding: 0.1666666666666667em 0.25em;
   margin: 0;
 }
 
@@ -425,7 +425,7 @@ input[type="radio"]:checked + label::after {
 
 input[type="radio"]:focus + label,
 input[type="checkbox"]:focus + label {
-  outline: 1px dotted #000000;
+  outline: 0.0833333333333333em dotted #000000;
 }
 
 input[type="radio"][disabled] + label::before {
@@ -485,7 +485,7 @@ input[type="number"],
 input[type="search"],
 select,
 textarea {
-  padding: 3px 4px;
+  padding: 0.25em 0.3333333333333em;
   border: none;
   box-shadow: var(--border-field);
   background-color: var(--button-highlight);
@@ -506,7 +506,7 @@ select {
 }
 input[type="number"] {
   /* need this 1 pixel to fit the spinner controls in box */
-  height: 22px;
+  height: 20.1666666666666667em;
 }
 /* clears the ‘X’ from Internet Explorer */
 input[type=search]::-ms-clear { display: none; width : 0; height: 0; }
@@ -548,9 +548,9 @@ select {
   -webkit-appearance: none;
   -moz-appearance: none;
   position: relative;
-  padding-right: 32px;
+  padding-right: 30.1666666666666667em;
   background-image: svg-load("./icon/button-down.svg");
-  background-position: top 2px right 2px;
+  background-position: top 0.1666666666666667em right 0.1666666666666667em;
   background-repeat: no-repeat;
   border-radius: 0;
 }
@@ -578,65 +578,65 @@ input[type="range"]:focus {
 
 input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
-  height: 21px;
-  width: 11px;
+  height: 20.0833333333333333em;
+  width: 10.0833333333333333em;
   background: svg-load("./icon/indicator-horizontal.svg");
-  transform: translateY(-8px);
+  transform: translateY(-0.666666666666667em);
   box-shadow: none;
   border: none;
 }
 
 input[type="range"].has-box-indicator::-webkit-slider-thumb {
   background: svg-load("./icon/indicator-rectangle-horizontal.svg");
-  transform: translateY(-10px);
+  transform: translateY(-0.8333333333333333em);
 }
 
 input[type="range"]::-moz-range-thumb {
-  height: 21px;
-  width: 11px;
+  height: 20.0833333333333333em;
+  width: 10.0833333333333333em;
   border: 0;
   border-radius: 0;
   background: svg-load("./icon/indicator-horizontal.svg");
-  transform: translateY(2px);
+  transform: translateY(0.1666666666666667em);
 }
 
 input[type="range"].has-box-indicator::-moz-range-thumb {
   background: svg-load("./icon/indicator-rectangle-horizontal.svg");
-  transform: translateY(0px);
+  transform: translateY(0em);
 }
 
 input[type="range"]::-webkit-slider-runnable-track {
   width: 100%;
-  height: 2px;
+  height: 0.1666666666666667em;
   box-sizing: border-box;
   background: black;
-  border-right: 1px solid grey;
-  border-bottom: 1px solid grey;
-  box-shadow: 1px 0 0 white, 1px 1px 0 white, 0 1px 0 white, -1px 0 0 darkgrey,
-    -1px -1px 0 darkgrey, 0 -1px 0 darkgrey, -1px 1px 0 white, 1px -1px darkgrey;
+  border-right: 0.0833333333333333em solid grey;
+  border-bottom: 0.0833333333333333em solid grey;
+  box-shadow: 0.0833333333333333em 0 0 white, 0.0833333333333333em 0.0833333333333333em 0 white, 0 0.0833333333333333em 0 white, -0.0833333333333333em 0 0 darkgrey,
+    -0.0833333333333333em -0.0833333333333333em 0 darkgrey, 0 -0.0833333333333333em 0 darkgrey, -0.0833333333333333em 0.0833333333333333em 0 white, 0.0833333333333333em -0.0833333333333333em darkgrey;
 }
 
 input[type="range"]::-moz-range-track {
   width: 100%;
-  height: 2px;
+  height: 0.1666666666666667em;
   box-sizing: border-box;
   background: black;
-  border-right: 1px solid grey;
-  border-bottom: 1px solid grey;
-  box-shadow: 1px 0 0 white, 1px 1px 0 white, 0 1px 0 white, -1px 0 0 darkgrey,
-    -1px -1px 0 darkgrey, 0 -1px 0 darkgrey, -1px 1px 0 white, 1px -1px darkgrey;
+  border-right: 0.0833333333333333em solid grey;
+  border-bottom: 0.0833333333333333em solid grey;
+  box-shadow: 0.0833333333333333em 0 0 white, 0.0833333333333333em 0.0833333333333333em 0 white, 0 0.0833333333333333em 0 white, -0.0833333333333333em 0 0 darkgrey,
+    -0.0833333333333333em -0.0833333333333333em 0 darkgrey, 0 -0.0833333333333333em 0 darkgrey, -0.0833333333333333em 0.0833333333333333em 0 white, 0.0833333333333333em -0.0833333333333333em darkgrey;
 }
 
 .is-vertical {
   display: inline-block;
-  width: 4px;
-  height: 150px;
+  width: 0.3333333333333em;
+  height: 12.5em;
   transform: translateY(50%);
 }
 
 .is-vertical > input[type="range"] {
-  width: 150px;
-  height: 4px;
+  width: 12.5em;
+  height: 0.3333333333333em;
   margin: 0 calc(var(--grouped-element-spacing) + var(--range-spacing)) 0
     var(--range-spacing);
   transform-origin: left;
@@ -644,35 +644,35 @@ input[type="range"]::-moz-range-track {
 }
 
 .is-vertical > input[type="range"]::-webkit-slider-runnable-track {
-  border-left: 1px solid grey;
+  border-left: 0.0833333333333333em solid grey;
   border-right: 0;
-  border-bottom: 1px solid grey;
-  box-shadow: -1px 0 0 white, -1px 1px 0 white, 0 1px 0 white, 1px 0 0 darkgrey,
-    1px -1px 0 darkgrey, 0 -1px 0 darkgrey, 1px 1px 0 white, -1px -1px darkgrey;
+  border-bottom: 0.0833333333333333em solid grey;
+  box-shadow: -0.0833333333333333em 0 0 white, -0.0833333333333333em 0.0833333333333333em 0 white, 0 0.0833333333333333em 0 white, 0.0833333333333333em 0 0 darkgrey,
+    0.0833333333333333em -0.0833333333333333em 0 darkgrey, 0 -0.0833333333333333em 0 darkgrey, 0.0833333333333333em 0.0833333333333333em 0 white, -0.0833333333333333em -0.0833333333333333em darkgrey;
 }
 
 .is-vertical > input[type="range"]::-moz-range-track {
-  border-left: 1px solid grey;
+  border-left: 0.0833333333333333em solid grey;
   border-right: 0;
-  border-bottom: 1px solid grey;
-  box-shadow: -1px 0 0 white, -1px 1px 0 white, 0 1px 0 white, 1px 0 0 darkgrey,
-    1px -1px 0 darkgrey, 0 -1px 0 darkgrey, 1px 1px 0 white, -1px -1px darkgrey;
+  border-bottom: 0.0833333333333333em solid grey;
+  box-shadow: -0.0833333333333333em 0 0 white, -0.0833333333333333em 0.0833333333333333em 0 white, 0 0.0833333333333333em 0 white, 0.0833333333333333em 0 0 darkgrey,
+    0.0833333333333333em -0.0833333333333333em 0 darkgrey, 0 -0.0833333333333333em 0 darkgrey, 0.0833333333333333em 0.0833333333333333em 0 white, -0.0833333333333333em -0.0833333333333333em darkgrey;
 }
 
 .is-vertical > input[type="range"]::-webkit-slider-thumb {
-  transform: translateY(-8px) scaleX(-1);
+  transform: translateY(-0.666666666666667em) scaleX(-1);
 }
 
 .is-vertical > input[type="range"].has-box-indicator::-webkit-slider-thumb {
-  transform: translateY(-10px) scaleX(-1);
+  transform: translateY(-0.8333333333333333em) scaleX(-1);
 }
 
 .is-vertical > input[type="range"]::-moz-range-thumb {
-  transform: translateY(2px) scaleX(-1);
+  transform: translateY(0.1666666666666667em) scaleX(-1);
 }
 
 .is-vertical > input[type="range"].has-box-indicator::-moz-range-thumb {
-  transform: translateY(0px) scaleX(-1);
+  transform: translateY(0em) scaleX(-1);
 }
 
 select:focus {
@@ -693,14 +693,14 @@ a {
 }
 
 a:focus {
-  outline: 1px dotted var(--link-blue);
+  outline: 0.0833333333333333em dotted var(--link-blue);
 }
 
 ul.tree-view {
   display: block;
   background: var(--button-highlight);
   box-shadow: var(--border-field);
-  padding: 6px;
+  padding: 0.5em;
   margin: 0;
 }
 
@@ -720,14 +720,14 @@ ul.tree-view a:focus {
 
 ul.tree-view ul,
 ul.tree-view li {
-  margin-top: 3px;
+  margin-top: 0.25em;
 }
 
 ul.tree-view ul {
-  margin-left: 16px;
-  padding-left: 16px;
+  margin-left: 10.5em;
+  padding-left: 10.5em;
   /* Goes down too far */
-  border-left: 1px dotted #808080;
+  border-left: 0.0833333333333333em dotted #808080;
 }
 
 ul.tree-view ul > li {
@@ -737,10 +737,10 @@ ul.tree-view ul > li::before {
   content: "";
   display: block;
   position: absolute;
-  left: -16px;
-  top: 6px;
-  width: 12px;
-  border-bottom: 1px dotted #808080;
+  left: -10.5em;
+  top: 0.5em;
+  width: 1em;
+  border-bottom: 0.0833333333333333em dotted #808080;
 }
 
 /* Cover the bottom of the left dotted border */
@@ -748,10 +748,10 @@ ul.tree-view ul > li:last-child::after {
   content: "";
   display: block;
   position: absolute;
-  left: -20px;
-  top: 7px;
-  bottom: 0px;
-  width: 8px;
+  left: -1.666666666666667em;
+  top: 0.5833333333333333em;
+  bottom: 0em;
+  width: 0.666666666666667em;
   background: var(--button-highlight);
 }
 
@@ -764,7 +764,7 @@ ul.tree-view details[open] summary {
 }
 
 ul.tree-view ul details > summary:before {
-  margin-left: -22px;
+  margin-left: -20.1666666666666667em;
   position: relative;
   z-index: 1;
 }
@@ -774,12 +774,12 @@ ul.tree-view details > summary:before {
   display: block;
   float: left;
   content: "+";
-  border: 1px solid #808080;
-  width: 8px;
-  height: 9px;
-  line-height: 8px;
-  margin-right: 5px;
-  padding-left: 1px;
+  border: 0.0833333333333333em solid #808080;
+  width: 0.666666666666667em;
+  height: 0.75em;
+  line-height: 0.666666666666667em;
+  margin-right: 0.4166666666666667em;
+  padding-left: 0.0833333333333333em;
   background-color: #fff;
 }
 
@@ -796,7 +796,7 @@ pre {
   display: block;
   background: var(--button-highlight);
   box-shadow: var(--border-field);
-  padding: 12px 8px;
+  padding: 1em 0.666666666666667em;
   margin: 0;
 }
 
@@ -806,14 +806,14 @@ code * {
 }
 
 summary:focus {
-  outline: 1px dotted #000000;
+  outline: 0.0833333333333333em dotted #000000;
 }
 
 ::-webkit-scrollbar {
-  width: 16px;
+  width: 10.5em;
 }
 ::-webkit-scrollbar:horizontal {
-  height: 17px;
+  height: 10.5833333333333333em;
 }
 
 ::-webkit-scrollbar-corner {
@@ -837,19 +837,19 @@ summary:focus {
 }
 
 ::-webkit-scrollbar-button:vertical:start {
-  height: 17px;
+  height: 10.5833333333333333em;
   background-image: svg-load("./icon/button-up.svg");
 }
 ::-webkit-scrollbar-button:vertical:end {
-  height: 17px;
+  height: 10.5833333333333333em;
   background-image: svg-load("./icon/button-down.svg");
 }
 ::-webkit-scrollbar-button:horizontal:start {
-  width: 16px;
+  width: 10.5em;
   background-image: svg-load("./icon/button-left.svg");
 }
 ::-webkit-scrollbar-button:horizontal:end {
-  width: 16px;
+  width: 10.5em;
   background-image: svg-load("./icon/button-right.svg");
 }
 
@@ -860,40 +860,40 @@ summary:focus {
 
 menu[role=tablist] {
   position: relative;
-  margin: 0 0 -2px 0;
+  margin: 0 0 -0.1666666666666667em 0;
   text-indent: 0;
   list-style-type: none;
   display: flex;
-  padding-left: 3px;
+  padding-left: 0.25em;
 }
 
 menu[role=tablist] > li {
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
+  border-top-left-radius: 0.25em;
+  border-top-right-radius: 0.25em;
   box-shadow: var(--border-tab);
   z-index: 1;
 }
 
 menu[role=tablist] > li[aria-selected=true] {
-  padding-bottom: 2px;
-  margin-top: -2px;
+  padding-bottom: 0.1666666666666667em;
+  margin-top: -0.1666666666666667em;
   background-color: var(--surface);
   position: relative;
   z-index: 8;
-  margin-left: -3px;
+  margin-left: -0.25em;
 }
 
 menu[role=tablist] > li > a {
   display: block;
   color: #222;
-  margin: 6px;
+  margin: 0.5em;
   text-decoration: none;
 }
 menu[role=tablist] > li[aria-selected=true] > a:focus {
   outline: none;
 }
 menu[role=tablist] > li > a:focus {
-  outline: 1px dotted #222;
+  outline: 0.0833333333333333em dotted #222;
 }
 
 menu[role=tablist].multirows > li {
@@ -942,10 +942,10 @@ table > tbody > tr > * {
 }
 
 .progress-indicator {
-	height: 32px;
+	height: 2em;
 	position: relative;
   box-shadow: var(--border-sunken-inner);
-  padding: 4px 4px;
+  padding: 0.3333333333333em 0.3333333333333em;
   border: none;
   box-sizing: border-box;
   -webkit-appearance: none;
@@ -966,11 +966,11 @@ table > tbody > tr > * {
   background-color: transparent; /* resets the background color which is set to blue in the non-segmented selector */
   background-image: linear-gradient(
     90deg,
-    var(--dialog-blue) 0 16px,
-    transparent 0 2px
+    var(--dialog-blue) 0 10.5em,
+    transparent 0 0.1666666666666667em
   );
   background-repeat: repeat;
-  background-size: 18px 100%;
+  background-size: 10.666666666666667em 100%;
 }
 
 ::selection {
@@ -979,5 +979,5 @@ table > tbody > tr > * {
 }
 
 input:focus {
-  outline: 1px black dotted;
+  outline: 0.0833333333333333em black dotted;
 }
