@@ -724,8 +724,8 @@ ul.tree-view li {
 }
 
 ul.tree-view ul {
-  margin-left: 10.5em;
-  padding-left: 10.5em;
+  margin-left: 1.5em;
+  padding-left: 1.5em;
   /* Goes down too far */
   border-left: 0.0833333333333333em dotted #808080;
 }
@@ -737,7 +737,7 @@ ul.tree-view ul > li::before {
   content: "";
   display: block;
   position: absolute;
-  left: -10.5em;
+  left: -1.5em;
   top: 0.5em;
   width: 1em;
   border-bottom: 0.0833333333333333em dotted #808080;
@@ -810,7 +810,7 @@ summary:focus {
 }
 
 ::-webkit-scrollbar {
-  width: 10.5em;
+  width: 1.5em;
 }
 ::-webkit-scrollbar:horizontal {
   height: 10.5833333333333333em;
@@ -845,11 +845,11 @@ summary:focus {
   background-image: svg-load("./icon/button-down.svg");
 }
 ::-webkit-scrollbar-button:horizontal:start {
-  width: 10.5em;
+  width: 1.5em;
   background-image: svg-load("./icon/button-left.svg");
 }
 ::-webkit-scrollbar-button:horizontal:end {
-  width: 10.5em;
+  width: 1.5em;
   background-image: svg-load("./icon/button-right.svg");
 }
 
@@ -966,7 +966,7 @@ table > tbody > tr > * {
   background-color: transparent; /* resets the background color which is set to blue in the non-segmented selector */
   background-image: linear-gradient(
     90deg,
-    var(--dialog-blue) 0 10.5em,
+    var(--dialog-blue) 0 1.5em,
     transparent 0 0.1666666666666667em
   );
   background-repeat: repeat;
