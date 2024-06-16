@@ -265,7 +265,7 @@ input[type="reset"]:disabled,
   padding: 0;
   display: block;
   min-width: 1.3333333333333333em;
-  min-height: 10.3333333333333em;
+  min-height: 1.3333333333333em;
 }
 
 .title-bar-controls button:active {
@@ -578,8 +578,8 @@ input[type="range"]:focus {
 
 input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
-  height: 20.0833333333333333em;
-  width: 10.0833333333333333em;
+  height: 1.75em;
+  width: 0.666666666666667em;
   background: svg-load("./icon/indicator-horizontal.svg");
   transform: translateY(-0.666666666666667em);
   box-shadow: none;
@@ -592,8 +592,8 @@ input[type="range"].has-box-indicator::-webkit-slider-thumb {
 }
 
 input[type="range"]::-moz-range-thumb {
-  height: 20.0833333333333333em;
-  width: 10.0833333333333333em;
+  height: 1.75em;
+  width: 0.666666666666667em;
   border: 0;
   border-radius: 0;
   background: svg-load("./icon/indicator-horizontal.svg");
