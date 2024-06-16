@@ -810,10 +810,10 @@ summary:focus {
 }
 
 ::-webkit-scrollbar {
-  width: 1.5em;
+  width: 1em;
 }
 ::-webkit-scrollbar:horizontal {
-  height: 10.5833333333333333em;
+  height: 1em;
 }
 
 ::-webkit-scrollbar-corner {
@@ -837,19 +837,19 @@ summary:focus {
 }
 
 ::-webkit-scrollbar-button:vertical:start {
-  height: 10.5833333333333333em;
+  height: 1em;
   background-image: svg-load("./icon/button-up.svg");
 }
 ::-webkit-scrollbar-button:vertical:end {
-  height: 10.5833333333333333em;
+  height: 1em;
   background-image: svg-load("./icon/button-down.svg");
 }
 ::-webkit-scrollbar-button:horizontal:start {
-  width: 1.5em;
+  width: 1em;
   background-image: svg-load("./icon/button-left.svg");
 }
 ::-webkit-scrollbar-button:horizontal:end {
-  width: 1.5em;
+  width: 1em;
   background-image: svg-load("./icon/button-right.svg");
 }
 
