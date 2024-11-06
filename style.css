@@ -366,6 +366,7 @@ legend {
 label {
   display: inline-flex;
   align-items: center;
+  user-select: none;
 }
 
 input[type="radio"],
