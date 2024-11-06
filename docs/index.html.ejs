@@ -44,6 +44,7 @@
           <li><a href="#tabs">Tabs</a></li>
           <li><a href="#table-view">TableView</a></li>
           <li><a href="#progress-indicator">Progress Indicator</a></li>
+          <li><a href="#field-borders">Field borders</a></li>
         </ul>
       </li>
       <li><a href="#issues-contributing-etc">Issues, Contributing, etc.</a></li>
@@ -1040,6 +1041,66 @@
         <%- example(`
           <div class="progress-indicator segmented">
             <span class="progress-indicator-bar" style="width: 40%;" />
+          </div>
+        `) %>
+      </div>
+    </section>
+
+    <section class="component">
+      <h3 id="field-borders">Field borders</a></li></h3>
+      <div>
+        <blockquote>
+          Text boxes, check boxes, drop-down list boxes, spin boxes and list
+          boxes use the <em>field border style</em>. You can also use the style
+          for define the work area within a window. It uses the sunken outer and
+          sunken inner basic border styles.
+
+          For most controls, the interior of the field uses the button highlight
+          color. For text fields, such as text boxes and combo boxes, the
+          interior uses the button face color when the field is read-only or
+          disabled.
+
+          <footer>
+            &mdash; Microsoft Windows User Experience p. 421
+          </footer>
+        </blockquote>
+
+        <blockquote>
+          Status fields use the <em>status field border style</em>. This style
+          uses only the sunken outer basic border style. You use the status
+          field style in status bars and other read-only fields where the
+          content of the file can change dynamically.
+
+          <footer>
+            &mdash; Microsoft Windows User Experience p. 422
+          </footer>
+        </blockquote>
+
+        As mentioned in these guidelines, these styles are used in other
+        contexts than just form elements and status fields such as to indicate
+        work areas and dynamic content. For that reason, we provide three
+        classes for these generic usages, <code>field-border</code>,
+        <code>field-border-disabled</code>, and
+        <code>status-field-border</code>. These classes only define the border
+        and background color and minimal padding, so you will typically need to
+        at least provide some extra padding yourself.
+
+        <%- example(`
+          <div class="field-border" style="padding: 8px">
+            Work area
+          </div>
+        `) %>
+
+
+        <%- example(`
+          <div class="field-border-disabled" style="padding: 8px">
+            Disabled work area
+          </div>
+        `) %>
+
+        <%- example(`
+          <div class="status-field-border" style="padding: 8px">
+            Dynamic content
           </div>
         `) %>
       </div>
