@@ -43,6 +43,7 @@
           <li><a href="#tree-view">TreeView</a></li>
           <li><a href="#tabs">Tabs</a></li>
           <li><a href="#table-view">TableView</a></li>
+          <li><a href="#progress-indicator">Progress Indicator</a></li>
         </ul>
       </li>
       <li><a href="#issues-contributing-etc">Issues, Contributing, etc.</a></li>
@@ -143,6 +144,14 @@
         <%- example(`<button>Click me</button>
         <input type="submit" />
         <input type="reset" /> `)%>
+
+        <p>
+          You can add the class <code>default</code> to any button to apply additional styling, 
+          useful when communicating to the user what default action would happen in the active window if 
+          the <kbd>Enter</kbd> key was pressed on Windows 98.
+        </p>
+
+        <%- example(`<button class="default">OK</button>`)%>
 
         <p>
           When buttons are clicked, the raised borders become sunken.
@@ -404,26 +413,6 @@
             <input id="text${getCurrentId()}" disabled type="text" value="Windows Green"/>
           </div>
         `) %>
-
-        <p>
-          Other types of HTML5 text inputs are also supported.
-        </p>
-
-        <%- example(`
-        <div class="field-row-stacked" style="width: 200px">
-          <label for="text${getNewId()}">Email</label>
-          <input id="text${getCurrentId()}" type="email" value="admin@contoso.com"/>
-        </div>
-        <div class="field-row-stacked" style="width: 200px">
-          <label for="text${getNewId()}">Password</label>
-          <input id="text${getCurrentId()}" type="password" value="hunter2"/>
-        </div>
-        <div class="field-row-stacked" style="width: 200px">
-          <label for="text${getNewId()}">Favorite Number</label>
-          <input id="text${getCurrentId()}" type="number" value="98"/>
-        </div>
-      `) %>
-
       </div>
 
 
@@ -604,6 +593,59 @@
             </div>
           </div>
         `) %>
+
+        <p>
+          Each <code>aria-label</code> also has a corresponding styling class to render the title bar buttons,
+          to let the <code>aria-label</code> text be in other languages without causing rendering, accessibility, or localization issues.
+        </p>
+
+        <%- example(`
+          <div class="title-bar">
+            <div class="title-bar-text">A Title Bar using Button Styling Classes</div>
+            <div class="title-bar-controls">
+              <button aria-label="Any Text" class="minimize"></button>
+              <button aria-label="Any Text" class="maximize"></button>
+              <button aria-label="Any Text" class="close"></button>
+            </div>
+          </div>
+
+          <br />
+
+          <div class="title-bar">
+            <div class="title-bar-text">A Maximized Title Bar using Button Styling Classes</div>
+            <div class="title-bar-controls">
+              <button aria-label="Any Text" class="minimize"></button>
+              <button aria-label="Any Text" class="restore"></button>
+              <button aria-label="Any Text" class="close"></button>
+            </div>
+          </div>
+
+          <br />
+
+          <div class="title-bar">
+            <div class="title-bar-text">A Helpful Bar using Button Styling Classes</div>
+            <div class="title-bar-controls">
+              <button aria-label="Any Text" class="help"></button>
+              <button aria-label="Any Text" class="close"></button>
+            </div>
+          </div>
+        `) %>
+
+    <p>
+        Maximize buttons can be disabled, useful when making a window appear as if it cannot be maximized.
+    </p>
+
+    <%- example(`
+          <div class="title-bar">
+            <div class="title-bar-text">A Title Bar with Maximize disabled</div>
+            <div class="title-bar-controls">
+              <button aria-label="Minimize"></button>
+              <button aria-label="Maximize" disabled></button>
+              <button aria-label="Close"></button>
+            </div>
+          </div>
+      `) %>
+
 		<p>
           You can make a title bar "inactive" by adding <code>inactive</code> class,
 		  useful when making more than one window.
@@ -878,7 +920,6 @@
               </div>
     </section>
     <section class="component">
-
       <h3 id="table-view">TableView</h3>
       <div>
         <p>
@@ -957,14 +998,50 @@
           <script>
             document.querySelectorAll('table.interactive').forEach(element => {
               element.addEventListener('click', (event) => {
-                const row = event.path.find(element => element.tagName === 'TR' && element.parentElement.tagName === 'TBODY');
-                if (row) {
-                  row.classList.toggle('highlighted');
+                const highlightedClass = 'highlighted';
+                const isRow = element => element.tagName === 'TR' && element.parentElement.tagName === 'TBODY';
+                const newlySelectedRow = event.composedPath().find(isRow);
+                const previouslySelectedRow = Array.from(newlySelectedRow.parentElement.children).filter(isRow).find(element => element.classList.contains(highlightedClass));
+                if(previouslySelectedRow){
+                  previouslySelectedRow.classList.toggle(highlightedClass);
+                }
+
+                if (newlySelectedRow) {
+                  newlySelectedRow.classList.toggle(highlightedClass);
                 }
               })
             });
           </script>
       `) %>
+    </div>
+    </section>
+
+    <section class="component">
+      <h3 id="progress-indicator">Progress Indicator</h3>
+      <div>
+        <blockquote>
+          You can use a <em>progress indicator</em>, also known as a <em>progress bar control</em>, to show the percentage of completion of a lengthy operation.
+
+          <footer>
+            &mdash; Microsoft Windows User Experience p. 189
+          </footer>
+        </blockquote>
+
+        <p>
+          There are two types of progress bars: solid and segmented. The solid version is the default. To declare a segmented bar, you should use the <code>segmented</code> class.
+        </p>
+
+        <%- example(`
+          <div class="progress-indicator">
+            <span class="progress-indicator-bar"  style="width: 40%;" />
+          </div>
+        `) %>
+
+        <%- example(`
+          <div class="progress-indicator segmented">
+            <span class="progress-indicator-bar" style="width: 40%;" />
+          </div>
+        `) %>
       </div>
     </section>
 

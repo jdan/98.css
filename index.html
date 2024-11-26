@@ -43,6 +43,7 @@
           <li><a href="#tree-view">TreeView</a></li>
           <li><a href="#tabs">Tabs</a></li>
           <li><a href="#table-view">TableView</a></li>
+          <li><a href="#progress-indicator">Progress Indicator</a></li>
         </ul>
       </li>
       <li><a href="#issues-contributing-etc">Issues, Contributing, etc.</a></li>
@@ -149,6 +150,20 @@
         <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>Click me<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span> /&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;reset&quot;</span> /&gt;</span></code></pre>
+      </details>
+    </div>
+
+        <p>
+          You can add the class <code>default</code> to any button to apply additional styling, 
+          useful when communicating to the user what default action would happen in the active window if 
+          the <kbd>Enter</kbd> key was pressed on Windows 98.
+        </p>
+
+        <div class="example">
+      <button class="default">OK</button>
+      <details>
+        <summary>Show code</summary>
+        <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;default&quot;</span>&gt;</span>OK<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></code></pre>
       </details>
     </div>
 
@@ -546,41 +561,6 @@
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
       </details>
     </div>
-
-        <p>
-          Other types of HTML5 text inputs are also supported.
-        </p>
-
-        <div class="example">
-      <div class="field-row-stacked" style="width: 200px">
-  <label for="text22">Email</label>
-  <input id="text22" type="email" value="admin@contoso.com"/>
-</div>
-<div class="field-row-stacked" style="width: 200px">
-  <label for="text23">Password</label>
-  <input id="text23" type="password" value="hunter2"/>
-</div>
-<div class="field-row-stacked" style="width: 200px">
-  <label for="text24">Favorite Number</label>
-  <input id="text24" type="number" value="98"/>
-</div>
-      <details>
-        <summary>Show code</summary>
-        <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;field-row-stacked&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;width: 200px&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;text22&quot;</span>&gt;</span>Email<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;text22&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;email&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;admin@contoso.com&quot;</span>/&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;field-row-stacked&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;width: 200px&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;text23&quot;</span>&gt;</span>Password<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;text23&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;password&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;hunter2&quot;</span>/&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;field-row-stacked&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;width: 200px&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;text24&quot;</span>&gt;</span>Favorite Number<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;text24&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;number&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;98&quot;</span>/&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
-      </details>
-    </div>
-
       </div>
 
 
@@ -604,18 +584,18 @@
 
         <div class="example">
       <div class="field-row" style="width: 300px">
-  <label for="range25">Volume:</label>
-  <label for="range26">Low</label>
-  <input id="range26" type="range" min="1" max="11" value="5" />
-  <label for="range27">High</label>
+  <label for="range22">Volume:</label>
+  <label for="range23">Low</label>
+  <input id="range23" type="range" min="1" max="11" value="5" />
+  <label for="range24">High</label>
 </div>
       <details>
         <summary>Show code</summary>
         <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;field-row&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;width: 300px&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;range25&quot;</span>&gt;</span>Volume:<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;range26&quot;</span>&gt;</span>Low<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;range26&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;range&quot;</span> <span class="hljs-attr">min</span>=<span class="hljs-string">&quot;1&quot;</span> <span class="hljs-attr">max</span>=<span class="hljs-string">&quot;11&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;5&quot;</span> /&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;range27&quot;</span>&gt;</span>High<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;range22&quot;</span>&gt;</span>Volume:<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;range23&quot;</span>&gt;</span>Low<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;range23&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;range&quot;</span> <span class="hljs-attr">min</span>=<span class="hljs-string">&quot;1&quot;</span> <span class="hljs-attr">max</span>=<span class="hljs-string">&quot;11&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;5&quot;</span> /&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;range24&quot;</span>&gt;</span>High<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
       </details>
     </div>
@@ -633,17 +613,17 @@
 
         <div class="example">
       <div class="field-row">
-  <label for="range28">Cowbell</label>
+  <label for="range25">Cowbell</label>
   <div class="is-vertical">
-    <input id="range28" class="has-box-indicator" type="range" min="1" max="3" step="1" value="2" />
+    <input id="range25" class="has-box-indicator" type="range" min="1" max="3" step="1" value="2" />
   </div>
 </div>
       <details>
         <summary>Show code</summary>
         <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;field-row&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;range28&quot;</span>&gt;</span>Cowbell<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;range25&quot;</span>&gt;</span>Cowbell<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;is-vertical&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;range28&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;has-box-indicator&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;range&quot;</span> <span class="hljs-attr">min</span>=<span class="hljs-string">&quot;1&quot;</span> <span class="hljs-attr">max</span>=<span class="hljs-string">&quot;3&quot;</span> <span class="hljs-attr">step</span>=<span class="hljs-string">&quot;1&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;2&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;range25&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;has-box-indicator&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;range&quot;</span> <span class="hljs-attr">min</span>=<span class="hljs-string">&quot;1&quot;</span> <span class="hljs-attr">max</span>=<span class="hljs-string">&quot;3&quot;</span> <span class="hljs-attr">step</span>=<span class="hljs-string">&quot;1&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;2&quot;</span> /&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
       </details>
@@ -840,6 +820,102 @@
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
       </details>
     </div>
+
+        <p>
+          Each <code>aria-label</code> also has a corresponding styling class to render the title bar buttons,
+          to let the <code>aria-label</code> text be in other languages without causing rendering, accessibility, or localization issues.
+        </p>
+
+        <div class="example">
+      <div class="title-bar">
+  <div class="title-bar-text">A Title Bar using Button Styling Classes</div>
+  <div class="title-bar-controls">
+    <button aria-label="Any Text" class="minimize"></button>
+    <button aria-label="Any Text" class="maximize"></button>
+    <button aria-label="Any Text" class="close"></button>
+  </div>
+</div>
+
+<br />
+
+<div class="title-bar">
+  <div class="title-bar-text">A Maximized Title Bar using Button Styling Classes</div>
+  <div class="title-bar-controls">
+    <button aria-label="Any Text" class="minimize"></button>
+    <button aria-label="Any Text" class="restore"></button>
+    <button aria-label="Any Text" class="close"></button>
+  </div>
+</div>
+
+<br />
+
+<div class="title-bar">
+  <div class="title-bar-text">A Helpful Bar using Button Styling Classes</div>
+  <div class="title-bar-controls">
+    <button aria-label="Any Text" class="help"></button>
+    <button aria-label="Any Text" class="close"></button>
+  </div>
+</div>
+      <details>
+        <summary>Show code</summary>
+        <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;title-bar&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;title-bar-text&quot;</span>&gt;</span>A Title Bar using Button Styling Classes<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;title-bar-controls&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">&quot;Any Text&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;minimize&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">&quot;Any Text&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;maximize&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">&quot;Any Text&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;close&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;title-bar&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;title-bar-text&quot;</span>&gt;</span>A Maximized Title Bar using Button Styling Classes<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;title-bar-controls&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">&quot;Any Text&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;minimize&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">&quot;Any Text&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;restore&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">&quot;Any Text&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;close&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;title-bar&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;title-bar-text&quot;</span>&gt;</span>A Helpful Bar using Button Styling Classes<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;title-bar-controls&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">&quot;Any Text&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;help&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">&quot;Any Text&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;close&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+      </details>
+    </div>
+
+    <p>
+        Maximize buttons can be disabled, useful when making a window appear as if it cannot be maximized.
+    </p>
+
+    <div class="example">
+      <div class="title-bar">
+  <div class="title-bar-text">A Title Bar with Maximize disabled</div>
+  <div class="title-bar-controls">
+    <button aria-label="Minimize"></button>
+    <button aria-label="Maximize" disabled></button>
+    <button aria-label="Close"></button>
+  </div>
+</div>
+      <details>
+        <summary>Show code</summary>
+        <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;title-bar&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;title-bar-text&quot;</span>&gt;</span>A Title Bar with Maximize disabled<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;title-bar-controls&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">&quot;Minimize&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">&quot;Maximize&quot;</span> <span class="hljs-attr">disabled</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">&quot;Close&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+      </details>
+    </div>
+
 		<p>
           You can make a title bar "inactive" by adding <code>inactive</code> class,
 		  useful when making more than one window.
@@ -1275,7 +1351,6 @@
               </div>
     </section>
     <section class="component">
-
       <h3 id="table-view">TableView</h3>
       <div>
         <p>
@@ -1354,9 +1429,16 @@
 <script>
   document.querySelectorAll('table.interactive').forEach(element => {
     element.addEventListener('click', (event) => {
-      const row = event.path.find(element => element.tagName === 'TR' && element.parentElement.tagName === 'TBODY');
-      if (row) {
-        row.classList.toggle('highlighted');
+      const highlightedClass = 'highlighted';
+      const isRow = element => element.tagName === 'TR' && element.parentElement.tagName === 'TBODY';
+      const newlySelectedRow = event.composedPath().find(isRow);
+      const previouslySelectedRow = Array.from(newlySelectedRow.parentElement.children).filter(isRow).find(element => element.classList.contains(highlightedClass));
+      if(previouslySelectedRow){
+        previouslySelectedRow.classList.toggle(highlightedClass);
+      }
+
+      if (newlySelectedRow) {
+        newlySelectedRow.classList.toggle(highlightedClass);
       }
     })
   });
@@ -1429,13 +1511,61 @@
 <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
   <span class="hljs-built_in">document</span>.querySelectorAll(<span class="hljs-string">&#x27;table.interactive&#x27;</span>).forEach(<span class="hljs-function"><span class="hljs-params">element</span> =&gt;</span> {
     element.addEventListener(<span class="hljs-string">&#x27;click&#x27;</span>, <span class="hljs-function">(<span class="hljs-params">event</span>) =&gt;</span> {
-      <span class="hljs-keyword">const</span> row = event.path.find(<span class="hljs-function"><span class="hljs-params">element</span> =&gt;</span> element.tagName === <span class="hljs-string">&#x27;TR&#x27;</span> &amp;&amp; element.parentElement.tagName === <span class="hljs-string">&#x27;TBODY&#x27;</span>);
-      <span class="hljs-keyword">if</span> (row) {
-        row.classList.toggle(<span class="hljs-string">&#x27;highlighted&#x27;</span>);
+      <span class="hljs-keyword">const</span> highlightedClass = <span class="hljs-string">&#x27;highlighted&#x27;</span>;
+      <span class="hljs-keyword">const</span> isRow = <span class="hljs-function"><span class="hljs-params">element</span> =&gt;</span> element.tagName === <span class="hljs-string">&#x27;TR&#x27;</span> &amp;&amp; element.parentElement.tagName === <span class="hljs-string">&#x27;TBODY&#x27;</span>;
+      <span class="hljs-keyword">const</span> newlySelectedRow = event.composedPath().find(isRow);
+      <span class="hljs-keyword">const</span> previouslySelectedRow = <span class="hljs-built_in">Array</span>.from(newlySelectedRow.parentElement.children).filter(isRow).find(<span class="hljs-function"><span class="hljs-params">element</span> =&gt;</span> element.classList.contains(highlightedClass));
+      <span class="hljs-keyword">if</span>(previouslySelectedRow){
+        previouslySelectedRow.classList.toggle(highlightedClass);
+      }
+
+      <span class="hljs-keyword">if</span> (newlySelectedRow) {
+        newlySelectedRow.classList.toggle(highlightedClass);
       }
     })
   });
 </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+      </details>
+    </div>
+    </div>
+    </section>
+
+    <section class="component">
+      <h3 id="progress-indicator">Progress Indicator</h3>
+      <div>
+        <blockquote>
+          You can use a <em>progress indicator</em>, also known as a <em>progress bar control</em>, to show the percentage of completion of a lengthy operation.
+
+          <footer>
+            &mdash; Microsoft Windows User Experience p. 189
+          </footer>
+        </blockquote>
+
+        <p>
+          There are two types of progress bars: solid and segmented. The solid version is the default. To declare a segmented bar, you should use the <code>segmented</code> class.
+        </p>
+
+        <div class="example">
+      <div class="progress-indicator">
+  <span class="progress-indicator-bar"  style="width: 40%;" />
+</div>
+      <details>
+        <summary>Show code</summary>
+        <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;progress-indicator&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;progress-indicator-bar&quot;</span>  <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;width: 40%;&quot;</span> /&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+      </details>
+    </div>
+
+        <div class="example">
+      <div class="progress-indicator segmented">
+  <span class="progress-indicator-bar" style="width: 40%;" />
+</div>
+      <details>
+        <summary>Show code</summary>
+        <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;progress-indicator segmented&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;progress-indicator-bar&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;width: 40%;&quot;</span> /&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
       </details>
     </div>
       </div>
