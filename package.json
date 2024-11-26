@@ -30,7 +30,7 @@
     "cssnano": "^5.0.1",
     "dedent": "^0.7.0",
     "ejs": "^3.0.2",
-    "gh-pages": "^2.2.0",
+    "gh-pages": "^5.0.0",
     "glob": "^7.1.6",
     "highlight.js": "^10.4.1",
     "live-server": "^1.2.1",
