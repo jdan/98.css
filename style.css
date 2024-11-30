@@ -73,6 +73,7 @@
   --border-field: inset -1px -1px var(--button-highlight),
     inset 1px 1px var(--button-shadow), inset -2px -2px var(--button-face),
     inset 2px 2px var(--window-frame);
+  --border-status-field: inset -1px -1px var(--button-face), inset 1px 1px var(--button-shadow);
 
   /* Tabs */
   --border-tab: inset -1px 0 var(--window-frame),
@@ -320,7 +321,7 @@ input[type="reset"]:disabled,
 }
 
 .status-bar-field {
-  box-shadow: inset -1px -1px #dfdfdf, inset 1px 1px #808080;
+  box-shadow: var(--border-status-field);
   flex-grow: 1;
   padding: 2px 3px;
   margin: 0;
@@ -972,4 +973,22 @@ table > tbody > tr > * {
   );
   background-repeat: repeat;
   background-size: 18px 100%;
+}
+
+.field-border {
+  background: var(--button-highlight);
+  box-shadow: var(--border-field);
+  padding: 2px;
+}
+
+.field-border-disabled {
+  background: var(--surface);
+  box-shadow: var(--border-field);
+  padding: 2px;
+}
+
+.status-field-border {
+  background: var(--surface);
+  box-shadow: var(--border-status-field);
+  padding: 1px;
 }
