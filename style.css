@@ -112,6 +112,7 @@ textarea,
 select,
 option,
 table,
+.combo-box,
 ul.tree-view,
 .window,
 .title-bar,
@@ -688,6 +689,98 @@ select:focus option {
 
 select:active {
   background-image: svg-load("./icon/button-down-active.svg");
+}
+
+.combo-box {
+  display: inline-block;
+}
+
+.combo-box > ul {
+  background: #fff;
+  border: 2px groove transparent;
+  border-image: svg-load('./icon/sunken-panel-border.svg') 2;
+  box-sizing: border-box;
+  overflow-y: scroll;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.combo-box > ul:focus-within {
+  outline: none;
+}
+
+.combo-box > ul > li {
+  padding: 0 4px;
+  color: var(--text-color);
+}
+
+ul[role=listbox] > li[aria-selected=true],
+.combo-box > input[aria-haspopup] ~ ul > li:hover {
+  color: #fff;
+  background-color: var(--dialog-blue);
+}
+
+.combo-box > input[aria-haspopup] ~ ul:hover > li[aria-selected=true]:not(:hover) {
+  color: inherit;
+  background-color: inherit;
+}
+
+.combo-box.drop-down,
+.combo-box:has(input[aria-haspopup]) {
+  position: relative;
+  box-shadow: var(--border-field);
+  display: inline-flex;
+  padding: 2px;
+}
+
+.combo-box > input[aria-haspopup] {
+  height: 17px;
+  box-shadow: none;
+}
+
+.combo-box > button {
+  width: 16px;
+  height: 17px;
+  background-image: svg-load("./icon/button-down.svg");
+  background-repeat: no-repeat;
+  min-width: unset;
+  min-height: unset;
+  box-shadow: none;
+  padding: 0;
+}
+
+.combo-box > button:focus {
+  outline: none;
+  outline-offset: 0;
+}
+
+.combo-box > button:active {
+  box-shadow: none;
+}
+
+.combo-box > input[aria-expanded=false] + button:active {
+  background-image: svg-load("./icon/button-down-active.svg");
+}
+
+.combo-box > input[aria-haspopup] ~ ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  border: 1px solid #000;
+  overflow-y: auto;
+}
+
+.combo-box > input[aria-expanded=true] ~ ul {
+  display: block;
+}
+
+.combo-box > ul,
+.combo-box > input:not([aria-haspopup]),
+.combo-box > input[aria-expanded=true] {
+  cursor: default;
 }
 
 a {

@@ -31,6 +31,7 @@
           <li><a href="#group-box">GroupBox</a></li>
           <li><a href="#text-box">TextBox</a></li>
           <li><a href="#slider">Slider</a></li>
+          <li><a href="#combo-box">ComboBox</a></li>
           <li><a href="#dropdown">Dropdown</a></li>
           <li>
             <a href="#window">Window</a>
@@ -461,6 +462,65 @@
             <div class="is-vertical">
               <input id="range${getCurrentId()}" class="has-box-indicator" type="range" min="1" max="3" step="1" value="2" />
             </div>
+          </div>
+        `) %>
+      </div>
+    </section>
+
+    <section class="component">
+      <h3 id="combo-box">ComboBox</h3>
+      <div>
+        <blockquote>
+          A <em>combo box</em> combines a text box with a list box. This allows the user to type an entry or choose one from the list.
+
+          <footer>
+            &mdash; Microsoft Windows User Experience p. 183
+          </footer>
+        </blockquote>
+
+        <p>
+          There are 2 ways you can render a combo box. The first is using a text <code>input</code>, a parent <code>ul</code>, and children <code>li</code> together, wrapped inside a container element with the <code>combo-box</code> class. For accessibility, follow the minimum requirements below: 
+        </p>
+
+        <ul>
+          <li>Add a <code>role="combobox"</code> attribute to the text <code>input</code></li>
+          <li>Add a <code>role="listbox"</code> attribute to the <code>ul</code></li>
+          <li>Add a <code>role="option"</code> attribute to each <code>li</code></li>
+          <li>
+            Specify the relationship between the list box and the text box by combining the <code>id</code> of the <code>listbox</code> with the <code>aria-controls</code> attribute on the text <code>input</code>
+          </li>
+        </ul>
+
+        <%- example(`
+          <div class="combo-box">
+            <input type="text" role="combobox" value="Regular" aria-controls="example${getNewId()}" />
+            <ul role="listbox" id="example${getCurrentId()}" tabindex="-1">
+              <li role="option" aria-selected="true">Regular</li>
+              <li role="option">Italic</li>
+              <li role="option">Bold</li>
+              <li role="option">Bold Italic</li>
+            </ul>
+          </div>
+        `) %>
+
+        <p>
+          The second adds a <code>button</code> to toggle the visibility of the drop-down. For accessibility, follow these additional requirements:
+        </p>
+
+        <ul>
+          <li>Add <code>aria-haspopup="listbox"</code> and <code>aria-expanded</code> attributes to the text <code>input</code></li>
+        </ul>
+
+        <%- example(`
+          <div class="combo-box" width="200px">
+            <input type="text" role="combobox" aria-haspopup="listbox" aria-expanded="false" aria-controls="example${getNewId()}" />
+            <button type="button" tabindex="-1"></button>
+            <ul role="listbox" id="example${getCurrentId()}" tabindex="-1">
+              <li role="option">h:mm:ss tt</li>
+              <li role="option">hh:mm:ss tt</li>
+              <li role="option">H:mm:ss</li>
+              <li role="option">HH:mm:ss</li>
+            </ul>
           </div>
         `) %>
       </div>
@@ -1126,4 +1186,5 @@
     </p>
   </main>
 </body>
+<script src="script.js"></script>
 </html>
