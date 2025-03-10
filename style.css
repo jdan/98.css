@@ -112,7 +112,7 @@ textarea,
 select,
 option,
 table,
-.combo-box,
+ul[role=listbox],
 ul.tree-view,
 .window,
 .title-bar,
@@ -481,7 +481,7 @@ input[type="url"],
 input[type="tel"],
 input[type="number"],
 input[type="search"],
-select,
+select:not([multiple]),
 textarea {
   padding: 3px 4px;
   border: none;
@@ -500,7 +500,7 @@ input[type="email"],
 input[type="url"],
 input[type="tel"],
 input[type="search"],
-select {
+select:not([multiple]) {
   height: 21px;
 }
 input[type="number"] {
@@ -545,7 +545,7 @@ textarea:disabled {
   background-color: var(--surface);
 }
 
-select {
+select:not([multiple]) {
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -678,24 +678,42 @@ input[type="range"]::-moz-range-track {
   transform: translateY(0px) scaleX(-1);
 }
 
-select:focus {
+select:focus:not([multiple]) {
   color: var(--button-highlight);
   background-color: var(--dialog-blue);
 }
+
+select[multiple] option {
+  padding: 2px;
+}
+
 select:focus option {
   color: #000;
   background-color: #fff;
 }
 
-select:active {
+select:active:not([multiple]) {
   background-image: svg-load("./icon/button-down-active.svg");
 }
 
 .combo-box {
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
 }
 
-.combo-box > ul {
+.list-box,
+.combo-box.drop-down,
+.combo-box:has(input[aria-haspopup]) {
+  position: relative;
+  box-shadow: var(--border-field);
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  padding: 2px;
+  background: var(--button-highlight);
+}
+
+ul[role=listbox] {
   background: #fff;
   border: 2px groove transparent;
   border-image: svg-load('./icon/sunken-panel-border.svg') 2;
@@ -706,39 +724,70 @@ select:active {
   margin: 0;
 }
 
-.combo-box > ul:focus-within {
-  outline: none;
+ul[role=listbox].no-scroll {
+  overflow-y: auto;
 }
 
-.combo-box > ul > li {
-  padding: 0 4px;
+ul[role=listbox] > li,
+ul[role=listbox] li[role=group] {
+  padding: 0 32px 0 4px;
+  white-space: nowrap;
   color: var(--text-color);
 }
 
-ul[role=listbox] > li[aria-selected=true],
+ul[role=listbox] > li[role=option] {
+  padding-block: 2px;
+}
+
+ul[role=listbox]:focus-within {
+  outline: none;
+}
+
+ul[role=listbox] > li[aria-current=true],
+ul[role=listbox]:not([aria-multiselectable]) > li[aria-selected=true],
 .combo-box > input[aria-haspopup] ~ ul > li:hover {
   color: #fff;
   background-color: var(--dialog-blue);
 }
 
-.combo-box > input[aria-haspopup] ~ ul:hover > li[aria-selected=true]:not(:hover) {
+.list-box > input[aria-haspopup]:read-only {
+  color: var(--text-color);
+  background-color: #fff;
+}
+
+.list-box > input[aria-haspopup]:read-only::selection {
   color: inherit;
   background-color: inherit;
 }
 
-.combo-box.drop-down,
-.combo-box:has(input[aria-haspopup]) {
-  position: relative;
-  box-shadow: var(--border-field);
-  display: inline-flex;
-  padding: 2px;
-}
-
+.list-box > input[aria-haspopup],
 .combo-box > input[aria-haspopup] {
   height: 17px;
+  flex: 1;
   box-shadow: none;
 }
 
+:not(.combo-box) ul[role=listbox]:not([aria-multiselectable]):focus > li[aria-selected=true],
+.list-box > input[aria-expanded=true] ~ ul[role=listbox] > li[aria-selected=true],
+.list-box > input[aria-haspopup] ~ ul > li[aria-current=true],
+ul[role=listbox][aria-multiselectable]:focus > li[role=option][aria-current=true] {
+  outline: 1px dotted yellow;
+  outline-offset: -1px;
+}
+
+.list-box > input[aria-haspopup] ~ ul:has([aria-current=true]) > li[aria-selected=true]:not([aria-current=true]) {
+  outline: none;
+}
+
+.list-box > input[aria-expanded=false]:focus {
+  background-color: var(--dialog-blue);
+  color: #fff;
+  outline: 1px dotted yellow;
+  outline-offset: -2px;
+  clip-path: inset(1px);
+}
+
+.list-box > button,
 .combo-box > button {
   width: 16px;
   height: 17px;
@@ -750,19 +799,18 @@ ul[role=listbox] > li[aria-selected=true],
   padding: 0;
 }
 
-.combo-box > button:focus {
+.list-box > button:focus, .combo-box > button:focus,
+.list-box > button:active, .combo-box > button:active {
   outline: none;
-  outline-offset: 0;
-}
-
-.combo-box > button:active {
   box-shadow: none;
 }
 
+.list-box > input[aria-expanded=false] + button:active,
 .combo-box > input[aria-expanded=false] + button:active {
   background-image: svg-load("./icon/button-down-active.svg");
 }
 
+.list-box > ul,
 .combo-box > input[aria-haspopup] ~ ul {
   display: none;
   position: absolute;
@@ -773,14 +821,92 @@ ul[role=listbox] > li[aria-selected=true],
   overflow-y: auto;
 }
 
+.list-box > input[aria-expanded=true] ~ ul,
 .combo-box > input[aria-expanded=true] ~ ul {
   display: block;
 }
 
-.combo-box > ul,
+.list-box > input,
+ul[role=listbox],
 .combo-box > input:not([aria-haspopup]),
 .combo-box > input[aria-expanded=true] {
   cursor: default;
+}
+
+ul[role=listbox][aria-multiselectable] > li[role=option] {
+  display: flex;
+  align-items: center;
+  padding-block: 2px;
+}
+
+ul[role=listbox][aria-multiselectable] li[role=option] > input[type=checkbox] + label {
+  margin-left: calc(var(--checkbox-width) + 3px);
+}
+
+ul[role=listbox][aria-multiselectable] li[role=option] > input[type=checkbox] + label::before {
+  box-shadow: none;
+  outline: 1px solid var(--button-shadow);
+  outline-offset: -2px;
+  clip-path: inset(1px);
+}
+
+ul[role=listbox][aria-multiselectable]:not(:focus) li[role=group] [aria-current=true],
+ul[role=listbox][aria-multiselectable]:not(:focus) li[role=group] [aria-current=true] > label {
+  color: inherit;
+  background-color: inherit;
+  outline: none;
+}
+
+ul[role=listbox][aria-multiselectable] li[role=option] > input[type="checkbox"]:active + label::before {
+  background: #fff;
+}
+
+ul[role=listbox] li[role=group] {
+  padding-top: 2px;
+}
+
+ul[role=listbox] li[role=group] ul {
+  list-style: none;
+  width: 100%;
+  padding-left: 14px;
+  padding-block: 2px;
+}
+
+ul[role=listbox][aria-multiselectable] li[role=group] ul > li[role=option] > input[type="checkbox"] + label::before {
+  outline: 2px solid #000;
+  clip-path: none;
+}
+
+ul[role=listbox] li[role=group]:not(:has(+ li)) > ul {
+  padding-bottom: 0;
+}
+
+li[role=group] > ul > li[role=option] > label,
+li[role=group] > span {
+  padding: 2px;
+}
+
+ul[role=listbox]:not([aria-multiselectable]) li[role=group] > ul > li[role=option] {
+  width: fit-content;
+  padding: 2px;
+}
+
+ul[role=listbox]:not([aria-multiselectable]) li[role=group] [aria-selected=true] {
+  background-color: var(--surface);
+}
+
+li[role=group] > span[aria-current=true],
+li[role=group] [aria-current=true] > label,
+ul[role=listbox]:not([aria-multiselectable]):focus li[role=group] [aria-selected=true] {
+  color: #fff;
+  background-color: var(--dialog-blue);
+  outline: 1px dotted yellow;
+  outline-offset: -1px;
+}
+
+ul[role=listbox][aria-multiselectable]:not(:focus) > li[role=option][aria-current=true] {
+  background-color: var(--dialog-blue);
+  color: #fff;
 }
 
 a {

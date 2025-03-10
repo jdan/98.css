@@ -116,20 +116,14 @@ button.active {
     inset -2px -2px #dfdfdf, inset 2px 2px #808080;
 }
 
-ul[role=listbox] > li.last-hovered,
 .combo-box.key-nav > input[aria-haspopup] ~ ul > li[aria-selected=true] {
   color: #fff;
   background-color: #000080;
 }
 
-.combo-box.key-nav > ul[role=listbox] > li.last-hovered,
-.combo-box.key-nav > ul[role=listbox] > li:hover:not([aria-selected=true]) {
-  color: inherit;
-  background-color: inherit;
-}
-
-.combo-box > input[aria-haspopup] ~ ul:has(.last-hovered) > li[aria-selected=true]:not(.last-hovered),
-.combo-box:not(.key-nav) > input[aria-haspopup] ~ ul:has(.last-hovered) > li[aria-selected=true]:not(.last-hovered) {
+div.key-nav > ul[role=listbox] > li[aria-current=true],
+div.key-nav > ul[role=listbox] > li:hover:not([aria-selected=true]),
+div:not(.key-nav) > input[aria-haspopup] ~ ul:has([aria-current=true]) > li[aria-selected=true]:not([aria-current=true]) {
   color: inherit;
   background-color: inherit;
 }
