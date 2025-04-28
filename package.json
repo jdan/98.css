@@ -1,6 +1,6 @@
 {
   "name": "98.css",
-  "version": "0.1.20",
+  "version": "0.1.21",
   "description": "A design system for building faithful recreations of old UIs",
   "main": "dist/98.css",
   "directories": {
