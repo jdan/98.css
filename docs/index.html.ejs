@@ -230,6 +230,27 @@
             <label for="example${getCurrentId()}">I am inactive but still checked</label>
           </div>
         `) %>
+
+        <p>
+          Checkboxes can be displayed in a mixed-value, or <code>indeterminate</code>, state through JavaScript. This state can also be disabled.
+        </p>
+
+        <%- example(`
+          <div class="field-row">
+            <input type="checkbox" id="indeterminate-example-1">
+            <label for="indeterminate-example">This is a mixed-value / indeterminate checkbox</label>
+          </div>
+          <div class="field-row">
+            <input type="checkbox" disabled id="indeterminate-example-2">
+            <label for="indeterminate-example">This is a disabled mixed-value / indeterminate checkbox</label>
+          </div>
+
+          <!-- JavaScript -->
+          <script>
+            document.getElementById("indeterminate-example-1").indeterminate = true;
+            document.getElementById("indeterminate-example-2").indeterminate = true;
+          </script>
+        `) %>
       </div>
     </section>
 
