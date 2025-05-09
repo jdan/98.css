@@ -10,6 +10,7 @@
   --surface: #c0c0c0;
   --button-highlight: #ffffff;
   --button-face: #dfdfdf;
+  --button-text: #222222;
   --button-shadow: #808080;
   --window-frame: #0a0a0a;
   --dialog-blue: #000080;
@@ -145,6 +146,8 @@ u {
 button,
 input[type="submit"],
 input[type="reset"] {
+  all: unset;
+  color: var(--button-text);
   box-sizing: border-box;
   border: none;
   color: transparent;
@@ -152,6 +155,7 @@ input[type="reset"] {
   background: var(--surface);
   box-shadow: var(--border-raised-outer), var(--border-raised-inner);
   border-radius: 0;
+  outline: none;
 
   min-width: 75px;
   min-height: 23px;
