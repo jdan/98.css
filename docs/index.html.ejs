@@ -713,6 +713,28 @@
             </div>
           </div>
         `) %>
+
+        <p>
+          To apply custom selection styling to children of a <code>window-body</code> element, you can add the optional <code>color-highlight</code> class. Note that overriding selection styling may impact <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::selection#accessibility_concerns">accessibility</a>, so use at your own discretion. 
+        </p>
+        
+        <%- example(`
+        <div class="window" style="width: 300px">
+          <div class="title-bar">
+            <div class="title-bar-text">A Window With Stuff In It</div>
+            <div class="title-bar-controls">
+              <button aria-label="Minimize"></button>
+              <button aria-label="Maximize"></button>
+              <button aria-label="Close"></button>
+            </div>
+          </div>
+          <div class="window-body">
+            <p class="color-highlight">You can highlight me and a custom <code>::selection</code> styling will be present!</p>
+
+            <p> I have no custom <code>::selection</code> styling</p>
+          </div>
+        </div>
+      `) %>
       </div>
     </section>
 

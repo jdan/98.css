@@ -17,6 +17,8 @@
   --dialog-gray: #808080;
   --dialog-gray-light: #b5b5b5;
   --link-blue: #0000ff;
+  --highlight-blue: #00005e;
+  --text-highlight: #ffffff;
 
   /* Spacing */
   --element-spacing: 8px;
@@ -329,6 +331,12 @@ input[type="reset"]:disabled,
 
 .window-body {
   margin: var(--element-spacing);
+}
+
+.window-body .color-highlight::selection,
+.window-body .color-highlight *::selection {
+  color: var(--text-highlight);
+  background-color: var(--highlight-blue);
 }
 
 fieldset {
