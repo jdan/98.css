@@ -2,14 +2,12 @@ const chokidar = require("chokidar");
 const build = require("./build");
 
 chokidar
-  .watch(["style.css", "build.js", "docs", "fonts", "icon"], {
-    usePolling: true,
-  })
   .on("change", (file) => {
     console.log(
       `[${new Date().toLocaleTimeString()}] ${file} changed -- rebuilding...`
     );
     build();
+    console.log('asdj')
   });
 
 var liveServer = require("live-server");
