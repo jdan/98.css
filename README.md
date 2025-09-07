@@ -1,7 +1,7 @@
 ## 98.css
 
-[![npm](https://98badges.now.sh/api/version)](http://npm.im/98.css)
-[![gzip size](https://98badges.now.sh/api/size)](https://unpkg.com/98.css)
+<a href="https://npm.im/98.css"><img height="29" alt="npm" src="https://98badges.now.sh/api/version" /></a>
+<a href="https://unpkg.com/98.css"><img height="29" alt="gzip size" src="https://98badges.now.sh/api/size" /></a>
 
 A design system for building faithful recreations of old UIs.
 
