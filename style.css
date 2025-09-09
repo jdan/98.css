@@ -314,6 +314,32 @@ input[type="reset"]:disabled,
   background-position: top 3px left 4px;
 }
 
+.menu-bar {
+  display: flex;
+}
+
+.menu-bar .menu-bar-item {
+  position: relative;
+}
+
+.menu-bar .menu-bar-item > button {
+  box-shadow: none;
+  min-height: 20px;
+  min-width: auto;
+  outline: none;
+  padding: 0 6px;
+}
+
+.menu-bar .menu-bar-item > button:active,
+.menu-bar .menu-bar-item > button:focus {
+  box-shadow: inset -1px -1px #fff, inset 0px 0px #0a0a0a, inset -1px -1px #dfdfdf, inset 1px 1px grey;
+  text-shadow: 0 0 #222;
+}
+
+.menu-bar .menu-bar-item > button:focus + .menu {
+  display: block;
+}
+
 .status-bar {
   margin: 0px 1px;
   display: flex;
@@ -329,6 +355,10 @@ input[type="reset"]:disabled,
 
 .window-body {
   margin: var(--element-spacing);
+}
+
+.window-body.frame {
+  margin: 2px;
 }
 
 fieldset {
@@ -696,6 +726,43 @@ a {
 
 a:focus {
   outline: 1px dotted var(--link-blue);
+}
+
+ul.menu {
+  background: silver;
+  box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px grey, inset 2px 2px #fff;
+  display: none;
+  list-style-type: none;
+  margin: 0;
+  min-width: 100px;
+  padding: 2px;
+  position: absolute;
+  width: max-content;
+}
+
+ul.menu > li:not(.divider) {
+  cursor: default;
+  padding: 3px 20px 3px 20px;
+}
+
+ul.menu li:not(.disabled):not(.divider):hover {
+  background: var(--dialog-blue);
+  color: #fff;
+}
+
+ul.menu li.disabled {
+  color: var(--button-shadow);
+}
+
+ul.menu li.divider {
+  border-bottom: 1px solid #dfdfdf;
+  border-top: 1px solid grey;
+  margin: 2px;
+}
+
+ul.menu li > span {
+  float: right;
+  margin-left: 10px;
 }
 
 ul.tree-view {
