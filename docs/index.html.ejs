@@ -31,7 +31,8 @@
           <li><a href="#group-box">GroupBox</a></li>
           <li><a href="#text-box">TextBox</a></li>
           <li><a href="#slider">Slider</a></li>
-          <li><a href="#dropdown">Dropdown</a></li>
+          <li><a href="#combo-box">ComboBox</a></li>
+          <li><a href="#list-box">ListBox</a></li>
           <li>
             <a href="#window">Window</a>
             <ul>
@@ -467,28 +468,87 @@
     </section>
 
     <section class="component">
-      <h3 id="dropdown">Dropdown</h3>
+      <h3 id="combo-box">ComboBox</h3>
       <div>
         <blockquote>
-          A <em>drop-down list box</em> allows the selection of only a
-          single item from a list. In its closed state, the control displays
-          the current value for the control. The user opens the list to change
-          the value.
+          A <em>combo box</em> combines a text box with a list box. This allows the user to type an entry or choose one from the list.
 
           <footer>
-            &mdash; Microsoft Windows User Experience p. 175
+            &mdash; Microsoft Windows User Experience p. 183
           </footer>
         </blockquote>
 
         <p>
-          Dropdowns can be rendered by using the <code>select</code> and <code>option</code>
-          elements.
+          There are 2 ways you can render a combo box. The first is using a text <code>input</code>, a parent <code>ul</code>, and children <code>li</code> together, wrapped inside a container element with the <code>combo-box</code> class. For accessibility, follow the minimum requirements below: 
+        </p>
+
+        <ul>
+          <li>Add a <code>role="combobox"</code> attribute to the text <code>input</code></li>
+          <li>Add a <code>role="listbox"</code> attribute to the <code>ul</code></li>
+          <li>Add a <code>role="option"</code> attribute to each <code>li</code></li>
+          <li>
+            Specify the relationship between the list box and the text box by combining the <code>id</code> of the <code>listbox</code> with the <code>aria-controls</code> attribute on the text <code>input</code>
+          </li>
+        </ul>
+
+        <%- example(`
+          <div class="combo-box" style="width: fit-content">
+            <input type="text" id="example${getNewId()}-input" role="combobox" value="Regular" aria-controls="example${getCurrentId()}-listbox" />
+            <ul role="listbox" id="example${getCurrentId()}-listbox" tabindex="-1">
+              <li role="option" aria-selected="true">Regular</li>
+              <li role="option">Italic</li>
+              <li role="option">Bold</li>
+              <li role="option">Bold Italic</li>
+            </ul>
+          </div>
+        `) %>
+
+        <p>
+          The second adds a <code>button</code> to toggle the visibility of the drop-down. For accessibility, follow these additional requirements:
+        </p>
+
+        <ul>
+          <li>Add <code>aria-haspopup="listbox"</code> and <code>aria-expanded</code> attributes to the text <code>input</code></li>
+        </ul>
+
+        <%- example(`
+          <div class="combo-box" style="width: fit-content">
+            <input type="text" id="example${getNewId()}-input" role="combobox" value="h:mm:ss tt" aria-haspopup="listbox" aria-expanded="false" aria-controls="example${getCurrentId()}-listbox" />
+            <button type="button" tabindex="-1"></button>
+            <ul role="listbox" id="example${getCurrentId()}-listbox" tabindex="-1">
+              <li role="option" aria-selected="true">h:mm:ss tt</li>
+              <li role="option">hh:mm:ss tt</li>
+              <li role="option">H:mm:ss</li>
+              <li role="option">HH:mm:ss</li>
+            </ul>
+          </div>
+        `) %>
+
+        <p>
+          For more options of the list box, see the <a href="#list-box">ListBox</a> section.
+        </p>
+      </div>
+    </section>
+
+    <section class="component">
+      <h3 id="list-box">ListBox</h3>
+      <div>
+        <blockquote>
+          A <em>list box</em> is a control for displaying a list of choices for the user.
+
+          <footer>
+            &mdash; Microsoft Windows User Experience p. 170
+          </footer>
+        </blockquote>
+
+        <p>
+          The simplest way to render a list box is by using the <code>select</code> element with a <code>multiple</code> attribute specified.
         </p>
 
         <%- example(`
-          <select>
+          <select multiple>
             <option>5 - Incredible!</option>
-            <option>4 - Great!</option>
+            <option selected>4 - Great!</option>
             <option>3 - Pretty good</option>
             <option>2 - Not so great</option>
             <option>1 - Unfortunate</option>
@@ -496,19 +556,131 @@
         `) %>
 
         <p>
-          By default, the first option will be selected. You can change this by
-          giving one of your <code>option</code> elements the <code>selected</code>
-          attribute.
+          The complex way is using a combination of the <code>ul</code>/<code>li</code> elements with the role attributes.
         </p>
 
         <%- example(`
-          <select>
-            <option>5 - Incredible!</option>
-            <option>4 - Great!</option>
-            <option selected>3 - Pretty good</option>
-            <option>2 - Not so great</option>
-            <option>1 - Unfortunate</option>
-          </select>
+          <ul role="listbox" tabindex="0" style="width: fit-content">
+            <li role="option" aria-selected="true">Bitmap Image</li>
+            <li role="option">Image Document</li>
+            <li role="option">Media Clip</li>
+            <li role="option">Wave Sound</li>
+            <li role="option">WordPad Document</li>
+          </ul>
+        `) %>
+
+        <p>
+          To remove the scroll bar of the list box, use the <code>no-scroll</code> class.
+        </p>
+
+        <%- example(`
+          <ul role="listbox" class="no-scroll" tabindex="0" style="width: 150px">
+            <li role="option">Edit</li>
+            <li role="option">Open</li>
+            <li role="option">Print</li>
+          </ul>
+        `) %>
+
+        <blockquote>
+          A <em>drop-down list box</em> allows the selection of only a single item from a list; the difference is that the list is displayed on demand. In its closed state, the control displays the current value for the control.
+
+          <footer>
+            &mdash; Microsoft Windows User Experience p. 175
+          </footer>
+        </blockquote>
+
+        <p>
+          A drop-down can be rendered in 2 ways. The first is using the native <code>select</code> and <code>option</code>. The second is using a text <code>input</code>, a <code>button</code>, a parent <code>ul</code>, and children <code>li</code> together, wrapped inside a container element with the <code>list-box</code> class. For accessibility, follow the minimum requirements below:
+        </p>
+
+        <ul>
+          <li>Add <code>aria-haspopup="listbox"</code> and <code>aria-expanded</code> attributes to the text <code>input</code></li>
+          <li>
+            Specify the relationship between the list box and the text box by combining the <code>id</code> of the <code>listbox</code> with the <code>aria-controls</code> attribute on the text <code>input</code>
+          </li>
+        </ul>
+
+        <%- example(`
+          <div class="list-box" style="width: fit-content">
+            <input type="text" id="example${getNewId()}-input" aria-haspopup="listbox" value="True Color (24 bit)" aria-expanded="false" aria-controls="example${getCurrentId()}-listbox" readonly />
+            <button type="button" tabindex="-1"></button>
+            <ul id="example${getCurrentId()}-listbox" role="listbox" tabindex="-1">
+              <li role="option">Monochrome</li>
+              <li role="option">16 Color</li>
+              <li role="option">256 Color</li>
+              <li role="option">High Color (16 bit)</li>
+              <li role="option" aria-selected="true">True Color (24 bit)</li>
+            </ul>
+          </div>
+        `) %>
+
+        <blockquote>
+          Although most list boxes are single-selection lists, some contexts require the user to choose more than one item. <em>Multiple-selection list boxes</em> support this functionality.
+
+          <footer>
+            &mdash; Microsoft Windows User Experience p. 176
+          </footer>
+        </blockquote>
+
+        <p>A multiple-selection list box can be rendered by adding the <code>aria-multiselectable</code> attribute to the <code>listbox</code>, along with checkboxes.</p>
+
+        <%- example(`
+          <ul role="listbox" tabindex="0" aria-multiselectable="true" style="width: fit-content">
+            <li role="option">
+              <input type="checkbox" id="example${getNewId()}-checkbox-1" tabindex="-1">
+              <label for="example${getCurrentId()}-checkbox-1">Yearly Statistic</label>
+            </li>
+            <li role="option">
+              <input type="checkbox" id="example${getCurrentId()}-checkbox-2" tabindex="-1">
+              <label for="example${getCurrentId()}-checkbox-2">Financial Summary</label>
+            </li>
+            <li role="option">
+              <input type="checkbox" id="example${getCurrentId()}-checkbox-3" tabindex="-1">
+              <label for="example${getCurrentId()}-checkbox-3">Samson Account</label>
+            </li>
+            <li role="option">
+              <input type="checkbox" id="example${getCurrentId()}-checkbox-4" tabindex="-1">
+              <label for="example${getCurrentId()}-checkbox-4">Lukison Review</label>
+            </li>
+          </ul>
+        `) %>
+
+        <p>Group options by wrapping them in a <code>ul</code> with parent <code>li</code> with the <code>role="group"</code> attribute.
+          To label a group of options, use a child <code>span</code> inside the parent <code>li</code> and reference its id in the <code>aria-labelledby</code> attribute of the <code>li</code>.</p>
+
+        <%- example(`
+          <ul role="listbox" tabindex="0" aria-multiselectable="true" style="width: fit-content">
+            <li role="group" aria-labelledby="example${getNewId()}-group-1">
+              <span id="example${getCurrentId()}-group-1">Browsing</span>
+              <ul>
+                <li role="option">
+                  <input type="checkbox" id="example${getCurrentId()}-checkbox-1" tabindex="-1">
+                  <label for="example${getCurrentId()}-checkbox-1">Enable page transitions</label>
+                </li>
+                <li role="option">
+                  <input type="checkbox" id="example${getCurrentId()}-checkbox-2" tabindex="-1">
+                  <label for="example${getCurrentId()}-checkbox-2">Use smooth scrolling</label>
+                </li>
+              </ul>
+            </li>
+            <li role="group" aria-labelledby="example${getCurrentId()}-group-2">
+              <span id="example${getCurrentId()}-group-2">Multimedia</span>
+              <ul>
+                <li role="option">
+                  <input type="checkbox" id="example${getCurrentId()}-checkbox-3" tabindex="-1">
+                  <label for="example${getCurrentId()}-checkbox-3">Play animations</label>
+                </li>
+                <li role="option">
+                  <input type="checkbox" id="example${getCurrentId()}-checkbox-4" tabindex="-1">
+                  <label for="example${getCurrentId()}-checkbox-4">Play sounds</label>
+                </li>
+                <li role="option">
+                  <input type="checkbox" id="example${getCurrentId()}-checkbox-5" tabindex="-1">
+                  <label for="example${getCurrentId()}-checkbox-5">Show pictures</label>
+                </li>
+              </ul>
+            </li>
+          </ul>
         `) %>
       </div>
     </section>
@@ -1126,4 +1298,5 @@
     </p>
   </main>
 </body>
+<script src="script.js"></script>
 </html>

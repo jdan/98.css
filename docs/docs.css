@@ -116,6 +116,18 @@ button.active {
     inset -2px -2px #dfdfdf, inset 2px 2px #808080;
 }
 
+.combo-box.key-nav > input[aria-haspopup] ~ ul > li[aria-selected=true] {
+  color: #fff;
+  background-color: #000080;
+}
+
+div.key-nav > ul[role=listbox] > li[aria-current=true],
+div.key-nav > ul[role=listbox] > li:hover:not([aria-selected=true]),
+div:not(.key-nav) > input[aria-haspopup] ~ ul:has([aria-current=true]) > li[aria-selected=true]:not([aria-current=true]) {
+  color: inherit;
+  background-color: inherit;
+}
+
 @media (max-width: 480px) {
   aside {
     display: none;
